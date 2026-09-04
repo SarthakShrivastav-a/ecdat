@@ -1,0 +1,19 @@
+name: crypto-zoo
+params:
+  z_year: 2041
+  engineers: 4
+  months: 6
+  profile: cii
+  now_year: 2026
+targets:
+  - {kind: dir, path: src/python, name: payments-api, zone: external, data_class: financial, criticality: high}
+  - {kind: dir, path: src/java, name: core-banking, zone: internal, data_class: financial, criticality: critical}
+  - {kind: dir, path: src/go, name: gateway, zone: external}
+  - {kind: dir, path: src/js, name: web-portal, zone: external, data_class: pii}
+  - {kind: dir, path: src/c, name: legacy-hsm-agent, zone: internal, data_class: defence, criticality: critical}
+  - {kind: dir, path: src/nginx, name: edge-lb, zone: external}
+  - {kind: certs, path: certs, name: pki, zone: external, passwords: [zoo, zoopass]}
+  - {kind: dir, path: bin, name: zoobin, zone: internal}
+  - {kind: image, path: images/zoo-oci.tar, name: pay-image, zone: external, data_class: financial}
+  - {kind: pcap, path: pcaps/smtp_starttls.pcap, name: mail-capture, zone: external}
+  - {kind: pcap, path: pcaps/tls_handshake.pcap, name: web-capture, zone: external}

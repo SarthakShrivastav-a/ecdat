@@ -1,0 +1,97 @@
+{
+  "certs": {
+    "ca_rsa4096.crt": {
+      "public_key_algorithm": "RSA",
+      "key_size": 4096,
+      "signature_hash": "SHA-256",
+      "is_ca": true
+    },
+    "rsa2048_sha256.crt": {
+      "public_key_algorithm": "RSA",
+      "key_size": 2048,
+      "signature_hash": "SHA-256",
+      "cn": "pay.zoo.local"
+    },
+    "ecdsa_p256.crt": {
+      "public_key_algorithm": "ECDSA",
+      "curve": "secp256r1",
+      "signature_hash": "SHA-384"
+    },
+    "rsa2048_expired.crt": {
+      "public_key_algorithm": "RSA",
+      "key_size": 2048,
+      "signature_hash": "SHA-256",
+      "expired": true
+    },
+    "rsa1024_sha1.der": {
+      "public_key_algorithm": "RSA",
+      "key_size": 1024,
+      "signature_hash": "SHA-1"
+    },
+    "bundle.pem": {
+      "certs": 2
+    },
+    "pay.p12": {
+      "password": "zoo",
+      "public_key_algorithm": "RSA",
+      "key_size": 2048,
+      "private_key": true
+    },
+    "modern.jks": {
+      "password": "zoopass",
+      "private_key_algorithm": "ECDSA",
+      "format": "PKCS#12"
+    },
+    "keystore.jks": {
+      "password": "zoopass",
+      "private_key_algorithm": "RSA",
+      "key_size": 2048
+    }
+  },
+  "bin": {
+    "libzoocrypto.so": {
+      "algorithms": [
+        "AES",
+        "SHA-256",
+        "MD5"
+      ],
+      "library": "openssl",
+      "version": "1.1.1w"
+    },
+    "zoobin": {
+      "algorithms": [
+        "RSA",
+        "ECDSA",
+        "SHA-256",
+        "AES",
+        "TLS"
+      ],
+      "go": true
+    }
+  },
+  "images": {
+    "zoo-oci.tar": {
+      "certs": 2,
+      "nginx": true,
+      "openssl_cnf": true,
+      "binary": "libcrypto.so.1.1"
+    },
+    "zoo-docker.tar": {
+      "certs": 2
+    }
+  },
+  "pcaps": {
+    "tls_handshake.pcap": {
+      "cipher_suite": "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384",
+      "version": "TLSv1.2",
+      "sni": "pay.zoo.local",
+      "cert_cn": "pay.zoo.local"
+    },
+    "smtp_starttls.pcap": {
+      "cipher_suite": "TLS_RSA_WITH_3DES_EDE_CBC_SHA",
+      "version": "TLSv1.0",
+      "starttls": true,
+      "app_protocol": "smtp"
+    }
+  }
+}

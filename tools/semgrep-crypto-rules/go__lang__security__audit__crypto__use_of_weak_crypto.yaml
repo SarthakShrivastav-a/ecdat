@@ -1,5 +1,5 @@
 rules:
-- id: use-of-md5
+- id: go-lang-security-audit-crypto-use-of-weak-crypto.use-of-md5
   message: >-
     Detected MD5 hash algorithm which is considered insecure. MD5 is not
     collision resistant and is therefore not suitable as a cryptographic
@@ -33,7 +33,7 @@ rules:
         md5.New()
     - pattern: |
         md5.Sum(...)
-- id: use-of-sha1
+- id: go-lang-security-audit-crypto-use-of-weak-crypto.use-of-sha1
   message: >-
     Detected SHA1 hash algorithm which is considered insecure. SHA1 is not
     collision resistant and is therefore not suitable as a cryptographic
@@ -67,7 +67,7 @@ rules:
           sha1.New()
       - pattern: |
           sha1.Sum(...)
-- id: use-of-DES
+- id: go-lang-security-audit-crypto-use-of-weak-crypto.use-of-DES
   message: >-
     Detected DES cipher algorithm which is insecure. The algorithm is
     considered weak and has been deprecated. Use AES instead.
@@ -100,7 +100,7 @@ rules:
         des.NewTripleDESCipher(...)
     - pattern: |
         des.NewCipher(...)
-- id: use-of-rc4
+- id: go-lang-security-audit-crypto-use-of-weak-crypto.use-of-rc4
   message: >-
     Detected RC4 cipher algorithm which is insecure. The algorithm has many
     known vulnerabilities. Use AES instead.

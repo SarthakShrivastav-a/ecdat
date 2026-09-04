@@ -1,5 +1,5 @@
 rules:
-- id: insecure-hash-algorithm-md5
+- id: python-lang-security-insecure-hash-algorithms-md5.insecure-hash-algorithm-md5
   patterns:
     - pattern: hashlib.md5(...)
     - pattern-not: hashlib.md5(..., usedforsecurity=False, ...)

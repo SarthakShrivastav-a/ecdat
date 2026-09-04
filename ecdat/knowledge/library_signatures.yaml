@@ -1,0 +1,124 @@
+# Which packages implement which algorithms (CycloneDX `provides` edges), per ecosystem.
+# pqc_native: the package ships NIST PQC (FIPS 203/204) itself; pqc_native_from: version that first did.
+pypi:
+  cryptography: {provides: [RSA, ECDSA, ECDH, X25519, Ed25519, DH, DSA, AES-128, AES-256, ChaCha20, 3DES, SHA-1, SHA-256, SHA-384, SHA-512, SHA3-256, MD5, HMAC, PBKDF2, scrypt, HKDF], pqc_native: false}
+  pycryptodome: {provides: [RSA, ECDSA, DSA, AES-128, AES-256, ChaCha20, 3DES, DES, RC4, Blowfish, MD5, SHA-1, SHA-256, SHA-512, SHA3-256, HMAC, PBKDF2, scrypt], pqc_native: false}
+  pycryptodomex: {provides: [RSA, ECDSA, DSA, AES-128, AES-256, ChaCha20, 3DES, DES, RC4, Blowfish, MD5, SHA-1, SHA-256, SHA-512, HMAC, PBKDF2], pqc_native: false}
+  pynacl: {provides: [X25519, Ed25519, ChaCha20, Argon2, SHA-256, SHA-512], pqc_native: false}
+  pyjwt: {provides: [HMAC, RSA, ECDSA, Ed25519], pqc_native: false, wrapper: true}
+  python-jose: {provides: [HMAC, RSA, ECDSA], pqc_native: false, wrapper: true}
+  authlib: {provides: [HMAC, RSA, ECDSA], pqc_native: false, wrapper: true}
+  paramiko: {provides: [RSA, ECDSA, Ed25519, DH, ECDH, AES-128, AES-256, SHA-1, SHA-256], pqc_native: false}
+  pyopenssl: {provides: [RSA, ECDSA, DH, AES-256, SHA-256, TLS], pqc_native: false}
+  rsa: {provides: [RSA], pqc_native: false}
+  ecdsa: {provides: [ECDSA], pqc_native: false}
+  bcrypt: {provides: [bcrypt], pqc_native: false}
+  argon2-cffi: {provides: [Argon2], pqc_native: false}
+  passlib: {provides: [bcrypt, PBKDF2, scrypt, Argon2, MD5, SHA-1, SHA-256], pqc_native: false, wrapper: true}
+  kyber-py: {provides: [ML-KEM-512, ML-KEM-768, ML-KEM-1024], pqc_native: true}
+  dilithium-py: {provides: [ML-DSA-44, ML-DSA-65, ML-DSA-87], pqc_native: true}
+  liboqs-python: {provides: [ML-KEM-768, ML-KEM-1024, ML-DSA-65, ML-DSA-87, SLH-DSA, FN-DSA, HQC], pqc_native: true}
+  pqcrypto: {provides: [ML-KEM-768, ML-DSA-65, SLH-DSA], pqc_native: true}
+  hashlib: {provides: [MD5, SHA-1, SHA-256, SHA-384, SHA-512, SHA3-256, PBKDF2], stdlib: true}
+  ssl: {provides: [TLS], stdlib: true}
+  requests: {provides: [TLS], wrapper: true}
+  urllib3: {provides: [TLS], wrapper: true}
+  httpx: {provides: [TLS], wrapper: true}
+  boto3: {provides: [KMS], cloud: true}
+  google-cloud-kms: {provides: [KMS], cloud: true}
+  azure-keyvault-keys: {provides: [KMS], cloud: true}
+  hvac: {provides: [KMS], cloud: true}
+  python-pkcs11: {provides: [HSM], hardware: true}
+  pkcs11: {provides: [HSM], hardware: true}
+
+npm:
+  node-forge: {provides: [RSA, AES-128, AES-256, 3DES, DES, RC4, MD5, SHA-1, SHA-256, SHA-384, SHA-512, HMAC, PBKDF2, TLS], pqc_native: false}
+  crypto-js: {provides: [AES-128, AES-256, 3DES, DES, RC4, MD5, SHA-1, SHA-256, SHA-512, SHA3-256, HMAC, PBKDF2], pqc_native: false}
+  jsonwebtoken: {provides: [HMAC, RSA, ECDSA], pqc_native: false, wrapper: true}
+  jose: {provides: [HMAC, RSA, ECDSA, Ed25519, ECDH, AES-128, AES-256], pqc_native: false, wrapper: true}
+  bcrypt: {provides: [bcrypt], pqc_native: false}
+  bcryptjs: {provides: [bcrypt], pqc_native: false}
+  argon2: {provides: [Argon2], pqc_native: false}
+  tweetnacl: {provides: [X25519, Ed25519, SHA-512], pqc_native: false}
+  "@noble/curves": {provides: [ECDSA, ECDH, X25519, Ed25519], pqc_native: false}
+  "@noble/hashes": {provides: [SHA-256, SHA-512, SHA3-256, HMAC, PBKDF2, scrypt], pqc_native: false}
+  "@noble/post-quantum": {provides: [ML-KEM-768, ML-KEM-1024, ML-DSA-65, ML-DSA-87, SLH-DSA], pqc_native: true}
+  liboqs-node: {provides: [ML-KEM-768, ML-DSA-65], pqc_native: true}
+  ssh2: {provides: [RSA, ECDSA, Ed25519, DH, ECDH, AES-128, AES-256, SSH], pqc_native: false}
+  md5: {provides: [MD5], pqc_native: false}
+  sha1: {provides: [SHA-1], pqc_native: false}
+  "@aws-sdk/client-kms": {provides: [KMS], cloud: true}
+  aws-sdk: {provides: [KMS], cloud: true}
+
+go:
+  golang.org/x/crypto: {provides: [ChaCha20, Ed25519, X25519, bcrypt, scrypt, Argon2, PBKDF2, HKDF, SHA3-256, Blowfish, SSH], pqc_native: false}
+  github.com/cloudflare/circl: {provides: [ML-KEM-768, ML-KEM-1024, ML-DSA-65, X25519, Ed25519, SLH-DSA], pqc_native: true}
+  github.com/open-quantum-safe/liboqs-go: {provides: [ML-KEM-768, ML-DSA-65, FN-DSA, HQC], pqc_native: true}
+  github.com/golang-jwt/jwt: {provides: [HMAC, RSA, ECDSA, Ed25519], wrapper: true}
+  github.com/dgrijalva/jwt-go: {provides: [HMAC, RSA, ECDSA], wrapper: true}
+  github.com/aws/aws-sdk-go: {provides: [KMS], cloud: true}
+  github.com/miekg/pkcs11: {provides: [HSM], hardware: true}
+  github.com/ThalesIgnite/crypto11: {provides: [HSM], hardware: true}
+
+maven:
+  org.bouncycastle:bcprov-jdk18on: {provides: [RSA, ECDSA, ECDH, X25519, Ed25519, DH, DSA, AES-128, AES-256, ChaCha20, 3DES, DES, RC4, Blowfish, MD5, SHA-1, SHA-256, SHA-384, SHA-512, SHA3-256, HMAC, PBKDF2, scrypt, Argon2, ML-KEM-768, ML-KEM-1024, ML-DSA-65, ML-DSA-87, SLH-DSA, FN-DSA], pqc_native_from: "1.79"}
+  org.bouncycastle:bcprov-jdk15on: {provides: [RSA, ECDSA, ECDH, DH, DSA, AES-128, AES-256, 3DES, DES, RC4, Blowfish, MD5, SHA-1, SHA-256, SHA-512, HMAC, PBKDF2], pqc_native: false}
+  org.bouncycastle:bcpkix-jdk18on: {provides: [RSA, ECDSA, SHA-256], pqc_native_from: "1.79"}
+  io.jsonwebtoken:jjwt-api: {provides: [HMAC, RSA, ECDSA, Ed25519], wrapper: true}
+  com.auth0:java-jwt: {provides: [HMAC, RSA, ECDSA], wrapper: true}
+  com.nimbusds:nimbus-jose-jwt: {provides: [HMAC, RSA, ECDSA, Ed25519, AES-128, AES-256, ECDH], wrapper: true}
+  org.springframework.security:spring-security-crypto: {provides: [bcrypt, PBKDF2, scrypt, Argon2, AES-256], wrapper: true}
+  commons-codec:commons-codec: {provides: [MD5, SHA-1, SHA-256, SHA-512, HMAC], pqc_native: false}
+  org.apache.sshd:sshd-core: {provides: [RSA, ECDSA, Ed25519, DH, ECDH, AES-128, AES-256, SSH], pqc_native: false}
+  com.jcraft:jsch: {provides: [RSA, DSA, ECDSA, DH, ECDH, AES-128, AES-256, 3DES, SHA-1, SHA-256, SSH], pqc_native: false}
+  com.amazonaws:aws-java-sdk-kms: {provides: [KMS], cloud: true}
+  software.amazon.awssdk:kms: {provides: [KMS], cloud: true}
+
+cargo:
+  ring: {provides: [RSA, ECDSA, ECDH, X25519, Ed25519, AES-128, AES-256, ChaCha20, SHA-256, SHA-384, SHA-512, HMAC, PBKDF2, HKDF], pqc_native: false}
+  rustls: {provides: [TLS, ECDH, X25519, AES-128, AES-256, ChaCha20], pqc_native: false}
+  openssl: {provides: [RSA, ECDSA, ECDH, DH, DSA, AES-128, AES-256, 3DES, DES, RC4, MD5, SHA-1, SHA-256, SHA-512, HMAC, TLS], pqc_native: false}
+  rsa: {provides: [RSA], pqc_native: false}
+  ed25519-dalek: {provides: [Ed25519], pqc_native: false}
+  x25519-dalek: {provides: [X25519], pqc_native: false}
+  sha2: {provides: [SHA-256, SHA-384, SHA-512], pqc_native: false}
+  md5: {provides: [MD5], pqc_native: false}
+  sha1: {provides: [SHA-1], pqc_native: false}
+  aes-gcm: {provides: [AES-128, AES-256], pqc_native: false}
+  pqcrypto-mlkem: {provides: [ML-KEM-768, ML-KEM-1024], pqc_native: true}
+  pqcrypto-mldsa: {provides: [ML-DSA-65, ML-DSA-87], pqc_native: true}
+  ml-kem: {provides: [ML-KEM-768, ML-KEM-1024], pqc_native: true}
+  ml-dsa: {provides: [ML-DSA-65, ML-DSA-87], pqc_native: true}
+  oqs: {provides: [ML-KEM-768, ML-DSA-65, FN-DSA, HQC], pqc_native: true}
+
+rubygems:
+  openssl: {provides: [RSA, ECDSA, ECDH, DH, AES-128, AES-256, 3DES, MD5, SHA-1, SHA-256, HMAC, TLS], pqc_native: false}
+  bcrypt: {provides: [bcrypt], pqc_native: false}
+  jwt: {provides: [HMAC, RSA, ECDSA], wrapper: true}
+  rbnacl: {provides: [X25519, Ed25519, ChaCha20], pqc_native: false}
+
+composer:
+  phpseclib/phpseclib: {provides: [RSA, ECDSA, DH, AES-128, AES-256, 3DES, DES, RC4, Blowfish, MD5, SHA-1, SHA-256, SSH], pqc_native: false}
+  firebase/php-jwt: {provides: [HMAC, RSA, ECDSA], wrapper: true}
+  paragonie/sodium_compat: {provides: [X25519, Ed25519, ChaCha20, Argon2], pqc_native: false}
+
+# Binary / system libraries recognised by version strings (binary collector)
+system:
+  openssl: {provides: [RSA, ECDSA, ECDH, X25519, Ed25519, DH, DSA, AES-128, AES-256, ChaCha20, 3DES, DES, RC4, MD5, SHA-1, SHA-256, SHA-384, SHA-512, SHA3-256, HMAC, PBKDF2, TLS], pqc_native_from: "3.5.0"}
+  mbedtls: {provides: [RSA, ECDSA, ECDH, X25519, DH, AES-128, AES-256, ChaCha20, 3DES, MD5, SHA-1, SHA-256, SHA-512, HMAC, TLS], pqc_native: false}
+  wolfssl: {provides: [RSA, ECDSA, ECDH, X25519, Ed25519, AES-128, AES-256, ChaCha20, 3DES, MD5, SHA-1, SHA-256, SHA-512, HMAC, TLS, ML-KEM-768, ML-DSA-65], pqc_native_from: "5.7.0"}
+  libsodium: {provides: [X25519, Ed25519, ChaCha20, Argon2, SHA-256, SHA-512], pqc_native: false}
+  gnutls: {provides: [RSA, ECDSA, ECDH, X25519, Ed25519, DH, AES-128, AES-256, ChaCha20, SHA-256, TLS], pqc_native_from: "3.8.9"}
+  boringssl: {provides: [RSA, ECDSA, ECDH, X25519, Ed25519, AES-128, AES-256, ChaCha20, SHA-256, TLS, X25519MLKEM768], pqc_native: true}
+  libressl: {provides: [RSA, ECDSA, ECDH, X25519, Ed25519, DH, AES-128, AES-256, ChaCha20, 3DES, MD5, SHA-1, SHA-256, TLS], pqc_native: false}
+  liboqs: {provides: [ML-KEM-512, ML-KEM-768, ML-KEM-1024, ML-DSA-44, ML-DSA-65, ML-DSA-87, SLH-DSA, FN-DSA, HQC], pqc_native: true}
+
+# Language runtimes: does the runtime itself ship NIST PQC? Drives the agility "runtime_pqc" dimension.
+runtimes:
+  go: {pqc_native_from: "1.24", note: "crypto/mlkem (ML-KEM-768/1024) since Go 1.24; X25519MLKEM768 default in crypto/tls; ML-DSA in Go 1.27"}
+  java: {pqc_native_from: "24", note: "JEP 496 (ML-KEM) and JEP 497 (ML-DSA) in JDK 24"}
+  openssl: {pqc_native_from: "3.5.0", note: "OpenSSL 3.5 ships ML-KEM, ML-DSA, SLH-DSA and X25519MLKEM768"}
+  python: {pqc_native: false, note: "no PQC in the stdlib; use kyber-py / dilithium-py / liboqs-python"}
+  node: {pqc_native: false, note: "no PQC in node:crypto yet; use @noble/post-quantum or liboqs-node"}
+  dotnet: {pqc_native_from: "10.0", note: ".NET 10 adds ML-KEM / ML-DSA on supported platforms"}
+  c: {pqc_native: false, note: "link liboqs / oqs-provider or upgrade OpenSSL to 3.5+"}

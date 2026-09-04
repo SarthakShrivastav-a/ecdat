@@ -1,5 +1,5 @@
 rules:
-- id: no-set-ciphers
+- id: python-lang-security-audit-insecure-transport-ssl-no-set-ciphers.no-set-ciphers
   pattern: $CONTEXT.set_ciphers(...)
   message: >-
     The 'ssl' module disables insecure cipher suites by default. Therefore,

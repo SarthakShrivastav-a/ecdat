@@ -1,5 +1,5 @@
 rules:
-- id: path-traversal-join
+- id: python-django-security-injection-path-traversal-path-traversal-join.path-traversal-join
   message: >-
     Data from request is passed to os.path.join() and to open(). This is a path traversal vulnerability,
     which can lead to sensitive data being leaked. To mitigate, consider using os.path.abspath or os.path.realpath

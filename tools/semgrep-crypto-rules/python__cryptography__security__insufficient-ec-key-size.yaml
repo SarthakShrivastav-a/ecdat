@@ -1,5 +1,5 @@
 rules:
-- id: insufficient-ec-key-size
+- id: python-cryptography-security-insufficient-ec-key-size.insufficient-ec-key-size
   patterns:
     - pattern-inside: cryptography.hazmat.primitives.asymmetric.ec.generate_private_key(...)
     - pattern: cryptography.hazmat.primitives.asymmetric.ec.$SIZE

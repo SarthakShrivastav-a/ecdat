@@ -1,5 +1,5 @@
 rules:
-- id: missing-ssl-version
+- id: generic-nginx-security-missing-ssl-version.missing-ssl-version
   patterns:
   - pattern: server { ... listen $PORT ssl; ... }
   - pattern-not-inside: server { ... ssl_protocols ... }

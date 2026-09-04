@@ -1,5 +1,5 @@
 rules:
-- id: create-de-cipher-no-iv
+- id: javascript-node-crypto-security-create-de-cipher-no-iv.create-de-cipher-no-iv
   message: >-
     The deprecated functions 'createCipher' and 'createDecipher' generate the same initialization vector every time.
     For counter modes such as CTR, GCM, or CCM this leads to break of both confidentiality and integrity, if the key is used more than once.

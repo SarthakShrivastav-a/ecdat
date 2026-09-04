@@ -1,5 +1,5 @@
 rules:
-  - id: ssl-verify-none
+  - id: rust-lang-security-ssl-verify-none.ssl-verify-none
     message: SSL verification disabled, this allows for MitM attacks
     pattern: "$BUILDER.set_verify(openssl::ssl::SSL_VERIFY_NONE)"
     metadata:

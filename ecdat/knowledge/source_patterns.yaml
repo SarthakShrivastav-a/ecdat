@@ -1,0 +1,311 @@
+# Source-collector patterns. Matched against tree-sitter call expressions (callee suffix match).
+# Fields: callee | algorithm | primitive | function | mode | padding | key_size_pos | key_size_kw |
+#         curve_arg | string_arg (index of a string literal describing the algorithm) | parse
+#         (transformation | signature | algorithm | cipher_name | protocol) | attach_to (Java initialize)
+languages:
+  python:
+    extensions: [.py, .pyi]
+    imports:
+      - {module: cryptography, library: pyca-cryptography}
+      - {module: Crypto, library: pycryptodome}
+      - {module: Cryptodome, library: pycryptodomex}
+      - {module: nacl, library: pynacl}
+      - {module: jwt, library: pyjwt}
+      - {module: kyber_py, library: kyber-py}
+      - {module: dilithium_py, library: dilithium-py}
+      - {module: oqs, library: liboqs-python}
+    calls:
+      - {callee: rsa.generate_private_key, algorithm: RSA, primitive: pke, function: keygen, key_size_kw: key_size, key_size_pos: 1}
+      - {callee: RSA.generate, algorithm: RSA, primitive: pke, function: keygen, key_size_pos: 0}
+      - {callee: RSA.construct, algorithm: RSA, primitive: pke}
+      - {callee: padding.OAEP, algorithm: RSA, primitive: pke, function: encrypt, padding: OAEP}
+      - {callee: padding.PKCS1v15, algorithm: RSA, primitive: pke, padding: PKCS1v15}
+      - {callee: padding.PSS, algorithm: RSA, primitive: signature, padding: PSS}
+      - {callee: PKCS1_OAEP.new, algorithm: RSA, primitive: pke, padding: OAEP}
+      - {callee: PKCS1_v1_5.new, algorithm: RSA, primitive: pke, padding: PKCS1v15}
+      - {callee: ec.generate_private_key, algorithm: ECDSA, primitive: signature, function: keygen, curve_arg: 0}
+      - {callee: ec.ECDSA, algorithm: ECDSA, primitive: signature, function: sign}
+      - {callee: ec.ECDH, algorithm: ECDH, primitive: key-agree}
+      - {callee: ECC.generate, algorithm: ECDSA, primitive: signature, function: keygen}
+      - {callee: x25519.X25519PrivateKey.generate, algorithm: X25519, primitive: key-agree, function: keygen}
+      - {callee: X25519PrivateKey.generate, algorithm: X25519, primitive: key-agree, function: keygen}
+      - {callee: ed25519.Ed25519PrivateKey.generate, algorithm: Ed25519, primitive: signature, function: keygen}
+      - {callee: Ed25519PrivateKey.generate, algorithm: Ed25519, primitive: signature, function: keygen}
+      - {callee: dh.generate_parameters, algorithm: DH, primitive: key-agree, key_size_kw: key_size}
+      - {callee: dsa.generate_private_key, algorithm: DSA, primitive: signature, key_size_kw: key_size}
+      - {callee: hashes.MD5, algorithm: MD5, primitive: hash}
+      - {callee: hashes.SHA1, algorithm: SHA-1, primitive: hash}
+      - {callee: hashes.SHA224, algorithm: SHA-224, primitive: hash}
+      - {callee: hashes.SHA256, algorithm: SHA-256, primitive: hash}
+      - {callee: hashes.SHA384, algorithm: SHA-384, primitive: hash}
+      - {callee: hashes.SHA512, algorithm: SHA-512, primitive: hash}
+      - {callee: hashes.SHA3_256, algorithm: SHA3-256, primitive: hash}
+      - {callee: hashlib.md5, algorithm: MD5, primitive: hash}
+      - {callee: hashlib.sha1, algorithm: SHA-1, primitive: hash}
+      - {callee: hashlib.sha224, algorithm: SHA-224, primitive: hash}
+      - {callee: hashlib.sha256, algorithm: SHA-256, primitive: hash}
+      - {callee: hashlib.sha384, algorithm: SHA-384, primitive: hash}
+      - {callee: hashlib.sha512, algorithm: SHA-512, primitive: hash}
+      - {callee: hashlib.sha3_256, algorithm: SHA3-256, primitive: hash}
+      - {callee: hashlib.new, string_arg: 0, parse: algorithm, primitive: hash}
+      - {callee: hashlib.pbkdf2_hmac, algorithm: PBKDF2, primitive: kdf}
+      - {callee: hmac.new, algorithm: HMAC, primitive: mac}
+      - {callee: MD5.new, algorithm: MD5, primitive: hash}
+      - {callee: SHA1.new, algorithm: SHA-1, primitive: hash}
+      - {callee: SHA256.new, algorithm: SHA-256, primitive: hash}
+      - {callee: AESGCM.generate_key, algorithm: AES, primitive: block-cipher, mode: GCM, key_size_kw: bit_length, key_size_pos: 0}
+      - {callee: AESGCM, algorithm: AES, primitive: ae, mode: GCM}
+      - {callee: AESCCM, algorithm: AES, primitive: ae, mode: CCM}
+      - {callee: ChaCha20Poly1305, algorithm: ChaCha20, primitive: ae}
+      - {callee: algorithms.AES, algorithm: AES, primitive: block-cipher}
+      - {callee: algorithms.AES128, algorithm: AES-128, primitive: block-cipher}
+      - {callee: algorithms.AES256, algorithm: AES-256, primitive: block-cipher}
+      - {callee: algorithms.TripleDES, algorithm: 3DES, primitive: block-cipher}
+      - {callee: algorithms.ARC4, algorithm: RC4, primitive: stream-cipher}
+      - {callee: algorithms.Blowfish, algorithm: Blowfish, primitive: block-cipher}
+      - {callee: algorithms.ChaCha20, algorithm: ChaCha20, primitive: stream-cipher}
+      - {callee: AES.new, algorithm: AES, primitive: block-cipher}
+      - {callee: DES3.new, algorithm: 3DES, primitive: block-cipher}
+      - {callee: DES.new, algorithm: DES, primitive: block-cipher}
+      - {callee: ARC4.new, algorithm: RC4, primitive: stream-cipher}
+      - {callee: modes.ECB, mode: ECB}
+      - {callee: modes.CBC, mode: CBC}
+      - {callee: modes.GCM, mode: GCM}
+      - {callee: modes.CTR, mode: CTR}
+      - {callee: PBKDF2HMAC, algorithm: PBKDF2, primitive: kdf}
+      - {callee: Scrypt, algorithm: scrypt, primitive: kdf}
+      - {callee: HKDF, algorithm: HKDF, primitive: kdf}
+      - {callee: bcrypt.hashpw, algorithm: bcrypt, primitive: kdf}
+      - {callee: ML_KEM_768.keygen, algorithm: ML-KEM-768, primitive: kem, function: keygen}
+      - {callee: ML_KEM_1024.keygen, algorithm: ML-KEM-1024, primitive: kem, function: keygen}
+      - {callee: ML_DSA_65.keygen, algorithm: ML-DSA-65, primitive: signature, function: keygen}
+      - {callee: ML_DSA_87.keygen, algorithm: ML-DSA-87, primitive: signature, function: keygen}
+      - {callee: oqs.KeyEncapsulation, string_arg: 0, parse: algorithm, primitive: kem}
+      - {callee: oqs.Signature, string_arg: 0, parse: algorithm, primitive: signature}
+      - {callee: jwt.encode, string_kw: algorithm, parse: jws}
+      - {callee: ssl.SSLContext, protocol: TLS}
+      - {callee: ssl.create_default_context, protocol: TLS}
+    regex:
+      - {pattern: 'ssl\.PROTOCOL_(TLSv1(?:_[123])?|SSLv[23])', protocol: TLS, version_group: 1}
+
+  java:
+    extensions: [.java, .kt, .scala]
+    imports:
+      - {module: javax.crypto, library: jce}
+      - {module: java.security, library: jca}
+      - {module: org.bouncycastle, library: bouncycastle}
+      - {module: io.jsonwebtoken, library: jjwt}
+    calls:
+      - {callee: Cipher.getInstance, string_arg: 0, parse: transformation, function: encrypt}
+      - {callee: KeyPairGenerator.getInstance, string_arg: 0, parse: algorithm, function: keygen, api: KeyPairGenerator}
+      - {callee: KeyGenerator.getInstance, string_arg: 0, parse: algorithm, function: keygen, api: KeyGenerator}
+      - {callee: Signature.getInstance, string_arg: 0, parse: signature, function: sign}
+      - {callee: MessageDigest.getInstance, string_arg: 0, parse: algorithm, primitive: hash}
+      - {callee: Mac.getInstance, string_arg: 0, parse: algorithm, primitive: mac}
+      - {callee: KeyAgreement.getInstance, string_arg: 0, parse: algorithm, primitive: key-agree}
+      - {callee: KeyFactory.getInstance, string_arg: 0, parse: algorithm}
+      - {callee: SecretKeyFactory.getInstance, string_arg: 0, parse: algorithm, primitive: kdf}
+      - {callee: SSLContext.getInstance, string_arg: 0, parse: protocol}
+      - {callee: KEM.getInstance, string_arg: 0, parse: algorithm, primitive: kem}
+      - {callee: initialize, key_size_pos: 0, attach_to: KeyPairGenerator}
+      - {callee: init, key_size_pos: 0, attach_to: KeyGenerator}
+      - {callee: SecureRandom.getInstance, string_arg: 0, parse: algorithm, primitive: drbg}
+    regex:
+      - {pattern: '"(TLSv1(?:\.[123])?|SSLv3)"', protocol: TLS, version_group: 1}
+
+  go:
+    extensions: [.go]
+    imports:
+      - {module: crypto/rsa, library: go-crypto}
+      - {module: golang.org/x/crypto, library: x-crypto}
+      - {module: crypto/mlkem, library: go-crypto-pqc}
+      - {module: github.com/cloudflare/circl, library: circl}
+    calls:
+      - {callee: rsa.GenerateKey, algorithm: RSA, primitive: pke, function: keygen, key_size_pos: 1}
+      - {callee: rsa.EncryptOAEP, algorithm: RSA, primitive: pke, padding: OAEP, function: encrypt}
+      - {callee: rsa.EncryptPKCS1v15, algorithm: RSA, primitive: pke, padding: PKCS1v15, function: encrypt}
+      - {callee: rsa.SignPSS, algorithm: RSA, primitive: signature, padding: PSS}
+      - {callee: rsa.SignPKCS1v15, algorithm: RSA, primitive: signature, padding: PKCS1v15}
+      - {callee: ecdsa.GenerateKey, algorithm: ECDSA, primitive: signature, function: keygen, curve_arg: 0}
+      - {callee: ecdsa.SignASN1, algorithm: ECDSA, primitive: signature, function: sign}
+      - {callee: ecdh.X25519, algorithm: X25519, primitive: key-agree}
+      - {callee: ecdh.P256, algorithm: ECDH, primitive: key-agree, curve: secp256r1}
+      - {callee: ed25519.GenerateKey, algorithm: Ed25519, primitive: signature, function: keygen}
+      - {callee: sha256.Sum256, algorithm: SHA-256, primitive: hash}
+      - {callee: sha256.New, algorithm: SHA-256, primitive: hash}
+      - {callee: sha512.New, algorithm: SHA-512, primitive: hash}
+      - {callee: sha1.New, algorithm: SHA-1, primitive: hash}
+      - {callee: sha1.Sum, algorithm: SHA-1, primitive: hash}
+      - {callee: md5.New, algorithm: MD5, primitive: hash}
+      - {callee: md5.Sum, algorithm: MD5, primitive: hash}
+      - {callee: aes.NewCipher, algorithm: AES, primitive: block-cipher}
+      - {callee: cipher.NewGCM, mode: GCM}
+      - {callee: cipher.NewCBCEncrypter, mode: CBC}
+      - {callee: des.NewTripleDESCipher, algorithm: 3DES, primitive: block-cipher}
+      - {callee: des.NewCipher, algorithm: DES, primitive: block-cipher}
+      - {callee: rc4.NewCipher, algorithm: RC4, primitive: stream-cipher}
+      - {callee: chacha20poly1305.New, algorithm: ChaCha20, primitive: ae}
+      - {callee: hmac.New, algorithm: HMAC, primitive: mac}
+      - {callee: pbkdf2.Key, algorithm: PBKDF2, primitive: kdf}
+      - {callee: bcrypt.GenerateFromPassword, algorithm: bcrypt, primitive: kdf}
+      - {callee: mlkem.GenerateKey768, algorithm: ML-KEM-768, primitive: kem, function: keygen}
+      - {callee: mlkem.GenerateKey1024, algorithm: ML-KEM-1024, primitive: kem, function: keygen}
+      - {callee: dsa.GenerateKey, algorithm: DSA, primitive: signature}
+    regex:
+      - {pattern: 'tls\.VersionTLS(1[0-3])', protocol: TLS, version_group: 1}
+      - {pattern: 'tls\.(X25519MLKEM768|CurveP256|CurveP384|X25519)\b', curve_group: 1}
+
+  javascript:
+    extensions: [.js, .mjs, .cjs, .jsx, .ts, .tsx]
+    imports:
+      - {module: node-forge, library: node-forge}
+      - {module: crypto-js, library: crypto-js}
+      - {module: jsonwebtoken, library: jsonwebtoken}
+      - {module: jose, library: jose}
+      - {module: bcrypt, library: bcrypt}
+      - {module: '@noble/post-quantum', library: noble-post-quantum}
+      - {module: tweetnacl, library: tweetnacl}
+    calls:
+      - {callee: crypto.createHash, string_arg: 0, parse: algorithm, primitive: hash}
+      - {callee: createHash, string_arg: 0, parse: algorithm, primitive: hash}
+      - {callee: crypto.createHmac, algorithm: HMAC, primitive: mac}
+      - {callee: createHmac, algorithm: HMAC, primitive: mac}
+      - {callee: crypto.createCipheriv, string_arg: 0, parse: cipher_name, function: encrypt}
+      - {callee: createCipheriv, string_arg: 0, parse: cipher_name, function: encrypt}
+      - {callee: crypto.createDecipheriv, string_arg: 0, parse: cipher_name, function: decrypt}
+      - {callee: crypto.createCipher, string_arg: 0, parse: cipher_name, function: encrypt}
+      - {callee: crypto.generateKeyPairSync, string_arg: 0, parse: algorithm, function: keygen, key_size_kw: modulusLength, curve_kw: namedCurve}
+      - {callee: crypto.generateKeyPair, string_arg: 0, parse: algorithm, function: keygen, key_size_kw: modulusLength, curve_kw: namedCurve}
+      - {callee: generateKeyPairSync, string_arg: 0, parse: algorithm, function: keygen, key_size_kw: modulusLength, curve_kw: namedCurve}
+      - {callee: crypto.createECDH, algorithm: ECDH, primitive: key-agree, curve_arg: 0}
+      - {callee: crypto.createDiffieHellman, algorithm: DH, primitive: key-agree, key_size_pos: 0}
+      - {callee: crypto.pbkdf2Sync, algorithm: PBKDF2, primitive: kdf}
+      - {callee: crypto.scryptSync, algorithm: scrypt, primitive: kdf}
+      - {callee: forge.pki.rsa.generateKeyPair, algorithm: RSA, primitive: pke, function: keygen, key_size_pos: 0, key_size_kw: bits}
+      - {callee: pki.rsa.generateKeyPair, algorithm: RSA, primitive: pke, function: keygen, key_size_pos: 0, key_size_kw: bits}
+      - {callee: forge.md.md5.create, algorithm: MD5, primitive: hash}
+      - {callee: forge.md.sha1.create, algorithm: SHA-1, primitive: hash}
+      - {callee: forge.md.sha256.create, algorithm: SHA-256, primitive: hash}
+      - {callee: forge.cipher.createCipher, string_arg: 0, parse: cipher_name}
+      - {callee: CryptoJS.MD5, algorithm: MD5, primitive: hash}
+      - {callee: CryptoJS.SHA1, algorithm: SHA-1, primitive: hash}
+      - {callee: CryptoJS.SHA256, algorithm: SHA-256, primitive: hash}
+      - {callee: CryptoJS.AES.encrypt, algorithm: AES, primitive: block-cipher, function: encrypt}
+      - {callee: CryptoJS.TripleDES.encrypt, algorithm: 3DES, primitive: block-cipher}
+      - {callee: CryptoJS.RC4.encrypt, algorithm: RC4, primitive: stream-cipher}
+      - {callee: bcrypt.hash, algorithm: bcrypt, primitive: kdf}
+      - {callee: bcrypt.hashSync, algorithm: bcrypt, primitive: kdf}
+      - {callee: jwt.sign, string_kw: algorithm, parse: jws}
+      - {callee: ml_kem768.keygen, algorithm: ML-KEM-768, primitive: kem}
+      - {callee: ml_dsa65.keygen, algorithm: ML-DSA-65, primitive: signature}
+      - {callee: nacl.box.keyPair, algorithm: X25519, primitive: key-agree}
+      - {callee: nacl.sign.keyPair, algorithm: Ed25519, primitive: signature}
+    regex:
+      - {pattern: "minVersion:\\s*['\"](TLSv1(?:\\.[123])?)['\"]", protocol: TLS, version_group: 1}
+
+  c:
+    extensions: [.c, .h, .cc, .cpp, .cxx, .hpp, .hh]
+    imports:
+      - {module: openssl/, library: openssl}
+      - {module: mbedtls/, library: mbedtls}
+      - {module: wolfssl/, library: wolfssl}
+      - {module: sodium.h, library: libsodium}
+      - {module: oqs/, library: liboqs}
+      - {module: gnutls/, library: gnutls}
+    calls:
+      - {callee: RSA_generate_key_ex, algorithm: RSA, primitive: pke, function: keygen, key_size_pos: 1}
+      - {callee: RSA_generate_key, algorithm: RSA, primitive: pke, function: keygen, key_size_pos: 0}
+      - {callee: RSA_new, algorithm: RSA, primitive: pke}
+      - {callee: RSA_public_encrypt, algorithm: RSA, primitive: pke, function: encrypt}
+      - {callee: EVP_PKEY_CTX_set_rsa_keygen_bits, algorithm: RSA, primitive: pke, key_size_pos: 1}
+      - {callee: EC_KEY_new_by_curve_name, algorithm: ECDSA, primitive: signature, curve_arg: 0}
+      - {callee: ECDSA_sign, algorithm: ECDSA, primitive: signature, function: sign}
+      - {callee: ECDH_compute_key, algorithm: ECDH, primitive: key-agree}
+      - {callee: DH_generate_key, algorithm: DH, primitive: key-agree}
+      - {callee: DSA_generate_key, algorithm: DSA, primitive: signature}
+      - {callee: AES_set_encrypt_key, algorithm: AES, primitive: block-cipher, key_size_pos: 1}
+      - {callee: AES_set_decrypt_key, algorithm: AES, primitive: block-cipher, key_size_pos: 1}
+      - {callee: AES_encrypt, algorithm: AES, primitive: block-cipher}
+      - {callee: EVP_aes_128_cbc, algorithm: AES-128, primitive: block-cipher, mode: CBC}
+      - {callee: EVP_aes_128_gcm, algorithm: AES-128, primitive: ae, mode: GCM}
+      - {callee: EVP_aes_256_cbc, algorithm: AES-256, primitive: block-cipher, mode: CBC}
+      - {callee: EVP_aes_256_gcm, algorithm: AES-256, primitive: ae, mode: GCM}
+      - {callee: EVP_des_ede3_cbc, algorithm: 3DES, primitive: block-cipher, mode: CBC}
+      - {callee: EVP_des_cbc, algorithm: DES, primitive: block-cipher, mode: CBC}
+      - {callee: EVP_rc4, algorithm: RC4, primitive: stream-cipher}
+      - {callee: EVP_chacha20_poly1305, algorithm: ChaCha20, primitive: ae}
+      - {callee: MD5_Init, algorithm: MD5, primitive: hash}
+      - {callee: MD5, algorithm: MD5, primitive: hash}
+      - {callee: EVP_md5, algorithm: MD5, primitive: hash}
+      - {callee: SHA1_Init, algorithm: SHA-1, primitive: hash}
+      - {callee: SHA1, algorithm: SHA-1, primitive: hash}
+      - {callee: EVP_sha1, algorithm: SHA-1, primitive: hash}
+      - {callee: SHA256_Init, algorithm: SHA-256, primitive: hash}
+      - {callee: SHA256, algorithm: SHA-256, primitive: hash}
+      - {callee: EVP_sha256, algorithm: SHA-256, primitive: hash}
+      - {callee: EVP_sha384, algorithm: SHA-384, primitive: hash}
+      - {callee: EVP_sha512, algorithm: SHA-512, primitive: hash}
+      - {callee: EVP_sha3_256, algorithm: SHA3-256, primitive: hash}
+      - {callee: HMAC, algorithm: HMAC, primitive: mac}
+      - {callee: PKCS5_PBKDF2_HMAC, algorithm: PBKDF2, primitive: kdf}
+      - {callee: DES_set_key, algorithm: DES, primitive: block-cipher}
+      - {callee: DES_ecb3_encrypt, algorithm: 3DES, primitive: block-cipher}
+      - {callee: mbedtls_rsa_gen_key, algorithm: RSA, primitive: pke, key_size_pos: 3}
+      - {callee: mbedtls_aes_setkey_enc, algorithm: AES, primitive: block-cipher, key_size_pos: 2}
+      - {callee: mbedtls_md5, algorithm: MD5, primitive: hash}
+      - {callee: mbedtls_sha1, algorithm: SHA-1, primitive: hash}
+      - {callee: mbedtls_sha256, algorithm: SHA-256, primitive: hash}
+      - {callee: mbedtls_ecdsa_genkey, algorithm: ECDSA, primitive: signature}
+      - {callee: crypto_box_keypair, algorithm: X25519, primitive: key-agree}
+      - {callee: crypto_sign_keypair, algorithm: Ed25519, primitive: signature}
+      - {callee: OQS_KEM_new, string_arg: 0, parse: algorithm, primitive: kem}
+      - {callee: OQS_SIG_new, string_arg: 0, parse: algorithm, primitive: signature}
+      - {callee: SSL_CTX_new, protocol: TLS}
+      - {callee: SSL_CTX_set_min_proto_version, protocol: TLS}
+      - {callee: SSL_CTX_set_cipher_list, protocol: TLS, string_arg: 1, parse: cipher_string}
+    regex:
+      - {pattern: '(TLS1_[123]_VERSION|SSL3_VERSION|TLS1_VERSION)', protocol: TLS, version_group: 1}
+
+# Config-file directives (line based). key -> what the values mean.
+config:
+  files: ["nginx.conf", "*.conf", "openssl.cnf", "sshd_config", "ssh_config", "httpd.conf", "ssl.conf",
+          "*.properties", "*.toml", "*.ini", "*.cfg", ".env", "*.env", "haproxy.cfg", "*.yaml", "*.yml",
+          "web.config", "server.xml", "standalone.xml", "application.yml", "application.properties"]
+  directives:
+    - {key: ssl_protocols, protocol: TLS, parse: versions}
+    - {key: ssl_ciphers, protocol: TLS, parse: cipher_string}
+    - {key: ssl_ecdh_curve, protocol: TLS, parse: curves}
+    - {key: ssl_conf_command, protocol: TLS, parse: openssl_conf_command}
+    - {key: MinProtocol, protocol: TLS, parse: versions}
+    - {key: MaxProtocol, protocol: TLS, parse: versions}
+    - {key: CipherString, protocol: TLS, parse: cipher_string}
+    - {key: Ciphersuites, protocol: TLS, parse: cipher_string}
+    - {key: Groups, protocol: TLS, parse: curves}
+    - {key: SSLProtocol, protocol: TLS, parse: versions}
+    - {key: SSLCipherSuite, protocol: TLS, parse: cipher_string}
+    - {key: SSLOpenSSLConfCmd, protocol: TLS, parse: openssl_conf_command}
+    - {key: ssl-default-bind-ciphers, protocol: TLS, parse: cipher_string}
+    - {key: ssl-default-bind-options, protocol: TLS, parse: versions}
+    - {key: Ciphers, protocol: SSH, parse: ssh_list}
+    - {key: KexAlgorithms, protocol: SSH, parse: ssh_list}
+    - {key: HostKeyAlgorithms, protocol: SSH, parse: ssh_list}
+    - {key: MACs, protocol: SSH, parse: ssh_list}
+    - {key: server.ssl.protocol, protocol: TLS, parse: versions}
+    - {key: server.ssl.enabled-protocols, protocol: TLS, parse: versions}
+    - {key: server.ssl.ciphers, protocol: TLS, parse: cipher_string}
+    - {key: sslProtocol, protocol: TLS, parse: versions}
+    - {key: sslEnabledProtocols, protocol: TLS, parse: versions}
+    - {key: ciphers, protocol: TLS, parse: cipher_string}
+    - {key: ike, protocol: IPsec, parse: ipsec_proposal}
+    - {key: esp, protocol: IPsec, parse: ipsec_proposal}
+    - {key: hsm_provider, hardware: HSM}
+    - {key: pkcs11_module, hardware: HSM}
+    - {key: kms_key_id, cloud: KMS}
+    - {key: aws_kms_key_arn, cloud: KMS}
+
+# Regex fallback for languages without a grammar (Ruby, PHP, Rust, C#, Swift, shell, PowerShell...)
+fallback:
+  extensions: [.rb, .php, .rs, .cs, .swift, .pl, .ps1, .sh, .bash, .lua, .m, .dart, .ex, .exs, .clj, .groovy, .sql]
+  words: [rsa, ecdsa, ecdh, x25519, ed25519, diffie-hellman, aes-128, aes-256, aes128, aes256, aes, des3, 3des, tripledes,
+          desede, des, rc4, arcfour, blowfish, md5, sha1, sha-1, sha256, sha-256, sha384, sha512, sha3, hmac, pbkdf2,
+          bcrypt, scrypt, argon2, chacha20, kyber, ml-kem, dilithium, ml-dsa, sphincs, falcon, x25519mlkem768]

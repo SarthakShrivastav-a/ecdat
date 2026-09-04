@@ -1,0 +1,18 @@
+# Data-lifetime defaults (X in Mosca's inequality) by data class, plus hints used to infer the class
+# from component names, paths and identifiers. Values are configurable defaults, not doctrine.
+classes:
+  defence:   {years: 30, hints: [classified, defence, defense, military, mil, strategic, sovereign, hsm, intelligence, ntro, nciipc]}
+  health:    {years: 25, hints: [patient, ehr, emr, medical, diagnosis, hipaa, clinical, hospital, health, pharma, abha]}
+  identity:  {years: 20, hints: [aadhaar, passport, identity, kyc, biometric, uidai, voter, licence, license, digilocker]}
+  financial: {years: 10, hints: [payment, payments, card, pan, ledger, bank, banking, upi, transaction, invoice, billing, wallet, loan, insurance, treasury, swift, neft, rtgs]}
+  pii:       {years: 7,  hints: [user, users, customer, email, phone, address, profile, portal, crm, hr, employee, student]}
+  logs:      {years: 1,  hints: [log, logs, audit, metric, metrics, telemetry, trace, monitoring]}
+  session:   {years: 0.1, hints: [session, token, jwt, cookie, cache, etag, nonce, csrf, otp]}
+  generic:   {years: 5,  hints: []}
+
+# QRAMM-style profile multiplier (0.8 - 1.5x) applied to priority by business criticality.
+criticality:
+  low: 0.8
+  medium: 1.0
+  high: 1.25
+  critical: 1.5

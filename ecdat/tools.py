@@ -8,32 +8,54 @@ from functools import lru_cache
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-TOOLS_DIR = ROOT / "tools"
 GO_BIN = Path(os.environ.get("USERPROFILE", os.environ.get("HOME", ""))) / "go" / "bin"
 WIRESHARK = Path(r"C:\Program Files\Wireshark")
 
+
+def _tools_dirs() -> list[Path]:
+    dirs = []
+    env = os.environ.get("ECDAT_TOOLS_DIR")
+    if env:
+        dirs.append(Path(env))
+    # ROOT/tools, then every ancestor's tools/ (worktrees nested under the main checkout find its tools/)
+    for base in [ROOT, *ROOT.parents]:
+        dirs.append(base / "tools")
+    return dirs
+
+
+def _first_existing(names: list[str]) -> Path | None:
+    for d in _tools_dirs():
+        for n in names:
+            p = d / n
+            if p.exists():
+                return p
+    return None
+
+
+TOOLS_DIR = next((d for d in _tools_dirs() if (d / "findcrypt3.rules").exists()), ROOT / "tools")
+RULES_DIR = TOOLS_DIR / "semgrep-crypto-rules"
+FINDCRYPT_RULES = TOOLS_DIR / "findcrypt3.rules"
+
 CANDIDATES = {
-    "opengrep": [TOOLS_DIR / "opengrep.exe", TOOLS_DIR / "opengrep"],
-    "syft": [TOOLS_DIR / "syft.exe", TOOLS_DIR / "syft"],
-    "cbomkit-theia": [GO_BIN / "cbomkit-theia.exe", GO_BIN / "cbomkit-theia"],
-    "crane": [GO_BIN / "crane.exe", GO_BIN / "crane"],
-    "tshark": [WIRESHARK / "tshark.exe"],
+    "opengrep": lambda: _first_existing(["opengrep.exe", "opengrep"]),
+    "syft": lambda: _first_existing(["syft.exe", "syft"]),
+    "cbomkit-theia": lambda: next((p for p in [GO_BIN / "cbomkit-theia.exe", GO_BIN / "cbomkit-theia"] if p.exists()), None),
+    "crane": lambda: next((p for p in [GO_BIN / "crane.exe", GO_BIN / "crane"] if p.exists()), None),
+    "tshark": lambda: next((p for p in [WIRESHARK / "tshark.exe"] if p.exists()), None),
 }
 VERSION_ARGS = {
     "opengrep": ["--version"], "syft": ["version"], "cbomkit-theia": ["--help"],
     "crane": ["version"], "tshark": ["--version"],
 }
-RULES_DIR = TOOLS_DIR / "semgrep-crypto-rules"
-FINDCRYPT_RULES = TOOLS_DIR / "findcrypt3.rules"
 
 
 @lru_cache(maxsize=None)
 def find(name: str) -> Path | None:
     if os.environ.get("ECDAT_NO_EXTERNAL_TOOLS") == "1":
         return None
-    for p in CANDIDATES.get(name, []):
-        if p.exists():
-            return p
+    p = CANDIDATES.get(name, lambda: None)()
+    if p:
+        return p
     w = shutil.which(name)
     return Path(w) if w else None
 

@@ -1,5 +1,5 @@
 rules:
-- id: use-tls
+- id: go-lang-security-audit-net-use-tls.use-tls
   pattern: http.ListenAndServe($ADDR, $HANDLER)
   fix: http.ListenAndServeTLS($ADDR, certFile, keyFile, $HANDLER)
   metadata:

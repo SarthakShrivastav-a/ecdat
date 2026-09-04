@@ -1,0 +1,50 @@
+# Regulatory / standards overlays. All rules are data; the risk engine only interprets them.
+# status: violation | warning | ok. deadline_year drives ACT_NOW when close.
+dst_india:
+  title: "DST / National Quantum Mission task force roadmap (4 Feb 2026)"
+  source: "https://dst.gov.in/quantum-safe-ecosystem-in-india"
+  profiles:
+    cii:        {M1: 2027, M2: 2028, M3: 2029}
+    enterprise: {M1: 2028, M2: 2030, M3: 2033}
+  milestones:
+    M1: "Preparatory: cryptographic asset inventory, quantum risk assessment, pilots; CBOM adoption from FY 2027-28"
+    M2: "High-priority migration: no new classical-only deployments; PKI/HSM/KMS PQC-ready; legacy contained"
+    M3: "Full adoption: quantum-safe-only trust chains, continuous vendor oversight"
+
+nist_ir_8547:
+  title: "NIST IR 8547 transition timeline"
+  deprecate_year: 2030
+  disallow_year: 2035
+  applies_to_classes: [broken]
+  note: "RSA, ECDSA, ECDH, FFDH and 112-bit params deprecated after 2030, disallowed after 2035; hybrids exempt"
+
+cnsa_2_0:
+  title: "NSA CNSA 2.0"
+  aes_min_bits: 256
+  hash_min_bits: 384
+  signature_target: ML-DSA-87
+  kem_target: ML-KEM-1024
+  timelines:
+    web_browsers_servers_cloud: {prefer: 2025, exclusive: 2033}
+    networking_equipment: {support: 2026, exclusive: 2030}
+    operating_systems: {support: 2027, exclusive: 2033}
+    software_firmware_signing: {support: 2025, exclusive: 2030}
+
+cert_in_v2:
+  title: "CERT-In Technical Guidelines on SBOM, QBOM & CBOM, AIBOM, HBOM v2.0 (9 Jul 2025)"
+  formats: [CycloneDX, SPDX]
+  vex_required: true
+  review_months: 3
+  prohibit_legacy: true
+  note: "8.4.2.2: prohibit weak or deprecated algorithms; 8.4.1.6: VEX per finding; 8.5.1: move off RSA/ECC/DH/DSA"
+
+eu_pqc:
+  title: "EU coordinated implementation roadmap (23 Jun 2025)"
+  high_risk_year: 2030
+  all_year: 2035
+
+uk_ncsc:
+  title: "UK NCSC PQC migration timelines (Mar 2025)"
+  discovery_year: 2028
+  priority_year: 2031
+  complete_year: 2035

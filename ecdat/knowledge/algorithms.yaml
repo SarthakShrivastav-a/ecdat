@@ -230,7 +230,7 @@ Blowfish:
   functions: [encrypt, decrypt]
 
 MD5:
-  aliases: [md5, md-5, md5withrsa, hmac-md5, ssl3-md5]
+  aliases: [md5, md-5, md5withrsa, ssl3-md5]
   family: MD5
   primitive: hash
   confidentiality: false
@@ -243,7 +243,7 @@ MD5:
   functions: [digest]
 
 SHA-1:
-  aliases: [sha1, sha-1, sha_1, sha1withrsa, ecdsa-with-sha1, hmac-sha1, sha, ssl3-sha1]
+  aliases: [sha1, sha-1, sha_1, sha1withrsa, ecdsa-with-sha1, sha, ssl3-sha1]
   family: SHA-1
   primitive: hash
   confidentiality: false
@@ -269,7 +269,7 @@ SHA-224:
   functions: [digest]
 
 SHA-256:
-  aliases: [sha256, sha-256, sha2-256, sha_256, hmac-sha256, hmac-sha2-256, sha256withecdsa-hash]
+  aliases: [sha256, sha-256, sha2-256, sha_256, sha256withecdsa-hash]
   family: SHA-2
   primitive: hash
   confidentiality: false
@@ -281,7 +281,7 @@ SHA-256:
   functions: [digest]
 
 SHA-384:
-  aliases: [sha384, sha-384, sha2-384, hmac-sha384]
+  aliases: [sha384, sha-384, sha2-384]
   family: SHA-2
   primitive: hash
   confidentiality: false
@@ -292,7 +292,7 @@ SHA-384:
   functions: [digest]
 
 SHA-512:
-  aliases: [sha512, sha-512, sha2-512, hmac-sha512, hmac-sha2-512, sha512/256]
+  aliases: [sha512, sha-512, sha2-512, sha512/256]
   family: SHA-2
   primitive: hash
   confidentiality: false
@@ -335,7 +335,7 @@ SHAKE:
   functions: [digest]
 
 HMAC:
-  aliases: [hmac, hmac-sha2, mac]
+  aliases: [hmac, hmac-sha2, mac, hmac-md5, hmac-sha1, hmac-sha256, hmac-sha2-256, hmac-sha384, hmac-sha512, hmac-sha2-512, hmac-sha2-256-etm@openssh.com, hmac-sha2-512-etm@openssh.com]
   family: HMAC
   primitive: mac
   confidentiality: false

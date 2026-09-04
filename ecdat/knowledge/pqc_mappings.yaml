@@ -1,0 +1,127 @@
+# PQC / hygiene replacement targets with the deltas the PS asks for ("latency, cost").
+# Sizes are bytes; latency notes are approximate and stated as such in reports.
+targets:
+  X25519MLKEM768:
+    type: hybrid-kem
+    fips: [FIPS 203]
+    standard: draft-ietf-tls-ecdhe-mlkem (X25519MLKEM768, IANA group 0x11EC)
+    pubkey_bytes: 1216
+    ciphertext_bytes: 1120
+    nist_level: 3
+    hybrid: true
+    latency_note: "~+0.2 ms per handshake, +1.1 KB per key share (vs 32 B for X25519)"
+    supported_by: ["OpenSSL >= 3.5", "Go >= 1.24", "JDK >= 24", "Chrome (Apr 2024)", "Firefox (Nov 2024)", "Cloudflare", "Akamai"]
+  ML-KEM-768:
+    type: kem
+    fips: [FIPS 203]
+    pubkey_bytes: 1184
+    ciphertext_bytes: 1088
+    nist_level: 3
+    latency_note: "keygen/encaps/decaps each ~30-60 us on x86-64; key material 37x larger than X25519"
+    supported_by: ["OpenSSL >= 3.5", "Go >= 1.24", "JDK >= 24", "Bouncy Castle >= 1.79", "liboqs", "kyber-py"]
+  ML-KEM-1024:
+    type: kem
+    fips: [FIPS 203]
+    pubkey_bytes: 1568
+    ciphertext_bytes: 1568
+    nist_level: 5
+    cnsa: true
+    latency_note: "~1.5x ML-KEM-768 cost; CNSA 2.0 parameter set"
+    supported_by: ["OpenSSL >= 3.5", "Go >= 1.24", "JDK >= 24", "Bouncy Castle >= 1.79", "liboqs"]
+  ML-DSA-65:
+    type: signature
+    fips: [FIPS 204]
+    pubkey_bytes: 1952
+    signature_bytes: 3309
+    nist_level: 3
+    latency_note: "sign ~0.3 ms, verify ~0.1 ms; signature 52x larger than ECDSA P-256 (64 B), 13x RSA-2048 (256 B)"
+    supported_by: ["OpenSSL >= 3.5", "JDK >= 24", "Bouncy Castle >= 1.79", "Go >= 1.27", "liboqs", "dilithium-py"]
+  ML-DSA-87:
+    type: signature
+    fips: [FIPS 204]
+    pubkey_bytes: 2592
+    signature_bytes: 4627
+    nist_level: 5
+    cnsa: true
+    latency_note: "~1.4x ML-DSA-65 cost; CNSA 2.0 parameter set"
+    supported_by: ["OpenSSL >= 3.5", "JDK >= 24", "Bouncy Castle >= 1.79", "liboqs"]
+  SLH-DSA-SHA2-128s:
+    type: signature
+    fips: [FIPS 205]
+    pubkey_bytes: 32
+    signature_bytes: 7856
+    nist_level: 1
+    latency_note: "stateless hash-based: slow signing (tens of ms) but minimal assumptions; good for firmware/root keys"
+    supported_by: ["OpenSSL >= 3.5", "Bouncy Castle >= 1.79", "liboqs"]
+  FN-DSA-512:
+    type: signature
+    fips: [FIPS 206 (draft)]
+    pubkey_bytes: 897
+    signature_bytes: 666
+    nist_level: 1
+    latency_note: "smallest PQC signatures; FIPS 206 still draft (Sep 2026), floating-point care needed"
+    supported_by: ["liboqs"]
+  AES-256:
+    type: symmetric
+    fips: [FIPS 197]
+    key_bytes: 32
+    nist_level: 5
+    latency_note: "~40% more rounds than AES-128; negligible with AES-NI"
+    supported_by: ["everything"]
+  AES-256-GCM:
+    type: aead
+    fips: [FIPS 197, SP 800-38D]
+    key_bytes: 32
+    nist_level: 5
+    latency_note: "authenticated encryption; replaces CBC+HMAC and all 64-bit-block ciphers"
+    supported_by: ["everything"]
+  ChaCha20:
+    type: aead
+    fips: []
+    key_bytes: 32
+    nist_level: 5
+    latency_note: "fast without AES-NI; RFC 8439"
+    supported_by: ["OpenSSL", "Go", "libsodium", "JDK >= 11"]
+  SHA-256:
+    type: hash
+    fips: [FIPS 180-4]
+    nist_level: 2
+    latency_note: "classical hygiene, not a PQC change"
+    supported_by: ["everything"]
+  SHA-384:
+    type: hash
+    fips: [FIPS 180-4]
+    nist_level: 4
+    cnsa: true
+    latency_note: "CNSA 2.0 minimum hash"
+    supported_by: ["everything"]
+  Argon2:
+    type: kdf
+    fips: []
+    nist_level: 1
+    latency_note: "memory-hard password hashing; RFC 9106"
+    supported_by: ["argon2-cffi", "argon2 (npm)", "Bouncy Castle", "libsodium"]
+
+rules:
+  - {from_primitive: [key-agree, kem, combiner], from_class: [broken, legacy-broken], to: X25519MLKEM768, alt: ML-KEM-768, cnsa: ML-KEM-1024, hybrid: true}
+  - {from_primitive: [pke], from_class: [broken, legacy-broken], to: ML-KEM-768, alt: X25519MLKEM768, cnsa: ML-KEM-1024, hybrid: true, note: "RSA encryption becomes KEM + AES-256-GCM (KEM-DEM)"}
+  - {from_primitive: [signature], from_class: [broken, legacy-broken], to: ML-DSA-65, alt: SLH-DSA-SHA2-128s, cnsa: ML-DSA-87, hybrid: true}
+  - {from_name: [AES-128, AES-192, AES], to: AES-256, alt: ChaCha20, cnsa: AES-256}
+  - {from_name: [3DES, DES, RC4, Blowfish], to: AES-256-GCM, alt: ChaCha20, cnsa: AES-256-GCM, note: "classical hygiene: 64-bit block or broken cipher"}
+  - {from_name: [MD5, SHA-1, SHA-224], to: SHA-256, alt: SHA3-256, cnsa: SHA-384, note: "classical hygiene, not PQC"}
+  - {from_name: [PBKDF2], to: Argon2, alt: scrypt, cnsa: PBKDF2, note: "optional hardening"}
+
+runtime_support:
+  python: {native: false, kem: "kyber-py / liboqs-python", sig: "dilithium-py / liboqs-python", tls: "OpenSSL >= 3.5 via the ssl module"}
+  javascript: {native: false, kem: "@noble/post-quantum / liboqs-node", sig: "@noble/post-quantum", tls: "Node >= 22 with OpenSSL 3.5"}
+  java: {native_from: "24", kem: "JEP 496 ML-KEM (KeyPairGenerator 'ML-KEM')", sig: "JEP 497 ML-DSA (Signature 'ML-DSA')", tls: "JDK 24+ / Bouncy Castle 1.79+"}
+  go: {native_from: "1.24", kem: "crypto/mlkem", sig: "crypto/mldsa (Go 1.27)", tls: "X25519MLKEM768 default in crypto/tls since 1.24"}
+  c: {native: false, kem: "liboqs / OpenSSL >= 3.5 EVP_PKEY 'ML-KEM-768'", sig: "liboqs / OpenSSL >= 3.5 'ML-DSA-65'", tls: "OpenSSL >= 3.5 or oqs-provider"}
+  config: {native: true, kem: "ssl_conf_command Groups X25519MLKEM768:X25519:prime256v1", sig: "ML-DSA certificates once the CA supports them", tls: "OpenSSL >= 3.5 behind nginx/haproxy/apache"}
+
+effort_base_weeks:
+  certificate: 1.0
+  protocol: 1.0
+  config: 1.0
+  related-crypto-material: 1.5
+  algorithm: 2.0

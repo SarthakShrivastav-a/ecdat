@@ -12,6 +12,11 @@ from rich.table import Table
 from ecdat import __version__, tools
 
 app = typer.Typer(add_completion=False, help="ECDAT - Enterprise Cryptographic Discovery & Analysis Tool (CBOM + quantum risk)")
+for _stream in (sys.stdout, sys.stderr):      # Windows consoles default to cp1252; keep unicode output safe
+    try:
+        _stream.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
 console = Console(highlight=False)
 
 
@@ -42,7 +47,7 @@ def scan(config: Path = typer.Option(..., "-c", "--config", exists=True, help="e
         import os
         os.environ["ECDAT_NO_EXTERNAL_TOOLS"] = "1"
     console.print(f"[bold]ECDAT {__version__}[/] scanning [cyan]{cfg.name}[/] ({len(cfg.targets)} targets)")
-    with console.status("collecting...") as status:
+    with console.status("collecting...", spinner="line") as status:
         def progress(stage, msg):
             status.update(f"[{stage}] {msg}")
             console.log(f"[{stage}] {msg}")

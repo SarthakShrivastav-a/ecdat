@@ -1,0 +1,28 @@
+[project]
+name = "ecdat"
+version = "0.1.0"
+description = "Enterprise Cryptographic Discovery & Analysis Tool - CBOM analytics + post-quantum risk"
+requires-python = ">=3.11"
+dependencies = [
+  "cryptography", "cyclonedx-python-lib>=11.11", "lief", "scapy", "tree-sitter>=0.25",
+  "tree-sitter-python", "tree-sitter-javascript", "tree-sitter-java", "tree-sitter-go", "tree-sitter-c",
+  "yara-python", "fastapi", "uvicorn[standard]", "pyyaml", "typer", "rich", "jsonschema", "reportlab",
+  "dilithium-py", "kyber-py", "httpx", "python-multipart", "cryptolyzer", "pycryptodomex", "pyasn1", "pyasn1-modules", "javaobj-py3",
+]
+
+[project.scripts]
+ecdat = "ecdat.cli:app"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["ecdat*"]
+
+[tool.setuptools.package-data]
+ecdat = ["knowledge/*.yaml", "schemas/*.json"]

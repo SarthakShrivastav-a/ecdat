@@ -1,0 +1,563 @@
+# ECDAT algorithm knowledge base. One entry per canonical algorithm.
+#   family:   CycloneDX 1.7 Cryptography Registry family name (cryptography-defs.json)
+#   primitive: CycloneDX cryptoProperties.algorithmProperties.primitive enum
+#   quantum:  broken (Shor) | weakened (Grover) | legacy-broken (classically broken already) | safe
+#   classical_security_bits: int, or map keyed by key size
+#   nist_quantum_level: NIST PQC security category (0 for classically-only algorithms)
+#   replace: default PQC / hygiene replacement by function
+#   confidentiality: true if the primitive protects confidentiality (HNDL applies)
+
+RSA:
+  aliases: [rsa, rsaencryption, rsa-oaep, rsaes-oaep, rsa-pkcs1, rsaes-pkcs1, rsassa-pkcs1, rsassa-pss, rsa-pss,
+            sha1withrsaencryption, sha256withrsaencryption, sha384withrsaencryption, sha512withrsaencryption,
+            sha256withrsa, sha384withrsa, sha512withrsa, sha1withrsa, md5withrsa, rsa-2048, rsa-3072, rsa-4096,
+            rsa-1024, rsa2048, rsa4096, rsa1024, rsa_pkcs1_padding, rsa_oaep, rsaprivatekey, rsapublickey, id-rsa]
+  family: RSASSA-PKCS1
+  primitive: pke
+  confidentiality: true
+  oid: 1.2.840.113549.1.1.1
+  quantum: broken
+  quantum_reason: "Integer factorisation is broken by Shor's algorithm"
+  classical_security_bits: {1024: 80, 2048: 112, 3072: 128, 4096: 152, 7680: 192, 15360: 256}
+  nist_quantum_level: 0
+  legacy_min_key_size: 2048
+  replace: {kem: X25519MLKEM768, pke: ML-KEM-768, signature: ML-DSA-65}
+  functions: [keygen, encrypt, decrypt, sign, verify]
+  cert_in_example: "RSA-2048 / sha256WithRSAEncryption"
+
+ECDSA:
+  aliases: [ecdsa, ecdsa-with-sha256, ecdsa-with-sha384, ecdsa-with-sha512, ecdsa-with-sha1, sha256withecdsa,
+            sha384withecdsa, sha512withecdsa, id-ecpublickey, ec, ecc, secp256r1, secp384r1, secp521r1, prime256v1,
+            p-256, p-384, p-521, p256, p384, p521, nistp256, nistp384, nistp521, secp256k1, brainpoolp256r1]
+  family: ECDSA
+  primitive: signature
+  confidentiality: false
+  oid: 1.2.840.10045.4.3.2
+  quantum: broken
+  quantum_reason: "Elliptic-curve discrete log is broken by Shor's algorithm"
+  classical_security_bits: {256: 128, 384: 192, 521: 256, 224: 112}
+  nist_quantum_level: 0
+  replace: {signature: ML-DSA-65}
+  functions: [keygen, sign, verify]
+
+ECDH:
+  aliases: [ecdh, ecdhe, ecdhe-rsa, ecdhe-ecdsa, ecdh-es, id-ecdh, ecdh-sha2-nistp256, ecdh-sha2-nistp384, ecdh-sha2-nistp521]
+  family: ECDH
+  primitive: key-agree
+  confidentiality: true
+  oid: 1.3.132.1.12
+  quantum: broken
+  quantum_reason: "Elliptic-curve discrete log is broken by Shor's algorithm"
+  classical_security_bits: {256: 128, 384: 192, 521: 256}
+  nist_quantum_level: 0
+  replace: {kem: X25519MLKEM768, key-agree: X25519MLKEM768}
+  functions: [keygen, keyagree]
+
+X25519:
+  aliases: [x25519, curve25519, curve25519-sha256, curve25519-sha256@libssh.org, x448]
+  family: ECDH
+  primitive: key-agree
+  confidentiality: true
+  oid: 1.3.101.110
+  quantum: broken
+  quantum_reason: "Curve25519 discrete log is broken by Shor's algorithm"
+  classical_security_bits: 128
+  nist_quantum_level: 0
+  replace: {kem: X25519MLKEM768, key-agree: X25519MLKEM768}
+  functions: [keygen, keyagree]
+
+Ed25519:
+  aliases: [ed25519, eddsa, ed448, ssh-ed25519, id-ed25519]
+  family: EdDSA
+  primitive: signature
+  confidentiality: false
+  oid: 1.3.101.112
+  quantum: broken
+  quantum_reason: "Edwards-curve discrete log is broken by Shor's algorithm"
+  classical_security_bits: 128
+  nist_quantum_level: 0
+  replace: {signature: ML-DSA-65}
+  functions: [keygen, sign, verify]
+
+DH:
+  aliases: [dh, dhe, diffie-hellman, diffie-hellman-group14-sha256, diffie-hellman-group-exchange-sha256,
+            diffie-hellman-group1-sha1, ffdhe2048, ffdhe3072, ffdhe4096, dhpublicnumber, dh-rsa, dhe-rsa]
+  family: FFDH
+  primitive: key-agree
+  confidentiality: true
+  oid: 1.2.840.10046.2.1
+  quantum: broken
+  quantum_reason: "Finite-field discrete log is broken by Shor's algorithm"
+  classical_security_bits: {1024: 80, 2048: 112, 3072: 128, 4096: 152}
+  nist_quantum_level: 0
+  legacy_min_key_size: 2048
+  replace: {kem: X25519MLKEM768, key-agree: X25519MLKEM768}
+  functions: [keygen, keyagree]
+
+DSA:
+  aliases: [dsa, id-dsa, dsa-with-sha256, ssh-dss]
+  family: DSA
+  primitive: signature
+  confidentiality: false
+  oid: 1.2.840.10040.4.1
+  quantum: broken
+  quantum_reason: "Finite-field discrete log is broken by Shor's algorithm"
+  classical_security_bits: {1024: 80, 2048: 112, 3072: 128}
+  nist_quantum_level: 0
+  legacy_min_key_size: 2048
+  replace: {signature: ML-DSA-65}
+  functions: [keygen, sign, verify]
+
+AES:
+  aliases: [aes, rijndael, aes-cbc, aes-gcm, aes-ctr, aes-ecb, aescbc, aesgcm, id-aes]
+  family: AES
+  primitive: block-cipher
+  confidentiality: true
+  sized_variants: {"128": AES-128, "192": AES-192, "256": AES-256}
+  quantum: weakened
+  quantum_reason: "Grover's algorithm halves the effective key length; key size not yet known"
+  nist_quantum_level: 1
+  replace: {block-cipher: AES-256}
+  functions: [keygen, encrypt, decrypt]
+
+AES-128:
+  aliases: [aes-128, aes128, aes-128-gcm, aes-128-cbc, aes-128-ctr, aes-128-ecb, aes-128-ccm, aes128-gcm, aes128-cbc,
+            aes128-ctr, aes128-gcm@openssh.com, id-aes128-gcm, id-aes128-cbc, tls_aes_128_gcm_sha256]
+  family: AES
+  primitive: block-cipher
+  confidentiality: true
+  key_size: 128
+  oid: 2.16.840.1.101.3.4.1.6
+  quantum: weakened
+  quantum_reason: "Grover reduces AES-128 to ~64-bit effective security; still NIST-approved but fails CNSA 2.0"
+  classical_security_bits: 128
+  nist_quantum_level: 1
+  replace: {block-cipher: AES-256}
+  functions: [keygen, encrypt, decrypt]
+
+AES-192:
+  aliases: [aes-192, aes192, aes-192-gcm, aes-192-cbc, id-aes192-gcm]
+  family: AES
+  primitive: block-cipher
+  confidentiality: true
+  key_size: 192
+  oid: 2.16.840.1.101.3.4.1.26
+  quantum: weakened
+  quantum_reason: "Grover reduces AES-192 to ~96-bit effective security"
+  classical_security_bits: 192
+  nist_quantum_level: 3
+  replace: {block-cipher: AES-256}
+  functions: [keygen, encrypt, decrypt]
+
+AES-256:
+  aliases: [aes-256, aes256, aes-256-gcm, aes-256-cbc, aes-256-ctr, aes-256-ecb, aes-256-ccm, aes-256-xts, aes256-gcm,
+            aes256-cbc, aes256-ctr, aes256-gcm@openssh.com, id-aes256-gcm, id-aes256-cbc, tls_aes_256_gcm_sha384]
+  family: AES
+  primitive: block-cipher
+  confidentiality: true
+  key_size: 256
+  oid: 2.16.840.1.101.3.4.1.46
+  quantum: safe
+  quantum_reason: "256-bit key keeps ~128-bit security under Grover"
+  classical_security_bits: 256
+  nist_quantum_level: 5
+  functions: [keygen, encrypt, decrypt]
+
+ChaCha20:
+  aliases: [chacha20, chacha20-poly1305, xchacha20, xchacha20-poly1305, chacha20-poly1305@openssh.com, tls_chacha20_poly1305_sha256]
+  family: ChaCha20
+  primitive: ae
+  confidentiality: true
+  key_size: 256
+  oid: 1.2.840.113549.1.9.16.3.18
+  quantum: safe
+  quantum_reason: "256-bit key keeps ~128-bit security under Grover"
+  classical_security_bits: 256
+  nist_quantum_level: 5
+  functions: [encrypt, decrypt, tag]
+
+3DES:
+  aliases: [3des, des3, desede, tripledes, triple-des, des-ede3, des-ede3-cbc, 3des-cbc, des-ede3-cbc-sha, tdes, tdea, 3des_ede_cbc]
+  family: 3DES
+  primitive: block-cipher
+  confidentiality: true
+  key_size: 168
+  oid: 1.2.840.113549.3.7
+  quantum: legacy-broken
+  quantum_reason: "Deprecated classically (Sweet32, 64-bit block); disallowed by NIST after 2023"
+  classical_security_bits: 112
+  nist_quantum_level: 0
+  replace: {block-cipher: AES-256}
+  functions: [encrypt, decrypt]
+
+DES:
+  aliases: [des, des-cbc, des-ecb, single-des, des_cbc]
+  family: DES
+  primitive: block-cipher
+  confidentiality: true
+  key_size: 56
+  oid: 1.3.14.3.2.7
+  quantum: legacy-broken
+  quantum_reason: "56-bit key is brute-forceable classically"
+  classical_security_bits: 56
+  nist_quantum_level: 0
+  replace: {block-cipher: AES-256}
+  functions: [encrypt, decrypt]
+
+RC4:
+  aliases: [rc4, arcfour, arcfour128, arcfour256, rc4-sha, rc4-md5]
+  family: RC4
+  primitive: stream-cipher
+  confidentiality: true
+  oid: 1.2.840.113549.3.4
+  quantum: legacy-broken
+  quantum_reason: "Biased keystream; prohibited in TLS (RFC 7465)"
+  classical_security_bits: 0
+  nist_quantum_level: 0
+  replace: {stream-cipher: ChaCha20}
+  functions: [encrypt, decrypt]
+
+Blowfish:
+  aliases: [blowfish, bf, bf-cbc, blowfish-cbc]
+  family: Blowfish
+  primitive: block-cipher
+  confidentiality: true
+  quantum: legacy-broken
+  quantum_reason: "64-bit block size (Sweet32)"
+  classical_security_bits: 64
+  nist_quantum_level: 0
+  replace: {block-cipher: AES-256}
+  functions: [encrypt, decrypt]
+
+MD5:
+  aliases: [md5, md-5, md5withrsa, hmac-md5, ssl3-md5]
+  family: MD5
+  primitive: hash
+  confidentiality: false
+  oid: 1.2.840.113549.2.5
+  quantum: legacy-broken
+  quantum_reason: "Practical collisions since 2004; unusable for signatures or integrity"
+  classical_security_bits: 0
+  nist_quantum_level: 0
+  replace: {hash: SHA-256}
+  functions: [digest]
+
+SHA-1:
+  aliases: [sha1, sha-1, sha_1, sha1withrsa, ecdsa-with-sha1, hmac-sha1, sha, ssl3-sha1]
+  family: SHA-1
+  primitive: hash
+  confidentiality: false
+  oid: 1.3.14.3.2.26
+  quantum: legacy-broken
+  quantum_reason: "Chosen-prefix collisions (SHAttered 2017, 2020); disallowed for signatures"
+  classical_security_bits: 0
+  nist_quantum_level: 0
+  replace: {hash: SHA-256}
+  functions: [digest]
+
+SHA-224:
+  aliases: [sha224, sha-224]
+  family: SHA-2
+  primitive: hash
+  confidentiality: false
+  oid: 2.16.840.1.101.3.4.2.4
+  quantum: weakened
+  quantum_reason: "112-bit collision resistance; below CNSA 2.0 minimum (SHA-384)"
+  classical_security_bits: 112
+  nist_quantum_level: 1
+  replace: {hash: SHA-384}
+  functions: [digest]
+
+SHA-256:
+  aliases: [sha256, sha-256, sha2-256, sha_256, hmac-sha256, hmac-sha2-256, sha256withecdsa-hash]
+  family: SHA-2
+  primitive: hash
+  confidentiality: false
+  oid: 2.16.840.1.101.3.4.2.1
+  quantum: safe
+  quantum_reason: "128-bit collision resistance holds; Grover pre-image gain is impractical"
+  classical_security_bits: 128
+  nist_quantum_level: 2
+  functions: [digest]
+
+SHA-384:
+  aliases: [sha384, sha-384, sha2-384, hmac-sha384]
+  family: SHA-2
+  primitive: hash
+  confidentiality: false
+  oid: 2.16.840.1.101.3.4.2.2
+  quantum: safe
+  classical_security_bits: 192
+  nist_quantum_level: 4
+  functions: [digest]
+
+SHA-512:
+  aliases: [sha512, sha-512, sha2-512, hmac-sha512, hmac-sha2-512, sha512/256]
+  family: SHA-2
+  primitive: hash
+  confidentiality: false
+  oid: 2.16.840.1.101.3.4.2.3
+  quantum: safe
+  classical_security_bits: 256
+  nist_quantum_level: 5
+  functions: [digest]
+
+SHA3-256:
+  aliases: [sha3-256, sha3_256, sha3, keccak256, keccak-256]
+  family: SHA-3
+  primitive: hash
+  confidentiality: false
+  oid: 2.16.840.1.101.3.4.2.8
+  quantum: safe
+  classical_security_bits: 128
+  nist_quantum_level: 2
+  functions: [digest]
+
+SHA3-512:
+  aliases: [sha3-512, sha3_512]
+  family: SHA-3
+  primitive: hash
+  confidentiality: false
+  oid: 2.16.840.1.101.3.4.2.10
+  quantum: safe
+  classical_security_bits: 256
+  nist_quantum_level: 5
+  functions: [digest]
+
+SHAKE:
+  aliases: [shake128, shake256, shake-128, shake-256]
+  family: SHA-3
+  primitive: xof
+  confidentiality: false
+  quantum: safe
+  classical_security_bits: 128
+  nist_quantum_level: 2
+  functions: [digest]
+
+HMAC:
+  aliases: [hmac, hmac-sha2, mac]
+  family: HMAC
+  primitive: mac
+  confidentiality: false
+  oid: 1.2.840.113549.2.9
+  quantum: safe
+  quantum_reason: "MAC security depends on key length and the hash; Grover gives only quadratic speed-up"
+  classical_security_bits: 128
+  nist_quantum_level: 1
+  functions: [tag, verify]
+
+PBKDF2:
+  aliases: [pbkdf2, pbkdf2-hmac, pbkdf2hmac, pbkdf2_hmac]
+  family: PBKDF2
+  primitive: kdf
+  confidentiality: false
+  oid: 1.2.840.113549.1.5.12
+  quantum: safe
+  classical_security_bits: 128
+  nist_quantum_level: 1
+  replace: {kdf: Argon2}
+  functions: [derive]
+
+bcrypt:
+  aliases: [bcrypt]
+  family: bcrypt
+  primitive: kdf
+  confidentiality: false
+  quantum: safe
+  classical_security_bits: 128
+  nist_quantum_level: 1
+  functions: [derive]
+
+scrypt:
+  aliases: [scrypt]
+  family: scrypt
+  primitive: kdf
+  confidentiality: false
+  oid: 1.3.6.1.4.1.11591.4.11
+  quantum: safe
+  classical_security_bits: 128
+  nist_quantum_level: 1
+  functions: [derive]
+
+Argon2:
+  aliases: [argon2, argon2id, argon2i, argon2d]
+  family: Argon2
+  primitive: kdf
+  confidentiality: false
+  quantum: safe
+  classical_security_bits: 128
+  nist_quantum_level: 1
+  functions: [derive]
+
+HKDF:
+  aliases: [hkdf, hkdf-sha256, hkdf-sha384]
+  family: HKDF
+  primitive: kdf
+  confidentiality: false
+  quantum: safe
+  classical_security_bits: 128
+  nist_quantum_level: 1
+  functions: [derive]
+
+ML-KEM-512:
+  aliases: [ml-kem-512, mlkem512, kyber512, kyber-512]
+  family: ML-KEM
+  primitive: kem
+  confidentiality: true
+  pqc: true
+  oid: 2.16.840.1.101.3.4.4.1
+  quantum: safe
+  quantum_reason: "Module-lattice KEM, FIPS 203"
+  classical_security_bits: 128
+  nist_quantum_level: 1
+  standard: FIPS 203
+  functions: [keygen, encapsulate, decapsulate]
+
+ML-KEM-768:
+  aliases: [ml-kem-768, mlkem768, ml-kem, mlkem, kyber, kyber768, kyber-768, crystals-kyber]
+  family: ML-KEM
+  primitive: kem
+  confidentiality: true
+  pqc: true
+  oid: 2.16.840.1.101.3.4.4.2
+  quantum: safe
+  quantum_reason: "Module-lattice KEM, FIPS 203"
+  classical_security_bits: 192
+  nist_quantum_level: 3
+  standard: FIPS 203
+  functions: [keygen, encapsulate, decapsulate]
+
+ML-KEM-1024:
+  aliases: [ml-kem-1024, mlkem1024, kyber1024, kyber-1024]
+  family: ML-KEM
+  primitive: kem
+  confidentiality: true
+  pqc: true
+  oid: 2.16.840.1.101.3.4.4.3
+  quantum: safe
+  classical_security_bits: 256
+  nist_quantum_level: 5
+  standard: FIPS 203
+  cnsa: true
+  functions: [keygen, encapsulate, decapsulate]
+
+ML-DSA-44:
+  aliases: [ml-dsa-44, mldsa44, dilithium2]
+  family: ML-DSA
+  primitive: signature
+  confidentiality: false
+  pqc: true
+  oid: 2.16.840.1.101.3.4.3.17
+  quantum: safe
+  classical_security_bits: 128
+  nist_quantum_level: 2
+  standard: FIPS 204
+  functions: [keygen, sign, verify]
+
+ML-DSA-65:
+  aliases: [ml-dsa-65, mldsa65, ml-dsa, mldsa, dilithium, dilithium3, crystals-dilithium]
+  family: ML-DSA
+  primitive: signature
+  confidentiality: false
+  pqc: true
+  oid: 2.16.840.1.101.3.4.3.18
+  quantum: safe
+  quantum_reason: "Module-lattice signature, FIPS 204"
+  classical_security_bits: 192
+  nist_quantum_level: 3
+  standard: FIPS 204
+  functions: [keygen, sign, verify]
+
+ML-DSA-87:
+  aliases: [ml-dsa-87, mldsa87, dilithium5]
+  family: ML-DSA
+  primitive: signature
+  confidentiality: false
+  pqc: true
+  oid: 2.16.840.1.101.3.4.3.19
+  quantum: safe
+  classical_security_bits: 256
+  nist_quantum_level: 5
+  standard: FIPS 204
+  cnsa: true
+  functions: [keygen, sign, verify]
+
+SLH-DSA:
+  aliases: [slh-dsa, sphincs+, sphincs, slh-dsa-sha2-128s, slh-dsa-sha2-128f, slh-dsa-shake-128s, slh-dsa-sha2-192s, slh-dsa-sha2-256s]
+  family: SLH-DSA
+  primitive: signature
+  confidentiality: false
+  pqc: true
+  oid: 2.16.840.1.101.3.4.3.20
+  quantum: safe
+  quantum_reason: "Stateless hash-based signature, FIPS 205"
+  classical_security_bits: 128
+  nist_quantum_level: 1
+  standard: FIPS 205
+  functions: [keygen, sign, verify]
+
+FN-DSA:
+  aliases: [fn-dsa, falcon, falcon-512, falcon-1024, fn-dsa-512, fn-dsa-1024]
+  family: FN-DSA
+  primitive: signature
+  confidentiality: false
+  pqc: true
+  quantum: safe
+  quantum_reason: "NTRU-lattice signature, FIPS 206 (draft)"
+  classical_security_bits: 128
+  nist_quantum_level: 1
+  standard: FIPS 206 (draft)
+  functions: [keygen, sign, verify]
+
+HQC:
+  aliases: [hqc, hqc-128, hqc-192, hqc-256]
+  family: HQC
+  primitive: kem
+  confidentiality: true
+  pqc: true
+  quantum: safe
+  quantum_reason: "Code-based KEM selected by NIST in March 2025 as the non-lattice backup"
+  classical_security_bits: 128
+  nist_quantum_level: 1
+  functions: [keygen, encapsulate, decapsulate]
+
+X25519MLKEM768:
+  aliases: [x25519mlkem768, x25519-mlkem768, x25519kyber768, x25519kyber768draft00, secp256r1mlkem768, mlkem768x25519-sha256, sntrup761x25519-sha512, hybrid-kem]
+  family: ML-KEM
+  primitive: combiner
+  confidentiality: true
+  pqc: true
+  hybrid: true
+  quantum: safe
+  quantum_reason: "Hybrid X25519 + ML-KEM-768; secure if either component holds"
+  classical_security_bits: 192
+  nist_quantum_level: 3
+  standard: draft-ietf-tls-ecdhe-mlkem
+  functions: [keygen, encapsulate, decapsulate]
+
+TLS:
+  aliases: [tls, ssl, tlsv1, tlsv1.0, tlsv1.1, tlsv1.2, tlsv1.3, sslv3, https, starttls]
+  family: TLS
+  primitive: other
+  protocol: true
+  confidentiality: true
+  quantum: unknown
+  functions: []
+
+SSH:
+  aliases: [ssh, ssh-2.0, sftp]
+  family: SSH
+  primitive: other
+  protocol: true
+  confidentiality: true
+  quantum: unknown
+  functions: []
+
+IPsec:
+  aliases: [ipsec, ike, ikev1, ikev2, esp, isakmp]
+  family: IPsec
+  primitive: other
+  protocol: true
+  confidentiality: true
+  quantum: unknown
+  functions: []

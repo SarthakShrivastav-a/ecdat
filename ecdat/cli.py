@@ -145,11 +145,11 @@ def zoo_build(out: Path = typer.Option(None, "--out")):
     console.print(json.dumps({k: sorted(v.keys()) for k, v in truth.items()}, indent=2))
 
 
-@app.command()
-def eval(result_json: Path = typer.Argument(..., exists=True), truth: Path = typer.Option(None, "--truth"),
+@app.command("evaluate")
+def evaluate(result_json: Path = typer.Argument(..., exists=True), truth: Path = typer.Option(None, "--truth"),
          out: Path = typer.Option(None, "-o", "--out"), strict: bool = typer.Option(False, help="exit 1 below the precision/recall gates")):
     """Precision / recall of a scan against the zoo ground truth."""
-    from ecdat import eval as evalmod, pipeline
+    from ecdat import evaluation as evalmod, pipeline
     res = pipeline.load_result(result_json)
     report_ = evalmod.evaluate(res, truth)
     evalmod.print_report(report_, console)

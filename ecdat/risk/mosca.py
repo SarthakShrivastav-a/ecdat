@@ -44,12 +44,15 @@ def assess(asset: CryptoAsset, params: ScanParams, kb: KnowledgeBase | None = No
     elif qclass == "unknown":
         tier = "MONITOR"
         reasons.append("could not classify; review manually")
-    elif hndl and gap > 0:
+    elif hndl and gap > 0 and qclass == "broken":
         tier = "EXPOSED"
         reasons.append(f"Mosca: X {x:g} + Y {y:g} = {x + y:g} > Z {z:g}: data captured today outlives the migration")
     elif qclass == "legacy-broken":
         tier = "ACT_NOW"
         reasons.append("classically broken or below minimum strength today, independent of quantum")
+    elif qclass == "weakened" and hndl and gap > 0:
+        tier = "ACT_NOW"
+        reasons.append(f"Grover-weakened and Mosca gap {gap:g} y: move to a 256-bit parameter set (AES-256 / SHA-384)")
     elif qclass == "broken" and (gap > -SLACK_YEARS or (deadline is not None and deadline - params.now_year <= y + 1)):
         tier = "ACT_NOW"
         if gap > -SLACK_YEARS:

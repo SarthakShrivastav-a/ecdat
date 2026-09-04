@@ -33,19 +33,24 @@ def classify(name: str, primitive: str | None, snippet: str | None, location: st
 
 def apply(assets: list) -> None:
     for a in assets:
-        first = a.evidence[0] if a.evidence else None
-        snippet = first.snippet if first else None
         ctx = dict(a.context)
-        if first:
-            for k in ("in_comment", "is_test", "is_vendored"):
-                if first.context.get(k):
-                    ctx[k] = True
-        # if ANY evidence is production, the asset is production
-        if any(not e.context.get("is_test") and not e.context.get("in_comment") for e in a.evidence):
-            ctx["is_test"] = False
-            ctx["in_comment"] = False
-            snippet = next((e.snippet for e in a.evidence if not e.context.get("is_test") and not e.context.get("in_comment")), snippet)
-        c = classify(a.name, a.primitive, snippet, first.location if first else "", ctx)
+        prod = [e for e in a.evidence if not e.context.get("is_test") and not e.context.get("in_comment")]
+        ctx["is_test"] = bool(a.evidence) and not prod and all(e.context.get("is_test") for e in a.evidence)
+        ctx["in_comment"] = bool(a.evidence) and not prod and all(e.context.get("in_comment") for e in a.evidence)
+        ctx["is_vendored"] = bool(a.evidence) and all(e.context.get("is_vendored") for e in a.evidence)
+        verdicts = []
+        for e in (prod or a.evidence):
+            ectx = dict(ctx)
+            ectx.update({k: v for k, v in e.context.items() if k in ("is_test", "in_comment", "is_vendored")})
+            if prod:
+                ectx["is_test"] = False
+                ectx["in_comment"] = False
+            verdicts.append(classify(a.name, a.primitive, e.snippet, e.location, ectx))
+        if not verdicts:
+            verdicts = [classify(a.name, a.primitive, None, "", ctx)]
+        order = ["security", "vendored", "non-security", "unknown", "test", "comment"]
+        best = min(verdicts, key=lambda v: order.index(v["usage"]) if v["usage"] in order else len(order))
         a.context.update(ctx)
-        a.context["usage"] = c["usage"]
-        a.context["usage_reason"] = c["reason"]
+        a.context["usage"] = best["usage"]
+        a.context["usage_reason"] = best["reason"]
+        a.context["usage_votes"] = {u: sum(1 for v in verdicts if v["usage"] == u) for u in {v["usage"] for v in verdicts}}

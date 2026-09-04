@@ -156,6 +156,7 @@ def merge(findings: list[RawFinding], targets: list, kb: KnowledgeBase) -> tuple
                 assets.append(a)
                 lib.props["provides_refs"].append(a.bom_ref)
                 used.add((comp_name, canon))
+    assets = _absorb_duplicates(assets)
     # bom-refs must be unique across the BOM
     seen_refs: dict[str, int] = {}
     for a in assets:
@@ -165,3 +166,60 @@ def merge(findings: list[RawFinding], targets: list, kb: KnowledgeBase) -> tuple
             a.bom_ref = f"{a.bom_ref}-{n + 1}"
     comps = list(components.values()) + list(lib_components.values())
     return assets, comps
+
+
+def _absorb(into: CryptoAsset, victim: CryptoAsset) -> None:
+    into.evidence.extend(victim.evidence)
+    into.context["collectors"] = sorted(set(into.context.get("collectors", [])) | set(victim.context.get("collectors", [])))
+    into.context["corroborated"] = len(into.context["collectors"]) >= 2
+    if into.context["corroborated"] and CONF_ORDER[into.confidence] < 2:
+        into.confidence = bump(into.confidence)
+    for k, v in victim.props.items():
+        into.props.setdefault(k, v)
+    for k in ("best_effort", "container", "live", "pcap"):
+        if victim.context.get(k):
+            into.context[k] = True
+    into.context.setdefault("absorbed", []).append(victim.bom_ref)
+
+
+def _absorb_duplicates(assets: list[CryptoAsset]) -> list[CryptoAsset]:
+    """Same component + same canonical algorithm: an asset with no key size (or no mode) adds no inventory information
+    beside a sized/moded sibling -> fold it in as evidence. Certificates without a fingerprint (theia) fold into the
+    parsed certificate with the same subject."""
+    out: list[CryptoAsset] = []
+    algs = [a for a in assets if a.asset_type == "algorithm"]
+    by_comp_name: dict[tuple, list[CryptoAsset]] = defaultdict(list)
+    for a in algs:
+        by_comp_name[(a.component, a.name)].append(a)
+    dropped: set[int] = set()
+    for group in by_comp_name.values():
+        if len(group) < 2:
+            continue
+        # richest first: has key size, has mode, most evidence
+        group.sort(key=lambda a: (a.key_size is not None, a.mode is not None, len(a.evidence)), reverse=True)
+        keep: list[CryptoAsset] = []
+        for a in group:
+            target = None
+            for k in keep:
+                same_size = a.key_size is None or k.key_size == a.key_size
+                same_mode = a.mode is None or k.mode == a.mode or k.mode is None
+                if same_size and same_mode and (a.key_size is None or a.mode is None or k.mode is None):
+                    target = k
+                    break
+            if target is not None and (a.key_size is None or a.mode is None or (target.mode is None and a.mode is not None)):
+                if target.mode is None and a.mode is not None:
+                    target.mode = a.mode
+                _absorb(target, a)
+                dropped.add(id(a))
+            else:
+                keep.append(a)
+    certs = [a for a in assets if a.asset_type == "certificate"]
+    with_fp = {(a.component, a.name): a for a in certs if a.props.get("sha256_fingerprint")}
+    for a in certs:
+        if not a.props.get("sha256_fingerprint") and (a.component, a.name) in with_fp:
+            _absorb(with_fp[(a.component, a.name)], a)
+            dropped.add(id(a))
+    for a in assets:
+        if id(a) not in dropped:
+            out.append(a)
+    return out

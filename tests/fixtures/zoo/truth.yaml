@@ -1,0 +1,116 @@
+# Ground truth for the crypto zoo. `expected` = planted assets that MUST be found (recall).
+# `allowed_extras` = real assets that engines legitimately report beyond the planted list (not counted as FP).
+# `negatives` = things that must NOT appear (counted as FP if they do). Truth keys: component, name,
+# asset_type (default algorithm), key_size (optional), usage (optional).
+expected:
+  # payments-api (python)
+  - {component: payments-api, name: RSA, key_size: 2048}
+  - {component: payments-api, name: ECDSA}
+  - {component: payments-api, name: AES-256, key_size: 256}
+  - {component: payments-api, name: SHA-256}
+  - {component: payments-api, name: MD5, usage: non-security}
+  - {component: payments-api, name: SHA-1, usage: test}
+  # core-banking (java)
+  - {component: core-banking, name: AES}
+  - {component: core-banking, name: RSA, key_size: 2048}
+  - {component: core-banking, name: ECDSA}
+  - {component: core-banking, name: MD5}
+  - {component: core-banking, name: 3DES}
+  # gateway (go)
+  - {component: gateway, name: RSA, key_size: 4096}
+  - {component: gateway, name: ECDSA}
+  - {component: gateway, name: SHA-256}
+  - {component: gateway, name: AES}
+  - {component: gateway, name: TLS, asset_type: protocol}
+  # web-portal (js)
+  - {component: web-portal, name: MD5}
+  - {component: web-portal, name: AES-256, key_size: 256}
+  - {component: web-portal, name: RSA, key_size: 2048}
+  - {component: web-portal, name: RSA, key_size: 1024}
+  - {component: web-portal, name: HMAC}
+  # legacy-hsm-agent (c)
+  - {component: legacy-hsm-agent, name: RSA, key_size: 2048}
+  - {component: legacy-hsm-agent, name: AES-128, key_size: 128}
+  - {component: legacy-hsm-agent, name: MD5}
+  - {component: legacy-hsm-agent, name: SHA-1}
+  # edge-lb (nginx + openssl.cnf)
+  - {component: edge-lb, name: TLS, asset_type: protocol}
+  - {component: edge-lb, name: ECDH}
+  - {component: edge-lb, name: AES-256}
+  - {component: edge-lb, name: ChaCha20}
+  - {component: edge-lb, name: RSA}
+  # pki (certs + keystores)
+  - {component: pki, name: pay.zoo.local, asset_type: certificate}
+  - {component: pki, name: api.zoo.local, asset_type: certificate}
+  - {component: pki, name: expired.zoo.local, asset_type: certificate}
+  - {component: pki, name: ECDAT Zoo Root CA, asset_type: certificate}
+  - {component: pki, name: legacy.zoo.local, asset_type: certificate}
+  - {component: pki, name: jks.zoo.local, asset_type: certificate}
+  - {component: pki, name: RSA, key_size: 4096}
+  - {component: pki, name: RSA, key_size: 2048}
+  - {component: pki, name: RSA, key_size: 1024}
+  - {component: pki, name: ECDSA}
+  - {component: pki, name: SHA-1}
+  - {component: pki, name: SHA-256}
+  # zoobin (synthetic .so + Go binary)
+  - {component: zoobin, name: AES}
+  - {component: zoobin, name: SHA-256}
+  - {component: zoobin, name: RSA}
+  - {component: zoobin, name: ECDSA}
+  - {component: zoobin, name: MD5}
+  # pay-image (OCI tar)
+  - {component: pay-image, name: pay.zoo.local, asset_type: certificate}
+  - {component: pay-image, name: expired.zoo.local, asset_type: certificate}
+  - {component: pay-image, name: TLS, asset_type: protocol}
+  - {component: pay-image, name: RSA, key_size: 2048}
+  - {component: pay-image, name: AES-256}
+  - {component: pay-image, name: MD5}
+  # captures
+  - {component: mail-capture, name: TLS, asset_type: protocol}
+  - {component: mail-capture, name: 3DES}
+  - {component: mail-capture, name: RSA}
+  - {component: web-capture, name: TLS, asset_type: protocol}
+  - {component: web-capture, name: AES-256}
+  - {component: web-capture, name: ECDH}
+  - {component: web-capture, name: pay.zoo.local, asset_type: certificate}
+
+allowed_extras:
+  # certificate signature hashes and suite-derived MACs
+  - {component: pki, name: SHA-384}
+  - {component: pay-image, name: SHA-1}
+  - {component: pay-image, name: SHA-256}
+  - {component: pay-image, name: SHA-384}
+  - {component: web-capture, name: SHA-256}
+  - {component: web-capture, name: SHA-384}
+  - {component: web-capture, name: RSA}
+  - {component: mail-capture, name: SHA-1}
+  - {component: edge-lb, name: SHA-384}
+  - {component: edge-lb, name: ECDSA}
+  # theia expands OpenSSL "DEFAULT@SECLEVEL=2" into the suites it permits
+  - {component: edge-lb, name: AES-128}
+  - {component: edge-lb, name: DH}
+  - {component: edge-lb, name: SHA-1}
+  - {component: edge-lb, name: SHA-256}
+  - {component: pay-image, name: AES-128}
+  - {component: pay-image, name: DH}
+  - {component: pay-image, name: ECDH}
+  - {component: pay-image, name: ECDSA}
+  - {component: pay-image, name: ChaCha20}
+  - {component: pay-image, name: AES}
+  # Go runtime links these packages into any TLS-capable binary
+  - {component: zoobin, name: ECDH}
+  - {component: zoobin, name: ChaCha20}
+  - {component: zoobin, name: SHA-1}
+  - {component: zoobin, name: SHA-512}
+  - {component: zoobin, name: SHA3-256}
+  - {component: zoobin, name: TLS, asset_type: protocol}
+  # comment-only mentions are kept as low-confidence inventory
+  - {component: web-portal, name: SHA-256, usage: comment}
+
+negatives:
+  - {component: payments-api, name: MD5, usage: security}
+  - {component: payments-api, name: RC4}
+  - {component: payments-api, name: AES-128}
+  - {component: gateway, name: MD5}
+  - {component: core-banking, name: RC4}
+  - {component: web-portal, name: 3DES}

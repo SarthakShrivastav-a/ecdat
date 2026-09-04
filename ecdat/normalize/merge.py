@@ -172,8 +172,12 @@ def _absorb(into: CryptoAsset, victim: CryptoAsset) -> None:
     into.evidence.extend(victim.evidence)
     into.context["collectors"] = sorted(set(into.context.get("collectors", [])) | set(victim.context.get("collectors", [])))
     into.context["corroborated"] = len(into.context["collectors"]) >= 2
+    if CONF_ORDER[victim.confidence] > CONF_ORDER[into.confidence]:
+        into.confidence = victim.confidence
     if into.context["corroborated"] and CONF_ORDER[into.confidence] < 2:
         into.confidence = bump(into.confidence)
+    if victim.key_size and not into.key_size:
+        into.key_size = victim.key_size
     for k, v in victim.props.items():
         into.props.setdefault(k, v)
     for k in ("best_effort", "container", "live", "pcap"):
@@ -196,17 +200,19 @@ def _absorb_duplicates(assets: list[CryptoAsset]) -> list[CryptoAsset]:
         if len(group) < 2:
             continue
         # richest first: has key size, has mode, most evidence
-        group.sort(key=lambda a: (a.key_size is not None, a.mode is not None, len(a.evidence)), reverse=True)
+        def _prod(a: CryptoAsset) -> int:
+            return sum(1 for e in a.evidence if not e.context.get("in_comment") and not e.context.get("is_test"))
+        group.sort(key=lambda a: (a.key_size is not None, a.mode is not None, _prod(a), CONF_ORDER[a.confidence], len(a.evidence)), reverse=True)
         keep: list[CryptoAsset] = []
         for a in group:
             target = None
             for k in keep:
                 same_size = a.key_size is None or k.key_size == a.key_size
                 same_mode = a.mode is None or k.mode == a.mode or k.mode is None
-                if same_size and same_mode and (a.key_size is None or a.mode is None or k.mode is None):
+                if same_size and same_mode:
                     target = k
                     break
-            if target is not None and (a.key_size is None or a.mode is None or (target.mode is None and a.mode is not None)):
+            if target is not None:
                 if target.mode is None and a.mode is not None:
                     target.mode = a.mode
                 _absorb(target, a)

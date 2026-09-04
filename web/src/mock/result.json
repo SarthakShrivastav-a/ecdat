@@ -1,0 +1,193 @@
+{
+  "id": "mock-zoo",
+  "name": "zoo-scan (mock)",
+  "timestamp": "2026-09-05T02:00:00+00:00",
+  "targets": [
+    {"kind": "dir", "path": "tests/fixtures/zoo/src/python", "name": "payments-api", "zone": "external", "data_class": "financial", "criticality": "high"},
+    {"kind": "dir", "path": "tests/fixtures/zoo/src/c", "name": "legacy-hsm-agent", "zone": "internal", "data_class": "defence", "criticality": "critical"},
+    {"kind": "dir", "path": "tests/fixtures/zoo/src/nginx", "name": "edge-lb", "zone": "external"}
+  ],
+  "components": [
+    {"bom_ref": "urn:ecdat:component:payments-api", "name": "payments-api", "type": "application", "version": null, "zone": "external", "data_class": "financial", "criticality": "high", "path": "tests/fixtures/zoo/src/python", "props": {}},
+    {"bom_ref": "urn:ecdat:component:legacy-hsm-agent", "name": "legacy-hsm-agent", "type": "application", "version": null, "zone": "internal", "data_class": "defence", "criticality": "critical", "path": "tests/fixtures/zoo/src/c", "props": {}},
+    {"bom_ref": "urn:ecdat:component:edge-lb", "name": "edge-lb", "type": "application", "version": null, "zone": "external", "data_class": null, "criticality": null, "path": "tests/fixtures/zoo/src/nginx", "props": {}},
+    {"bom_ref": "urn:ecdat:library:cryptography", "name": "cryptography", "type": "library", "version": "42.0.5", "zone": "external", "data_class": null, "criticality": null, "path": "requirements.txt", "props": {"ecosystem": "pypi", "component": "payments-api"}}
+  ],
+  "assets": [
+    {
+      "bom_ref": "urn:ecdat:algorithm:a1", "asset_type": "algorithm", "name": "RSA", "family": "RSASSA-PKCS1", "primitive": "pke", "key_size": 2048,
+      "mode": null, "padding": "OAEP", "oid": "1.2.840.113549.1.1.1", "parameter_set": null, "curve": null, "crypto_functions": ["keygen", "encrypt"],
+      "classical_security_level": 112, "nist_quantum_security_level": 0, "component": "payments-api", "provided_by": "urn:ecdat:library:cryptography",
+      "confidence": "high",
+      "evidence": [
+        {"collector": "source", "location": "payments/auth.py", "line": 12, "snippet": "return rsa.generate_private_key(public_exponent=65537, key_size=2048)", "confidence": "high", "context": {"is_test": false}},
+        {"collector": "opengrep", "location": "payments/auth.py", "line": 16, "snippet": "pubkey.encrypt(pan, padding.OAEP(...))", "confidence": "medium", "context": {}}
+      ],
+      "props": {"api": "rsa.generate_private_key", "language": "python", "literal": true},
+      "context": {"usage": "security", "corroborated": true, "collectors": ["opengrep", "source"], "is_test": false},
+      "exposure": {"zone": "external", "transit": true, "at_rest": true, "signing_only": false, "confidentiality": true, "reason": "public-key encryption of card data on an external service"},
+      "lifetime_years": 10, "data_class": "financial", "criticality": "high", "criticality_multiplier": 1.25,
+      "agility": {"dimensions": {"algorithm_coupling": 1.0, "provider_coupling": 1.0, "parameter_coupling": 1.0, "decoupling": 1.0, "spread": 0.2, "ownership": 0.2, "runtime_pqc": 0.6}, "total": 32, "y_years": 3.72, "reasons": ["algorithm hardcoded at the call site", "direct low-level provider API (pyca hazmat)", "key size is a literal", "no configuration indirection found", "python runtime has no native PQC; kyber-py available"]},
+      "risk": {"quantum_class": "broken", "reason": "Integer factorisation is broken by Shor's algorithm", "hndl_applicable": true, "x": 10, "y": 3.72, "z": 9, "mosca_gap": 4.72, "tier": "EXPOSED", "priority": 7.5, "deadline_year": 2029,
+        "overlays": [
+          {"framework": "DST-NQM", "rule": "M1 inventory", "status": "ok", "deadline_year": 2027, "text": "asset is inventoried in a CycloneDX CBOM"},
+          {"framework": "DST-NQM", "rule": "M2 no new classical-only deployments", "status": "violation", "deadline_year": 2028, "kind": "policy", "text": "classical-only RSA must not be newly deployed after 2028 (CII); enforced by the CI gate"},
+          {"framework": "DST-NQM", "rule": "M3 quantum-safe-only trust chains", "status": "violation", "deadline_year": 2029, "text": "RSA must be migrated before 2029 (CII)"},
+          {"framework": "NIST IR 8547", "rule": "deprecate 2030 / disallow 2035", "status": "violation", "deadline_year": 2030, "text": "RSA deprecated after 2030, disallowed after 2035"}
+        ],
+        "reasons": ["Mosca: X 10 + Y 3.72 = 13.72 > Z 9: data captured today outlives the migration"]},
+      "recommendation": {"target": "X25519MLKEM768", "alternative": "ML-KEM-768", "cnsa_target": "ML-KEM-1024", "fips": ["FIPS 203"], "deltas": {"pubkey_bytes": 1216, "ciphertext_bytes": 1120, "latency_note": "+~0.2 ms handshake, +1.1 KB per key share"}, "runtime_note": "python: kyber-py or liboqs-python (no stdlib PQC)", "effort_weeks": 6.5, "hybrid": true, "rationale": "hybrid first: secure if either component holds; matches what browsers negotiate today",
+        "patches": [{"title": "Replace RSA keygen with ML-KEM-768 (hybrid alongside X25519)", "file": "payments/auth.py", "line": 12, "unified_diff": "--- a/payments/auth.py\n+++ b/payments/auth.py\n@@ -1,3 +1,4 @@\n-from cryptography.hazmat.primitives.asymmetric import rsa\n+from kyber_py.ml_kem import ML_KEM_768\n@@ -11,2 +12,2 @@\n-    return rsa.generate_private_key(public_exponent=65537, key_size=2048)\n+    ek, dk = ML_KEM_768.keygen()  # FIPS 203; keep X25519 alongside for hybrid\n", "note": "suggestion only; verify with dependency-aware tests"}]},
+      "vex": "affected",
+      "certin": {"table": "algorithm", "present": ["Name", "Asset Type", "Primitive", "Mode", "Crypto Functions", "Classical security level", "OID"], "missing": [], "pct": 100.0}
+    },
+    {
+      "bom_ref": "urn:ecdat:algorithm:a2", "asset_type": "algorithm", "name": "RSA", "family": "RSASSA-PKCS1", "primitive": "pke", "key_size": 2048,
+      "mode": null, "padding": null, "oid": "1.2.840.113549.1.1.1", "parameter_set": null, "curve": null, "crypto_functions": ["keygen"],
+      "classical_security_level": 112, "nist_quantum_security_level": 0, "component": "legacy-hsm-agent", "provided_by": null, "confidence": "high",
+      "evidence": [{"collector": "source", "location": "legacy.c", "line": 9, "snippet": "return RSA_generate_key_ex(rsa, 2048, e, NULL);", "confidence": "high", "context": {}}],
+      "props": {"api": "RSA_generate_key_ex", "language": "c", "literal": true},
+      "context": {"usage": "security", "corroborated": false, "collectors": ["source"]},
+      "exposure": {"zone": "internal", "transit": false, "at_rest": true, "signing_only": false, "confidentiality": true},
+      "lifetime_years": 30, "data_class": "defence", "criticality": "critical", "criticality_multiplier": 1.5,
+      "agility": {"dimensions": {"algorithm_coupling": 1.0, "provider_coupling": 1.0, "parameter_coupling": 1.0, "decoupling": 1.0, "spread": 0.1, "ownership": 0.2, "runtime_pqc": 1.0}, "total": 24, "y_years": 4.04, "reasons": ["OpenSSL 1.x C API; no native PQC until OpenSSL 3.5", "key size is a literal"]},
+      "risk": {"quantum_class": "broken", "reason": "Integer factorisation is broken by Shor's algorithm", "hndl_applicable": true, "x": 30, "y": 4.04, "z": 9, "mosca_gap": 25.04, "tier": "EXPOSED", "priority": 9.0, "deadline_year": 2029,
+        "overlays": [{"framework": "DST-NQM", "rule": "M3 quantum-safe-only trust chains", "status": "violation", "deadline_year": 2029, "text": "RSA must be migrated before 2029 (CII)"}, {"framework": "NIST IR 8547", "rule": "deprecate 2030 / disallow 2035", "status": "violation", "deadline_year": 2030, "text": "RSA deprecated after 2030, disallowed after 2035"}],
+        "reasons": ["Mosca: X 30 + Y 4.04 = 34.04 > Z 9: data captured today outlives the migration"]},
+      "recommendation": {"target": "X25519MLKEM768", "alternative": "ML-KEM-768", "cnsa_target": "ML-KEM-1024", "fips": ["FIPS 203"], "deltas": {"pubkey_bytes": 1216}, "runtime_note": "upgrade to OpenSSL 3.5+ or link liboqs / oqs-provider", "effort_weeks": 9.0, "hybrid": true, "rationale": "30-year secrecy requirement: migration alone does not save already-captured data; re-key and shorten retention", "patches": []},
+      "vex": "affected",
+      "certin": {"table": "algorithm", "present": ["Name", "Asset Type", "Primitive", "Mode", "Crypto Functions", "Classical security level", "OID"], "missing": [], "pct": 100.0}
+    },
+    {
+      "bom_ref": "urn:ecdat:algorithm:a3", "asset_type": "algorithm", "name": "ECDSA", "family": "ECDSA", "primitive": "signature", "key_size": null,
+      "mode": null, "padding": null, "oid": "1.2.840.10045.4.3.2", "parameter_set": null, "curve": "secp256r1", "crypto_functions": ["keygen", "sign"],
+      "classical_security_level": 128, "nist_quantum_security_level": 0, "component": "payments-api", "provided_by": "urn:ecdat:library:cryptography", "confidence": "high",
+      "evidence": [{"collector": "source", "location": "payments/auth.py", "line": 20, "snippet": "key = ec.generate_private_key(ec.SECP256R1())", "confidence": "high", "context": {}}],
+      "props": {"api": "ec.generate_private_key", "language": "python"},
+      "context": {"usage": "security", "corroborated": false, "collectors": ["source"]},
+      "exposure": {"zone": "external", "transit": false, "at_rest": false, "signing_only": true, "confidentiality": false},
+      "lifetime_years": 10, "data_class": "financial", "criticality": "high", "criticality_multiplier": 1.25,
+      "agility": {"dimensions": {"algorithm_coupling": 1.0, "provider_coupling": 1.0, "parameter_coupling": 0.4, "decoupling": 1.0, "spread": 0.1, "ownership": 0.2, "runtime_pqc": 0.6}, "total": 40, "y_years": 3.4, "reasons": ["algorithm hardcoded at the call site"]},
+      "risk": {"quantum_class": "broken", "reason": "Elliptic-curve discrete log is broken by Shor's algorithm", "hndl_applicable": false, "x": 10, "y": 3.4, "z": 9, "mosca_gap": 4.4, "tier": "ACT_NOW", "priority": 5.0, "deadline_year": 2029,
+        "overlays": [{"framework": "DST-NQM", "rule": "M3 quantum-safe-only trust chains", "status": "violation", "deadline_year": 2029, "text": "ECDSA must be migrated before 2029 (CII)"}],
+        "reasons": ["framework deadline 2029 is within the 3.4-year migration window", "signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"]},
+      "recommendation": {"target": "ML-DSA-65", "alternative": "SLH-DSA-SHA2-128s", "cnsa_target": "ML-DSA-87", "fips": ["FIPS 204"], "deltas": {"pubkey_bytes": 1952, "signature_bytes": 3309, "vs": "ECDSA P-256 signature 64 B"}, "runtime_note": "python: dilithium-py or liboqs-python", "effort_weeks": 4.0, "hybrid": false, "rationale": "signatures are deadline-driven, not HNDL; migrate before the M3 date", "patches": []},
+      "vex": "affected",
+      "certin": {"table": "algorithm", "present": ["Name", "Asset Type", "Primitive", "Mode", "Crypto Functions", "Classical security level", "OID"], "missing": [], "pct": 100.0}
+    },
+    {
+      "bom_ref": "urn:ecdat:algorithm:a4", "asset_type": "algorithm", "name": "AES-256", "family": "AES", "primitive": "ae", "key_size": 256,
+      "mode": "GCM", "padding": null, "oid": "2.16.840.1.101.3.4.1.46", "parameter_set": null, "curve": null, "crypto_functions": ["keygen", "encrypt"],
+      "classical_security_level": 256, "nist_quantum_security_level": 5, "component": "payments-api", "provided_by": "urn:ecdat:library:cryptography", "confidence": "high",
+      "evidence": [{"collector": "source", "location": "payments/auth.py", "line": 25, "snippet": "key = AESGCM.generate_key(bit_length=256)", "confidence": "high", "context": {}}],
+      "props": {"api": "AESGCM.generate_key", "language": "python"},
+      "context": {"usage": "security", "corroborated": false, "collectors": ["source"]},
+      "exposure": {"zone": "external", "transit": false, "at_rest": true, "signing_only": false, "confidentiality": true},
+      "lifetime_years": 10, "data_class": "financial", "criticality": "high", "criticality_multiplier": 1.25,
+      "agility": {"dimensions": {"algorithm_coupling": 1.0, "provider_coupling": 1.0, "parameter_coupling": 1.0, "decoupling": 1.0, "spread": 0.1, "ownership": 0.2, "runtime_pqc": 0.0}, "total": 43, "y_years": 3.3, "reasons": ["AES-256 needs no PQC replacement"]},
+      "risk": {"quantum_class": "safe", "reason": "256-bit key keeps ~128-bit security under Grover", "hndl_applicable": false, "x": 10, "y": 3.3, "z": 9, "mosca_gap": 4.3, "tier": "SAFE", "priority": 0.0, "deadline_year": null, "overlays": [{"framework": "DST-NQM", "rule": "M1 inventory", "status": "ok", "deadline_year": 2027, "text": "asset is inventoried in a CycloneDX CBOM"}], "reasons": ["quantum-safe algorithm or parameter set"]},
+      "recommendation": {"target": null, "alternative": null, "cnsa_target": null, "fips": [], "deltas": {}, "runtime_note": "", "effort_weeks": 0.0, "hybrid": false, "rationale": "no change required", "patches": []},
+      "vex": "not_affected",
+      "certin": {"table": "algorithm", "present": ["Name", "Asset Type", "Primitive", "Mode", "Crypto Functions", "Classical security level", "OID"], "missing": [], "pct": 100.0}
+    },
+    {
+      "bom_ref": "urn:ecdat:algorithm:a5", "asset_type": "algorithm", "name": "MD5", "family": "MD5", "primitive": "hash", "key_size": null,
+      "mode": null, "padding": null, "oid": "1.2.840.113549.2.5", "parameter_set": null, "curve": null, "crypto_functions": ["digest"],
+      "classical_security_level": 0, "nist_quantum_security_level": 0, "component": "payments-api", "provided_by": null, "confidence": "high",
+      "evidence": [{"collector": "source", "location": "utils/cache.py", "line": 6, "snippet": "return hashlib.md5(url.encode()).hexdigest()  # etag cache key, not security", "confidence": "high", "context": {}}],
+      "props": {"api": "hashlib.md5", "language": "python"},
+      "context": {"usage": "non-security", "usage_reason": "hash used for a non-security purpose (cache)", "corroborated": false, "collectors": ["source"]},
+      "exposure": {"zone": "external", "transit": false, "at_rest": false, "signing_only": false, "confidentiality": false},
+      "lifetime_years": 0.1, "data_class": "session", "criticality": "high", "criticality_multiplier": 1.25,
+      "agility": {"dimensions": {"algorithm_coupling": 1.0, "provider_coupling": 0.5, "parameter_coupling": 0.4, "decoupling": 1.0, "spread": 0.1, "ownership": 0.2, "runtime_pqc": 0.0}, "total": 52, "y_years": 2.9, "reasons": ["stdlib hashlib; one-line swap"]},
+      "risk": {"quantum_class": "legacy-broken", "reason": "Practical collisions since 2004", "hndl_applicable": false, "x": 0.1, "y": 2.9, "z": 9, "mosca_gap": -6.0, "tier": "SAFE", "priority": 0.0, "deadline_year": null, "overlays": [], "reasons": ["usage is non-security: not a production security control"]},
+      "recommendation": {"target": null, "alternative": null, "cnsa_target": null, "fips": [], "deltas": {}, "runtime_note": "", "effort_weeks": 0.0, "hybrid": false, "rationale": "non-security use; no migration needed", "patches": []},
+      "vex": "not_affected",
+      "certin": {"table": "algorithm", "present": ["Name", "Asset Type", "Primitive", "Mode", "Crypto Functions", "Classical security level", "OID"], "missing": [], "pct": 100.0}
+    },
+    {
+      "bom_ref": "urn:ecdat:algorithm:a6", "asset_type": "algorithm", "name": "AES-128", "family": "AES", "primitive": "block-cipher", "key_size": 128,
+      "mode": null, "padding": null, "oid": "2.16.840.1.101.3.4.1.6", "parameter_set": null, "curve": null, "crypto_functions": ["keygen"],
+      "classical_security_level": 128, "nist_quantum_security_level": 1, "component": "legacy-hsm-agent", "provided_by": null, "confidence": "high",
+      "evidence": [{"collector": "source", "location": "legacy.c", "line": 13, "snippet": "return AES_set_encrypt_key(k, 128, aes);", "confidence": "high", "context": {}}],
+      "props": {"api": "AES_set_encrypt_key", "language": "c"},
+      "context": {"usage": "security", "corroborated": false, "collectors": ["source"]},
+      "exposure": {"zone": "internal", "transit": false, "at_rest": true, "signing_only": false, "confidentiality": true},
+      "lifetime_years": 30, "data_class": "defence", "criticality": "critical", "criticality_multiplier": 1.5,
+      "agility": {"dimensions": {"algorithm_coupling": 1.0, "provider_coupling": 1.0, "parameter_coupling": 1.0, "decoupling": 1.0, "spread": 0.1, "ownership": 0.2, "runtime_pqc": 1.0}, "total": 24, "y_years": 4.0, "reasons": ["key size is a literal in C"]},
+      "risk": {"quantum_class": "weakened", "reason": "Grover reduces AES-128 to ~64-bit effective security", "hndl_applicable": true, "x": 30, "y": 4.0, "z": 9, "mosca_gap": 25.0, "tier": "EXPOSED", "priority": 9.0, "deadline_year": 2030,
+        "overlays": [{"framework": "CNSA 2.0", "rule": "AES >= 256", "status": "violation", "deadline_year": 2030, "text": "AES-128 below CNSA 2.0 minimum AES-256"}, {"framework": "DST-NQM", "rule": "M3 quantum-safe-only trust chains", "status": "warning", "deadline_year": 2029, "text": "AES-128 is Grover-weakened; upgrade parameters before 2029"}],
+        "reasons": ["Mosca: X 30 + Y 4 = 34 > Z 9: data captured today outlives the migration"]},
+      "recommendation": {"target": "AES-256", "alternative": null, "cnsa_target": "AES-256", "fips": ["FIPS 197"], "deltas": {"key_bytes": 32, "latency_note": "+~40% AES rounds (14 vs 10); negligible with AES-NI"}, "runtime_note": "one-line key-size change", "effort_weeks": 1.5, "hybrid": false, "rationale": "double the key length; no protocol change", "patches": [{"title": "AES-128 -> AES-256 key schedule", "file": "legacy.c", "line": 13, "unified_diff": "--- a/legacy.c\n+++ b/legacy.c\n@@ -13 +13 @@\n-    return AES_set_encrypt_key(k, 128, aes);\n+    return AES_set_encrypt_key(k, 256, aes);\n", "note": "key material must be 32 bytes"}]},
+      "vex": "affected",
+      "certin": {"table": "algorithm", "present": ["Name", "Asset Type", "Primitive", "Crypto Functions", "Classical security level", "OID"], "missing": ["Mode"], "pct": 85.7}
+    },
+    {
+      "bom_ref": "urn:ecdat:protocol:p1", "asset_type": "protocol", "name": "TLS", "family": "TLS", "primitive": "other", "key_size": null,
+      "mode": null, "padding": null, "oid": null, "parameter_set": null, "curve": null, "crypto_functions": [], "classical_security_level": null, "nist_quantum_security_level": null,
+      "component": "edge-lb", "provided_by": null, "confidence": "high",
+      "evidence": [{"collector": "source", "location": "nginx.conf", "line": 7, "snippet": "ssl_protocols TLSv1.2 TLSv1.3;", "confidence": "high", "context": {}}, {"collector": "source", "location": "nginx.conf", "line": 8, "snippet": "ssl_ciphers ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305;", "confidence": "high", "context": {}}],
+      "props": {"type": "tls", "versions": ["TLSv1.2", "TLSv1.3"], "cipher_suites": ["ECDHE-RSA-AES256-GCM-SHA384", "ECDHE-ECDSA-CHACHA20-POLY1305"], "curves": ["prime256v1"], "api": "config", "kex_group": "prime256v1", "pq_kex": false},
+      "context": {"usage": "security", "corroborated": false, "collectors": ["source"]},
+      "exposure": {"zone": "external", "transit": true, "at_rest": false, "signing_only": false, "confidentiality": true, "reason": "TLS terminator on an external load balancer"},
+      "lifetime_years": 5, "data_class": "generic", "criticality": "medium", "criticality_multiplier": 1.0,
+      "agility": {"dimensions": {"algorithm_coupling": 0.3, "provider_coupling": 0.2, "parameter_coupling": 0.2, "decoupling": 0.0, "spread": 0.1, "ownership": 0.2, "runtime_pqc": 0.6}, "total": 78, "y_years": 0.5, "reasons": ["algorithm chosen in configuration, not code", "provider is the TLS/SSH stack; swapped by configuration"]},
+      "risk": {"quantum_class": "broken", "reason": "ECDHE key exchange on prime256v1 is Shor-vulnerable", "hndl_applicable": true, "x": 5, "y": 0.5, "z": 9, "mosca_gap": -3.5, "tier": "ACT_NOW", "priority": 3.5, "deadline_year": 2029,
+        "overlays": [{"framework": "DST-NQM", "rule": "M2 no new classical-only deployments", "status": "violation", "deadline_year": 2028, "kind": "policy", "text": "classical-only TLS key exchange must not be newly deployed after 2028 (CII); enforced by the CI gate"}, {"framework": "CNSA 2.0", "rule": "quantum-resistant only", "status": "violation", "deadline_year": 2030, "text": "TLS must be replaced by ML-KEM-1024 (exclusive by 2030)"}],
+        "reasons": ["Mosca margin only 3.5 year(s) (X 5 + Y 0.5 vs Z 9)"]},
+      "recommendation": {"target": "X25519MLKEM768", "alternative": "ML-KEM-768", "cnsa_target": "ML-KEM-1024", "fips": ["FIPS 203"], "deltas": {"pubkey_bytes": 1216, "latency_note": "+~0.2 ms handshake, +1.1 KB per key share"}, "runtime_note": "enable a PQ hybrid group on the TLS terminator (OpenSSL >= 3.5)", "effort_weeks": 1.0, "hybrid": true, "rationale": "enable hybrid PQ key exchange on the wire; keep classical suites for clients that lack it",
+        "patches": [{"title": "Prefer X25519MLKEM768 in nginx", "file": "nginx.conf", "line": 9, "unified_diff": "--- a/nginx.conf\n+++ b/nginx.conf\n@@ -9 +9 @@\n-    ssl_ecdh_curve prime256v1;\n+    ssl_ecdh_curve X25519MLKEM768:X25519:prime256v1;\n", "note": "requires nginx linked against OpenSSL 3.5+"}]},
+      "vex": "affected",
+      "certin": {"table": "protocol", "present": ["Name", "Asset Type", "Version", "Cipher Suites"], "missing": ["OID"], "pct": 80.0}
+    },
+    {
+      "bom_ref": "urn:ecdat:certificate:c1", "asset_type": "certificate", "name": "pay.zoo.local", "family": "X.509", "primitive": "other", "key_size": 2048,
+      "mode": null, "padding": null, "oid": "1.2.840.113549.1.1.11", "parameter_set": null, "curve": null, "crypto_functions": [], "classical_security_level": null, "nist_quantum_security_level": null,
+      "component": "edge-lb", "provided_by": null, "confidence": "high",
+      "evidence": [{"collector": "certificate", "location": "certs/rsa2048_sha256.crt", "line": 1, "snippet": "CN=pay.zoo.local issuer=CN=ECDAT Zoo Root CA", "confidence": "high", "context": {}}],
+      "props": {"subject": "CN=pay.zoo.local,O=ECDAT Zoo,C=IN", "issuer": "CN=ECDAT Zoo Root CA,O=ECDAT Zoo,C=IN", "not_before": "2026-09-04T00:00:00+00:00", "not_after": "2027-09-04T00:00:00+00:00", "expired": false, "signature_algorithm": "RSA", "signature_hash": "SHA-256", "public_key_algorithm": "RSA", "key_size": 2048, "format": "X.509", "extension": ".crt", "san": ["pay.zoo.local", "zoo.local"]},
+      "context": {"usage": "security", "corroborated": false, "collectors": ["certificate"]},
+      "exposure": {"zone": "external", "transit": true, "at_rest": false, "signing_only": true, "confidentiality": false},
+      "lifetime_years": 1, "data_class": "generic", "criticality": "medium", "criticality_multiplier": 1.0,
+      "agility": {"dimensions": {"algorithm_coupling": 0.0, "provider_coupling": 0.2, "parameter_coupling": 0.0, "decoupling": 0.0, "spread": 0.0, "ownership": 0.2, "runtime_pqc": 0.6}, "total": 88, "y_years": 0.5, "reasons": ["algorithm is a property of key material; rotation swaps it"]},
+      "risk": {"quantum_class": "broken", "reason": "RSA certificate public key", "hndl_applicable": false, "x": 1, "y": 0.5, "z": 9, "mosca_gap": -7.5, "tier": "MONITOR", "priority": 1.5, "deadline_year": 2030, "overlays": [{"framework": "NIST IR 8547", "rule": "deprecate 2030 / disallow 2035", "status": "violation", "deadline_year": 2030, "text": "RSA deprecated after 2030, disallowed after 2035"}], "reasons": ["quantum-vulnerable but short-lived data, signing-only, or ample migration time", "signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"]},
+      "recommendation": {"target": "ML-DSA-65", "alternative": "SLH-DSA-SHA2-128s", "cnsa_target": "ML-DSA-87", "fips": ["FIPS 204"], "deltas": {"signature_bytes": 3309, "vs": "RSA-2048 signature 256 B"}, "runtime_note": "re-issue from a PQC-capable CA at next rotation", "effort_weeks": 1.0, "hybrid": false, "rationale": "rotate at renewal; certificate chains are deadline-driven", "patches": []},
+      "vex": "in_triage",
+      "certin": {"table": "certificate", "present": ["Name", "Asset Type", "Subject Name", "Issuer Name", "Not Valid Before", "Not Valid After", "Signature Algorithm Reference", "Subject Public Key Reference", "Certificate Format", "Certificate Extension"], "missing": [], "pct": 100.0}
+    },
+    {
+      "bom_ref": "urn:ecdat:algorithm:a9", "asset_type": "algorithm", "name": "SHA-256", "family": "SHA-2", "primitive": "hash", "key_size": null,
+      "mode": null, "padding": null, "oid": "2.16.840.1.101.3.4.2.1", "parameter_set": null, "curve": null, "crypto_functions": ["digest"],
+      "classical_security_level": 128, "nist_quantum_security_level": 2, "component": "legacy-hsm-agent", "provided_by": null, "confidence": "medium",
+      "evidence": [{"collector": "binary", "location": "libzoocrypto.so", "line": null, "snippet": "yara:SHA256_Constants", "confidence": "medium", "context": {"best_effort": true}}],
+      "props": {"api": "binary", "method": "yara-constant"},
+      "context": {"usage": "security", "corroborated": false, "collectors": ["binary"], "best_effort": true},
+      "exposure": {"zone": "internal", "transit": false, "at_rest": false, "signing_only": false, "confidentiality": false},
+      "lifetime_years": 30, "data_class": "defence", "criticality": "critical", "criticality_multiplier": 1.5,
+      "agility": {"dimensions": {"algorithm_coupling": 1.0, "provider_coupling": 1.0, "parameter_coupling": 0.4, "decoupling": 1.0, "spread": 0.1, "ownership": 1.0, "runtime_pqc": 1.0}, "total": 12, "y_years": 8.0, "reasons": ["opaque binary: only rebuild or vendor change can swap it"]},
+      "risk": {"quantum_class": "safe", "reason": "128-bit collision resistance holds", "hndl_applicable": false, "x": 30, "y": 8.0, "z": 9, "mosca_gap": 29.0, "tier": "SAFE", "priority": 0.0, "deadline_year": null, "overlays": [{"framework": "CNSA 2.0", "rule": "SHA >= 384", "status": "warning", "deadline_year": 2030, "text": "SHA-256 below CNSA 2.0 minimum SHA-384 (for NSS use)"}], "reasons": ["quantum-safe algorithm or parameter set"]},
+      "recommendation": {"target": null, "alternative": null, "cnsa_target": "SHA-384", "fips": [], "deltas": {}, "runtime_note": "", "effort_weeks": 0.0, "hybrid": false, "rationale": "no change required", "patches": []},
+      "vex": "not_affected",
+      "certin": {"table": "algorithm", "present": ["Name", "Asset Type", "Primitive", "Mode", "Crypto Functions", "Classical security level", "OID"], "missing": [], "pct": 100.0}
+    }
+  ],
+  "params": {"z_year": 2035, "y_default": 3.0, "engineers": 4, "months": 6, "profile": "cii", "now_year": 2026},
+  "stats": {
+    "assets": 9, "tiers": {"EXPOSED": 3, "ACT_NOW": 2, "MONITOR": 1, "SAFE": 3}, "quantum_classes": {"broken": 5, "weakened": 1, "safe": 2, "legacy-broken": 1}, "hndl_applicable": 4, "z_year": 2035,
+    "certin": {"by_type": {"algorithm": 97.6, "protocol": 80.0, "certificate": 100.0}, "counts": {"algorithm": 7, "protocol": 1, "certificate": 1}, "top_missing": [["protocol:OID", 1], ["algorithm:Mode", 1]], "overall_pct": 95.7, "source": "CERT-In Technical Guidelines on SBOM, QBOM & CBOM, AIBOM and HBOM v2.0 (09.07.2025), section 8.3 Table 9"},
+    "collectors": {"per_collector": {"source": 14, "opengrep": 3, "dependency": 4, "certificate": 6, "binary": 5}, "per_target": {"payments-api": 12, "legacy-hsm-agent": 9, "edge-lb": 11}, "errors": [], "total_findings": 32}
+  },
+  "plan": {
+    "engineers": 4, "months": 6, "capacity_weeks": 103.9, "used_weeks": 23.0, "candidates": 6, "total_risk": 35.5, "covered_pct": 100.0, "exposed_remaining": 0,
+    "items": [
+      {"bom_ref": "urn:ecdat:algorithm:a6", "name": "AES-128", "asset_type": "algorithm", "component": "legacy-hsm-agent", "tier": "EXPOSED", "priority": 9.0, "effort_weeks": 1.5, "risk_per_week": 6.0, "target": "AES-256", "cumulative_weeks": 1.5, "cumulative_risk_pct": 25.4, "location": "legacy.c"},
+      {"bom_ref": "urn:ecdat:protocol:p1", "name": "TLS", "asset_type": "protocol", "component": "edge-lb", "tier": "ACT_NOW", "priority": 3.5, "effort_weeks": 1.0, "risk_per_week": 3.5, "target": "X25519MLKEM768", "cumulative_weeks": 2.5, "cumulative_risk_pct": 35.2, "location": "nginx.conf"},
+      {"bom_ref": "urn:ecdat:certificate:c1", "name": "pay.zoo.local", "asset_type": "certificate", "component": "edge-lb", "tier": "MONITOR", "priority": 1.5, "effort_weeks": 1.0, "risk_per_week": 1.5, "target": "ML-DSA-65", "cumulative_weeks": 3.5, "cumulative_risk_pct": 39.4, "location": "certs/rsa2048_sha256.crt"},
+      {"bom_ref": "urn:ecdat:algorithm:a3", "name": "ECDSA", "asset_type": "algorithm", "component": "payments-api", "tier": "ACT_NOW", "priority": 5.0, "effort_weeks": 4.0, "risk_per_week": 1.25, "target": "ML-DSA-65", "cumulative_weeks": 7.5, "cumulative_risk_pct": 53.5, "location": "payments/auth.py"},
+      {"bom_ref": "urn:ecdat:algorithm:a1", "name": "RSA", "asset_type": "algorithm", "component": "payments-api", "tier": "EXPOSED", "priority": 7.5, "effort_weeks": 6.5, "risk_per_week": 1.154, "target": "X25519MLKEM768", "cumulative_weeks": 14.0, "cumulative_risk_pct": 74.6, "location": "payments/auth.py"},
+      {"bom_ref": "urn:ecdat:algorithm:a2", "name": "RSA", "asset_type": "algorithm", "component": "legacy-hsm-agent", "tier": "EXPOSED", "priority": 9.0, "effort_weeks": 9.0, "risk_per_week": 1.0, "target": "X25519MLKEM768", "cumulative_weeks": 23.0, "cumulative_risk_pct": 100.0, "location": "legacy.c"}
+    ],
+    "uncovered": []
+  },
+  "tool_versions": {"ecdat": "0.1.0", "opengrep": "1.29.0", "cbomkit-theia": "edge", "syft": "1.51.1", "tshark": "4.6.8", "crane": "present", "cyclonedx-python-lib": "11.12.0"}
+}

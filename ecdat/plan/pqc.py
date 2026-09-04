@@ -68,6 +68,24 @@ def recommend(asset: CryptoAsset, kb: KnowledgeBase, params: ScanParams | None =
         asset.recommendation = rec
         return rec
 
+    if asset.asset_type == "certificate":
+        pr = asset.props or {}
+        pk = pr.get("public_key_algorithm")
+        pk_class = kb.info(pk).get("quantum", "unknown") if pk else "unknown"
+        if pk_class == "safe":
+            rec = Recommendation(target=None, rationale="certificate already uses a quantum-safe public key", effort_weeks=0.0)
+        else:
+            legacy = pr.get("expired") or (pr.get("key_size") and pk == "RSA" and pr["key_size"] < 2048) or pr.get("signature_hash") in ("SHA-1", "MD5")
+            rec = Recommendation(target="ML-DSA-65 certificate (re-issue when the CA supports FIPS 204; hybrid/dual certificates during transition)",
+                                 alternative="SLH-DSA-SHA2-128s certificate", cnsa_target="ML-DSA-87 certificate", fips=["FIPS 204"],
+                                 deltas=dict(targets.get("ML-DSA-65", {})), hybrid=True,
+                                 runtime_note="until PQC certificates are issuable: shorten validity, automate rotation, pin the trust chain",
+                                 rationale=("re-issue now: expired, sub-2048-bit or SHA-1/MD5-signed certificate" if legacy else
+                                            f"{pk}-{pr.get('key_size') or ''} public key is Shor-vulnerable; plan re-issuance with a PQC signature algorithm"))
+        rec.effort_weeks = rec.effort_weeks if rec.target is None else effort_weeks(asset, kb)
+        asset.recommendation = rec
+        return rec
+
     if qclass == "safe" or asset.context.get("usage") in ("non-security", "test", "comment"):
         rec = Recommendation(target=None, rationale="no change required" if qclass == "safe" else f"{asset.context.get('usage')} use; no migration needed",
                              effort_weeks=0.0)

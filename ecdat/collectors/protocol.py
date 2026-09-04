@@ -167,7 +167,10 @@ def cryptolyzer_tls(host: str, port: int) -> dict | None:
         params = L4TransferSocketParams(timeout=TIMEOUT)
         client = L7ClientTlsBase.from_scheme("tls", host, port, l4_socket_params=params)
         versions = AnalyzerVersions().analyze(client, None)
-        out = {"versions": [str(v) for v in versions.versions], "cipher_suites": [], "groups": []}
+        def _norm(v) -> str:
+            t = str(v).replace("TLS ", "TLSv").replace("SSL ", "SSLv")
+            return t if t.startswith(("TLSv", "SSLv")) else str(v)
+        out = {"versions": [_norm(v) for v in versions.versions], "cipher_suites": [], "groups": []}
         best = None
         for v in versions.versions:
             best = v

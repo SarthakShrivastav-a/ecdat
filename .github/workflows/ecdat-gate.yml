@@ -1,0 +1,37 @@
+name: ECDAT quantum-crypto gate
+on:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  cbom-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - name: Install ECDAT
+        run: pip install . --no-deps && pip install -r requirements-ci.txt
+      - name: Scan and gate (no external engines needed)
+        run: |
+          ecdat gate -c ecdat.yaml --baseline cbom-baseline.json --policy no-new-vulnerable --no-external-tools -o out/gate
+      - name: Upload CBOM, VEX, SARIF and gate summary
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ecdat-cbom
+          path: |
+            out/gate/cbom.json
+            out/gate/vex.json
+            out/gate/findings.sarif
+            out/gate/gate.md
+      - name: Publish findings to code scanning
+        if: always()
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: out/gate/findings.sarif
+      - name: Comment on the PR
+        if: github.event_name == 'pull_request' && always()
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          path: out/gate/gate.md

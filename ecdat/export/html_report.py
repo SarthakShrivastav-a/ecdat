@@ -78,7 +78,7 @@ def render(result: ScanResult) -> str:
     tiers = {t: [a for a in assets if a.risk and a.risk.tier == t] for t in ("EXPOSED", "ACT_NOW", "MONITOR", "SAFE")}
     z = result.params.z_year
     plan = result.plan or {}
-    certin = [a.certin for a in assets if a.certin]
+    certin = [a.certin for a in assets if a.certin and a.certin.get("pct") is not None]
     certin_pct = round(sum(c.get("pct", 0) for c in certin) / len(certin), 1) if certin else None
     profile = result.params.profile
     dst = {"cii": (2027, 2028, 2029), "enterprise": (2028, 2030, 2033)}.get(profile, (2028, 2030, 2033))

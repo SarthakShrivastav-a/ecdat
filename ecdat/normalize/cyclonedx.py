@@ -232,7 +232,8 @@ def to_bom(result: ScanResult, include_vex: bool = True) -> dict:
                                            "ecdat:targets": len(result.targets), "ecdat:certin_table9": "CERT-In BOM guidelines v2.0 (2025-07-09) section 8.3",
                                            "ecdat:stats": result.stats.get("per_collector")})},
         "components": components,
-        "dependencies": [{k: v for k, v in d.items() if k != "dependsOn" or v} for d in deps.values()],
+        "dependencies": [{k: (list(dict.fromkeys(v)) if isinstance(v, list) else v) for k, v in d.items() if k != "dependsOn" or v}
+                         for d in deps.values()],
     }
     if include_vex and result.plan.get("vex"):
         bom["vulnerabilities"] = result.plan["vex"]

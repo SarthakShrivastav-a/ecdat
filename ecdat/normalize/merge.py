@@ -156,5 +156,12 @@ def merge(findings: list[RawFinding], targets: list, kb: KnowledgeBase) -> tuple
                 assets.append(a)
                 lib.props["provides_refs"].append(a.bom_ref)
                 used.add((comp_name, canon))
+    # bom-refs must be unique across the BOM
+    seen_refs: dict[str, int] = {}
+    for a in assets:
+        n = seen_refs.get(a.bom_ref, 0)
+        seen_refs[a.bom_ref] = n + 1
+        if n:
+            a.bom_ref = f"{a.bom_ref}-{n + 1}"
     comps = list(components.values()) + list(lib_components.values())
     return assets, comps

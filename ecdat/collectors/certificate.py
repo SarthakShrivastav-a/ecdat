@@ -300,7 +300,7 @@ class CertificateCollector(Collector):
         except Exception:
             return []
         out = []
-        for c in data.get("components", []):
+        for c in (data.get("components") or []):
             cp = c.get("cryptoProperties") or {}
             at = cp.get("assetType")
             if not at:

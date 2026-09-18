@@ -179,6 +179,30 @@ def gate(config: Path = typer.Option(..., "-c", "--config", exists=True), baseli
 
 
 @app.command()
+def verify(cbom: Path = typer.Argument(..., exists=True, help="cbom.json"),
+           pubkey: Path = typer.Option(None, "--pubkey", exists=True, help="trusted ecdat-mldsa65.pub (base64)")):
+    """Verify a CBOM's ML-DSA-65 (FIPS 204) signature. With --pubkey, also check it was signed by that key."""
+    import base64
+
+    from ecdat.normalize import signing
+    sig_path = cbom.with_name(cbom.name + ".mldsa65.sig")
+    if not sig_path.exists():
+        console.print(f"[red]no signature file[/red] {sig_path.name}")
+        raise typer.Exit(2)
+    meta = json.loads(sig_path.read_text(encoding="utf-8"))
+    if pubkey is not None:
+        trusted = base64.b64decode(pubkey.read_text(encoding="utf-8").strip())
+        if base64.b64decode(meta["public_key_b64"]) != trusted:
+            console.print("[red]FAIL[/red] signed with a different key than the trusted one")
+            raise typer.Exit(1)
+    ok = signing.verify_file(cbom, sig_path)
+    who = "trusted key" if pubkey is not None else "embedded key (integrity only; pass --pubkey to check the signer)"
+    console.print(f"{'[green]OK[/green]' if ok else '[red]FAIL[/red]'}  {cbom.name}  {meta.get('algorithm')} ({meta.get('standard')}) "
+                  f"sha256 {meta.get('sha256', '')[:16]}...  {who}")
+    raise typer.Exit(0 if ok else 1)
+
+
+@app.command()
 def serve(results_dir: Path = typer.Argument(Path("out")), host: str = "127.0.0.1", port: int = 8787):
     """Serve the API + dashboard for a results directory (each sub-directory with result.json is one scan)."""
     import uvicorn

@@ -95,3 +95,21 @@ def test_pipeline_layers_agree(result):
     md5 = [a for a in result.assets if a.name == "MD5"][0]
     assert md5.risk.tier == "SAFE" and md5.recommendation.target is None
     assert result.plan["items"] and result.plan["capacity_weeks"] == 26.0
+
+
+def test_verify_command_trusted_key_tamper_and_wrong_key(tmp_path):
+    from typer.testing import CliRunner
+
+    from ecdat.cli import app
+    from ecdat.normalize import signing
+    bom = tmp_path / "cbom.json"
+    bom.write_text('{"bomFormat": "CycloneDX", "components": [{"name": "RSA"}]}', encoding="utf-8")
+    signing.sign_file(bom, tmp_path / "keys")
+    pub = tmp_path / "keys" / "ecdat-mldsa65.pub"
+    run = CliRunner().invoke
+    assert run(app, ["verify", str(bom), "--pubkey", str(pub)]).exit_code == 0
+    other = tmp_path / "other"
+    signing.load_or_create_keys(other)
+    assert run(app, ["verify", str(bom), "--pubkey", str(other / "ecdat-mldsa65.pub")]).exit_code == 1
+    bom.write_text(bom.read_text(encoding="utf-8").replace("RSA", "AES"), encoding="utf-8")
+    assert run(app, ["verify", str(bom), "--pubkey", str(pub)]).exit_code == 1

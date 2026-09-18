@@ -257,7 +257,12 @@ languages:
       - {callee: mbedtls_sha256, algorithm: SHA-256, primitive: hash}
       - {callee: mbedtls_ecdsa_genkey, algorithm: ECDSA, primitive: signature}
       - {callee: crypto_box_keypair, algorithm: X25519, primitive: key-agree}
-      - {callee: crypto_sign_keypair, algorithm: Ed25519, primitive: signature}
+      # crypto_sign_keypair / crypto_sign are ALSO the NIST PQC reference API (every Dilithium/Falcon/SPHINCS+ ref impl),
+      # so only libsodium's explicit names map to Ed25519.
+      - {callee: crypto_sign_ed25519_keypair, algorithm: Ed25519, primitive: signature}
+      - {callee: crypto_sign_ed25519_seed_keypair, algorithm: Ed25519, primitive: signature}
+      - {callee: crypto_scalarmult_curve25519, algorithm: X25519, primitive: key-agree}
+      - {callee: crypto_kx_keypair, algorithm: X25519, primitive: key-agree}
       - {callee: OQS_KEM_new, string_arg: 0, parse: algorithm, primitive: kem}
       - {callee: OQS_SIG_new, string_arg: 0, parse: algorithm, primitive: signature}
       - {callee: SSL_CTX_new, protocol: TLS}

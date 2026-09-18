@@ -22,3 +22,20 @@ def test_unknown_hash_is_conservative():
 
 def test_non_hash_primitive_is_security():
     assert classify("RSA", "pke", "rsa.generate_private_key(key_size=2048)", "a.py", {})["usage"] == "security"
+
+
+def test_sha1_identifier_and_approved_constructions_are_not_flagged():
+    from ecdat.enrich.context import classify
+    skid = classify("SHA-1", "hash", "skid := sha1.Sum(spki.SubjectPublicKey.Bytes)", "cert.go", {})
+    assert skid["usage"] == "non-security"
+    oaep = classify("SHA-1", "hash", "padding.OAEP(padding.MGF1(hashes.SHA1()), hashes.SHA1(), None)", "backend.py", {})
+    assert oaep["usage"] == "non-security" and "OAEP" in oaep["reason"]
+    pw = classify("SHA-1", "hash", "digest = hashlib.sha1(password).hexdigest()", "auth.py", {})
+    assert pw["usage"] == "security"
+
+
+def test_nist_pqc_reference_api_is_not_ed25519():
+    import pathlib
+    text = (pathlib.Path(__file__).parents[1] / "ecdat" / "knowledge" / "source_patterns.yaml").read_text(encoding="utf-8")
+    assert "{callee: crypto_sign_keypair," not in text
+    assert "crypto_sign_ed25519_keypair" in text

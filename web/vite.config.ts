@@ -9,5 +9,7 @@ export default defineConfig({
     port: 5181,
     proxy: { '/api': { target: 'http://127.0.0.1:8787', changeOrigin: true } },
   },
+  // relative asset paths so the same build works at / (ecdat serve) and under a sub-path (GitHub Pages)
+  base: './',
   build: { outDir: 'dist', sourcemap: false },
 })

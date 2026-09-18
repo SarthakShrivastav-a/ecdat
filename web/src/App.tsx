@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
-import { fetchResult, loadInitial, paramsToBody, recompute, type Source } from './api'
+import { fetchResult, loadInitial, paramsToBody, recompute, staticRecompute, type Source } from './api'
 import Drawer from './components/Drawer'
 import Export from './components/Export'
 import ZSlider from './components/ZSlider'
@@ -38,6 +38,10 @@ export default function App() {
       if (source === 'api') {
         const r = await recompute(result.id, body)
         setResult(r)
+      } else if (source === 'static') {
+        const { result: r, note } = await staticRecompute(result.id, body)
+        setResult(r)
+        if (note) setError(note)
       } else {
         // mock mode: no server to recompute; only echo the parameter so the UI stays honest
         setResult({ ...result, params: { ...result.params, ...body }, stats: { ...result.stats, z_year: body.z_year } })
@@ -82,6 +86,7 @@ export default function App() {
           <small>Enterprise Cryptographic Discovery &amp; Analysis · CBOM analytics</small>
           <span className="badge amber">PROTOTYPE</span>
           {source === 'mock' ? <span className="badge red">MOCK DATA</span> : null}
+          {source === 'static' ? <span className="badge amber" title="Real ECDAT scans, precomputed at the Z presets; no server">STATIC DEMO · real scans</span> : null}
         </div>
         <nav className="tabs">
           {(['overview', 'matrix', 'assets', 'plan'] as View[]).map((v) => (

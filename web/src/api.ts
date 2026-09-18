@@ -1,6 +1,6 @@
 import type { Params, ResultSummary, ScanResult } from './types'
 
-export type Source = 'api' | 'mock'
+export type Source = 'api' | 'static' | 'mock'
 
 const TIMEOUT_MS = 6000
 
@@ -21,11 +21,46 @@ export async function loadMock(): Promise<ScanResult> {
   return (m.default ?? m) as unknown as ScanResult
 }
 
+/* ---------- static mode (GitHub Pages): real scans, precomputed at the Z presets and both profiles ---------- */
+interface StaticVariant { z_year: number; profile: string; engineers: number; months: number; file: string }
+interface StaticScan extends ResultSummary { default: string; variants: StaticVariant[]; exports: Record<string, string> }
+let staticScans: StaticScan[] | null = null
+
+async function loadStaticIndex(): Promise<StaticScan[] | null> {
+  try {
+    const idx = await get<{ scans: StaticScan[] }>('./static/index.json')
+    staticScans = idx.scans?.length ? idx.scans : null
+  } catch {
+    staticScans = null
+  }
+  return staticScans
+}
+
+const staticScan = (id: string) => staticScans?.find((s) => s.id === id)
+
+/** Static-mode stand-in for the recompute endpoint: pick the precomputed variant, snapping Z to the nearest preset. */
+export async function staticRecompute(id: string, body: RecomputeBody): Promise<{ result: ScanResult; note: string | null }> {
+  const scan = staticScan(id)
+  if (!scan) throw new Error('static demo: unknown scan')
+  const base = scan.variants.find((v) => v.file === scan.default)!
+  if (body.engineers !== base.engineers || body.months !== base.months) {
+    throw new Error(`static demo: the plan is precomputed for ${base.engineers} engineers x ${base.months} months; install ECDAT locally to replan any budget`)
+  }
+  const pool = scan.variants.filter((v) => v.profile === body.profile)
+  const pick = pool.reduce((a, b) => (Math.abs(b.z_year - body.z_year) < Math.abs(a.z_year - body.z_year) ? b : a))
+  const result = await get<ScanResult>(`./static/${pick.file}`)
+  const note = pick.z_year === body.z_year ? null
+    : `static demo: Z snaps to the precomputed presets (${[...new Set(pool.map((v) => v.z_year))].join(' / ')}); a local install recomputes any year`
+  return { result, note }
+}
+
 export async function listResults(): Promise<ResultSummary[]> {
   return get<ResultSummary[]>('/api/results')
 }
 
 export async function fetchResult(id: string): Promise<ScanResult> {
+  const scan = staticScan(id)
+  if (scan) return get<ScanResult>(`./static/${scan.default}`)
   return get<ScanResult>(`/api/results/${encodeURIComponent(id)}`)
 }
 
@@ -39,7 +74,12 @@ export async function loadInitial(): Promise<{ result: ScanResult; source: Sourc
       return { result, source: 'api', available: list }
     }
   } catch {
-    /* fall through to mock */
+    /* no server: try the static bundle, then the built-in mock */
+  }
+  const scans = await loadStaticIndex()
+  if (scans) {
+    const first = scans[0]
+    return { result: await get<ScanResult>(`./static/${first.default}`), source: 'static', available: scans }
   }
   return { result: await loadMock(), source: 'mock', available: [] }
 }
@@ -64,6 +104,8 @@ export async function recompute(id: string, body: RecomputeBody): Promise<ScanRe
 export type ExportKind = 'cbom' | 'vex' | 'sarif' | 'csv' | 'report.html' | 'report.pdf'
 
 export function exportUrl(id: string, kind: ExportKind): string {
+  const scan = staticScan(id)
+  if (scan) return scan.exports[kind] ? `./static/${scan.exports[kind]}` : '#'
   return `/api/results/${encodeURIComponent(id)}/${kind}`
 }
 

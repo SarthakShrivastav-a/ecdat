@@ -91,3 +91,21 @@ def test_priority_and_recompute_moves_tiers():
     ext = [a for a in res.assets if a.name == "RSA" and a.exposure["zone"] == "external"][0]
     assert ext.risk.priority > 0
     assert res.stats["z_year"] == 2032 and res.stats["assets"] == 4
+
+
+def test_library_capability_only_never_drives_act_now_or_plan():
+    # the dependency *can* provide 3DES / RSA, but no use was observed in the codebase
+    tdes = _asset("3DES", "block-cipher", x=10, y=3)
+    tdes.context.update({"from_library_only": True, "corroborated": False})
+    r = mosca.assess(tdes, ScanParams(z_year=2041, now_year=2026), kb)
+    assert r.tier == "MONITOR"
+    assert r.priority == 0.0
+    assert any("library capability only" in s for s in r.reasons)
+    # the same algorithm seen in code keeps its real tier
+    seen = _asset("3DES", "block-cipher", x=10, y=3)
+    assert mosca.assess(seen, ScanParams(z_year=2041, now_year=2026), kb).tier == "ACT_NOW"
+    # corroborated by another collector: real use, real tier
+    corr = _asset("3DES", "block-cipher", x=10, y=3)
+    corr.context.update({"from_library_only": True, "corroborated": True})
+    assert mosca.assess(corr, ScanParams(z_year=2041, now_year=2026), kb).tier == "ACT_NOW"
+    assert mosca.summarize([tdes, seen])["library_capability_only"] == 1

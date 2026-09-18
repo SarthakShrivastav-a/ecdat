@@ -65,12 +65,21 @@ def assess(asset: CryptoAsset, params: ScanParams, kb: KnowledgeBase | None = No
     else:
         tier = "MONITOR"
 
+    # A dependency that *can* provide an algorithm is inventory, not evidence of use. Keep it in the CBOM
+    # (CERT-In 8.4.2.4 dependency mapping) but never let it drive ACT_NOW/EXPOSED or the migration plan.
+    capability_only = bool(asset.context.get("from_library_only")) and not asset.context.get("corroborated")
+    if capability_only and tier in ("EXPOSED", "ACT_NOW"):
+        tier = "MONITOR"
+        reasons.append("library capability only: the dependency provides this algorithm but no use was observed in this codebase")
+
     if not hndl and qclass in ("broken", "weakened") and exposure.get("signing_only"):
         reasons.append("signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven")
 
     zone_mult = 1.5 if exposure.get("zone") == "external" else 1.0
     legacy_bonus = 0.5 if qclass == "legacy-broken" and tier != "SAFE" else 0.0
     priority = (asset.criticality_multiplier or 1.0) * (TIER_WEIGHT[tier] + legacy_bonus) * zone_mult * (1 + min(x, 30.0) / 30.0)
+    if capability_only:
+        priority = 0.0
     ra = RiskAssessment(quantum_class=qclass, reason=q.get("reason", ""), hndl_applicable=hndl, x=x, y=y, z=z,
                         mosca_gap=round(gap, 2), tier=tier, priority=round(priority, 3), deadline_year=deadline,
                         overlays=over, reasons=reasons)
@@ -99,9 +108,12 @@ def summarize(assets: list[CryptoAsset]) -> dict:
     tiers = {"EXPOSED": 0, "ACT_NOW": 0, "MONITOR": 0, "SAFE": 0}
     classes: dict[str, int] = {}
     hndl = 0
+    capability_only = 0
     for a in assets:
         if a.risk:
             tiers[a.risk.tier] = tiers.get(a.risk.tier, 0) + 1
             classes[a.risk.quantum_class] = classes.get(a.risk.quantum_class, 0) + 1
             hndl += int(a.risk.hndl_applicable)
-    return {"assets": len(assets), "tiers": tiers, "quantum_classes": classes, "hndl_applicable": hndl}
+        capability_only += int(bool(a.context.get("from_library_only")) and not a.context.get("corroborated"))
+    return {"assets": len(assets), "tiers": tiers, "quantum_classes": classes, "hndl_applicable": hndl,
+            "library_capability_only": capability_only}

@@ -47,9 +47,13 @@ def repo_summary(row: dict, result: dict) -> dict:
     prod = [a for a in obs if _production(a)]
     tiers = Counter((a.get("risk") or {}).get("tier") for a in obs)
     qc = lambda a: (a.get("risk") or {}).get("quantum_class")  # noqa: E731
-    algo = [a for a in prod if a.get("asset_type") in ALGO_TYPES]
+    # algorithms and key material count as use; a protocol counts only when it ENABLES a legacy version
+    # (a bare "TLS" mention or a TLS 1.2 constant is not a vulnerable algorithm)
+    algo = [a for a in prod if a.get("asset_type") in ("algorithm", "related-crypto-material")]
+    legacy_proto = [a for a in prod if a.get("asset_type") == "protocol" and qc(a) == "legacy-broken"]
     shor = sorted({_alg_label(a) for a in algo if qc(a) == "broken"})
-    legacy = sorted({_alg_label(a) for a in algo if qc(a) == "legacy-broken"})
+    legacy = sorted({_alg_label(a) for a in algo if qc(a) == "legacy-broken"}
+                    | {f"{a['name']} {','.join((a.get('props') or {}).get('versions') or [])}".strip() for a in legacy_proto})
     pqc = sorted({_alg_label(a) for a in obs if _is_pqc(a)})
     certs = [a for a in obs if a.get("asset_type") == "certificate"]
     cert_keys = Counter(_cert_key(a) for a in certs)

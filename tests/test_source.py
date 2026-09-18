@@ -78,3 +78,17 @@ def test_helpers():
     assert parse_java_signature("SHA256withECDSA", kb)["hash"] == "SHA-256"
     d = parse_cipher_name("aes-128-cbc", kb)
     assert d["algorithm"] == "AES-128" and d["mode"] == "CBC"
+
+
+def test_config_versions_respect_negation():
+    from ecdat.collectors.source import enabled_versions
+    assert enabled_versions("all -SSLv2 -SSLv3 -TLSv1 -TLSv1.1") == ["TLSv1.2", "TLSv1.3"]
+    assert enabled_versions("TLSv1 TLSv1.1 TLSv1.2") == ["TLSv1.0", "TLSv1.1", "TLSv1.2"]
+    assert enabled_versions("TLSv1.2 TLSv1.3;") == ["TLSv1.2", "TLSv1.3"]
+    assert enabled_versions("-ALL +TLSv1.3") == ["TLSv1.3"]
+
+
+def test_cipher_suite_sha_is_hmac_not_bare_sha1():
+    from ecdat.collectors.source import suite_algorithms
+    names = [a for a, _, _ in suite_algorithms("ECDHE-RSA-AES128-SHA")]
+    assert "HMAC" in names and "SHA-1" not in names

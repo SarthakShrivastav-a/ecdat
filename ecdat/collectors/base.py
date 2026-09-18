@@ -12,6 +12,18 @@ from ecdat.model import RawFinding
 SKIP_DIRS = {".git", "node_modules", ".venv", "venv", "dist", "build", "__pycache__", ".idea", ".tox",
              "site-packages", ".mypy_cache", ".pytest_cache", "target", ".gradle"}
 TEST_PARTS = {"test", "tests", "spec", "specs", "__tests__", "testdata", "mocks", "e2e"}
+TEST_WORDS = {"test", "tests", "testing", "testutil", "testutils", "fixture", "fixtures", "integration_tests", "integrationtests"}
+NOT_TEST = {"latest", "contest", "attest", "protest", "detest", "greatest", "fastest"}
+
+
+def _is_test_dir(part: str) -> bool:
+    """test/, but also caddytest/, certbot-compatibility-test/, certbot_integration_tests/, test-utils/ (not latest/)."""
+    if part in TEST_PARTS:
+        return True
+    if part in NOT_TEST:
+        return False
+    words = [w for w in part.replace("-", "_").replace(".", "_").split("_") if w]
+    return any(w in TEST_WORDS for w in words) or (part.isalnum() and part.endswith(("test", "tests")) and len(part) > 5)
 VENDOR_PARTS = {"vendor", "vendors", "third_party", "thirdparty", "external", "node_modules", "deps", "contrib"}
 BINARY_MAGIC = (b"\x7fELF", b"MZ", b"\xcf\xfa\xed\xfe", b"\xfe\xed\xfa\xcf", b"\xca\xfe\xba\xbe", b"PK\x03\x04",
                 b"\x00asm")
@@ -75,7 +87,7 @@ def rel(path: Path, root: str | Path) -> str:
 def path_context(path: str | Path) -> dict:
     parts = [p.lower() for p in Path(path).parts]
     name = Path(path).name.lower()
-    is_test = any(p in TEST_PARTS for p in parts[:-1]) or name.startswith("test_") or name.endswith("_test.go") \
+    is_test = any(_is_test_dir(p) for p in parts[:-1]) or name.startswith("test_") or name.endswith("_test.go") \
         or ".test." in name or ".spec." in name or name.endswith("test.java") or name.endswith("tests.py")
     is_vendored = any(p in VENDOR_PARTS for p in parts[:-1])
     is_example = any(p in {"example", "examples", "samples", "demo", "docs"} for p in parts[:-1])

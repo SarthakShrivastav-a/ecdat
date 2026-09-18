@@ -108,7 +108,8 @@ SUITE_TOKENS = {
     "AES128": ("AES-128", "block-cipher"), "AES256": ("AES-256", "block-cipher"), "AES": ("AES", "block-cipher"),
     "CHACHA20": ("ChaCha20", "ae"), "POLY1305": (None, None), "3DES": ("3DES", "block-cipher"),
     "DES": ("DES", "block-cipher"), "CBC3": ("3DES", "block-cipher"), "RC4": ("RC4", "stream-cipher"),
-    "MD5": ("MD5", "hash"), "SHA": ("SHA-1", "hash"), "SHA1": ("SHA-1", "hash"), "SHA256": ("SHA-256", "hash"),
+    # suite "...-SHA" is the HMAC-SHA1 record MAC (still sound), not a bare SHA-1 hash
+    "MD5": ("MD5", "hash"), "SHA": ("HMAC", "mac"), "SHA1": ("HMAC", "mac"), "SHA256": ("SHA-256", "hash"),
     "SHA384": ("SHA-384", "hash"), "SHA512": ("SHA-512", "hash"), "NULL": (None, None), "GCM": (None, None),
     "CCM": (None, None), "EXPORT": (None, None), "ANON": (None, None), "CAMELLIA128": (None, None),
     "CAMELLIA256": (None, None), "MLKEM768": ("ML-KEM-768", "kem"), "X25519MLKEM768": ("X25519MLKEM768", "combiner"),
@@ -142,6 +143,36 @@ def suite_algorithms(suite: str) -> list[tuple[str, str, str | None]]:
 
 
 VERSION_RE = re.compile(r"(TLSv1(?:\.[0-3])?|TLS1[._]?[0-3]|SSLv?[23]|TLSv1_[0-3]|TLS1_[0-3]_VERSION|SSL3_VERSION|TLS1_VERSION)", re.I)
+
+
+ALL_TLS = ["TLSv1.0", "TLSv1.1", "TLSv1.2", "TLSv1.3"]
+
+
+def enabled_versions(val: str) -> list[str]:
+    """Versions a config directive actually ENABLES. 'all -SSLv3 -TLSv1 -TLSv1.1' -> TLSv1.2, TLSv1.3.
+    Apache/nginx/OpenSSL use '-' / '!' to disable; listing a version to switch it off is not using it."""
+    enabled: set[str] = set()
+    touched = False
+    for tok in re.split(r"[\s,:;]+", val.strip().strip("\"'")):
+        if not tok:
+            continue
+        neg = tok[0] in "-!"
+        core = tok.lstrip("+-!")
+        if core.lower() == "all":
+            touched = True
+            enabled = set() if neg else set(ALL_TLS)
+            continue
+        found = [normalise_version(v) for v in VERSION_RE.findall(core)]
+        if not found:
+            continue
+        touched = True
+        for v in found:
+            if neg:
+                enabled.discard(v)
+            else:
+                enabled.add(v)
+    order = {v: i for i, v in enumerate(["SSLv2", "SSLv3"] + ALL_TLS)}
+    return sorted(enabled, key=lambda v: order.get(v, 99)) if touched else []
 
 
 def normalise_version(v: str) -> str:
@@ -492,7 +523,7 @@ class SourceCollector(Collector):
             if d.get("protocol"):
                 props["type"] = d["protocol"].lower()
                 if parse == "versions":
-                    props["versions"] = [normalise_version(v) for v in VERSION_RE.findall(val)] or [val]
+                    props["versions"] = enabled_versions(val) or [val]
                 elif parse == "cipher_string":
                     suites = [s for s in re.split(r"[:, ]+", val) if s and not s.startswith(("!", "-"))]
                     props["cipher_suites"] = suites

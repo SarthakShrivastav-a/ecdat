@@ -39,3 +39,15 @@ def test_nist_pqc_reference_api_is_not_ed25519():
     text = (pathlib.Path(__file__).parents[1] / "ecdat" / "knowledge" / "source_patterns.yaml").read_text(encoding="utf-8")
     assert "{callee: crypto_sign_keypair," not in text
     assert "crypto_sign_ed25519_keypair" in text
+
+
+def test_non_standard_test_dirs_and_identifiers():
+    from ecdat.collectors.base import path_context
+    from ecdat.enrich.context import classify
+    for p in ("caddytest/leafcert.pem", "certbot-compatibility-test/nginx/a.conf", "src/certbot_integration_tests/x.py",
+              "pkg/testutil/keys.go", "test-fixtures/k.pem"):
+        assert path_context(p)["is_test"], p
+    for p in ("src/latest/app.py", "contest/main.go", "attest/sign.py"):
+        assert not path_context(p)["is_test"], p
+    fp = classify("SHA-1", "hash", "_thumb=\"$(_fingerprint \"$_ccert\" 'sha1')\"", "deploy/x.sh", {})
+    assert fp["usage"] == "non-security"

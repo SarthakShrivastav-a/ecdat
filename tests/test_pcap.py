@@ -39,4 +39,5 @@ def test_smtp_starttls_legacy(pcaps):
     assert proto.props["starttls"] is True and proto.props["app_protocol"] == "smtp"
     assert proto.props["negotiated"]["cipher_suite"] == "TLS_RSA_WITH_3DES_EDE_CBC_SHA" and proto.props["versions"] == ["TLSv1.0"]
     names = {f.name for f in fs if f.asset_type == "algorithm"}
-    assert "3DES" in names and "RSA" in names and "SHA-1" in names
+    # the suite's trailing SHA is the HMAC-SHA1 record MAC, not a bare SHA-1 hash
+    assert "3DES" in names and "RSA" in names and "HMAC" in names and "SHA-1" not in names

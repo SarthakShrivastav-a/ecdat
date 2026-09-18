@@ -109,3 +109,13 @@ def test_library_capability_only_never_drives_act_now_or_plan():
     corr.context.update({"from_library_only": True, "corroborated": True})
     assert mosca.assess(corr, ScanParams(z_year=2041, now_year=2026), kb).tier == "ACT_NOW"
     assert mosca.summarize([tdes, seen])["library_capability_only"] == 1
+
+
+def test_recompute_keeps_scan_stats():
+    a = _asset("RSA", "pke", x=10, y=3, props={"function": "encrypt"})
+    res = ScanResult(name="t", assets=[a], params=ScanParams(z_year=2041, now_year=2026),
+                     stats={"collectors": {"per_collector": {"source": 3}}, "certin": {"overall_pct": 70.0}})
+    mosca.recompute(res, ScanParams(z_year=2032, now_year=2026), kb)
+    assert res.stats["collectors"]["per_collector"]["source"] == 3
+    assert res.stats["certin"]["overall_pct"] == 70.0
+    assert res.stats["z_year"] == 2032 and "tiers" in res.stats

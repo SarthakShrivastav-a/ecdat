@@ -109,7 +109,7 @@ export default function App() {
             {available.map((s) => <option key={s.id} value={s.id}>{s.name} · {s.timestamp?.slice(0, 16)}</option>)}
           </select>
         ) : null}
-        <Export id={result.id} disabled={source !== 'api'} />
+        <Export id={result.id} disabled={source === 'mock'} />
       </header>
 
       <main className="main">

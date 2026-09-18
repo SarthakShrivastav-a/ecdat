@@ -99,7 +99,8 @@ def recompute(result: ScanResult, params: ScanParams, kb: KnowledgeBase | None =
     result.params = params
     for a in result.assets:
         assess(a, params, kb)
-    result.stats = summarize(result.assets)
+    # update the risk counts, keep everything the scan measured (collectors, CERT-In, runtimes, timings)
+    result.stats = {**(result.stats or {}), **summarize(result.assets)}
     result.stats["z_year"] = params.z_year
     return result
 

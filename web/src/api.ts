@@ -66,6 +66,11 @@ export async function fetchResult(id: string): Promise<ScanResult> {
 
 /** Load the newest scan from the API; fall back to the bundled mock when the server is unreachable. */
 export async function loadInitial(): Promise<{ result: ScanResult; source: Source; available: ResultSummary[] }> {
+  // a static bundle next to the app wins (GitHub Pages); otherwise talk to `ecdat serve`
+  const bundled = await loadStaticIndex()
+  if (bundled) {
+    return { result: await get<ScanResult>(`./static/${bundled[0].default}`), source: 'static', available: bundled }
+  }
   try {
     const list = await listResults()
     if (list.length) {
@@ -74,12 +79,7 @@ export async function loadInitial(): Promise<{ result: ScanResult; source: Sourc
       return { result, source: 'api', available: list }
     }
   } catch {
-    /* no server: try the static bundle, then the built-in mock */
-  }
-  const scans = await loadStaticIndex()
-  if (scans) {
-    const first = scans[0]
-    return { result: await get<ScanResult>(`./static/${first.default}`), source: 'static', available: scans }
+    /* no server and no static bundle: fall back to the built-in sample */
   }
   return { result: await loadMock(), source: 'mock', available: [] }
 }

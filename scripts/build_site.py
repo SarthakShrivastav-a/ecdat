@@ -208,7 +208,7 @@ def snapshot_svg(sectors: dict, india: dict, width: int = 900) -> str:
         else:
             parts.append(f"<line x1='{label_w}' y1='{y}' x2='{label_w}' y2='{y + bar_h}' stroke='{colour}' stroke-width='2'/>")
         parts.append(f"<rect x='{label_w}' y='{y - gap / 2}' width='{plot_w}' height='{bar_h + gap}' fill='transparent'/>"
-                     f"<text x='{label_w + w + 8:.1f}' y='{y + bar_h * 0.72:.1f}' font-size='14' fill='var(--ink)'{bold}>{pct:g}%</text>"
+                     f"<text x='{label_w + w + 8:.1f}' y='{y + bar_h * 0.72:.1f}' font-size='14' fill='var(--ink)'{bold}>{pct:.1f}%</text>"
                      f"<text x='{width - 4}' y='{y + bar_h * 0.72:.1f}' font-size='12' fill='var(--muted)' text-anchor='end'>n={n}</text></g>")
     parts.append("</svg>")
     return "".join(parts)
@@ -242,8 +242,12 @@ not necessarily its internal systems. Snapshot, not a ranking.</p>"""
     dest = SITE / "snapshot"
     dest.mkdir(parents=True)
     (dest / "index.html").write_text(page("ECDAT · India quantum-readiness snapshot", body, 1), encoding="utf-8")
-    (dest / "chart.html").write_text(page("snapshot chart", f"<p class='small'><span style='color:var(--india)'>■</span> Indian sector &nbsp; "
-                                          f"<span style='color:var(--ref)'>■</span> global reference</p>{svg}", 1), encoding="utf-8")
+    # bare chart for the slide export (no page chrome): screenshot #chart
+    (dest / "chart.html").write_text(
+        f"<!doctype html><html><head><meta charset='utf-8'><link rel='icon' href='data:,'><style>{CSS}</style></head><body>"
+        f"<div id='chart' style='padding:16px 20px;background:var(--surface)'><p class='small' style='margin:0 0 4px'>"
+        f"<span style='color:var(--india)'>■</span> Indian sector &nbsp; <span style='color:var(--ref)'>■</span> global reference</p>{svg}</div>"
+        f"</body></html>", encoding="utf-8")
     (dest / "survey.json").write_text(json.dumps({"taken_utc": s["taken_utc"], "sectors": s["sectors"]}, indent=1), encoding="utf-8")
     return s
 
@@ -282,8 +286,10 @@ def main() -> None:
     ap.add_argument("--video-url", default="")
     ap.add_argument("--team", default="Team <name>")
     a = ap.parse_args()
-    shutil.rmtree(SITE, ignore_errors=True)
-    SITE.mkdir(parents=True)
+    # empty the folder rather than deleting it (a local preview server may hold it as its working directory)
+    SITE.mkdir(parents=True, exist_ok=True)
+    for child in SITE.iterdir():
+        shutil.rmtree(child) if child.is_dir() else child.unlink()
     pub = OUT / "atlas" / "scans" / "keys" / "ecdat-mldsa65.pub"
     shutil.copy(pub, SITE / "ecdat-mldsa65.pub")
     fpr = hashlib.sha256(base64.b64decode(pub.read_text().strip())).hexdigest()

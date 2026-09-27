@@ -18,7 +18,6 @@ export default function ZSlider({ zYear, nowYear, busy, onChange }: Props) {
   }
   return (
     <div className="zslider" title="Z = year a cryptographically relevant quantum computer is assumed to exist. Drag it: tiers recompute live.">
-      <span className="muted small">Z (CRQC year)</span>
       <input
         type="range"
         min={2028}
@@ -31,8 +30,10 @@ export default function ZSlider({ zYear, nowYear, busy, onChange }: Props) {
         onTouchEnd={() => commit(local)}
         onKeyUp={() => commit(local)}
       />
-      <span className="year">{local}</span>
-      <span className="dim small mono">({local - nowYear}y)</span>
+      <span className="knob">
+        <span className="year">{local}</span>
+        <span className="in">in {local - nowYear}y</span>
+      </span>
       <span className="presets">
         {Z_PRESETS.map((p) => (
           <button key={p.key} className={zYear === p.year ? 'active' : ''} disabled={busy} onClick={() => commit(p.year)} title={p.label}>

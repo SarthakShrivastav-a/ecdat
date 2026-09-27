@@ -7,9 +7,9 @@ interface Props {
   onSelect: (a: Asset) => void
 }
 
-const W = 900
-const H = 480
-const PAD = { l: 56, r: 24, t: 24, b: 44 }
+const W = 1320
+const H = 520
+const PAD = { l: 66, r: 30, t: 30, b: 54 }
 
 /** Risk x agility 2x2. x = agility.total (0 = rigid, left; 100 = agile, right). y = risk priority. */
 export default function Matrix({ assets, onSelect }: Props) {
@@ -33,13 +33,17 @@ export default function Matrix({ assets, onSelect }: Props) {
     </g>
   )
   return (
-    <div className="panel">
-      <div className="row between">
-        <h2 style={{ margin: 0 }}>Risk x crypto-agility</h2>
+    <section className="panel">
+      <div className="row between" style={{ flexWrap: 'wrap' }}>
+        <h2 style={{ margin: 0 }}>Risk against how hard the fix is</h2>
         <label className="small muted"><input type="checkbox" checked={hideSafe} onChange={(e) => setHideSafe(e.target.checked)} /> hide SAFE</label>
       </div>
       <svg className="chart" viewBox={`0 0 ${W} ${H}`} role="img" aria-label="risk versus agility scatter">
-        <rect x={PAD.l} y={PAD.t} width={iw} height={ih} fill="#06111f" stroke="var(--line)" />
+        <rect x={PAD.l} y={PAD.t} width={iw} height={ih} fill="#050f1c" stroke="var(--line)" />
+        <rect x={PAD.l} y={PAD.t} width={iw / 2} height={ih / 2} fill="rgba(255, 98, 87, 0.07)" />
+        <rect x={midX} y={PAD.t} width={iw / 2} height={ih / 2} fill="rgba(242, 177, 52, 0.07)" />
+        <rect x={PAD.l} y={midY} width={iw / 2} height={ih / 2} fill="rgba(111, 169, 255, 0.03)" />
+        <rect x={midX} y={midY} width={iw / 2} height={ih / 2} fill="rgba(79, 209, 139, 0.05)" />
         <line x1={midX} x2={midX} y1={PAD.t} y2={PAD.t + ih} stroke="var(--line-2)" strokeDasharray="4 4" />
         <line x1={PAD.l} x2={PAD.l + iw} y1={midY} y2={midY} stroke="var(--line-2)" strokeDasharray="4 4" />
         {quadrant(PAD.l + 10, PAD.t + 18, 'START PLANNING NOW', 'high risk, hard to change')}
@@ -56,11 +60,11 @@ export default function Matrix({ assets, onSelect }: Props) {
             key={a.bom_ref}
             cx={x(a)}
             cy={y(a)}
-            r={hover === a ? 8 : 5.5}
+            r={hover === a ? 9 : 5.5}
             fill={TIER_COLOR[a.risk!.tier]}
             fillOpacity={0.85}
-            stroke={hover === a ? '#fff' : '#06111f'}
-            strokeWidth={1}
+            stroke={hover === a ? '#ffffff' : '#050f1c'}
+            strokeWidth={hover === a ? 1.5 : 1}
             style={{ cursor: 'pointer' }}
             onMouseEnter={() => setHover(a)}
             onMouseLeave={() => setHover(null)}
@@ -81,10 +85,13 @@ export default function Matrix({ assets, onSelect }: Props) {
           </g>
         ) : null}
       </svg>
+      <div className="small dim" style={{ marginTop: 'var(--s2)' }}>
+        Top-left is the expensive work that cannot be rushed; top-right is what a sprint can finish this quarter.
+      </div>
       <div className="legend">
         {TIERS.map((t) => (<span key={t}><i style={{ background: TIER_COLOR[t] }} />{TIER_LABEL[t]}</span>))}
         <span className="dim">{pts.length} assets plotted · click a dot for evidence and the recommendation</span>
       </div>
-    </div>
+    </section>
   )
 }

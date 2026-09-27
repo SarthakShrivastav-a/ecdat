@@ -1,5 +1,5 @@
 import type { Asset } from '../types'
-import { TIER_LABEL } from '../types'
+import { TIER_COLOR, TIER_LABEL } from '../types'
 
 const DIM_LABEL: Record<string, string> = {
   algorithm_coupling: 'algorithm coupling',
@@ -26,7 +26,13 @@ export default function Drawer({ asset, onClose }: { asset: Asset; onClose: () =
   return (
     <>
       <div className="drawer-backdrop" onClick={onClose} />
-      <aside className="drawer" role="dialog" aria-label={`asset ${asset.name}`}>
+      <aside
+        className="drawer"
+        role="dialog"
+        aria-modal="true"
+        aria-label={`asset ${asset.name}`}
+        style={r ? { borderTop: '3px solid ' + TIER_COLOR[r.tier] } : undefined}
+      >
         <button className="close" onClick={onClose}>close</button>
         <h2>
           {asset.name}

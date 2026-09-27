@@ -11,6 +11,13 @@ import Plan from './views/Plan'
 
 type View = 'overview' | 'matrix' | 'assets' | 'plan'
 
+const VIEWS: { id: View; label: string; hint: string }[] = [
+  { id: 'overview', label: 'overview', hint: 'the verdict at this Z' },
+  { id: 'matrix', label: 'matrix', hint: 'risk against how hard each fix is' },
+  { id: 'assets', label: 'assets', hint: 'every finding with its evidence' },
+  { id: 'plan', label: 'plan', hint: 'what fits the budget, in order' },
+]
+
 export default function App() {
   const [result, setResult] = useState<ScanResult | null>(null)
   const [source, setSource] = useState<Source>('mock')
@@ -74,74 +81,138 @@ export default function App() {
     }
   }, [result, byRef, selected])
 
-  if (!result) return <div className="center">loading ECDAT results...</div>
+  // Escape closes the drawer; 1-4 switch views when not typing
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      const el = document.activeElement
+      const typing = el instanceof HTMLInputElement || el instanceof HTMLSelectElement || el instanceof HTMLTextAreaElement
+      if (e.key === 'Escape') setSelected(null)
+      if (!typing && e.key >= '1' && e.key <= '4') setView(VIEWS[Number(e.key) - 1].id)
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [])
+
+  if (!result) {
+    return (
+      <div className="center">
+        <div className="mono busy">reading ECDAT results…</div>
+      </div>
+    )
+  }
 
   const openTier = (t: Tier) => { setTierFilter(t); setView('assets') }
+  const versions = Object.entries(result.tool_versions || {}).filter(([, v]) => v)
 
   return (
     <div className="app">
       <header className="topbar">
         <div className="brand">
+          <span className="tick" aria-hidden />
           <h1>EC<span>DAT</span></h1>
-          <small>Enterprise Cryptographic Discovery &amp; Analysis · CBOM analytics</small>
-          <span className="badge amber">PROTOTYPE</span>
-          {source === 'mock' ? <span className="badge red">MOCK DATA</span> : null}
-          {source === 'static' ? <span className="badge amber" title="Real ECDAT scans, precomputed at the Z presets; no server">STATIC DEMO · real scans</span> : null}
+          <small>cryptographic discovery &amp; analysis</small>
+          {source === 'mock' ? <span className="badge red"><i className="dot" />mock data</span> : null}
+          {source === 'static' ? (
+            <span className="badge amber" title="Real ECDAT scans, precomputed at the Z presets; no server needed">
+              <i className="dot" />real scan · static
+            </span>
+          ) : null}
+          {source === 'api' ? <span className="badge amber"><i className="dot" />live server</span> : null}
         </div>
-        <nav className="tabs">
-          {(['overview', 'matrix', 'assets', 'plan'] as View[]).map((v) => (
-            <button key={v} className={view === v ? 'active' : ''} onClick={() => setView(v)}>{v}</button>
+
+        <nav className="tabs" role="tablist" aria-label="views">
+          {VIEWS.map((v) => (
+            <button
+              key={v.id}
+              role="tab"
+              aria-selected={view === v.id}
+              className={view === v.id ? 'active' : ''}
+              onClick={() => setView(v.id)}
+              title={v.hint}
+            >
+              {v.label}
+            </button>
           ))}
         </nav>
-        <div className="spacer" />
-        <ZSlider zYear={result.params.z_year} nowYear={result.params.now_year} busy={busy} onChange={(z) => applyParams({ z_year: z })} />
-        <select
-          value={result.params.profile}
-          disabled={busy}
-          onChange={(e) => applyParams({ profile: e.target.value })}
-          title="DST roadmap profile: CII deadlines 2027/2028/2029, enterprise 2028/2030/2033"
-        >
-          <option value="cii">profile: CII</option>
-          <option value="enterprise">profile: enterprise</option>
-        </select>
-        {available.length > 1 ? (
-          <select value={result.id} disabled={busy} onChange={(e) => switchScan(e.target.value)}>
-            {available.map((s) => <option key={s.id} value={s.id}>{s.name} · {s.timestamp?.slice(0, 16)}</option>)}
-          </select>
-        ) : null}
-        <Export id={result.id} disabled={source === 'mock'} />
+
+        <div className="right">
+          <span className="status mono" title="assets · components · when this scan ran">
+            {result.assets.length} assets · {result.components.length} comp
+          </span>
+          <Export id={result.id} disabled={source === 'mock'} />
+        </div>
       </header>
 
-      <main className="main">
-        <div className="row between" style={{ marginBottom: 12, flexWrap: 'wrap' }}>
-          <span className="status">
-            scan <b className="mono">{result.name}</b> · {result.assets.length} assets · {result.components.length} components · {result.timestamp?.slice(0, 19).replace('T', ' ')}
-            {busy ? ' · recomputing...' : ''}
-          </span>
-          {error ? <span className="status" style={{ color: 'var(--act)' }}>{error}</span> : null}
+      <div className="rail">
+        <div className="cell">
+          <span className="lbl">quantum year (Z) — your assumption</span>
+          <ZSlider zYear={result.params.z_year} nowYear={result.params.now_year} busy={busy} onChange={(z) => applyParams({ z_year: z })} />
         </div>
-        {view === 'overview' ? <Overview result={result} onTier={openTier} /> : null}
-        {view === 'matrix' ? <Matrix assets={result.assets} onSelect={setSelected} /> : null}
-        {view === 'assets' ? (
-          <Assets assets={result.assets} selected={selected} onSelect={setSelected} initialTier={tierFilter} onTierChange={setTierFilter} />
+        <div className="cell">
+          <label htmlFor="profile">roadmap profile</label>
+          <select
+            id="profile"
+            value={result.params.profile}
+            disabled={busy}
+            onChange={(e) => applyParams({ profile: e.target.value })}
+            title="DST roadmap profile: CII deadlines 2027/2028/2029, enterprise 2028/2030/2033"
+          >
+            <option value="cii">critical infrastructure</option>
+            <option value="enterprise">enterprise</option>
+          </select>
+        </div>
+        <div className="cell grow">
+          <label htmlFor="scan">scan</label>
+          {available.length > 1 ? (
+            <select id="scan" value={result.id} disabled={busy} onChange={(e) => switchScan(e.target.value)}>
+              {available.map((s) => <option key={s.id} value={s.id}>{s.name} · {s.timestamp?.slice(0, 16).replace('T', ' ')}</option>)}
+            </select>
+          ) : (
+            <span className="mono small">{result.name} · {result.timestamp?.slice(0, 16).replace('T', ' ')}</span>
+          )}
+        </div>
+        {busy || error ? (
+          <div className="cell" style={{ justifyContent: 'flex-end' }}>
+            {busy ? <span className="status mono busy">recomputing…</span> : null}
+            {error ? <span className="status" style={{ color: 'var(--act)', maxWidth: 420 }}>{error}</span> : null}
+          </div>
         ) : null}
-        {view === 'plan' ? (
-          <Plan
-            plan={result.plan}
-            engineers={result.params.engineers}
-            months={result.params.months}
-            busy={busy}
-            onBudget={(engineers, months) => applyParams({ engineers, months })}
-            onSelect={(ref) => { const a = byRef.get(ref); if (a) setSelected(a) }}
-            assets={result.assets}
-          />
-        ) : null}
+      </div>
+
+      <main className="main">
+        <div key={view} className="stagger">
+          {view === 'overview' ? <Overview result={result} onTier={openTier} /> : null}
+          {view === 'matrix' ? <Matrix assets={result.assets} onSelect={setSelected} /> : null}
+          {view === 'assets' ? (
+            <Assets assets={result.assets} selected={selected} onSelect={setSelected} initialTier={tierFilter} onTierChange={setTierFilter} />
+          ) : null}
+          {view === 'plan' ? (
+            <Plan
+              plan={result.plan}
+              engineers={result.params.engineers}
+              months={result.params.months}
+              busy={busy}
+              onBudget={(engineers, months) => applyParams({ engineers, months })}
+              onSelect={(ref) => { const a = byRef.get(ref); if (a) setSelected(a) }}
+              assets={result.assets}
+            />
+          ) : null}
+        </div>
       </main>
 
       <footer className="footer">
-        ECDAT static prototype for SIH 2026 PS 26164 (NTRO). Z is a user assumption anchored to the Global Risk Institute 2025 timeline report, not a forecast.
-        Binary findings are best-effort. Mosca's inequality is applied only to confidentiality primitives; signatures and hashes are deadline-driven.
-        Tool versions: {Object.entries(result.tool_versions || {}).filter(([, v]) => v).map(([k, v]) => `${k} ${String(v).slice(0, 24)}`).join(' · ') || 'n/a'}
+        <details>
+          <summary>How to read this, and what it does not claim</summary>
+          <p>
+            Z is a user assumption anchored to the Global Risk Institute 2025 timeline report, not a forecast. Mosca's
+            inequality is applied only to confidentiality primitives; signatures and hashes are deadline-driven. Binary
+            findings prove presence, not use, and are capped at medium confidence. Findings that come only from a
+            dependency manifest are capped at MONITOR until a call site is seen.
+          </p>
+          <p className="mono" style={{ fontSize: 10.5 }}>
+            ECDAT prototype · SIH 2026 PS 26164 (NTRO) · {versions.map(([k, v]) => `${k} ${String(v).slice(0, 24)}`).join(' · ') || 'versions n/a'}
+          </p>
+        </details>
       </footer>
 
       {selected ? <Drawer asset={selected} onClose={() => setSelected(null)} /> : null}

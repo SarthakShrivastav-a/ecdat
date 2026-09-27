@@ -413,3 +413,20 @@ svg text { font-family: var(--mono); font-size: 11px; fill: var(--muted); }
     transition-duration: 0.001ms !important;
   }
 }
+
+/* ------------------------------------------------------------------ narrow: the topbar becomes rows */
+@media (max-width: 1200px) {
+  .topbar { grid-template-columns: 1fr; gap: var(--s2); padding: var(--s3) var(--s4); }
+  .tabs, .topbar .right { justify-self: start; flex-wrap: wrap; }
+  .tabs button { padding: 6px 10px; }
+  .main, .rail { padding-inline: var(--s4); }
+  .rail .cell { border-left: 0; padding-left: 0; }
+  .rail { gap: var(--s4) var(--s5); }
+}
+@media (max-width: 860px) {
+  .brand small { display: none; }
+  .verdict .headline { font-size: 28px; }
+  .zslider input[type='range'] { width: 140px; }
+  .kv, .dim-bar { grid-template-columns: 1fr; }
+  .dim-bar { gap: 2px; margin-bottom: var(--s2); }
+}

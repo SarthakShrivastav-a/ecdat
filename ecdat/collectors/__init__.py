@@ -1,6 +1,8 @@
 """Collector registry. Every collector implements Collector.collect(target, kb) -> list[RawFinding]."""
 from __future__ import annotations
 
+import time
+
 from typing import Callable
 
 from ecdat.collectors.base import Collector, Target
@@ -41,18 +43,22 @@ def run_collectors(targets: list[Target], kb: KnowledgeBase, enabled: set[str] |
     for t in targets:
         n_target = 0
         for coll in collectors_for(t, enabled):
+            if progress:
+                progress(t.name, coll.name, None, None, "start")
+            t_started = time.monotonic()
+            failed = False
             try:
                 fs = coll.collect(t, kb)
             except Exception as exc:
                 stats["errors"].append({"target": t.name, "collector": coll.name, "error": str(exc)[:300]})
-                fs = []
+                fs, failed = [], True
             for f in fs:
                 f.context.setdefault("zone", t.zone)
             findings += fs
             n_target += len(fs)
             stats["per_collector"][coll.name] = stats["per_collector"].get(coll.name, 0) + len(fs)
             if progress:
-                progress(t.name, coll.name, len(fs))
+                progress(t.name, coll.name, len(fs), round(time.monotonic() - t_started, 2), "done", failed)
         stats["per_target"][t.name] = n_target
     stats["total_findings"] = len(findings)
     return findings, stats

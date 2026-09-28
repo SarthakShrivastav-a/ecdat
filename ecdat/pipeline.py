@@ -65,9 +65,15 @@ def run(config: ScanConfig, progress: Progress | None = None) -> ScanResult:
     kb = KnowledgeBase()
     t0 = datetime.now(timezone.utc)
 
-    def prog(target: str, coll: str, n: int) -> None:
-        if progress:
-            progress("collect", f"{target}: {coll} -> {n} findings")
+    def prog(target: str, coll: str, n: int | None, secs: float | None = None,
+             state: str = "done", failed: bool = False) -> None:
+        if not progress:
+            return
+        if state == "start":
+            progress("collect-start", f"{target}: {coll}", target=target, collector=coll)
+        else:
+            progress("collect", f"{target}: {coll} -> {n} findings", target=target, collector=coll,
+                     findings=n, seconds=secs, error=failed)
 
     findings, cstats = run_collectors(config.targets, kb, config.collectors, prog)
     if progress:
@@ -75,7 +81,7 @@ def run(config: ScanConfig, progress: Progress | None = None) -> ScanResult:
     assets, components = merge.merge(findings, config.targets, kb)
     runtimes = _runtimes_by_component(findings)
     if progress:
-        progress("analyse", f"{len(assets)} assets, {len(components)} components")
+        progress("analyse", f"{len(assets)} assets to score")
     analyse(assets, components, config.params, kb, runtimes)
     result = ScanResult(name=config.name, targets=[t.to_dict() for t in config.targets], components=components, assets=assets,
                         params=config.params, stats={"collectors": cstats, "runtimes": runtimes}, tool_versions=tools.versions(),

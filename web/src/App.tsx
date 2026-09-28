@@ -18,11 +18,17 @@ const VIEWS: { id: View; label: string; hint: string }[] = [
   { id: 'plan', label: 'plan', hint: 'what fits the budget, in order' },
 ]
 
+/** #overview | #matrix | #assets | #plan - deep-links a view, for demos and for screenshots. */
+function viewFromHash(): View {
+  const h = (typeof location !== 'undefined' ? location.hash.replace('#', '') : '') as View
+  return VIEWS.some((v) => v.id === h) ? h : 'overview'
+}
+
 export default function App() {
   const [result, setResult] = useState<ScanResult | null>(null)
   const [source, setSource] = useState<Source>('mock')
   const [available, setAvailable] = useState<ResultSummary[]>([])
-  const [view, setView] = useState<View>('overview')
+  const [view, setView] = useState<View>(viewFromHash)
   const [selected, setSelected] = useState<Asset | null>(null)
   const [tierFilter, setTierFilter] = useState<Tier | 'all'>('all')
   const [busy, setBusy] = useState(false)
@@ -80,6 +86,16 @@ export default function App() {
       if (fresh && fresh !== selected) setSelected(fresh)
     }
   }, [result, byRef, selected])
+
+  // keep the address bar on the current view, and follow back/forward
+  useEffect(() => {
+    if (viewFromHash() !== view) history.replaceState(null, '', `#${view}`)
+  }, [view])
+  useEffect(() => {
+    const onHash = () => setView(viewFromHash())
+    window.addEventListener('hashchange', onHash)
+    return () => window.removeEventListener('hashchange', onHash)
+  }, [])
 
   // Escape closes the drawer; 1-4 switch views when not typing
   useEffect(() => {

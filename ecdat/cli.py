@@ -46,17 +46,40 @@ def scan(config: Path = typer.Option(..., "-c", "--config", exists=True, help="e
     if no_external_tools:
         import os
         os.environ["ECDAT_NO_EXTERNAL_TOOLS"] = "1"
-    console.print(f"[bold]ECDAT {__version__}[/] scanning [cyan]{cfg.name}[/] ({len(cfg.targets)} targets)")
-    with console.status("collecting...", spinner="line") as status:
-        def progress(stage, msg):
-            status.update(f"[{stage}] {msg}")
-            console.log(f"[{stage}] {msg}")
-        result = pipeline.run(cfg, progress)
+    from ecdat.tui import ScanReporter
+
+    svg = ScanReporter.wants_svg()
+    if svg:                                   # record the whole session for the README / the demo video
+        console.record = True
+    rep = ScanReporter(console, cfg, __version__)
+    rep.header()
+    seen: set[str] = set()
+
+    def progress(stage, msg, **data):
+        if stage in ("collect-start", "collect") and "collect" not in seen:
+            seen.add("collect")
+            rep.phase(1, "DISCOVER", "every collector that applies to every target")
+            rep.start_collect()
+        elif stage == "merge" and "merge" not in seen:
+            seen.add("merge")
+            rep.stop_collect()
+            rep.phase(2, "RECONCILE", "duplicates collapse into one asset with many proofs")
+            console.print(f"  {msg}")
+        elif stage == "analyse" and "analyse" not in seen:
+            seen.add("analyse")
+            rep.phase(3, "ANALYSE", "quantum class, HNDL scope, Mosca X + Y > Z, crypto-agility")
+            console.print(f"  {msg}")
+        rep.on_progress(stage, msg, **data)
+
+    result = pipeline.run(cfg, progress)
+    rep.stop_collect()
+    rep.phase(4, "DECIDE", "tiers at this Z, then a plan that fits the budget")
+    rep.tiers(result.stats)
     files = pipeline.write_outputs(result, out, sign=not no_sign)
-    _print_summary(result)
-    console.print("\n[bold]outputs[/]")
-    for k, v in files.items():
-        console.print(f"  {k:10s} {v}")
+    rep.summary(result, files)
+    if svg:
+        rep.save_svg(svg)
+        console.print(f"[dim]session saved to[/] {svg}")
     if not result.stats.get("cbom_valid", True):
         console.print(f"[red]CBOM failed schema validation:[/] {result.stats.get('cbom_errors')[:3]}")
         raise typer.Exit(2)

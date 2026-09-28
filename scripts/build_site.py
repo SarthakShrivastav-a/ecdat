@@ -188,8 +188,8 @@ def build_atlas() -> dict:
         for c in atlas["by_category"].values() if c["repos"]) + "</tbody></table>"
     body = f"""
 <h1>CBOM Atlas</h1>
-<p class='sub'>{o['repos']} public codebases scanned with ECDAT on 18 Sep 2026. Every row links to a CycloneDX 1.7 Cryptographic
-Bill of Materials signed with ML-DSA-65 (FIPS 204), a human-readable report and a VEX file.</p>
+<p class='sub'>We scanned {o['repos']} public codebases with our prototype on 18 Sep 2026. Every row links to the CycloneDX 1.7
+Cryptographic Bill of Materials we produced, signed with ML-DSA-65 (FIPS 204), together with its human-readable report and VEX file.</p>
 <div class='tiles'>{tile_html}</div>
 <h2>By category</h2>{cats}
 <h2>Every repository</h2>
@@ -201,8 +201,8 @@ Bill of Materials signed with ML-DSA-65 (FIPS 204), a human-readable report and 
 <h2>How to check our work</h2>
 <pre>git clone &lt;ecdat repo&gt; &amp;&amp; cd ecdat &amp;&amp; pip install -e .
 ecdat verify r/&lt;repo&gt;/cbom.json --pubkey ../ecdat-mldsa65.pub</pre>
-<p class='note'>"Observed" means found in the project's own code, configuration, certificates or binaries. Algorithms a dependency merely
-<i>can</i> provide are listed in the CBOM as dependency inventory ({o['library_capability_only']:,} of them) but never counted as use.
+<p class='note'>"Observed" means we found it in the project's own code, configuration, certificates or binaries. Algorithms a dependency merely
+<i>can</i> provide we list in the CBOM as dependency inventory ({o['library_capability_only']:,} of them) and never count as use.
 "Data kept for" is the assumption that drives Mosca's rule for that repository; change it and the tiers change. Quantum-vulnerable
 algorithms such as RSA are today's global default, not a flaw in any one project. Maintainers who want a row changed or removed can open
 an issue.</p>
@@ -275,21 +275,22 @@ def build_snapshot() -> dict:
                     for k, v in sectors.items())
     body = f"""
 <h1>India quantum-readiness snapshot</h1>
-<p class='sub'>Which public sites already negotiate hybrid post-quantum key exchange (X25519MLKEM768)? {india['reachable']} Indian public sites
-across NCIIPC's seven critical sectors, and 25 global reference sites. Taken {html.escape(s['taken_utc'].replace('T', ' ').replace('+00:00', ''))} UTC with ECDAT's protocol scanner.</p>
+<p class='sub'>We asked which public sites already negotiate hybrid post-quantum key exchange (X25519MLKEM768). We probed {india['reachable']} Indian
+public sites across NCIIPC's seven critical sectors, plus 25 global reference sites as a control, on
+{html.escape(s['taken_utc'].replace('T', ' ').replace('+00:00', ''))} UTC using our own protocol scanner.</p>
 <p class='small'><span style='color:var(--india)'>■</span> Indian sector &nbsp; <span style='color:var(--ref)'>■</span> global reference</p>
 {svg}
-<div class='tiles'><div class='tile'><div class='v'>{india['pq_hybrid_kex_pct']}%</div><div class='l'>of Indian sites use post-quantum key exchange (global reference: {sectors['Global reference']['pq_hybrid_kex_pct']}%)</div></div>
-<div class='tile'><div class='v'>{india['rsa_cert_pct']:.0f}%</div><div class='l'>of Indian sites present an RSA certificate</div></div>
-<div class='tile'><div class='v'>0%</div><div class='l'>post-quantum certificates anywhere: no public CA issues them yet</div></div>
+<div class='tiles'><div class='tile'><div class='v'>{india['pq_hybrid_kex_pct']}%</div><div class='l'>of the Indian sites we probed use post-quantum key exchange (our global reference: {sectors['Global reference']['pq_hybrid_kex_pct']}%)</div></div>
+<div class='tile'><div class='v'>{india['rsa_cert_pct']:.0f}%</div><div class='l'>of the Indian sites we probed present an RSA certificate</div></div>
+<div class='tile'><div class='v'>0%</div><div class='l'>post-quantum certificates in anything we probed: no public CA issues them yet</div></div>
 <div class='tile'><div class='v'>22 / 25</div><div class='l'>Indian sites that pass sit behind a CDN that enabled it for them</div></div></div>
 <details><summary>Table view</summary><table><thead><tr><th>sector</th><th class='num'>reachable / probed</th><th class='num'>hybrid PQ key exchange</th>
 <th class='num'>TLS 1.3</th><th class='num'>RSA leaf cert</th><th class='num'>ECDSA leaf cert</th></tr></thead><tbody>{table}</tbody></table></details>
 <h2>Method</h2>
-<p class='note'>Per site, two connections, exactly what a browser does on a visit: one TLS 1.3 ClientHello offering X25519MLKEM768 first (which
-key-exchange group does the server pick?) and one normal handshake (version, cipher suite, leaf certificate). No crawling, no vulnerability
-probing, no authentication. Only sector totals are published; the list of sites is not. A site's result reflects its public edge (often a CDN),
-not necessarily its internal systems. Snapshot, not a ranking.</p>"""
+<p class='note'>We make two connections per site, exactly what a browser does on a visit: one TLS 1.3 ClientHello offering X25519MLKEM768 first
+(which key-exchange group does the server pick?) and one normal handshake (version, cipher suite, leaf certificate). We do not crawl, probe for
+vulnerabilities or authenticate. We publish sector totals only and keep the list of sites to ourselves. A result reflects a site's public edge
+(often a CDN), not necessarily its internal systems. This is our snapshot, not a ranking.</p>"""
     dest = SITE / "snapshot"
     dest.mkdir(parents=True)
     (dest / "index.html").write_text(page("ECDAT · India quantum-readiness snapshot", body, 1), encoding="utf-8")
@@ -311,20 +312,22 @@ def build_hub(atlas: dict, survey: dict, repo_url: str, video_url: str, team: st
     scanned = atlas.get("params", {}).get("scanned_on", "18 Sep 2026")
 
     rows = [("CBOM Atlas", "atlas/index.html",
-             f"{o['repos']} public codebases, including India's open digital public infrastructure. Every inventory is a "
-             f"CycloneDX 1.7 CBOM signed with ML-DSA-65, published with its report and VEX file.",
+             f"We pointed our prototype at {o['repos']} public codebases, including India's open digital public "
+             f"infrastructure. Every inventory we produced is a CycloneDX 1.7 CBOM signed with ML-DSA-65, published "
+             f"here with its report and VEX file.",
              f"{o['repos']}", "repositories", scanned),
             ("India quantum-readiness snapshot", "snapshot/index.html",
-             f"{india['reachable']} public sites across NCIIPC's seven critical sectors. {india['pq_hybrid_kex_pct']}% negotiate "
-             f"post-quantum key exchange, against {glob['pq_hybrid_kex_pct']}% of global reference sites. Sector totals only \u2014 no site is named.",
+             f"We probed {india['reachable']} public sites across NCIIPC's seven critical sectors. "
+             f"{india['pq_hybrid_kex_pct']}% negotiate post-quantum key exchange, against {glob['pq_hybrid_kex_pct']}% of the "
+             f"global reference sites we used as a control. We publish sector totals only \u2014 we name no site.",
              f"{india['reachable']}", "sites", "18 Sep 2026"),
             ("The dashboard, on real scans", "dashboard/index.html",
-             "The tool itself, running on the scans above: move the quantum-year slider, filter by tier, open any asset "
-             "and read the evidence that produced it.",
+             "Our dashboard, running on the scans above. Move the quantum-year slider, filter by tier, open any asset "
+             "and read the evidence our scanners produced for it.",
              "2", "scans", "live")]
     if video_url:
         rows.append(("Three-minute walkthrough", video_url,
-                     "Scan, reconcile, score, plan, export, verify \u2014 end to end.", "3", "minutes", ""))
+                     "We scan, reconcile, score, plan, export and verify \u2014 end to end.", "3", "minutes", ""))
 
     items = "".join(
         f"<div class='artefact'><div class='t'><div class='n'><a href='{html.escape(href)}'>{html.escape(name)}</a></div>"
@@ -336,29 +339,29 @@ def build_hub(atlas: dict, survey: dict, repo_url: str, video_url: str, team: st
     body = f"""
 <p class='kicker'>Smart India Hackathon 2026 · PS 26164 · NTRO{team_bit}</p>
 <h1>ECDAT</h1>
-<p class='lede'>Find every piece of cryptography an organisation runs. See which of it a quantum computer will break,
-and when that stops being theoretical. Then plan the fix under a real budget.</p>
+<p class='lede'>We built ECDAT to find every piece of cryptography an organisation runs, show which of it a quantum
+computer will break and when that stops being theoretical, then plan the fix under a real budget.</p>
 <div class='rule'></div>
 
-<h2>What is published here</h2>
+<h2>What we built, and what we measured with it</h2>
 <div class='artefacts'>{items}</div>
 
-<h2>Verify any file yourself</h2>
-<p class='sub'>Every CBOM on this site is signed with ML-DSA-65 (FIPS 204). Download one, download the public key,
-and check it offline \u2014 nothing here asks you to trust us.</p>
+<h2>Check our work</h2>
+<p class='sub'>We sign every CBOM we publish with ML-DSA-65 (FIPS 204). Download one, download our public key and
+check it offline \u2014 we are not asking you to take our numbers on trust.</p>
 <pre>git clone {html.escape(repo_url)} &amp;&amp; cd ecdat &amp;&amp; pip install -e .
 curl -O https://sarthakshrivastav-a.github.io/ecdat/ecdat-mldsa65.pub
 ecdat verify cbom.json --pubkey ecdat-mldsa65.pub</pre>
 <p class='kv small'>Public key <a href='ecdat-mldsa65.pub'>ecdat-mldsa65.pub</a>, SHA-256
 <span class='mono'>{pub_fpr}</span><br>
-Source <a href='{html.escape(repo_url)}'>{html.escape(repo_url.replace("https://", ""))}</a>,
+Our source <a href='{html.escape(repo_url)}'>{html.escape(repo_url.replace("https://", ""))}</a>,
 <b>{tests}</b> automated tests, runs fully offline.</p>
 
-<h2>How to read the numbers</h2>
-<p class='note'>The atlas scans each repository's default branch as downloaded on {html.escape(scanned)}. <b>Observed</b> means found in
-the project's own code, configuration, certificates or binaries; an algorithm a dependency merely <em>could</em> provide is listed
-separately and never counted as use. The readiness snapshot makes two browser-equivalent connections per site and publishes only
-sector totals. Quantum-year <b>Z</b> is an assumption you set, not a forecast.</p>"""
+<h2>How to read our numbers</h2>
+<p class='note'>We scanned each repository's default branch as we downloaded it on {html.escape(scanned)}. <b>Observed</b> means we found it in
+the project's own code, configuration, certificates or binaries; an algorithm a dependency merely <em>could</em> provide we list
+separately and never count as use. For the snapshot we make two browser-equivalent connections per site and publish only sector
+totals. Quantum-year <b>Z</b> is an assumption you set, not a forecast we are making.</p>"""
     (SITE / "index.html").write_text(page("ECDAT \u00b7 evidence", body, 0), encoding="utf-8")
 
 

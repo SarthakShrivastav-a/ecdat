@@ -1,0 +1,14 @@
+# A four-target slice of the zoo, used for the demo recording: small enough that every external
+# engine can run and the phase table still streams on camera, big enough to hit four surfaces.
+name: crypto-zoo
+params:
+  z_year: 2041
+  engineers: 4
+  months: 6
+  profile: cii
+  now_year: 2026
+targets:
+  - {kind: dir, path: src/python, name: payments-api, zone: external, data_class: financial, criticality: high}
+  - {kind: dir, path: src/java, name: core-banking, zone: internal, data_class: financial, criticality: critical}
+  - {kind: certs, path: certs, name: pki, zone: external, passwords: [zoo, zoopass]}
+  - {kind: image, path: images/zoo-oci.tar, name: pay-image, zone: external, data_class: financial}

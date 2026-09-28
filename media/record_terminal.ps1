@@ -24,19 +24,27 @@ public class Win {
 
 $py = "C:\customize\SIH2026\demo\ecdat\.venv\Scripts\python.exe"
 $mark = "ECDAT-SCAN-CAPTURE"
-$inner = "title $mark & cd /d `"$root`" & set COLUMNS=100 & cls & " +
-         "`"$py`" -m ecdat.cli scan -c tests/fixtures/zoo/ecdat.yaml -o out/demo --no-external-tools & timeout /t 6 > nul"
+# PYTHONWARNINGS: third-party deprecation notices from paramiko/cryptography are not our output
+# and they were the first thing on screen. The pause lets the capture start before the run does,
+# so the footage opens on the command rather than on a finished screen.
+$inner = "title $mark & mode con: cols=104 lines=42 & set PYTHONWARNINGS=ignore & cd /d `"$root`" & set COLUMNS=100 & cls & " +
+         "echo. & echo   ecdat scan -c tests/fixtures/zoo/demo.yaml -o out/demo & echo. & ping -n 5 127.0.0.1 > nul & " +
+         "`"$py`" -m ecdat.cli scan -c tests/fixtures/zoo/demo.yaml -o out/demo & ping -n 40 127.0.0.1 > nul"
 
-# -w -1 = always a new window, never a tab in an existing one
+# -w -1 = always a new window, never a tab in an existing one; --size makes the console fill it
 Start-Process wt.exe -ArgumentList "-w", "-1", "--title", $mark, "cmd.exe", "/c", $inner
-Start-Sleep -Seconds 5
-
-$proc = Get-Process WindowsTerminal -ErrorAction SilentlyContinue |
-        Where-Object { $_.MainWindowTitle -like "*$mark*" } |
-        Sort-Object StartTime -Descending | Select-Object -First 1
+# the window can take a moment to appear and to take its title - poll rather than guess
+$proc = $null
+foreach ($i in 1..30) {
+    Start-Sleep -Milliseconds 400
+    $proc = Get-Process WindowsTerminal -ErrorAction SilentlyContinue |
+            Where-Object { $_.MainWindowTitle -like "*$mark*" } |
+            Sort-Object StartTime -Descending | Select-Object -First 1
+    if ($proc) { break }
+}
 if (-not $proc) { throw "could not find the capture window" }
 $h = $proc.MainWindowHandle
-[void][Win]::MoveWindow($h, 80, 60, 1160, 880, $true)
+[void][Win]::MoveWindow($h, 80, 60, 1180, 900, $true)
 [void][Win]::SetForegroundWindow($h)
 Start-Sleep -Milliseconds 900
 
@@ -48,5 +56,5 @@ Write-Output "capturing ${w}x${ht} at $($r.Left),$($r.Top) (window: $($proc.Main
 
 & ffmpeg -hide_banner -loglevel error -f gdigrab -framerate 12 `
     -offset_x $r.Left -offset_y $r.Top -video_size "${w}x${ht}" -i desktop `
-    -t 60 -c:v libx264 -preset veryfast -crf 20 -pix_fmt yuv420p -y $out
+    -t 72 -c:v libx264 -preset veryfast -crf 20 -pix_fmt yuv420p -y $out
 Write-Output "wrote $out"

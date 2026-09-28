@@ -1,11 +1,12 @@
 # Demo footage
 
-Seven clips, each recorded against the real tool and the real scans — nothing is mocked or
+Eight clips, each recorded against the real tool and the real scans — nothing is mocked or
 re-enacted. Regenerate any of them with the two scripts here.
 
 | # | clip | length | what it shows |
 |---|---|---|---|
-| 01 | `clips/01-scan-live.mp4` | 11 s | A screen recording of an actual `ecdat scan` in a console window: the five phases appear, the scan finishes in 5.1 s and writes nine artefacts. External engines are off for this one, which is why it is fast. |
+| 01 | `clips/01-scan-live.mp4` | 64 s | A screen recording of an actual `ecdat scan` in its own console window: the command, then the DISCOVER table filling in collector by collector over four targets with every external engine running, RECONCILE, ANALYSE, the tier bars, the nine artefacts and the completion panel — 113 assets, 365 findings, CERT-In 75.5%, signed ML-DSA-65, 50.5 s. |
+| 01b | `clips/01b-scan-live-2x.mp4` | 32 s | The same take at 2x, for a tighter edit. |
 | 02 | `clips/02-scan-session.mp4` | 22 s | A slow pan down the full run **with** every external engine enabled (OpenGrep, Syft, cbomkit-theia, tshark): 9 collectors, 44 target runs, 639 findings, 197 assets, signed CBOM. |
 | 03 | `clips/03-overview.mp4` | 12 s | The verdict — *11 of 159 assets cannot wait* — then the quantum year Z is dragged back and every tier recomputes live, with ALREADY EXPOSED appearing. |
 | 04 | `clips/04-findings.mp4` | 13 s | Filtering the findings table to RSA, opening one, and reading the evidence behind it: file:line, call sites, agility dimensions, the recommended target. |

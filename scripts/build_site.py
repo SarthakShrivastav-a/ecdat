@@ -114,9 +114,14 @@ def build_atlas() -> dict:
     atlas = json.loads((OUT / "atlas" / "atlas.json").read_text(encoding="utf-8"))
     dest = SITE / "atlas"
     for r in atlas["repos"]:
+        # atlas.json is written by the run that filled scans/; the runner rotates that directory to
+        # scans_prev/ when a later partial re-scan starts, so publish whichever one holds this run's
+        # artefacts - never a mix, or a row's numbers would disagree with the file under it.
         src = OUT / "atlas" / "scans" / r["slug"]
+        if not (src / "cbom.json").exists():
+            src = OUT / "atlas" / "scans_prev" / r["slug"]
         d = dest / "r" / r["slug"]
-        d.mkdir(parents=True)
+        d.mkdir(parents=True, exist_ok=True)
         for f in ("cbom.json", "cbom.json.mldsa65.sig", "report.html", "vex.json", "summary.md"):
             if (src / f).exists():
                 shutil.copy(src / f, d / f)

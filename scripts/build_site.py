@@ -66,13 +66,23 @@ p{max-width:74ch}
 .mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
 /* the three artefacts, as a record rather than as cards */
 .artefacts{border-top:1px solid var(--rule)}
-.artefact{display:flex;gap:32px;align-items:flex-start;justify-content:space-between;
-padding:18px 2px;border-bottom:1px solid var(--rule)}
+.artefact{position:relative;display:flex;gap:32px;align-items:flex-start;justify-content:space-between;
+padding:18px 14px;margin:0 -14px;border-bottom:1px solid var(--rule);border-radius:8px;cursor:pointer;
+transition:background .12s ease}
+/* the whole row is the tap target: the title's link is stretched over it, so the accessible
+   name stays the title and keyboard focus still lands on one link per row */
+.artefact .n a::after{content:"";position:absolute;inset:0;border-radius:8px}
+.artefact:hover{background:rgba(237,161,0,.07)}
+.artefact:hover .n a{border-bottom-color:currentColor}
+.artefact:focus-within{background:rgba(237,161,0,.07);outline:2px solid var(--accent);outline-offset:-2px}
+.artefact:focus-within .n a:focus-visible{outline:none}
 .artefact .t{flex:1;min-width:0}
 .artefact .n{font-size:19px;font-weight:600;letter-spacing:-.01em;margin-bottom:5px}
-.artefact .n a{border-bottom:none}
-.artefact .n a:hover{border-bottom:1px solid currentColor}
+.artefact .n a{border-bottom:1px solid transparent}
 .artefact .d{color:var(--ink2);font-size:14.5px;max-width:62ch}
+.artefact .go{display:block;margin-top:8px;font-family:"IBM Plex Mono",monospace;font-size:11px;
+letter-spacing:.14em;text-transform:uppercase;color:var(--muted);opacity:0;transition:opacity .12s ease}
+.artefact:hover .go,.artefact:focus-within .go{opacity:1}
 .artefact .f{flex:none;width:126px;text-align:right;font-family:"IBM Plex Mono",monospace;color:var(--muted);
 font-size:12px;line-height:1.45;white-space:nowrap}
 .artefact .f b{display:block;font-size:23px;font-weight:600;color:var(--ink);letter-spacing:-.02em;margin-bottom:2px}
@@ -332,7 +342,8 @@ def build_hub(atlas: dict, survey: dict, repo_url: str, video_url: str, team: st
     items = "".join(
         f"<div class='artefact'><div class='t'><div class='n'><a href='{html.escape(href)}'>{html.escape(name)}</a></div>"
         f"<div class='d'>{desc}</div></div>"
-        f"<div class='f'><b>{html.escape(fig)}</b>{html.escape(unit)}<br>{html.escape(when)}</div></div>"
+        f"<div class='f'><b>{html.escape(fig)}</b>{html.escape(unit)}<br>{html.escape(when)}"
+        f"<span class='go'>open &rarr;</span></div></div>"
         for name, href, desc, fig, unit, when in rows)
 
     team_bit = (" · " + html.escape(team)) if team else ""

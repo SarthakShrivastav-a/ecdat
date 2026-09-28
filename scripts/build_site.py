@@ -35,31 +35,76 @@ EXPORTS = {"cbom": "cbom.json", "vex": "vex.json", "sarif": "findings.sarif", "c
 # Colours validated with the dataviz skill's validate_palette.js (light + dark, all checks pass; the light
 # amber is below 3:1 so every bar carries a visible value label and the page has a table view).
 CSS = """
-:root{--surface:#fcfcfb;--panel:#ffffff;--ink:#0b1b2b;--ink2:#52514e;--muted:#8a8984;--rule:#e6e5e1;
---india:#eda100;--ref:#2a78d6;--accent:#b37a00;--exposed:#e5484d;--safe:#30a46c;color-scheme:light}
-@media (prefers-color-scheme:dark){:root{--surface:#1a1a19;--panel:#222221;--ink:#f4f4f2;--ink2:#c3c2b7;
---muted:#8f8e88;--rule:#383835;--india:#c98500;--ref:#3987e5;--accent:#f5b301;color-scheme:dark}}
-*{box-sizing:border-box}body{margin:0;background:var(--surface);color:var(--ink);
-font:15px/1.5 "IBM Plex Sans",Inter,system-ui,sans-serif}main{max-width:1080px;margin:0 auto;padding:32px 20px 64px}
-a{color:var(--ref)}h1{font-size:34px;margin:0 0 4px}h2{font-size:20px;margin:36px 0 10px}
-.sub{color:var(--ink2);margin:0 0 20px}.muted{color:var(--muted)}.small{font-size:13px}
-.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}.tag{display:inline-block;border:1px solid var(--rule);
-border-radius:999px;padding:2px 10px;font-size:12px;color:var(--ink2);margin-right:6px}
-.doors{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin:22px 0}
-.door{display:block;background:var(--panel);border:1px solid var(--rule);border-radius:10px;padding:18px;
-text-decoration:none;color:var(--ink)}.door:hover{border-color:var(--accent)}.door b{font-size:18px;display:block;margin-bottom:6px}
-.door span{color:var(--ink2);font-size:14px}
-.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:14px 0}
-.tile{background:var(--panel);border:1px solid var(--rule);border-radius:10px;padding:14px}
-.tile .v{font-size:34px;font-weight:600}.tile .l{color:var(--ink2);font-size:13px}
-pre{background:var(--panel);border:1px solid var(--rule);border-radius:8px;padding:12px;overflow:auto;font-size:13px}
-table{border-collapse:collapse;width:100%;font-size:13px}th,td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--rule);
-vertical-align:top}th{color:var(--ink2);font-weight:600;cursor:pointer;white-space:nowrap}td.num,th.num{text-align:right;
-font-variant-numeric:tabular-nums}.filters{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
-.filters button{background:var(--panel);border:1px solid var(--rule);border-radius:999px;padding:4px 12px;color:var(--ink);cursor:pointer}
-.filters button.on{border-color:var(--accent);color:var(--accent)}
-.note{border-left:3px solid var(--accent);padding:8px 12px;background:var(--panel);color:var(--ink2);font-size:13px}
-footer{margin-top:48px;color:var(--muted);font-size:12px}
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+:root{--paper:#fbfaf7;--panel:#ffffff;--ink:#12212e;--ink2:#41505d;--muted:#6f7c88;--rule:#e3e0d9;
+--rule2:#cfcabf;--india:#eda100;--ref:#1f5fae;--accent:#a87400;--exposed:#b8322f;--safe:#256f4a;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--paper:#14181b;--panel:#191e22;--ink:#eef1f2;--ink2:#b9c2c8;
+--muted:#8a949c;--rule:#2a3136;--rule2:#3b444b;--india:#eda100;--ref:#6ba8f0;--accent:#e9b44c;
+--exposed:#e5736f;--safe:#5cbe8d;color-scheme:dark}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);
+font:16px/1.62 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums}
+main{max-width:1180px;margin:0 auto;padding:56px 28px 80px}
+@media(max-width:640px){main{padding:34px 18px 56px}}
+a{color:var(--ref);text-decoration:none;border-bottom:1px solid rgba(31,95,174,.3)}
+a:hover{border-bottom-color:currentColor}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+.kicker{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11.5px;letter-spacing:.18em;
+text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+h1{font-size:40px;line-height:1.08;letter-spacing:-.02em;font-weight:600;margin:0}
+h2{font-size:15px;letter-spacing:.14em;text-transform:uppercase;font-family:"IBM Plex Mono",monospace;
+font-weight:500;color:var(--muted);margin:52px 0 14px;display:flex;align-items:center;gap:14px}
+h2::after{content:"";flex:1;height:1px;background:var(--rule)}
+h3{font-size:17px;margin:26px 0 6px;font-weight:600}
+.lede{font-size:19px;line-height:1.5;color:var(--ink2);margin:14px 0 0;max-width:62ch}
+.rule{width:64px;height:3px;background:var(--india);border-radius:2px;margin:26px 0 0}
+p{max-width:74ch}
+.sub{color:var(--ink2);margin:6px 0 0;max-width:74ch}
+.muted{color:var(--muted)}.small{font-size:13.5px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+/* the three artefacts, as a record rather than as cards */
+.artefacts{border-top:1px solid var(--rule)}
+.artefact{display:flex;gap:32px;align-items:flex-start;justify-content:space-between;
+padding:18px 2px;border-bottom:1px solid var(--rule)}
+.artefact .t{flex:1;min-width:0}
+.artefact .n{font-size:19px;font-weight:600;letter-spacing:-.01em;margin-bottom:5px}
+.artefact .n a{border-bottom:none}
+.artefact .n a:hover{border-bottom:1px solid currentColor}
+.artefact .d{color:var(--ink2);font-size:14.5px;max-width:62ch}
+.artefact .f{flex:none;width:126px;text-align:right;font-family:"IBM Plex Mono",monospace;color:var(--muted);
+font-size:12px;line-height:1.45;white-space:nowrap}
+.artefact .f b{display:block;font-size:23px;font-weight:600;color:var(--ink);letter-spacing:-.02em;margin-bottom:2px}
+/* stat line, used by the atlas */
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:2px 28px;margin:18px 0 8px}
+.tile{padding:12px 0 2px;border-top:2px solid var(--rule2)}
+.tile .v{font-size:30px;font-weight:600;letter-spacing:-.02em;line-height:1.1}
+.tile .l{color:var(--muted);font-size:12.5px;line-height:1.35;margin-top:4px;max-width:26ch}
+pre{background:var(--panel);border:1px solid var(--rule);border-left:3px solid var(--india);
+border-radius:0 6px 6px 0;padding:14px 16px;overflow:auto;font-size:13.5px;line-height:1.65;
+font-family:"IBM Plex Mono",ui-monospace,monospace}
+code{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.92em}
+table{border-collapse:collapse;width:100%;font-size:13.5px;margin-top:8px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--rule);vertical-align:top}
+th{color:var(--muted);font-weight:500;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+font-family:"IBM Plex Mono",monospace;cursor:pointer;line-height:1.35;vertical-align:bottom;
+border-bottom:1px solid var(--rule2)}
+th:first-child,td:first-child{min-width:150px}
+td:last-child,td:nth-child(2){white-space:nowrap}
+.scroll{overflow-x:auto;margin-top:8px}
+tbody tr:hover{background:rgba(237,161,0,.05)}
+td.num,th.num{text-align:right;font-family:"IBM Plex Mono",monospace}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
+.filters button{background:transparent;border:1px solid var(--rule2);border-radius:999px;padding:4px 13px;
+color:var(--ink2);cursor:pointer;font:inherit;font-size:13px}
+.filters button:hover{border-color:var(--accent)}
+.filters button.on{border-color:var(--accent);color:var(--accent);background:rgba(237,161,0,.08)}
+.note{border-left:2px solid var(--rule2);padding:4px 0 4px 16px;color:var(--muted);font-size:13.5px;max-width:78ch}
+.kv{font-size:13.5px;color:var(--ink2)}
+.kv b{font-weight:500;color:var(--ink)}
+footer{margin-top:64px;padding-top:16px;border-top:1px solid var(--rule);color:var(--muted);font-size:12.5px;
+display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between}
 """
 
 
@@ -67,7 +112,8 @@ def page(title: str, body: str, depth: int = 0) -> str:
     up = "../" * depth
     return (f"<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'>"
             f"<title>{html.escape(title)}</title><link rel='icon' href='data:,'><style>{CSS}</style></head><body><main>{body}"
-            f"<footer>ECDAT · SIH 2026 · PS 26164 · <a href='{up}index.html'>evidence hub</a></footer></main></body></html>")
+            f"<footer><span>ECDAT \u00b7 Smart India Hackathon 2026 \u00b7 problem statement 26164 (NTRO)</span>"
+            f"<span><a href='{up}index.html'>evidence hub</a></span></footer></main></body></html>")
 
 
 def _run(args: list[str]) -> None:
@@ -262,26 +308,58 @@ def build_hub(atlas: dict, survey: dict, repo_url: str, video_url: str, team: st
     o = atlas["overall"]
     india = survey["sectors"]["_india_all"]
     glob = survey["sectors"]["Global reference"]
-    video = f"<a class='door' href='{html.escape(video_url)}'><b>Watch the 3-minute demo →</b><span>Scan, reconcile, score, plan, export, verify.</span></a>" if video_url else ""
+    scanned = atlas.get("params", {}).get("scanned_on", "18 Sep 2026")
+
+    rows = [("CBOM Atlas", "atlas/index.html",
+             f"{o['repos']} public codebases, including India's open digital public infrastructure. Every inventory is a "
+             f"CycloneDX 1.7 CBOM signed with ML-DSA-65, published with its report and VEX file.",
+             f"{o['repos']}", "repositories", scanned),
+            ("India quantum-readiness snapshot", "snapshot/index.html",
+             f"{india['reachable']} public sites across NCIIPC's seven critical sectors. {india['pq_hybrid_kex_pct']}% negotiate "
+             f"post-quantum key exchange, against {glob['pq_hybrid_kex_pct']}% of global reference sites. Sector totals only \u2014 no site is named.",
+             f"{india['reachable']}", "sites", "18 Sep 2026"),
+            ("The dashboard, on real scans", "dashboard/index.html",
+             "The tool itself, running on the scans above: move the quantum-year slider, filter by tier, open any asset "
+             "and read the evidence that produced it.",
+             "2", "scans", "live")]
+    if video_url:
+        rows.append(("Three-minute walkthrough", video_url,
+                     "Scan, reconcile, score, plan, export, verify \u2014 end to end.", "3", "minutes", ""))
+
+    items = "".join(
+        f"<div class='artefact'><div class='t'><div class='n'><a href='{html.escape(href)}'>{html.escape(name)}</a></div>"
+        f"<div class='d'>{desc}</div></div>"
+        f"<div class='f'><b>{html.escape(fig)}</b>{html.escape(unit)}<br>{html.escape(when)}</div></div>"
+        for name, href, desc, fig, unit, when in rows)
+
+    team_bit = (" · " + html.escape(team)) if team else ""
     body = f"""
+<p class='kicker'>Smart India Hackathon 2026 · PS 26164 · NTRO{team_bit}</p>
 <h1>ECDAT</h1>
-<p class='sub'>Find every piece of cryptography. See which of it a quantum computer will break. Plan the fix.</p>
-<p><span class='tag'>SIH 2026</span><span class='tag'>PS 26164 · NTRO</span><span class='tag'>Blockchain &amp; Cybersecurity</span><span class='tag'>{html.escape(team)}</span></p>
-<div class='doors'>
-<a class='door' href='atlas/index.html'><b>CBOM Atlas →</b><span>{o['repos']} public codebases scanned, including India's open digital public infrastructure. Every inventory is a CycloneDX 1.7 CBOM signed with ML-DSA-65.</span></a>
-<a class='door' href='snapshot/index.html'><b>India quantum-readiness snapshot →</b><span>{india['reachable']} public sites across NCIIPC's seven sectors: {india['pq_hybrid_kex_pct']}% use post-quantum key exchange, versus {glob['pq_hybrid_kex_pct']}% of global reference sites.</span></a>
-<a class='door' href='dashboard/index.html'><b>Try the dashboard →</b><span>The real ECDAT dashboard on real scans. Switch scans, drag the quantum-year presets, open any asset's evidence.</span></a>
-{video}
-</div>
-<h2>Check our work</h2>
+<p class='lede'>Find every piece of cryptography an organisation runs. See which of it a quantum computer will break,
+and when that stops being theoretical. Then plan the fix under a real budget.</p>
+<div class='rule'></div>
+
+<h2>What is published here</h2>
+<div class='artefacts'>{items}</div>
+
+<h2>Verify any file yourself</h2>
+<p class='sub'>Every CBOM on this site is signed with ML-DSA-65 (FIPS 204). Download one, download the public key,
+and check it offline \u2014 nothing here asks you to trust us.</p>
 <pre>git clone {html.escape(repo_url)} &amp;&amp; cd ecdat &amp;&amp; pip install -e .
+curl -O https://sarthakshrivastav-a.github.io/ecdat/ecdat-mldsa65.pub
 ecdat verify cbom.json --pubkey ecdat-mldsa65.pub</pre>
-<p class='small'>Public key: <a href='ecdat-mldsa65.pub'>ecdat-mldsa65.pub</a> · SHA-256 fingerprint <span class='mono'>{pub_fpr}</span><br>
-Source: <a href='{html.escape(repo_url)}'>{html.escape(repo_url)}</a> · {tests} automated tests · runs fully offline</p>
-<p class='note'>The atlas scans each repository's default branch as downloaded on 18 Sep 2026. "Observed" means found in the project's own code,
-configuration, certificates or binaries; algorithms a dependency merely can provide are listed separately and never counted as use. The readiness
-snapshot makes two browser-equivalent connections per site and publishes only sector totals.</p>"""
-    (SITE / "index.html").write_text(page("ECDAT · evidence", body, 0), encoding="utf-8")
+<p class='kv small'>Public key <a href='ecdat-mldsa65.pub'>ecdat-mldsa65.pub</a>, SHA-256
+<span class='mono'>{pub_fpr}</span><br>
+Source <a href='{html.escape(repo_url)}'>{html.escape(repo_url.replace("https://", ""))}</a>,
+<b>{tests}</b> automated tests, runs fully offline.</p>
+
+<h2>How to read the numbers</h2>
+<p class='note'>The atlas scans each repository's default branch as downloaded on {html.escape(scanned)}. <b>Observed</b> means found in
+the project's own code, configuration, certificates or binaries; an algorithm a dependency merely <em>could</em> provide is listed
+separately and never counted as use. The readiness snapshot makes two browser-equivalent connections per site and publishes only
+sector totals. Quantum-year <b>Z</b> is an assumption you set, not a forecast.</p>"""
+    (SITE / "index.html").write_text(page("ECDAT \u00b7 evidence", body, 0), encoding="utf-8")
 
 
 def main() -> None:
@@ -289,7 +367,7 @@ def main() -> None:
     remote = subprocess.run(["git", "remote", "get-url", "origin"], cwd=ROOT, capture_output=True, text=True).stdout.strip()
     ap.add_argument("--repo-url", default=remote.removesuffix(".git") or "https://github.com/<owner>/ecdat")
     ap.add_argument("--video-url", default="")
-    ap.add_argument("--team", default="Team <name>")
+    ap.add_argument("--team", default="")
     a = ap.parse_args()
     # empty the folder rather than deleting it (a local preview server may hold it as its working directory)
     SITE.mkdir(parents=True, exist_ok=True)

@@ -81,7 +81,7 @@ def build_dashboard() -> None:
     dest = SITE / "dashboard"
     shutil.copytree(ROOT / "web" / "dist", dest)
     static = dest / "static"
-    static.mkdir()
+    static.mkdir(parents=True, exist_ok=True)
     scans = []
     for scan_dir, label in DASHBOARD_SCANS:
         src = OUT / scan_dir / "result.json"

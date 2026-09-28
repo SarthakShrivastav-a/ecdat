@@ -1,0 +1,383 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.7",
+  "version": 1,
+  "vulnerabilities": [
+    {
+      "bom-ref": "vuln-1",
+      "id": "ECDAT-QV-0001",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is comment: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "SHA-256 (algorithm) in mosip/admin-services: safe; tier SAFE",
+      "detail": "128-bit collision resistance holds; Grover pre-image gain is impractical",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "false_positive",
+        "detail": "mentioned in a comment only",
+        "response": [],
+        "justification": "code_not_present"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:7f124dfe4a83"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=20 Y=3.92 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-2",
+      "id": "ECDAT-QV-0002",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "DES (algorithm) in mosip/admin-services: legacy-broken; tier SAFE",
+      "detail": "56-bit key is brute-forceable classically",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:cf87368700bf"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=20 Y=3.64 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-3",
+      "id": "ECDAT-QV-0003",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "critical",
+          "justification": "Mosca: X 20 + Y 3.52 = 23.52 > Z 15: data captured today outlives the migration"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "RSA (algorithm) in mosip/admin-services: broken; tier EXPOSED",
+      "detail": "Integer factorisation is broken by Shor's algorithm",
+      "recommendation": "Migrate to ML-KEM-768 (hybrid)",
+      "analysis": {
+        "state": "exploitable",
+        "detail": "quantum-vulnerable and reachable",
+        "response": [
+          "update"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:ac588a80667f"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "EXPOSED"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=20 Y=3.52 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-4",
+      "id": "ECDAT-QV-0004",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "key:generic-api-key (related-crypto-material) in mosip/admin-services: unknown; tier SAFE",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:0b3ad03fb037"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=20 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-5",
+      "id": "ECDAT-QV-0005",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "token:jwt (related-crypto-material) in mosip/admin-services: unknown; tier SAFE",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:a0589d3af2f3"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=20 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-6",
+      "id": "ECDAT-QV-0006",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "token:jwt-base64 (related-crypto-material) in mosip/admin-services: unknown; tier SAFE",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:a680e2109da9"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=20 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-7",
+      "id": "ECDAT-QV-0007",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "could not classify; review manually"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "key:generic-api-key (related-crypto-material) in mosip/admin-services: unknown; tier MONITOR",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:6f29bda4c64c"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=20 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-8",
+      "id": "ECDAT-QV-0008",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "could not classify; review manually"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "key:generic-api-key (related-crypto-material) in mosip/admin-services: unknown; tier MONITOR",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:acc8761e00cd"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=20 Y=1 Z=15"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "timestamp": "2026-09-18T08:43:02.664388+00:00",
+    "properties": [
+      {
+        "name": "ecdat:z_year",
+        "value": "2041"
+      }
+    ]
+  }
+}

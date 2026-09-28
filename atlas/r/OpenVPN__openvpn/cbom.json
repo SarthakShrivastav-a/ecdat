@@ -1,0 +1,6658 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.7.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.7",
+  "serialNumber": "urn:uuid:453a3ff7-f7a5-4919-a4d6-891f24fa67aa",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-09-18T08:22:42Z",
+    "tools": {
+      "components": [
+        {
+          "type": "application",
+          "name": "ecdat",
+          "version": "0.1.0",
+          "description": "Enterprise Cryptographic Discovery & Analysis Tool (SIH 2026 PS 26164)"
+        },
+        {
+          "type": "application",
+          "name": "opengrep",
+          "version": "1.29.0"
+        },
+        {
+          "type": "application",
+          "name": "cbomkit-theia",
+          "version": "- CycloneDXv1.6"
+        },
+        {
+          "type": "application",
+          "name": "syft",
+          "version": "Version:       1.51.1"
+        },
+        {
+          "type": "application",
+          "name": "tshark",
+          "version": "TShark (Wireshark) 4.6.8 (v4.6.8-0-ge677bf052328)."
+        },
+        {
+          "type": "application",
+          "name": "crane",
+          "version": "v0.22.1"
+        }
+      ]
+    },
+    "component": {
+      "type": "application",
+      "bom-ref": "urn:ecdat:scan:343cd511f049",
+      "name": "OpenVPN__openvpn"
+    },
+    "properties": [
+      {
+        "name": "ecdat:z_year",
+        "value": "2041"
+      },
+      {
+        "name": "ecdat:profile",
+        "value": "enterprise"
+      },
+      {
+        "name": "ecdat:targets",
+        "value": "1"
+      },
+      {
+        "name": "ecdat:certin_table9",
+        "value": "CERT-In BOM guidelines v2.0 (2025-07-09) section 8.3"
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "application",
+      "bom-ref": "urn:ecdat:component:openvpn-openvpn",
+      "name": "OpenVPN/openvpn",
+      "properties": [
+        {
+          "name": "ecdat:zone",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "pii"
+        },
+        {
+          "name": "ecdat:path",
+          "value": "C:\\customize\\SIH2026\\demo\\ecdat\\.claude\\worktrees\\ecdat-build\\out\\atlas\\src\\OpenVPN__openvpn"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "urn:ecdat:library:a305f958a175",
+      "name": "pyca-cryptography",
+      "properties": [
+        {
+          "name": "ecdat:zone",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:path",
+          "value": "contrib/extract-crl/extractcrl.py"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "urn:ecdat:library:cb9ecf32b2be",
+      "name": "openssl",
+      "properties": [
+        {
+          "name": "ecdat:zone",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:path",
+          "value": "src/openvpn/xkey_common.h"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "urn:ecdat:library:529f065c6670",
+      "name": "mbedtls",
+      "properties": [
+        {
+          "name": "ecdat:zone",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:path",
+          "value": "src/openvpn/crypto_mbedtls_legacy.h"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:3e103e86aa7c",
+      "name": "AES-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "2.16.840.1.101.3.4.1.46",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "algorithmFamily": "AES",
+          "parameterSetIdentifier": "256",
+          "cryptoFunctions": [
+            "decrypt",
+            "encrypt",
+            "keygen"
+          ],
+          "classicalSecurityLevel": 256,
+          "nistQuantumSecurityLevel": 5,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/openvpn/tls_crypt.h",
+            "line": 23
+          },
+          {
+            "location": "sample/sample-keys/gen-sample-keys.sh",
+            "line": 48
+          },
+          {
+            "location": "src/openvpn/ovpn_dco_win.h",
+            "line": 108
+          },
+          {
+            "location": "src/openvpn/ssl_ncp.h",
+            "line": 155
+          },
+          {
+            "location": "src/openvpn/ssl_ncp.h",
+            "line": 155
+          },
+          {
+            "location": "src/openvpn/ssl_ncp.h",
+            "line": 165
+          },
+          {
+            "location": "tests/unit_tests/openvpn/test_crypto.c",
+            "line": 325
+          },
+          {
+            "location": "tests/unit_tests/openvpn/test_crypto.c",
+            "line": 335
+          },
+          {
+            "location": "tests/unit_tests/openvpn/test_crypto.c",
+            "line": 340
+          },
+          {
+            "location": "tests/unit_tests/openvpn/test_crypto.c",
+            "line": 436
+          },
+          {
+            "location": "src/openvpn/ssl_ncp.c",
+            "line": 579
+          },
+          {
+            "location": "src/openvpn/ssl_ncp.c",
+            "line": 579
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/openvpn"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "7.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "pii"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "27"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.92"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "safe"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-4.08"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "85.7"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:2c1a9ed771af",
+      "name": "SHA-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "2.16.840.1.101.3.4.2.1",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "SHA-2",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "classicalSecurityLevel": 128,
+          "nistQuantumSecurityLevel": 2,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "sample/sample-keys/client.p12"
+          },
+          {
+            "location": "sample/sample-keys/client.p12"
+          },
+          {
+            "location": "sample/sample-keys/ca.crt",
+            "line": 1
+          },
+          {
+            "location": "sample/sample-keys/client-ec.crt",
+            "line": 61
+          },
+          {
+            "location": "sample/sample-keys/server-ec.crt",
+            "line": 69
+          },
+          {
+            "location": "sample/sample-keys/client.crt",
+            "line": 74
+          },
+          {
+            "location": "sample/sample-keys/server.crt",
+            "line": 82
+          },
+          {
+            "location": "src/openvpn/ssl_verify_openssl.c",
+            "line": 371
+          },
+          {
+            "location": "src/openvpn/ssl_verify_openssl.c",
+            "line": 373
+          },
+          {
+            "location": "sample/sample-config-files/loopback-client"
+          },
+          {
+            "location": "sample/sample-config-files/loopback-client"
+          },
+          {
+            "location": "sample/sample-config-files/loopback-client"
+          },
+          {
+            "location": "sample/sample-config-files/loopback-client"
+          },
+          {
+            "location": "sample/sample-keys/ca.crt"
+          },
+          {
+            "location": "sample/sample-keys/ca.crt"
+          },
+          {
+            "location": "sample/sample-keys/client.crt"
+          },
+          {
+            "location": "sample/sample-keys/client.crt"
+          },
+          {
+            "location": "sample/sample-keys/server.crt"
+          },
+          {
+            "location": "sample/sample-keys/server.crt"
+          },
+          {
+            "location": "src/openvpn/tls_crypt.h",
+            "line": 23
+          },
+          {
+            "location": "src/openvpn/auth_token.h",
+            "line": 25
+          },
+          {
+            "location": "src/openvpn/crypto_epoch.h",
+            "line": 28
+          },
+          {
+            "location": "src/openvpn/crypto_epoch.h",
+            "line": 44
+          },
+          {
+            "location": "src/openvpn/xkey_common.h",
+            "line": 52
+          },
+          {
+            "location": "src/openvpn/crypto_epoch.c",
+            "line": 82
+          },
+          {
+            "location": "tests/unit_tests/openvpn/test_provider.c",
+            "line": 86
+          },
+          {
+            "location": "tests/unit_tests/openvpn/test_ssl.c",
+            "line": 90
+          },
+          {
+            "location": "src/openvpn/xkey_common.h",
+            "line": 102
+          },
+          {
+            "location": "src/openvpn/ssl_verify_backend.h",
+            "line": 103
+          },
+          {
+            "location": "src/openvpn/xkey_common.h",
+            "line": 121
+          },
+          {
+            "location": "src/openvpn/crypto.h",
+            "line": 131
+          },
+          {
+            "location": "src/openvpn/options.h",
+            "line": 249
+          },
+          {
+            "location": "tests/unit_tests/openvpn/test_crypto.c",
+            "line": 262
+          },
+          {
+            "location": "src/openvpn/xkey_helper.c",
+            "line": 278
+          },
+          {
+            "location": "tests/unit_tests/openvpn/test_provider.c",
+            "line": 279
+          },
+          {
+            "location": "tests/unit_tests/openvpn/test_provider.c",
+            "line": 351
+          },
+          {
+            "location": "src/openvpn/xkey_provider.c",
+            "line": 716
+          },
+          {
+            "location": "tests/unit_tests/openvpn/test_ssl.c",
+            "line": 779
+          },
+          {
+            "location": "tests/unit_tests/openvpn/test_ssl.c",
+            "line": 909
+          },
+          {
+            "location": "tests/unit_tests/openvpn/test_ssl.c",
+            "line": 962
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/openvpn"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "certificate,source,theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "7.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "pii"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "18"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "4.28"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "safe"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-3.72"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:aad3fa6c9af7",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.2.840.113549.2.5",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "MD5",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "classicalSecurityLevel": 0,
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/openvpn/cryptoapi.c",
+            "line": 78
+          },
+          {
+            "location": "src/openvpn/crypto_backend.h",
+            "line": 507
+          },
+          {
+            "location": "src/openvpn/crypto.h",
+            "line": 750
+          },
+          {
+            "location": "src/openvpn/crypto.c",
+            "line": 1916
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/openvpn"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "comment"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "7.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "pii"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "33"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.68"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "legacy-broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-4.32"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:b52614782af3",
+      "name": "SHA-1",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.3.14.3.2.26",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "SHA-1",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "classicalSecurityLevel": 0,
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "tests/unit_tests/openvpn/test_pkcs11.c",
+            "line": 186
+          },
+          {
+            "location": "tests/unit_tests/openvpn/test_pkcs11.c",
+            "line": 187
+          },
+          {
+            "location": "src/openvpn/ssl_verify_openssl.c",
+            "line": 361
+          },
+          {
+            "location": "src/openvpn/ssl_verify_openssl.c",
+            "line": 363
+          },
+          {
+            "location": "src/openvpn/ssl_mbedtls.c",
+            "line": 59
+          },
+          {
+            "location": "src/openvpn/cryptoapi.c",
+            "line": 78
+          },
+          {
+            "location": "src/openvpn/ssl_verify_backend.h",
+            "line": 93
+          },
+          {
+            "location": "src/openvpn/xkey_common.h",
+            "line": 102
+          },
+          {
+            "location": "tests/unit_tests/openvpn/test_cryptoapi.c",
+            "line": 106
+          },
+          {
+            "location": "src/openvpn/xkey_common.h",
+            "line": 121
+          },
+          {
+            "location": "src/openvpn/ssl_util.c",
+            "line": 130
+          },
+          {
+            "location": "tests/unit_tests/openvpn/test_pkcs11.c",
+            "line": 131
+          },
+          {
+            "location": "src/openvpn/ssl_util.c",
+            "line": 132
+          },
+          {
+            "location": "tests/unit_tests/openvpn/test_pkcs11.c",
+            "line": 182
+          },
+          {
+            "location": "src/openvpn/options.h",
+            "line": 249
+          },
+          {
+            "location": "src/openvpn/options.h",
+            "line": 249
+          },
+          {
+            "location": "tests/unit_tests/openvpn/test_crypto.c",
+            "line": 268
+          },
+          {
+            "location": "tests/unit_tests/openvpn/test_crypto.c",
+            "line": 274
+          },
+          {
+            "location": "src/openvpn/xkey_helper.c",
+            "line": 278
+          },
+          {
+            "location": "tests/unit_tests/openvpn/test_crypto.c",
+            "line": 284
+          },
+          {
+            "location": "tests/unit_tests/openvpn/test_crypto.c",
+            "line": 289
+          },
+          {
+            "location": "tests/unit_tests/openvpn/test_crypto.c",
+            "line": 304
+          },
+          {
+            "location": "tests/unit_tests/openvpn/test_crypto.c",
+            "line": 312
+          },
+          {
+            "location": "tests/unit_tests/openvpn/test_crypto.c",
+            "line": 325
+          },
+          {
+            "location": "tests/unit_tests/openvpn/test_crypto.c",
+            "line": 335
+          },
+          {
+            "location": "tests/unit_tests/openvpn/test_crypto.c",
+            "line": 340
+          },
+          {
+            "location": "tests/unit_tests/openvpn/test_pkcs11.c",
+            "line": 380
+          },
+          {
+            "location": "src/openvpn/ssl_verify_openssl.c",
+            "line": 422
+          },
+          {
+            "location": "src/openvpn/ssl_verify_openssl.c",
+            "line": 422
+          },
+          {
+            "location": "src/openvpn/ssl_verify_openssl.c",
+            "line": 422
+          },
+          {
+            "location": "tests/unit_tests/openvpn/test_crypto.c",
+            "line": 436
+          },
+          {
+            "location": "src/openvpn/crypto_backend.h",
+            "line": 516
+          },
+          {
+            "location": "src/openvpn/crypto.h",
+            "line": 750
+          },
+          {
+            "location": "src/openvpn/options.c",
+            "line": 1090
+          },
+          {
+            "location": "src/openvpn/options.c",
+            "line": 1142
+          },
+          {
+            "location": "src/openvpn/crypto.c",
+            "line": 1916
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/openvpn"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "7.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "pii"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "18"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "4.28"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "legacy-broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "3.083"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-3.72"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "SHA-256"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "17.1"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:6043c62f42db",
+      "name": "AES-128",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "2.16.840.1.101.3.4.1.6",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "algorithmFamily": "AES",
+          "parameterSetIdentifier": "128",
+          "cryptoFunctions": [
+            "decrypt",
+            "encrypt",
+            "keygen"
+          ],
+          "classicalSecurityLevel": 128,
+          "nistQuantumSecurityLevel": 1,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/openvpn/ssl_ncp.c",
+            "line": 97
+          },
+          {
+            "location": "src/openvpn/ssl_ncp.c",
+            "line": 97
+          },
+          {
+            "location": "src/openvpn/ovpn_dco_win.h",
+            "line": 108
+          },
+          {
+            "location": "src/openvpn/ssl_ncp.h",
+            "line": 155
+          },
+          {
+            "location": "src/openvpn/ssl_ncp.h",
+            "line": 155
+          },
+          {
+            "location": "src/openvpn/crypto_backend.h",
+            "line": 177
+          },
+          {
+            "location": "src/openvpn/crypto_backend.h",
+            "line": 192
+          },
+          {
+            "location": "src/openvpn/crypto_backend.h",
+            "line": 222
+          },
+          {
+            "location": "tests/unit_tests/openvpn/test_crypto.c",
+            "line": 256
+          },
+          {
+            "location": "tests/unit_tests/openvpn/test_crypto.c",
+            "line": 304
+          },
+          {
+            "location": "tests/unit_tests/openvpn/test_crypto.c",
+            "line": 312
+          },
+          {
+            "location": "tests/unit_tests/openvpn/test_crypto.c",
+            "line": 382
+          },
+          {
+            "location": "src/openvpn/ssl_ncp.c",
+            "line": 579
+          },
+          {
+            "location": "src/openvpn/ssl_ncp.c",
+            "line": 579
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/openvpn"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "comment"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "7.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "pii"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "27"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.92"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "weakened"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-4.08"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "85.7"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:aba9c7681b24",
+      "name": "AES-192",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "2.16.840.1.101.3.4.1.26",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "algorithmFamily": "AES",
+          "parameterSetIdentifier": "192",
+          "cryptoFunctions": [
+            "decrypt",
+            "encrypt",
+            "keygen"
+          ],
+          "classicalSecurityLevel": 192,
+          "nistQuantumSecurityLevel": 3,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/openvpn/ovpn_dco_win.h",
+            "line": 108
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/openvpn"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "comment"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "7.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "pii"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "40"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.4"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "weakened"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-4.6"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "85.7"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:6b4f60af71be",
+      "name": "ECDH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.3.132.1.12",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "algorithmFamily": "ECDH",
+          "cryptoFunctions": [
+            "keygen",
+            "other"
+          ],
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/openvpn/ssl.c",
+            "line": 663
+          },
+          {
+            "location": "src/openvpn/ssl_openssl.c",
+            "line": 732
+          },
+          {
+            "location": "src/openvpn/ssl_openssl.c",
+            "line": 732
+          },
+          {
+            "location": "src/openvpn/ssl_openssl.c",
+            "line": 753
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/openvpn"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "comment"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "7.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "pii"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "37"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.52"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-4.48"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "85.7"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:protocol:83b5b65220d4",
+      "name": "TLS",
+      "cryptoProperties": {
+        "assetType": "protocol",
+        "protocolProperties": {
+          "type": "tls",
+          "version": "TLSv1.0, TLSv1.1, TLSv1.2, TLSv1.3",
+          "cipherSuites": [
+            {
+              "name": "SUITEB128"
+            }
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/openvpn/ssl_openssl.c",
+            "line": 231
+          },
+          {
+            "location": "src/openvpn/ssl_openssl.c",
+            "line": 391
+          },
+          {
+            "location": "src/openvpn/ssl_openssl.c",
+            "line": 415
+          },
+          {
+            "location": "src/openvpn/ssl_openssl.c",
+            "line": 493
+          },
+          {
+            "location": "src/openvpn/ssl_openssl.c",
+            "line": 2525
+          },
+          {
+            "location": "src/openvpn/ssl_openssl.c",
+            "line": 2533
+          },
+          {
+            "location": "src/openvpn/ssl_openssl.c",
+            "line": 199
+          },
+          {
+            "location": "src/openvpn/ssl_openssl.c",
+            "line": 203
+          },
+          {
+            "location": "src/openvpn/ssl_openssl.c",
+            "line": 207
+          },
+          {
+            "location": "src/openvpn/ssl_openssl.c",
+            "line": 211
+          },
+          {
+            "location": "src/openvpn/ssl_openssl.c",
+            "line": 228
+          },
+          {
+            "location": "src/openvpn/ssl_openssl.c",
+            "line": 228
+          },
+          {
+            "location": "src/openvpn/ssl_openssl.c",
+            "line": 421
+          },
+          {
+            "location": "src/openvpn/ssl_openssl.c",
+            "line": 2533
+          },
+          {
+            "location": "src/openvpn/ssl_openssl.c",
+            "line": 2538
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/openvpn"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "7.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "pii"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "53"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "0.5"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "legacy-broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "3.083"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-7.5"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "X25519MLKEM768"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "3.2"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "80.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:cba32e1d6589",
+      "name": "DES-56",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.3.14.3.2.7",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "algorithmFamily": "DES",
+          "parameterSetIdentifier": "56",
+          "cryptoFunctions": [
+            "decrypt",
+            "encrypt"
+          ],
+          "classicalSecurityLevel": 56,
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "tests/t_lpback.sh",
+            "line": 81
+          },
+          {
+            "location": "tests/t_lpback.sh",
+            "line": 84
+          },
+          {
+            "location": "tests/t_lpback.sh",
+            "line": 86
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/openvpn"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "7.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "pii"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "38"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.48"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "legacy-broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-4.52"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "85.7"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:protocol:62a5404f0aa6",
+      "name": "TLS",
+      "cryptoProperties": {
+        "assetType": "protocol",
+        "protocolProperties": {
+          "type": "tls"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "tests/unit_tests/openvpn/test_pkcs11.c",
+            "line": 423
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/openvpn"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "7.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "pii"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "60"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "0.5"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-7.5"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "X25519MLKEM768"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "2.9"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "40.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:certificate:3c842bddd185",
+      "name": "1.2.840.113549.1.9.1=me@myhost.mydomain,O=OpenVPN-TEST,L=BISHKEK,ST=NA,C=KG",
+      "cryptoProperties": {
+        "assetType": "certificate",
+        "oid": "1.2.840.113549.1.1.11",
+        "certificateProperties": {
+          "subjectName": "1.2.840.113549.1.9.1=me@myhost.mydomain,O=OpenVPN-TEST,L=BISHKEK,ST=NA,C=KG",
+          "issuerName": "1.2.840.113549.1.9.1=me@myhost.mydomain,O=OpenVPN-TEST,L=BISHKEK,ST=NA,C=KG",
+          "notValidBefore": "2023-11-07T12:23:39Z",
+          "notValidAfter": "2033-11-04T12:23:39Z",
+          "certificateFormat": "X.509",
+          "certificateExtension": "p12",
+          "serialNumber": "6f50b8d3466e723459bc0033dd7cae12eb274606",
+          "certificateState": [
+            {
+              "state": "active"
+            }
+          ],
+          "fingerprint": {
+            "alg": "SHA-256",
+            "content": "3eee30f25eb688354fbd4c3c82facdadfe5f2563a62174a360212d9b6ce1179b"
+          }
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "sample/sample-keys/client.p12"
+          },
+          {
+            "location": "sample/sample-keys/ca.crt",
+            "line": 1
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/openvpn"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "certificate"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "7.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "pii"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "74"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "0.5"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.233"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-7.5"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "ML-DSA-65 certificate (re-issue when the CA supports FIPS 204; hybrid/dual certificates during transition)"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "2.4"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:8ee8eab2dfd9",
+      "name": "RSA-4096",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.2.840.113549.1.1.1",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "algorithmFamily": "RSASSA-PKCS1",
+          "parameterSetIdentifier": "4096",
+          "cryptoFunctions": [
+            "verify"
+          ],
+          "classicalSecurityLevel": 152,
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "sample/sample-keys/client.p12"
+          },
+          {
+            "location": "sample/sample-keys/ca.crt",
+            "line": 1
+          },
+          {
+            "location": "sample/sample-keys/ca.key",
+            "line": 1
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/openvpn"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "certificate"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "7.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "pii"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "35"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.6"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "2.467"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-4.4"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "ML-KEM-768"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "9.4"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:8c1e94ec9b3c",
+      "name": "private-key:RSA",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "private-key",
+          "size": 4096,
+          "state": "active",
+          "format": "PEM"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "sample/sample-keys/ca.key",
+            "line": 1
+          },
+          {
+            "location": "sample/sample-keys/ca.key"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/openvpn"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "certificate,theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "7.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "pii"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "70"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.233"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-7.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "3.6"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "71.4"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:certificate:83a1f86435b6",
+      "name": "Test-Client-EC",
+      "cryptoProperties": {
+        "assetType": "certificate",
+        "oid": "1.2.840.113549.1.1.11",
+        "certificateProperties": {
+          "subjectName": "1.2.840.113549.1.9.1=me@myhost.mydomain,CN=Test-Client-EC,O=OpenVPN-TEST,ST=NA,C=KG",
+          "issuerName": "1.2.840.113549.1.9.1=me@myhost.mydomain,O=OpenVPN-TEST,L=BISHKEK,ST=NA,C=KG",
+          "notValidBefore": "2023-11-07T12:23:40Z",
+          "notValidAfter": "2033-11-04T12:23:40Z",
+          "certificateFormat": "X.509",
+          "certificateExtension": "crt",
+          "serialNumber": "7",
+          "certificateState": [
+            {
+              "state": "active"
+            }
+          ],
+          "fingerprint": {
+            "alg": "SHA-256",
+            "content": "385da8c24252a13584f07609aaad130926fe11387fd36e5cec9e8a7fe4971a57"
+          }
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "sample/sample-keys/client-ec.crt",
+            "line": 61
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/openvpn"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "certificate"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "7.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "pii"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "76"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "0.5"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.233"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-7.5"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "ML-DSA-65 certificate (re-issue when the CA supports FIPS 204; hybrid/dual certificates during transition)"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "2.2"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:76cc6f396ebb",
+      "name": "ECDSA-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.2.840.10045.4.3.2",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "algorithmFamily": "ECDSA",
+          "parameterSetIdentifier": "256",
+          "curve": "secp256k1",
+          "cryptoFunctions": [
+            "verify"
+          ],
+          "classicalSecurityLevel": 128,
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "sample/sample-keys/client-ec.key",
+            "line": 1
+          },
+          {
+            "location": "sample/sample-keys/server-ec.key",
+            "line": 1
+          },
+          {
+            "location": "sample/sample-keys/client-ec.crt",
+            "line": 61
+          },
+          {
+            "location": "sample/sample-keys/server-ec.crt",
+            "line": 69
+          },
+          {
+            "location": "src/openvpn/ssl_openssl.c",
+            "line": 754
+          },
+          {
+            "location": "src/openvpn/ssl_openssl.c",
+            "line": 757
+          },
+          {
+            "location": "src/openvpn/pkcs11_openssl.c",
+            "line": 160
+          },
+          {
+            "location": "src/openvpn/xkey_common.h",
+            "line": 171
+          },
+          {
+            "location": "src/openvpn/xkey_common.h",
+            "line": 171
+          },
+          {
+            "location": "tests/unit_tests/openvpn/test_provider.c",
+            "line": 174
+          },
+          {
+            "location": "src/openvpn/xkey_helper.c",
+            "line": 400
+          },
+          {
+            "location": "src/openvpn/ssl_openssl.c",
+            "line": 1591
+          },
+          {
+            "location": "src/openvpn/ssl_openssl.c",
+            "line": 1591
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/openvpn"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "certificate,source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "7.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "pii"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "18"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "4.28"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "2.467"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-3.72"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "ML-DSA-65"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "16.3"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:5cdcb4adeca3",
+      "name": "private-key:ECDSA",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "private-key",
+          "size": 256,
+          "state": "active",
+          "format": "PEM"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "sample/sample-keys/client-ec.key",
+            "line": 1
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/openvpn"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "certificate"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "7.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "pii"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "70"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.233"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-7.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "3.6"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "71.4"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:afdd09fdaed0",
+      "name": "private-key:RSA",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "private-key",
+          "size": 2048,
+          "state": "active",
+          "format": "PEM"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "sample/sample-keys/client-pass.key",
+            "line": 1
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/openvpn"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "certificate"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "7.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "pii"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "70"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.233"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-7.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "3.6"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "71.4"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:676b1254026a",
+      "name": "RSA-2048",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.2.840.113549.1.1.1",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "algorithmFamily": "RSASSA-PKCS1",
+          "parameterSetIdentifier": "2048",
+          "cryptoFunctions": [
+            "verify"
+          ],
+          "classicalSecurityLevel": 112,
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "sample/sample-keys/client.p12"
+          },
+          {
+            "location": "sample/sample-keys/client-pass.key",
+            "line": 1
+          },
+          {
+            "location": "sample/sample-keys/client.key",
+            "line": 1
+          },
+          {
+            "location": "sample/sample-keys/server.key",
+            "line": 1
+          },
+          {
+            "location": "sample/sample-keys/client.crt",
+            "line": 74
+          },
+          {
+            "location": "sample/sample-keys/server.crt",
+            "line": 82
+          },
+          {
+            "location": "src/openvpn/ssl_openssl.c",
+            "line": 1530
+          },
+          {
+            "location": "sample/sample-config-files/loopback-client"
+          },
+          {
+            "location": "sample/sample-config-files/loopback-client"
+          },
+          {
+            "location": "sample/sample-config-files/loopback-client"
+          },
+          {
+            "location": "sample/sample-config-files/loopback-client"
+          },
+          {
+            "location": "sample/sample-keys/ca.crt"
+          },
+          {
+            "location": "sample/sample-keys/ca.crt"
+          },
+          {
+            "location": "sample/sample-keys/client.crt"
+          },
+          {
+            "location": "sample/sample-keys/client.crt"
+          },
+          {
+            "location": "sample/sample-keys/server.crt"
+          },
+          {
+            "location": "sample/sample-keys/server.crt"
+          },
+          {
+            "location": "tests/unit_tests/openvpn/cert_data.h",
+            "line": 27
+          },
+          {
+            "location": "tests/unit_tests/openvpn/cert_data.h",
+            "line": 27
+          },
+          {
+            "location": "sample/sample-keys/gen-sample-keys.sh",
+            "line": 28
+          },
+          {
+            "location": "sample/sample-keys/gen-sample-keys.sh",
+            "line": 48
+          },
+          {
+            "location": "tests/unit_tests/openvpn/test_provider.c",
+            "line": 53
+          },
+          {
+            "location": "src/openvpn/xkey_common.h",
+            "line": 54
+          },
+          {
+            "location": "sample/sample-keys/gen-sample-keys.sh",
+            "line": 65
+          },
+          {
+            "location": "src/openvpn/ssl_mbedtls.c",
+            "line": 65
+          },
+          {
+            "location": "src/openvpn/ssl_mbedtls.c",
+            "line": 74
+          },
+          {
+            "location": "sample/sample-keys/gen-sample-keys.sh",
+            "line": 81
+          },
+          {
+            "location": "src/openvpn/xkey_common.h",
+            "line": 156
+          },
+          {
+            "location": "src/openvpn/xkey_helper.c",
+            "line": 212
+          },
+          {
+            "location": "tests/unit_tests/openvpn/test_provider.c",
+            "line": 279
+          },
+          {
+            "location": "tests/unit_tests/openvpn/test_provider.c",
+            "line": 279
+          },
+          {
+            "location": "src/openvpn/xkey_provider.c",
+            "line": 340
+          },
+          {
+            "location": "tests/unit_tests/openvpn/test_provider.c",
+            "line": 351
+          },
+          {
+            "location": "src/openvpn/cryptoapi.c",
+            "line": 375
+          },
+          {
+            "location": "src/openvpn/cryptoapi.c",
+            "line": 445
+          },
+          {
+            "location": "src/openvpn/ssl_mbedtls.c",
+            "line": 620
+          },
+          {
+            "location": "src/openvpn/ssl_mbedtls.c",
+            "line": 791
+          },
+          {
+            "location": "src/openvpn/ssl_openssl.c",
+            "line": 1427
+          },
+          {
+            "location": "src/openvpn/ssl_openssl.c",
+            "line": 1518
+          },
+          {
+            "location": "src/openvpn/ssl_openssl.c",
+            "line": 1529
+          },
+          {
+            "location": "src/openvpn/ssl_openssl.c",
+            "line": 1537
+          },
+          {
+            "location": "src/openvpn/ssl_openssl.c",
+            "line": 1548
+          },
+          {
+            "location": "src/openvpn/ssl_openssl.c",
+            "line": 1550
+          },
+          {
+            "location": "src/openvpn/ssl_openssl.c",
+            "line": 2112
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/openvpn"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "certificate,source,theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "7.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "pii"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "18"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "4.28"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "2.467"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-3.72"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "ML-KEM-768"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "17.1"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:certificate:d5eb1b30ab74",
+      "name": "Test-Client",
+      "cryptoProperties": {
+        "assetType": "certificate",
+        "oid": "1.2.840.113549.1.1.11",
+        "certificateProperties": {
+          "subjectName": "1.2.840.113549.1.9.1=me@myhost.mydomain,CN=Test-Client,O=OpenVPN-TEST,ST=NA,C=KG",
+          "issuerName": "1.2.840.113549.1.9.1=me@myhost.mydomain,O=OpenVPN-TEST,L=BISHKEK,ST=NA,C=KG",
+          "notValidBefore": "2023-11-07T12:23:39Z",
+          "notValidAfter": "2033-11-04T12:23:39Z",
+          "certificateFormat": "X.509",
+          "certificateExtension": "p12",
+          "serialNumber": "2",
+          "certificateState": [
+            {
+              "state": "active"
+            }
+          ],
+          "fingerprint": {
+            "alg": "SHA-256",
+            "content": "45083dc5b6ed9ea92c95e91c72ba846ce41e023a1a0de625d8ad4e4d7cd22638"
+          }
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "sample/sample-keys/client.p12"
+          },
+          {
+            "location": "sample/sample-keys/client.crt",
+            "line": 74
+          },
+          {
+            "location": "sample/sample-config-files/loopback-client"
+          },
+          {
+            "location": "sample/sample-keys/client.crt"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/openvpn"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "certificate,theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "7.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "pii"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "71"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "0.5"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.233"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-7.5"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "ML-DSA-65 certificate (re-issue when the CA supports FIPS 204; hybrid/dual certificates during transition)"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "2.8"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:28a99134af8e",
+      "name": "private-key:RSA",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "private-key",
+          "size": 2048,
+          "state": "active",
+          "format": "PEM"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "sample/sample-keys/client.key",
+            "line": 1
+          },
+          {
+            "location": "sample/sample-keys/client.key"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/openvpn"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "certificate,theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "7.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "pii"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "70"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.233"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-7.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "3.6"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "71.4"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:4edc61f895e5",
+      "name": "private-key:RSA",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "private-key",
+          "size": 2048,
+          "state": "active",
+          "format": "PKCS#12"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "sample/sample-keys/client.p12"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/openvpn"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "certificate"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "7.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "pii"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "70"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.233"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-7.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "3.6"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "71.4"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:certificate:69a2b4a9e757",
+      "name": "Test-Server-EC",
+      "cryptoProperties": {
+        "assetType": "certificate",
+        "oid": "1.2.840.113549.1.1.11",
+        "certificateProperties": {
+          "subjectName": "1.2.840.113549.1.9.1=me@myhost.mydomain,CN=Test-Server-EC,O=OpenVPN-TEST,ST=NA,C=KG",
+          "issuerName": "1.2.840.113549.1.9.1=me@myhost.mydomain,O=OpenVPN-TEST,L=BISHKEK,ST=NA,C=KG",
+          "notValidBefore": "2023-11-07T12:23:40Z",
+          "notValidAfter": "2033-11-04T12:23:40Z",
+          "certificateFormat": "X.509",
+          "certificateExtension": "crt",
+          "serialNumber": "6",
+          "certificateState": [
+            {
+              "state": "active"
+            }
+          ],
+          "fingerprint": {
+            "alg": "SHA-256",
+            "content": "8b5e6857e150a0906a0e3b9922a120a40e81192d11a1e47566dfa58ce2164c09"
+          }
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "sample/sample-keys/server-ec.crt",
+            "line": 69
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/openvpn"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "certificate"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "7.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "pii"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "76"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "0.5"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.233"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-7.5"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "ML-DSA-65 certificate (re-issue when the CA supports FIPS 204; hybrid/dual certificates during transition)"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "2.2"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:526719e068c1",
+      "name": "private-key:ECDSA",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "private-key",
+          "size": 256,
+          "state": "active",
+          "format": "PEM"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "sample/sample-keys/server-ec.key",
+            "line": 1
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/openvpn"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "certificate"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "7.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "pii"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "70"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.233"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-7.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "3.6"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "71.4"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:certificate:5ee3b51d6e83",
+      "name": "Test-Server",
+      "cryptoProperties": {
+        "assetType": "certificate",
+        "oid": "1.2.840.113549.1.1.11",
+        "certificateProperties": {
+          "subjectName": "1.2.840.113549.1.9.1=me@myhost.mydomain,CN=Test-Server,O=OpenVPN-TEST,ST=NA,C=KG",
+          "issuerName": "1.2.840.113549.1.9.1=me@myhost.mydomain,O=OpenVPN-TEST,L=BISHKEK,ST=NA,C=KG",
+          "notValidBefore": "2023-11-07T12:23:39Z",
+          "notValidAfter": "2033-11-04T12:23:39Z",
+          "certificateFormat": "X.509",
+          "certificateExtension": "crt",
+          "serialNumber": "1",
+          "certificateState": [
+            {
+              "state": "active"
+            }
+          ],
+          "fingerprint": {
+            "alg": "SHA-256",
+            "content": "180a6dfa3d5cb5d48fff2c7f455314fd7199d80cee07680d4a00ee95d959c91b"
+          }
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "sample/sample-keys/server.crt",
+            "line": 82
+          },
+          {
+            "location": "sample/sample-keys/server.crt"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/openvpn"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "certificate,theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "7.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "pii"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "76"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "0.5"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.233"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-7.5"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "ML-DSA-65 certificate (re-issue when the CA supports FIPS 204; hybrid/dual certificates during transition)"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "2.2"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:dce49322a31e",
+      "name": "private-key:RSA",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "private-key",
+          "size": 2048,
+          "state": "active",
+          "format": "PEM"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "sample/sample-keys/server.key",
+            "line": 1
+          },
+          {
+            "location": "sample/sample-keys/server.key"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/openvpn"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "certificate,theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "7.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "pii"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "70"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.233"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-7.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "3.6"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "71.4"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:7990d7f82d1c",
+      "name": "private-key:unknown",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "private-key",
+          "format": "PEM"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "sample/sample-keys/ta.key",
+            "line": 1
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/openvpn"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "certificate"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "7.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "pii"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "70"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.233"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-7.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "3.6"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "42.9"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:8c7b65b53dd7",
+      "name": "public-key:RSA",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "public-key",
+          "size": 4096,
+          "format": "PEM"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "sample/sample-config-files/loopback-client"
+          },
+          {
+            "location": "sample/sample-config-files/loopback-client"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/openvpn"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "7.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "pii"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "58"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.233"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-7.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "4.4"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "57.1"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:certificate:27930fc06743",
+      "name": "",
+      "cryptoProperties": {
+        "assetType": "certificate",
+        "certificateProperties": {
+          "notValidBefore": "2023-11-07T12:23:39Z",
+          "notValidAfter": "2033-11-04T12:23:39Z",
+          "certificateFormat": "X.509",
+          "certificateExtension": "crt",
+          "certificateState": [
+            {
+              "state": "active"
+            }
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "sample/sample-config-files/loopback-client"
+          },
+          {
+            "location": "sample/sample-keys/ca.crt"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/openvpn"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "7.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "pii"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "62"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.233"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-7.0"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "ML-DSA-65 certificate (re-issue when the CA supports FIPS 204; hybrid/dual certificates during transition)"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "3.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "30.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:8996ef687f2e",
+      "name": "public-key:RSA",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "public-key",
+          "size": 4096,
+          "format": "PEM"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "sample/sample-keys/ca.crt"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/openvpn"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "7.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "pii"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "58"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.233"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-7.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "4.4"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "57.1"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:c87b530bfce7",
+      "name": "public-key:RSA",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "public-key",
+          "size": 2048,
+          "format": "PEM"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "sample/sample-keys/client.crt"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/openvpn"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "7.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "pii"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "58"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.233"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-7.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "4.4"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "57.1"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:a752be77f518",
+      "name": "public-key:RSA",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "public-key",
+          "size": 2048,
+          "format": "PEM"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "sample/sample-keys/server.crt"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/openvpn"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "7.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "pii"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "58"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.233"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-7.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "4.4"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "57.1"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:d0aa544f40ab",
+      "name": "key:generic-api-key",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "contrib/vcpkg-ports/pkcs11-helper/pkcs11-helper-001-RFC7512.patch",
+            "line": 490
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/openvpn"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "vendored"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "7.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "pii"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "58"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.233"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-7.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "4.4"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "42.9"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:18b2375f0231",
+      "name": "private-key:private-key",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "private-key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "doc/man-sections/example-fingerprint.rst",
+            "line": 93
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/openvpn"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "7.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "pii"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "58"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.233"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-7.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "4.4"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "42.9"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:d1fb9980bbba",
+      "name": "private-key:RSA",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "private-key",
+          "size": 2048,
+          "format": "PEM"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "sample/sample-config-files/loopback-client",
+            "line": 64
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/openvpn"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "7.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "pii"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "58"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.233"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-7.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "4.4"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "57.1"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:eb5ba0424935",
+      "name": "unknown:pkcs12-file",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "unknown"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "sample/sample-keys/client.p12"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/openvpn"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "7.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "pii"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "58"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.233"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-7.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "4.4"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:731431a90965",
+      "name": "key:generic-api-key",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "sample/sample-plugins/keying-material-exporter-demo/README",
+            "line": 44
+          },
+          {
+            "location": "sample/sample-plugins/keying-material-exporter-demo/README",
+            "line": 52
+          },
+          {
+            "location": "sample/sample-plugins/keying-material-exporter-demo/README",
+            "line": 63
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/openvpn"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "7.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "pii"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "57"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.233"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-7.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "4.5"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "42.9"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:4eb96849f757",
+      "name": "key:generic-api-key",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/openvpn/pkcs11_openssl.c",
+            "line": 67
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/openvpn"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "7.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "pii"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "58"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.233"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-7.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "4.4"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "42.9"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:b23c96f9637f",
+      "name": "private-key:private-key",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "private-key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "tests/unit_tests/openvpn/cert_data.h",
+            "line": 54
+          },
+          {
+            "location": "tests/unit_tests/openvpn/cert_data.h",
+            "line": 105
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/openvpn"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "7.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "pii"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "57"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-7.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "42.9"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:823aebdac924",
+      "name": "private-key:private-key",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "private-key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "tests/unit_tests/openvpn/test_ssl.c",
+            "line": 111
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/openvpn"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "7.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "pii"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "58"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-7.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "42.9"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "urn:ecdat:scan:343cd511f049",
+      "dependsOn": [
+        "urn:ecdat:component:openvpn-openvpn"
+      ]
+    },
+    {
+      "ref": "urn:ecdat:component:openvpn-openvpn",
+      "dependsOn": [
+        "urn:ecdat:library:a305f958a175",
+        "urn:ecdat:library:cb9ecf32b2be",
+        "urn:ecdat:library:529f065c6670",
+        "urn:ecdat:algorithm:3e103e86aa7c",
+        "urn:ecdat:algorithm:2c1a9ed771af",
+        "urn:ecdat:algorithm:aad3fa6c9af7",
+        "urn:ecdat:algorithm:b52614782af3",
+        "urn:ecdat:algorithm:6043c62f42db",
+        "urn:ecdat:algorithm:aba9c7681b24",
+        "urn:ecdat:algorithm:6b4f60af71be",
+        "urn:ecdat:protocol:83b5b65220d4",
+        "urn:ecdat:algorithm:cba32e1d6589",
+        "urn:ecdat:protocol:62a5404f0aa6",
+        "urn:ecdat:certificate:3c842bddd185",
+        "urn:ecdat:algorithm:8ee8eab2dfd9",
+        "urn:ecdat:material:8c1e94ec9b3c",
+        "urn:ecdat:certificate:83a1f86435b6",
+        "urn:ecdat:algorithm:76cc6f396ebb",
+        "urn:ecdat:material:5cdcb4adeca3",
+        "urn:ecdat:material:afdd09fdaed0",
+        "urn:ecdat:algorithm:676b1254026a",
+        "urn:ecdat:certificate:d5eb1b30ab74",
+        "urn:ecdat:material:28a99134af8e",
+        "urn:ecdat:material:4edc61f895e5",
+        "urn:ecdat:certificate:69a2b4a9e757",
+        "urn:ecdat:material:526719e068c1",
+        "urn:ecdat:certificate:5ee3b51d6e83",
+        "urn:ecdat:material:dce49322a31e",
+        "urn:ecdat:material:7990d7f82d1c",
+        "urn:ecdat:material:8c7b65b53dd7",
+        "urn:ecdat:certificate:27930fc06743",
+        "urn:ecdat:material:8996ef687f2e",
+        "urn:ecdat:material:c87b530bfce7",
+        "urn:ecdat:material:a752be77f518",
+        "urn:ecdat:material:d0aa544f40ab",
+        "urn:ecdat:material:18b2375f0231",
+        "urn:ecdat:material:d1fb9980bbba",
+        "urn:ecdat:material:eb5ba0424935",
+        "urn:ecdat:material:731431a90965",
+        "urn:ecdat:material:4eb96849f757",
+        "urn:ecdat:material:b23c96f9637f",
+        "urn:ecdat:material:823aebdac924"
+      ]
+    },
+    {
+      "ref": "urn:ecdat:library:a305f958a175"
+    },
+    {
+      "ref": "urn:ecdat:library:cb9ecf32b2be"
+    },
+    {
+      "ref": "urn:ecdat:library:529f065c6670"
+    }
+  ],
+  "vulnerabilities": [
+    {
+      "bom-ref": "vuln-1",
+      "id": "ECDAT-QV-0001",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is comment: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "MD5 (algorithm) in OpenVPN/openvpn: legacy-broken; tier SAFE",
+      "detail": "Practical collisions since 2004; unusable for signatures or integrity",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "false_positive",
+        "detail": "mentioned in a comment only",
+        "response": [],
+        "justification": "code_not_present"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:aad3fa6c9af7"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=3.68 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-2",
+      "id": "ECDAT-QV-0002",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "high",
+          "justification": "classically broken or below minimum strength today, independent of quantum"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "SHA-1 (algorithm) in OpenVPN/openvpn: legacy-broken; tier ACT_NOW",
+      "detail": "Chosen-prefix collisions (SHAttered 2017, 2020); disallowed for signatures",
+      "recommendation": "Migrate to SHA-256",
+      "analysis": {
+        "state": "exploitable",
+        "detail": "quantum-vulnerable and reachable",
+        "response": [
+          "update"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:b52614782af3"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=4.28 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-3",
+      "id": "ECDAT-QV-0003",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is comment: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "AES-128 (algorithm) in OpenVPN/openvpn: weakened; tier SAFE",
+      "detail": "Grover reduces AES-128 to ~64-bit effective security; still NIST-approved but fails CNSA 2.0",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "false_positive",
+        "detail": "mentioned in a comment only",
+        "response": [],
+        "justification": "code_not_present"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:6043c62f42db"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=3.92 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-4",
+      "id": "ECDAT-QV-0004",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is comment: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "AES-192 (algorithm) in OpenVPN/openvpn: weakened; tier SAFE",
+      "detail": "Grover reduces AES-192 to ~96-bit effective security",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "false_positive",
+        "detail": "mentioned in a comment only",
+        "response": [],
+        "justification": "code_not_present"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:aba9c7681b24"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=3.4 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-5",
+      "id": "ECDAT-QV-0005",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is comment: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "ECDH (algorithm) in OpenVPN/openvpn: broken; tier SAFE",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "false_positive",
+        "detail": "mentioned in a comment only",
+        "response": [],
+        "justification": "code_not_present"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:6b4f60af71be"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=3.52 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-6",
+      "id": "ECDAT-QV-0006",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "high",
+          "justification": "classically broken or below minimum strength today, independent of quantum"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "TLS (protocol) in OpenVPN/openvpn: legacy-broken; tier ACT_NOW",
+      "detail": "legacy protocol version(s) enabled: TLSv1.0, TLSv1.1",
+      "recommendation": "Migrate to X25519MLKEM768 (hybrid)",
+      "analysis": {
+        "state": "exploitable",
+        "detail": "quantum-vulnerable and reachable",
+        "response": [
+          "update"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:protocol:83b5b65220d4"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=0.5 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-7",
+      "id": "ECDAT-QV-0007",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "DES (algorithm) in OpenVPN/openvpn: legacy-broken; tier SAFE",
+      "detail": "56-bit key is brute-forceable classically",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:cba32e1d6589"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=3.48 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-8",
+      "id": "ECDAT-QV-0008",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "TLS (protocol) in OpenVPN/openvpn: broken; tier SAFE",
+      "detail": "classical (ECDHE/RSA) key exchange only: harvestable today",
+      "recommendation": "Migrate to X25519MLKEM768 (hybrid)",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:protocol:62a5404f0aa6"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=0.5 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-9",
+      "id": "ECDAT-QV-0009",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "quantum-vulnerable but short-lived data, signing-only, or ample migration time; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "1.2.840.113549.1.9.1=me@myhost.mydomain,O=OpenVPN-TEST,L=BISHKEK,ST=NA,C=KG (certificate) in OpenVPN/openvpn: broken; tier MONITOR",
+      "detail": "Integer factorisation is broken by Shor's algorithm",
+      "recommendation": "Migrate to ML-DSA-65 certificate (re-issue when the CA supports FIPS 204; hybrid/dual certificates during transition) (hybrid)",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:certificate:3c842bddd185"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=0.5 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-10",
+      "id": "ECDAT-QV-0010",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "high",
+          "justification": "framework deadline 2030 is within the 3.6-year migration window"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "RSA (algorithm) in OpenVPN/openvpn: broken; tier ACT_NOW",
+      "detail": "Integer factorisation is broken by Shor's algorithm",
+      "recommendation": "Migrate to ML-KEM-768 (hybrid)",
+      "analysis": {
+        "state": "exploitable",
+        "detail": "quantum-vulnerable and reachable",
+        "response": [
+          "update"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:8ee8eab2dfd9"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=3.6 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-11",
+      "id": "ECDAT-QV-0011",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "quantum-vulnerable but short-lived data, signing-only, or ample migration time"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "private-key:RSA (related-crypto-material) in OpenVPN/openvpn: broken; tier MONITOR",
+      "detail": "Integer factorisation is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:8c1e94ec9b3c"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-12",
+      "id": "ECDAT-QV-0012",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "quantum-vulnerable but short-lived data, signing-only, or ample migration time; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "Test-Client-EC (certificate) in OpenVPN/openvpn: broken; tier MONITOR",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "Migrate to ML-DSA-65 certificate (re-issue when the CA supports FIPS 204; hybrid/dual certificates during transition) (hybrid)",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:certificate:83a1f86435b6"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=0.5 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-13",
+      "id": "ECDAT-QV-0013",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "high",
+          "justification": "framework deadline 2030 is within the 4.28-year migration window; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "ECDSA (algorithm) in OpenVPN/openvpn: broken; tier ACT_NOW",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "Migrate to ML-DSA-65 (hybrid)",
+      "analysis": {
+        "state": "exploitable",
+        "detail": "quantum-vulnerable and reachable",
+        "response": [
+          "update"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:76cc6f396ebb"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=4.28 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-14",
+      "id": "ECDAT-QV-0014",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "quantum-vulnerable but short-lived data, signing-only, or ample migration time; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "private-key:ECDSA (related-crypto-material) in OpenVPN/openvpn: broken; tier MONITOR",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:5cdcb4adeca3"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-15",
+      "id": "ECDAT-QV-0015",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "quantum-vulnerable but short-lived data, signing-only, or ample migration time"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "private-key:RSA (related-crypto-material) in OpenVPN/openvpn: broken; tier MONITOR",
+      "detail": "Integer factorisation is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:afdd09fdaed0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-16",
+      "id": "ECDAT-QV-0016",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "high",
+          "justification": "framework deadline 2030 is within the 4.28-year migration window"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "RSA (algorithm) in OpenVPN/openvpn: broken; tier ACT_NOW",
+      "detail": "Integer factorisation is broken by Shor's algorithm",
+      "recommendation": "Migrate to ML-KEM-768 (hybrid)",
+      "analysis": {
+        "state": "exploitable",
+        "detail": "quantum-vulnerable and reachable",
+        "response": [
+          "update"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:676b1254026a"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=4.28 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-17",
+      "id": "ECDAT-QV-0017",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "quantum-vulnerable but short-lived data, signing-only, or ample migration time"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "Test-Client (certificate) in OpenVPN/openvpn: broken; tier MONITOR",
+      "detail": "Integer factorisation is broken by Shor's algorithm",
+      "recommendation": "Migrate to ML-DSA-65 certificate (re-issue when the CA supports FIPS 204; hybrid/dual certificates during transition) (hybrid)",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:certificate:d5eb1b30ab74"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=0.5 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-18",
+      "id": "ECDAT-QV-0018",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "quantum-vulnerable but short-lived data, signing-only, or ample migration time"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "private-key:RSA (related-crypto-material) in OpenVPN/openvpn: broken; tier MONITOR",
+      "detail": "Integer factorisation is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:28a99134af8e"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-19",
+      "id": "ECDAT-QV-0019",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "quantum-vulnerable but short-lived data, signing-only, or ample migration time"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "private-key:RSA (related-crypto-material) in OpenVPN/openvpn: broken; tier MONITOR",
+      "detail": "Integer factorisation is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:4edc61f895e5"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-20",
+      "id": "ECDAT-QV-0020",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "quantum-vulnerable but short-lived data, signing-only, or ample migration time; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "Test-Server-EC (certificate) in OpenVPN/openvpn: broken; tier MONITOR",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "Migrate to ML-DSA-65 certificate (re-issue when the CA supports FIPS 204; hybrid/dual certificates during transition) (hybrid)",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:certificate:69a2b4a9e757"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=0.5 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-21",
+      "id": "ECDAT-QV-0021",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "quantum-vulnerable but short-lived data, signing-only, or ample migration time; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "private-key:ECDSA (related-crypto-material) in OpenVPN/openvpn: broken; tier MONITOR",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:526719e068c1"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-22",
+      "id": "ECDAT-QV-0022",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "quantum-vulnerable but short-lived data, signing-only, or ample migration time"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "Test-Server (certificate) in OpenVPN/openvpn: broken; tier MONITOR",
+      "detail": "Integer factorisation is broken by Shor's algorithm",
+      "recommendation": "Migrate to ML-DSA-65 certificate (re-issue when the CA supports FIPS 204; hybrid/dual certificates during transition) (hybrid)",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:certificate:5ee3b51d6e83"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=0.5 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-23",
+      "id": "ECDAT-QV-0023",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "quantum-vulnerable but short-lived data, signing-only, or ample migration time"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "private-key:RSA (related-crypto-material) in OpenVPN/openvpn: broken; tier MONITOR",
+      "detail": "Integer factorisation is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:dce49322a31e"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-24",
+      "id": "ECDAT-QV-0024",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "could not classify; review manually"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "private-key:unknown (related-crypto-material) in OpenVPN/openvpn: unknown; tier MONITOR",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:7990d7f82d1c"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-25",
+      "id": "ECDAT-QV-0025",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "quantum-vulnerable but short-lived data, signing-only, or ample migration time"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "public-key:RSA (related-crypto-material) in OpenVPN/openvpn: broken; tier MONITOR",
+      "detail": "Integer factorisation is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:8c7b65b53dd7"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-26",
+      "id": "ECDAT-QV-0026",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "could not classify; review manually"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": " (certificate) in OpenVPN/openvpn: unknown; tier MONITOR",
+      "detail": "",
+      "recommendation": "Migrate to ML-DSA-65 certificate (re-issue when the CA supports FIPS 204; hybrid/dual certificates during transition) (hybrid)",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:certificate:27930fc06743"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-27",
+      "id": "ECDAT-QV-0027",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "quantum-vulnerable but short-lived data, signing-only, or ample migration time"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "public-key:RSA (related-crypto-material) in OpenVPN/openvpn: broken; tier MONITOR",
+      "detail": "Integer factorisation is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:8996ef687f2e"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-28",
+      "id": "ECDAT-QV-0028",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "quantum-vulnerable but short-lived data, signing-only, or ample migration time"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "public-key:RSA (related-crypto-material) in OpenVPN/openvpn: broken; tier MONITOR",
+      "detail": "Integer factorisation is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:c87b530bfce7"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-29",
+      "id": "ECDAT-QV-0029",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "quantum-vulnerable but short-lived data, signing-only, or ample migration time"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "public-key:RSA (related-crypto-material) in OpenVPN/openvpn: broken; tier MONITOR",
+      "detail": "Integer factorisation is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:a752be77f518"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-30",
+      "id": "ECDAT-QV-0030",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "could not classify; review manually"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "key:generic-api-key (related-crypto-material) in OpenVPN/openvpn: unknown; tier MONITOR",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:d0aa544f40ab"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-31",
+      "id": "ECDAT-QV-0031",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "could not classify; review manually"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "private-key:private-key (related-crypto-material) in OpenVPN/openvpn: unknown; tier MONITOR",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:18b2375f0231"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-32",
+      "id": "ECDAT-QV-0032",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "quantum-vulnerable but short-lived data, signing-only, or ample migration time"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "private-key:RSA (related-crypto-material) in OpenVPN/openvpn: broken; tier MONITOR",
+      "detail": "Integer factorisation is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:d1fb9980bbba"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-33",
+      "id": "ECDAT-QV-0033",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "could not classify; review manually"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "unknown:pkcs12-file (related-crypto-material) in OpenVPN/openvpn: unknown; tier MONITOR",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:eb5ba0424935"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-34",
+      "id": "ECDAT-QV-0034",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "could not classify; review manually"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "key:generic-api-key (related-crypto-material) in OpenVPN/openvpn: unknown; tier MONITOR",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:731431a90965"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-35",
+      "id": "ECDAT-QV-0035",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "could not classify; review manually"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "key:generic-api-key (related-crypto-material) in OpenVPN/openvpn: unknown; tier MONITOR",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:4eb96849f757"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-36",
+      "id": "ECDAT-QV-0036",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "private-key:private-key (related-crypto-material) in OpenVPN/openvpn: unknown; tier SAFE",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:b23c96f9637f"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-37",
+      "id": "ECDAT-QV-0037",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "private-key:private-key (related-crypto-material) in OpenVPN/openvpn: unknown; tier SAFE",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:823aebdac924"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=1 Z=15"
+        }
+      ]
+    }
+  ]
+}

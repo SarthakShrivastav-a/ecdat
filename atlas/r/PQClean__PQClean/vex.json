@@ -1,0 +1,200 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.7",
+  "version": 1,
+  "vulnerabilities": [
+    {
+      "bom-ref": "vuln-1",
+      "id": "ECDAT-QV-0001",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "SHA-256 (algorithm) in PQClean/PQClean: safe; tier SAFE",
+      "detail": "128-bit collision resistance holds; Grover pre-image gain is impractical",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:2fe895002f28"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=4.04 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-2",
+      "id": "ECDAT-QV-0002",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is comment: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "ML-KEM-768 (algorithm) in PQClean/PQClean: safe; tier SAFE",
+      "detail": "Module-lattice KEM, FIPS 203",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "false_positive",
+        "detail": "mentioned in a comment only",
+        "response": [],
+        "justification": "code_not_present"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:1a26c3d748a1"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.92 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-3",
+      "id": "ECDAT-QV-0003",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is comment: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "SHA-1 (algorithm) in PQClean/PQClean: legacy-broken; tier SAFE",
+      "detail": "Chosen-prefix collisions (SHAttered 2017, 2020); disallowed for signatures",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "false_positive",
+        "detail": "mentioned in a comment only",
+        "response": [],
+        "justification": "code_not_present"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:786deb0d2316"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.4 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-4",
+      "id": "ECDAT-QV-0004",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is comment: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "ML-DSA-65 (algorithm) in PQClean/PQClean: safe; tier SAFE",
+      "detail": "Module-lattice signature, FIPS 204",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "false_positive",
+        "detail": "mentioned in a comment only",
+        "response": [],
+        "justification": "code_not_present"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:ca503cc7529a"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.92 Z=15"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "timestamp": "2026-09-18T08:56:25.257968+00:00",
+    "properties": [
+      {
+        "name": "ecdat:z_year",
+        "value": "2041"
+      }
+    ]
+  }
+}

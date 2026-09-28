@@ -1,0 +1,4072 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.7.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.7",
+  "serialNumber": "urn:uuid:9e8c7fdd-739a-43c5-a2c4-0e5246870494",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-09-18T08:35:09Z",
+    "tools": {
+      "components": [
+        {
+          "type": "application",
+          "name": "ecdat",
+          "version": "0.1.0",
+          "description": "Enterprise Cryptographic Discovery & Analysis Tool (SIH 2026 PS 26164)"
+        },
+        {
+          "type": "application",
+          "name": "opengrep",
+          "version": "1.29.0"
+        },
+        {
+          "type": "application",
+          "name": "cbomkit-theia",
+          "version": "- CycloneDXv1.6"
+        },
+        {
+          "type": "application",
+          "name": "syft",
+          "version": "Version:       1.51.1"
+        },
+        {
+          "type": "application",
+          "name": "tshark",
+          "version": "TShark (Wireshark) 4.6.8 (v4.6.8-0-ge677bf052328)."
+        },
+        {
+          "type": "application",
+          "name": "crane",
+          "version": "v0.22.1"
+        }
+      ]
+    },
+    "component": {
+      "type": "application",
+      "bom-ref": "urn:ecdat:scan:eddfd9c0dbcc",
+      "name": "OpenVPN__easy-rsa"
+    },
+    "properties": [
+      {
+        "name": "ecdat:z_year",
+        "value": "2041"
+      },
+      {
+        "name": "ecdat:profile",
+        "value": "enterprise"
+      },
+      {
+        "name": "ecdat:targets",
+        "value": "1"
+      },
+      {
+        "name": "ecdat:certin_table9",
+        "value": "CERT-In BOM guidelines v2.0 (2025-07-09) section 8.3"
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "application",
+      "bom-ref": "urn:ecdat:component:openvpn-easy-rsa",
+      "name": "OpenVPN/easy-rsa",
+      "properties": [
+        {
+          "name": "ecdat:zone",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:path",
+          "value": "C:\\customize\\SIH2026\\demo\\ecdat\\.claude\\worktrees\\ecdat-build\\out\\atlas\\src\\OpenVPN__easy-rsa"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "urn:ecdat:library:4566ac2fbe76",
+      "name": "openssl",
+      "version": "3.6.0",
+      "properties": [
+        {
+          "name": "ecdat:zone",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:path",
+          "value": "distro/windows/win32/libcrypto-3.dll"
+        },
+        {
+          "name": "ecdat:ecosystem",
+          "value": "system"
+        },
+        {
+          "name": "ecdat:pqc_native",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:pqc_native_from",
+          "value": "3.5.0"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "urn:ecdat:library:693bda13c547",
+      "name": "windows-capi",
+      "properties": [
+        {
+          "name": "ecdat:zone",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:path",
+          "value": "distro/windows/win32/libcrypto-3.dll"
+        },
+        {
+          "name": "ecdat:ecosystem",
+          "value": "system"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:95f138eca6cd",
+      "name": "RSA",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.2.840.113549.1.1.1",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "algorithmFamily": "RSASSA-PKCS1",
+          "cryptoFunctions": [
+            "decrypt",
+            "encrypt",
+            "keygen",
+            "sign",
+            "verify"
+          ],
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "distro/windows/win32/libcrypto-3.dll"
+          },
+          {
+            "location": "distro/windows/win32/libcrypto-3.dll"
+          },
+          {
+            "location": "distro/windows/win32/libssl-3.dll"
+          },
+          {
+            "location": "distro/windows/win32/openssl.exe"
+          },
+          {
+            "location": "distro/windows/win64/libcrypto-3-x64.dll"
+          },
+          {
+            "location": "distro/windows/win64/libcrypto-3-x64.dll"
+          },
+          {
+            "location": "distro/windows/win64/libssl-3-x64.dll"
+          },
+          {
+            "location": "distro/windows/win64/openssl.exe"
+          },
+          {
+            "location": "op-test.sh",
+            "line": 4
+          },
+          {
+            "location": "wop-test.sh",
+            "line": 4
+          },
+          {
+            "location": "distro/windows/bin/easyrsa-shell-init.sh",
+            "line": 4
+          },
+          {
+            "location": "distro/windows/bin/easyrsa-shell-init.sh",
+            "line": 52
+          },
+          {
+            "location": "wop-test.sh",
+            "line": 54
+          },
+          {
+            "location": "distro/windows/bin/easyrsa-shell-init.sh",
+            "line": 74
+          },
+          {
+            "location": "distro/windows/bin/easyrsa-shell-init.sh",
+            "line": 75
+          },
+          {
+            "location": "wop-test.sh",
+            "line": 76
+          },
+          {
+            "location": "distro/windows/bin/easyrsa-shell-init.sh",
+            "line": 76
+          },
+          {
+            "location": "wop-test.sh",
+            "line": 77
+          },
+          {
+            "location": "wop-test.sh",
+            "line": 78
+          },
+          {
+            "location": "distro/windows/bin/easyrsa-shell-init.sh",
+            "line": 78
+          },
+          {
+            "location": "wop-test.sh",
+            "line": 80
+          },
+          {
+            "location": "distro/windows/bin/easyrsa-shell-init.sh",
+            "line": 81
+          },
+          {
+            "location": "distro/windows/bin/easyrsa-shell-init.sh",
+            "line": 82
+          },
+          {
+            "location": "wop-test.sh",
+            "line": 83
+          },
+          {
+            "location": "wop-test.sh",
+            "line": 84
+          },
+          {
+            "location": "distro/windows/bin/easyrsa-shell-init.sh",
+            "line": 101
+          },
+          {
+            "location": "wop-test.sh",
+            "line": 105
+          },
+          {
+            "location": "distro/windows/bin/easyrsa-shell-init.sh",
+            "line": 112
+          },
+          {
+            "location": "wop-test.sh",
+            "line": 116
+          },
+          {
+            "location": "distro/windows/bin/easyrsa-shell-init.sh",
+            "line": 117
+          },
+          {
+            "location": "wop-test.sh",
+            "line": 121
+          },
+          {
+            "location": "distro/windows/bin/easyrsa-shell-init.sh",
+            "line": 121
+          },
+          {
+            "location": "wop-test.sh",
+            "line": 125
+          },
+          {
+            "location": "distro/windows/bin/easyrsa-shell-init.sh",
+            "line": 127
+          },
+          {
+            "location": "wop-test.sh",
+            "line": 131
+          },
+          {
+            "location": "distro/windows/bin/easyrsa-shell-init.sh",
+            "line": 181
+          },
+          {
+            "location": "wop-test.sh",
+            "line": 185
+          },
+          {
+            "location": "op-test.sh",
+            "line": 329
+          },
+          {
+            "location": "op-test.sh",
+            "line": 343
+          },
+          {
+            "location": "op-test.sh",
+            "line": 415
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/easy-rsa"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "binary,source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:best_effort",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "15"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "4.4"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "2.333"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-5.6"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "ML-KEM-768"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "16.7"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "85.7"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:5b5487c99a8d",
+      "name": "SHA-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "2.16.840.1.101.3.4.2.1",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "SHA-2",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "classicalSecurityLevel": 128,
+          "nistQuantumSecurityLevel": 2,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "distro/windows/win32/libcrypto-3.dll"
+          },
+          {
+            "location": "distro/windows/win32/libcrypto-3.dll"
+          },
+          {
+            "location": "distro/windows/win32/libssl-3.dll"
+          },
+          {
+            "location": "distro/windows/win32/openssl.exe"
+          },
+          {
+            "location": "distro/windows/win64/libcrypto-3-x64.dll"
+          },
+          {
+            "location": "distro/windows/win64/libcrypto-3-x64.dll"
+          },
+          {
+            "location": "distro/windows/win64/libssl-3-x64.dll"
+          },
+          {
+            "location": "distro/windows/win64/openssl.exe"
+          },
+          {
+            "location": "op-test.sh",
+            "line": 77
+          },
+          {
+            "location": "op-test.sh",
+            "line": 435
+          },
+          {
+            "location": "op-test.sh",
+            "line": 438
+          },
+          {
+            "location": "op-test.sh",
+            "line": 443
+          },
+          {
+            "location": "op-test.sh",
+            "line": 446
+          },
+          {
+            "location": "op-test.sh",
+            "line": 449
+          },
+          {
+            "location": "op-test.sh",
+            "line": 452
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/easy-rsa"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "binary,source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:best_effort",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "10"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "4.6"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "safe"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-5.4"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:7dfc2eaad9bc",
+      "name": "key:generic-api-key",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "easyrsa3/easyrsa",
+            "line": 3220
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/easy-rsa"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "58"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.167"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-9.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "4.4"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "42.9"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:9734afb8eb54",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.2.840.113549.2.5",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "MD5",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "classicalSecurityLevel": 0,
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "distro/windows/bin/md5sum.exe"
+          },
+          {
+            "location": "distro/windows/win32/libcrypto-3.dll"
+          },
+          {
+            "location": "distro/windows/win32/libcrypto-3.dll"
+          },
+          {
+            "location": "distro/windows/win32/libssl-3.dll"
+          },
+          {
+            "location": "distro/windows/win32/openssl.exe"
+          },
+          {
+            "location": "distro/windows/win64/libcrypto-3-x64.dll"
+          },
+          {
+            "location": "distro/windows/win64/libcrypto-3-x64.dll"
+          },
+          {
+            "location": "distro/windows/win64/libssl-3-x64.dll"
+          },
+          {
+            "location": "distro/windows/win64/openssl.exe"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/easy-rsa"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "binary"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:best_effort",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "13"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "8.96"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "legacy-broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "2.917"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-1.04"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "SHA-256"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "15.2"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:51483ef6023e",
+      "name": "SHA-1",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.3.14.3.2.26",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "SHA-1",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "classicalSecurityLevel": 0,
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "distro/windows/bin/md5sum.exe"
+          },
+          {
+            "location": "distro/windows/win32/libcrypto-3.dll"
+          },
+          {
+            "location": "distro/windows/win32/libcrypto-3.dll"
+          },
+          {
+            "location": "distro/windows/win32/libssl-3.dll"
+          },
+          {
+            "location": "distro/windows/win32/openssl.exe"
+          },
+          {
+            "location": "distro/windows/win64/libcrypto-3-x64.dll"
+          },
+          {
+            "location": "distro/windows/win64/libcrypto-3-x64.dll"
+          },
+          {
+            "location": "distro/windows/win64/libssl-3-x64.dll"
+          },
+          {
+            "location": "distro/windows/win64/openssl.exe"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/easy-rsa"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "binary"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:best_effort",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "13"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "8.96"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "legacy-broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "2.917"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-1.04"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "SHA-256"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "15.2"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:411b2846758d",
+      "name": "Blowfish",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "algorithmFamily": "Blowfish",
+          "cryptoFunctions": [
+            "decrypt",
+            "encrypt"
+          ],
+          "classicalSecurityLevel": 64,
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "distro/windows/win32/libcrypto-3.dll"
+          },
+          {
+            "location": "distro/windows/win32/libcrypto-3.dll"
+          },
+          {
+            "location": "distro/windows/win64/libcrypto-3-x64.dll"
+          },
+          {
+            "location": "distro/windows/win64/libcrypto-3-x64.dll"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/easy-rsa"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "binary"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:best_effort",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "26"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "7.92"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "legacy-broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "2.917"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-2.08"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "AES-256-GCM"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "9.5"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "71.4"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:f08b7cd27105",
+      "name": "SHA-512",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "2.16.840.1.101.3.4.2.3",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "SHA-2",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "classicalSecurityLevel": 256,
+          "nistQuantumSecurityLevel": 5,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "distro/windows/win32/libcrypto-3.dll"
+          },
+          {
+            "location": "distro/windows/win32/libcrypto-3.dll"
+          },
+          {
+            "location": "distro/windows/win32/libssl-3.dll"
+          },
+          {
+            "location": "distro/windows/win32/openssl.exe"
+          },
+          {
+            "location": "distro/windows/win64/libcrypto-3-x64.dll"
+          },
+          {
+            "location": "distro/windows/win64/libcrypto-3-x64.dll"
+          },
+          {
+            "location": "distro/windows/win64/libssl-3-x64.dll"
+          },
+          {
+            "location": "distro/windows/win64/openssl.exe"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/easy-rsa"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "binary"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:best_effort",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "14"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "8.88"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "safe"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-1.12"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:4d3c25c5cc8b",
+      "name": "DES-56",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.3.14.3.2.7",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "algorithmFamily": "DES",
+          "parameterSetIdentifier": "56",
+          "cryptoFunctions": [
+            "decrypt",
+            "encrypt"
+          ],
+          "classicalSecurityLevel": 56,
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "distro/windows/win32/libcrypto-3.dll"
+          },
+          {
+            "location": "distro/windows/win32/libcrypto-3.dll"
+          },
+          {
+            "location": "distro/windows/win32/openssl.exe"
+          },
+          {
+            "location": "distro/windows/win64/libcrypto-3-x64.dll"
+          },
+          {
+            "location": "distro/windows/win64/libcrypto-3-x64.dll"
+          },
+          {
+            "location": "distro/windows/win64/openssl.exe"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/easy-rsa"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "binary"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:best_effort",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "17"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "8.64"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "legacy-broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "2.917"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-1.36"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "AES-256-GCM"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "12.1"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "85.7"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:79448446462a",
+      "name": "AES",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "algorithmFamily": "AES",
+          "cryptoFunctions": [
+            "decrypt",
+            "encrypt",
+            "keygen"
+          ],
+          "nistQuantumSecurityLevel": 1,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "distro/windows/win32/libcrypto-3.dll"
+          },
+          {
+            "location": "distro/windows/win32/libcrypto-3.dll"
+          },
+          {
+            "location": "distro/windows/win32/libcrypto-3.dll"
+          },
+          {
+            "location": "distro/windows/win32/openssl.exe"
+          },
+          {
+            "location": "distro/windows/win64/libcrypto-3-x64.dll"
+          },
+          {
+            "location": "distro/windows/win64/libcrypto-3-x64.dll"
+          },
+          {
+            "location": "distro/windows/win64/libcrypto-3-x64.dll"
+          },
+          {
+            "location": "distro/windows/win64/openssl.exe"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/easy-rsa"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "binary"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:best_effort",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "21"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "8.32"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "weakened"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.167"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-1.68"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "AES-256"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "11.6"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "57.1"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:9a983a0f44ea",
+      "name": "ChaCha20-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.2.840.113549.1.9.16.3.18",
+        "algorithmProperties": {
+          "primitive": "ae",
+          "algorithmFamily": "ChaCha20",
+          "parameterSetIdentifier": "256",
+          "cryptoFunctions": [
+            "decrypt",
+            "encrypt",
+            "tag"
+          ],
+          "classicalSecurityLevel": 256,
+          "nistQuantumSecurityLevel": 5,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "distro/windows/win32/libcrypto-3.dll"
+          },
+          {
+            "location": "distro/windows/win32/libcrypto-3.dll"
+          },
+          {
+            "location": "distro/windows/win64/libcrypto-3-x64.dll"
+          },
+          {
+            "location": "distro/windows/win64/libcrypto-3-x64.dll"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/easy-rsa"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "binary"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:best_effort",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "21"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "8.32"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "safe"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-1.68"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "85.7"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:9c3088055fd7",
+      "name": "DSA",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.2.840.10040.4.1",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "algorithmFamily": "DSA",
+          "cryptoFunctions": [
+            "keygen",
+            "sign",
+            "verify"
+          ],
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "distro/windows/win32/libcrypto-3.dll"
+          },
+          {
+            "location": "distro/windows/win64/libcrypto-3-x64.dll"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/easy-rsa"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "binary"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:best_effort",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "25"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "8.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "2.333"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-2.0"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "ML-DSA-65"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "9.6"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "85.7"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:1d88574f0f98",
+      "name": "HMAC",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.2.840.113549.2.9",
+        "algorithmProperties": {
+          "primitive": "mac",
+          "algorithmFamily": "HMAC",
+          "cryptoFunctions": [
+            "tag",
+            "verify"
+          ],
+          "classicalSecurityLevel": 128,
+          "nistQuantumSecurityLevel": 1,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "distro/windows/win32/libcrypto-3.dll"
+          },
+          {
+            "location": "distro/windows/win32/libcrypto-3.dll"
+          },
+          {
+            "location": "distro/windows/win32/libssl-3.dll"
+          },
+          {
+            "location": "distro/windows/win32/openssl.exe"
+          },
+          {
+            "location": "distro/windows/win64/libcrypto-3-x64.dll"
+          },
+          {
+            "location": "distro/windows/win64/libcrypto-3-x64.dll"
+          },
+          {
+            "location": "distro/windows/win64/libssl-3-x64.dll"
+          },
+          {
+            "location": "distro/windows/win64/openssl.exe"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/easy-rsa"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "binary"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:best_effort",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "18"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "8.56"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "safe"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-1.44"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:2cb1b0538f8d",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.2.840.10046.2.1",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "algorithmFamily": "FFDH",
+          "cryptoFunctions": [
+            "keygen",
+            "other"
+          ],
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "distro/windows/win32/libcrypto-3.dll"
+          },
+          {
+            "location": "distro/windows/win64/libcrypto-3-x64.dll"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/easy-rsa"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "binary"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:best_effort",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "26"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "7.92"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "2.333"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-2.08"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "X25519MLKEM768"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "9.5"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "85.7"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:92c2feaddd53",
+      "name": "ECDH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.3.132.1.12",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "algorithmFamily": "ECDH",
+          "cryptoFunctions": [
+            "keygen",
+            "other"
+          ],
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "distro/windows/win32/libcrypto-3.dll"
+          },
+          {
+            "location": "distro/windows/win64/libcrypto-3-x64.dll"
+          },
+          {
+            "location": "distro/windows/win64/openssl.exe"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/easy-rsa"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "binary"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:best_effort",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "19"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "8.48"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "2.333"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-1.52"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "X25519MLKEM768"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "11.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "85.7"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:eaa3088ae12b",
+      "name": "ECDSA",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.2.840.10045.4.3.2",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "algorithmFamily": "ECDSA",
+          "cryptoFunctions": [
+            "keygen",
+            "sign",
+            "verify"
+          ],
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "distro/windows/win32/libcrypto-3.dll"
+          },
+          {
+            "location": "distro/windows/win32/libssl-3.dll"
+          },
+          {
+            "location": "distro/windows/win64/libcrypto-3-x64.dll"
+          },
+          {
+            "location": "distro/windows/win64/libssl-3-x64.dll"
+          },
+          {
+            "location": "distro/windows/win64/openssl.exe"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/easy-rsa"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "binary"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:best_effort",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "19"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "8.48"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "2.333"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-1.52"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "ML-DSA-65"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "12.7"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "85.7"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:0483aeebd0f7",
+      "name": "RC4",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.2.840.113549.3.4",
+        "algorithmProperties": {
+          "primitive": "stream-cipher",
+          "algorithmFamily": "RC4",
+          "cryptoFunctions": [
+            "decrypt",
+            "encrypt"
+          ],
+          "classicalSecurityLevel": 0,
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "distro/windows/win32/libcrypto-3.dll"
+          },
+          {
+            "location": "distro/windows/win64/libcrypto-3-x64.dll"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/easy-rsa"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "binary"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:best_effort",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "21"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "8.32"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "legacy-broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "2.917"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-1.68"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "AES-256-GCM"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "10.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "85.7"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:edafa1df2fa4",
+      "name": "SHA-384",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "2.16.840.1.101.3.4.2.2",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "SHA-2",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "classicalSecurityLevel": 192,
+          "nistQuantumSecurityLevel": 4,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "distro/windows/win32/libcrypto-3.dll"
+          },
+          {
+            "location": "distro/windows/win32/libssl-3.dll"
+          },
+          {
+            "location": "distro/windows/win64/libcrypto-3-x64.dll"
+          },
+          {
+            "location": "distro/windows/win64/libssl-3-x64.dll"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/easy-rsa"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "binary"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:best_effort",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "17"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "8.64"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "safe"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-1.36"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:221a42259d6a",
+      "name": "PBKDF2",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.2.840.113549.1.5.12",
+        "algorithmProperties": {
+          "primitive": "kdf",
+          "algorithmFamily": "PBKDF2",
+          "cryptoFunctions": [
+            "keyderive"
+          ],
+          "classicalSecurityLevel": 128,
+          "nistQuantumSecurityLevel": 1,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "distro/windows/win32/libcrypto-3.dll"
+          },
+          {
+            "location": "distro/windows/win32/openssl.exe"
+          },
+          {
+            "location": "distro/windows/win64/libcrypto-3-x64.dll"
+          },
+          {
+            "location": "distro/windows/win64/openssl.exe"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/easy-rsa"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "binary"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:best_effort",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "21"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "8.32"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "safe"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-1.68"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:2175f85020bd",
+      "name": "Ed25519",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.3.101.112",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "algorithmFamily": "EdDSA",
+          "cryptoFunctions": [
+            "keygen",
+            "sign",
+            "verify"
+          ],
+          "classicalSecurityLevel": 128,
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "distro/windows/win64/libcrypto-3-x64.dll"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/easy-rsa"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "binary"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:best_effort",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "28"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "7.76"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "2.333"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-2.24"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "ML-DSA-65"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "8.5"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:86ef563443de",
+      "name": "X25519",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.3.101.110",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "algorithmFamily": "ECDH",
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "distro/windows/win32/libcrypto-3.dll"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/easy-rsa"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "binary"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "34"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.64"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-6.36"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "X25519MLKEM768"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "8.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "71.4"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:faf9aa9b2e5e",
+      "name": "AES-128",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "2.16.840.1.101.3.4.1.6",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "algorithmFamily": "AES",
+          "nistQuantumSecurityLevel": 1,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "distro/windows/win32/libcrypto-3.dll"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/easy-rsa"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "binary"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "34"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.64"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "weakened"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-6.36"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "AES-256"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "8.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "57.1"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:c2547723c08d",
+      "name": "AES-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "2.16.840.1.101.3.4.1.46",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "algorithmFamily": "AES",
+          "nistQuantumSecurityLevel": 5,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "distro/windows/win32/libcrypto-3.dll"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/easy-rsa"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "binary"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "34"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.64"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "safe"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-6.36"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "57.1"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:3bc07460a0c4",
+      "name": "3DES",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.2.840.113549.3.7",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "algorithmFamily": "3DES",
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "distro/windows/win32/libcrypto-3.dll"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/easy-rsa"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "binary"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "34"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.64"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "legacy-broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-6.36"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "AES-256-GCM"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "8.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "57.1"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:bfdd96615d6c",
+      "name": "SHA3-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "2.16.840.1.101.3.4.2.8",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "SHA-3",
+          "nistQuantumSecurityLevel": 2,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "distro/windows/win32/libcrypto-3.dll"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/easy-rsa"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "binary"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "34"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.64"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "safe"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-6.36"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "71.4"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:0e903013ab4b",
+      "name": "TLS",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "other",
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "distro/windows/win32/libcrypto-3.dll"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenVPN/easy-rsa"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "binary"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "34"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.64"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-6.36"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "8.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "28.6"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "urn:ecdat:scan:eddfd9c0dbcc",
+      "dependsOn": [
+        "urn:ecdat:component:openvpn-easy-rsa"
+      ]
+    },
+    {
+      "ref": "urn:ecdat:component:openvpn-easy-rsa",
+      "dependsOn": [
+        "urn:ecdat:library:4566ac2fbe76",
+        "urn:ecdat:library:693bda13c547",
+        "urn:ecdat:material:7dfc2eaad9bc",
+        "urn:ecdat:algorithm:411b2846758d",
+        "urn:ecdat:algorithm:79448446462a"
+      ]
+    },
+    {
+      "ref": "urn:ecdat:library:4566ac2fbe76",
+      "provides": [
+        "urn:ecdat:algorithm:95f138eca6cd",
+        "urn:ecdat:algorithm:eaa3088ae12b",
+        "urn:ecdat:algorithm:92c2feaddd53",
+        "urn:ecdat:algorithm:86ef563443de",
+        "urn:ecdat:algorithm:2175f85020bd",
+        "urn:ecdat:algorithm:2cb1b0538f8d",
+        "urn:ecdat:algorithm:9c3088055fd7",
+        "urn:ecdat:algorithm:faf9aa9b2e5e",
+        "urn:ecdat:algorithm:c2547723c08d",
+        "urn:ecdat:algorithm:9a983a0f44ea",
+        "urn:ecdat:algorithm:3bc07460a0c4",
+        "urn:ecdat:algorithm:4d3c25c5cc8b",
+        "urn:ecdat:algorithm:0483aeebd0f7",
+        "urn:ecdat:algorithm:9734afb8eb54",
+        "urn:ecdat:algorithm:51483ef6023e",
+        "urn:ecdat:algorithm:5b5487c99a8d",
+        "urn:ecdat:algorithm:edafa1df2fa4",
+        "urn:ecdat:algorithm:f08b7cd27105",
+        "urn:ecdat:algorithm:bfdd96615d6c",
+        "urn:ecdat:algorithm:1d88574f0f98",
+        "urn:ecdat:algorithm:221a42259d6a",
+        "urn:ecdat:algorithm:0e903013ab4b"
+      ]
+    },
+    {
+      "ref": "urn:ecdat:library:693bda13c547"
+    }
+  ],
+  "vulnerabilities": [
+    {
+      "bom-ref": "vuln-1",
+      "id": "ECDAT-QV-0001",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "high",
+          "justification": "framework deadline 2030 is within the 4.4-year migration window"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "RSA (algorithm) in OpenVPN/easy-rsa: broken; tier ACT_NOW",
+      "detail": "Integer factorisation is broken by Shor's algorithm",
+      "recommendation": "Migrate to ML-KEM-768 (hybrid)",
+      "analysis": {
+        "state": "exploitable",
+        "detail": "quantum-vulnerable and reachable",
+        "response": [
+          "update"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:95f138eca6cd"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=4.4 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-2",
+      "id": "ECDAT-QV-0002",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "could not classify; review manually"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "key:generic-api-key (related-crypto-material) in OpenVPN/easy-rsa: unknown; tier MONITOR",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:7dfc2eaad9bc"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-3",
+      "id": "ECDAT-QV-0003",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "high",
+          "justification": "classically broken or below minimum strength today, independent of quantum"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "MD5 (algorithm) in OpenVPN/easy-rsa: legacy-broken; tier ACT_NOW",
+      "detail": "Practical collisions since 2004; unusable for signatures or integrity",
+      "recommendation": "Migrate to SHA-256",
+      "analysis": {
+        "state": "exploitable",
+        "detail": "quantum-vulnerable and reachable",
+        "response": [
+          "update"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:9734afb8eb54"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=8.96 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-4",
+      "id": "ECDAT-QV-0004",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "high",
+          "justification": "classically broken or below minimum strength today, independent of quantum"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "SHA-1 (algorithm) in OpenVPN/easy-rsa: legacy-broken; tier ACT_NOW",
+      "detail": "Chosen-prefix collisions (SHAttered 2017, 2020); disallowed for signatures",
+      "recommendation": "Migrate to SHA-256",
+      "analysis": {
+        "state": "exploitable",
+        "detail": "quantum-vulnerable and reachable",
+        "response": [
+          "update"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:51483ef6023e"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=8.96 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-5",
+      "id": "ECDAT-QV-0005",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "high",
+          "justification": "classically broken or below minimum strength today, independent of quantum"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "Blowfish (algorithm) in OpenVPN/easy-rsa: legacy-broken; tier ACT_NOW",
+      "detail": "64-bit block size (Sweet32)",
+      "recommendation": "Migrate to AES-256-GCM",
+      "analysis": {
+        "state": "exploitable",
+        "detail": "quantum-vulnerable and reachable",
+        "response": [
+          "update"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:411b2846758d"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=7.92 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-6",
+      "id": "ECDAT-QV-0006",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "high",
+          "justification": "classically broken or below minimum strength today, independent of quantum"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "DES (algorithm) in OpenVPN/easy-rsa: legacy-broken; tier ACT_NOW",
+      "detail": "56-bit key is brute-forceable classically",
+      "recommendation": "Migrate to AES-256-GCM",
+      "analysis": {
+        "state": "exploitable",
+        "detail": "quantum-vulnerable and reachable",
+        "response": [
+          "update"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:4d3c25c5cc8b"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=8.64 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-7",
+      "id": "ECDAT-QV-0007",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "quantum-vulnerable but short-lived data, signing-only, or ample migration time"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "AES (algorithm) in OpenVPN/easy-rsa: weakened; tier MONITOR",
+      "detail": "Grover's algorithm halves the effective key length; key size not yet known",
+      "recommendation": "Migrate to AES-256",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:79448446462a"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=8.32 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-8",
+      "id": "ECDAT-QV-0008",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "high",
+          "justification": "framework deadline 2030 is within the 8-year migration window; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "DSA (algorithm) in OpenVPN/easy-rsa: broken; tier ACT_NOW",
+      "detail": "Finite-field discrete log is broken by Shor's algorithm",
+      "recommendation": "Migrate to ML-DSA-65 (hybrid)",
+      "analysis": {
+        "state": "exploitable",
+        "detail": "quantum-vulnerable and reachable",
+        "response": [
+          "update"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:9c3088055fd7"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=8 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-9",
+      "id": "ECDAT-QV-0009",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "high",
+          "justification": "framework deadline 2030 is within the 7.92-year migration window"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "DH (algorithm) in OpenVPN/easy-rsa: broken; tier ACT_NOW",
+      "detail": "Finite-field discrete log is broken by Shor's algorithm",
+      "recommendation": "Migrate to X25519MLKEM768 (hybrid)",
+      "analysis": {
+        "state": "exploitable",
+        "detail": "quantum-vulnerable and reachable",
+        "response": [
+          "update"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:2cb1b0538f8d"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=7.92 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-10",
+      "id": "ECDAT-QV-0010",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "high",
+          "justification": "Mosca margin only 1.52 year(s) (X 5 + Y 8.48 vs Z 15); framework deadline 2030 is within the 8.48-year migration window"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "ECDH (algorithm) in OpenVPN/easy-rsa: broken; tier ACT_NOW",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "Migrate to X25519MLKEM768 (hybrid)",
+      "analysis": {
+        "state": "exploitable",
+        "detail": "quantum-vulnerable and reachable",
+        "response": [
+          "update"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:92c2feaddd53"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=8.48 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-11",
+      "id": "ECDAT-QV-0011",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "high",
+          "justification": "Mosca margin only 1.52 year(s) (X 5 + Y 8.48 vs Z 15); framework deadline 2030 is within the 8.48-year migration window; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "ECDSA (algorithm) in OpenVPN/easy-rsa: broken; tier ACT_NOW",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "Migrate to ML-DSA-65 (hybrid)",
+      "analysis": {
+        "state": "exploitable",
+        "detail": "quantum-vulnerable and reachable",
+        "response": [
+          "update"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:eaa3088ae12b"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=8.48 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-12",
+      "id": "ECDAT-QV-0012",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "high",
+          "justification": "classically broken or below minimum strength today, independent of quantum"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "RC4 (algorithm) in OpenVPN/easy-rsa: legacy-broken; tier ACT_NOW",
+      "detail": "Biased keystream; prohibited in TLS (RFC 7465)",
+      "recommendation": "Migrate to AES-256-GCM",
+      "analysis": {
+        "state": "exploitable",
+        "detail": "quantum-vulnerable and reachable",
+        "response": [
+          "update"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:0483aeebd0f7"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=8.32 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-13",
+      "id": "ECDAT-QV-0013",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "high",
+          "justification": "framework deadline 2030 is within the 7.76-year migration window; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "Ed25519 (algorithm) in OpenVPN/easy-rsa: broken; tier ACT_NOW",
+      "detail": "Edwards-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "Migrate to ML-DSA-65 (hybrid)",
+      "analysis": {
+        "state": "exploitable",
+        "detail": "quantum-vulnerable and reachable",
+        "response": [
+          "update"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:2175f85020bd"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=7.76 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-14",
+      "id": "ECDAT-QV-0014",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "framework deadline 2030 is within the 3.64-year migration window; library capability only: the dependency provides this algorithm but no use was observed in this codebase"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "X25519 (algorithm) in OpenVPN/easy-rsa: broken; tier MONITOR",
+      "detail": "Curve25519 discrete log is broken by Shor's algorithm",
+      "recommendation": "Migrate to X25519MLKEM768 (hybrid)",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:86ef563443de"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.64 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-15",
+      "id": "ECDAT-QV-0015",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "quantum-vulnerable but short-lived data, signing-only, or ample migration time"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "AES-128 (algorithm) in OpenVPN/easy-rsa: weakened; tier MONITOR",
+      "detail": "Grover reduces AES-128 to ~64-bit effective security; still NIST-approved but fails CNSA 2.0",
+      "recommendation": "Migrate to AES-256",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:faf9aa9b2e5e"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.64 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-16",
+      "id": "ECDAT-QV-0016",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "classically broken or below minimum strength today, independent of quantum; library capability only: the dependency provides this algorithm but no use was observed in this codebase"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "3DES (algorithm) in OpenVPN/easy-rsa: legacy-broken; tier MONITOR",
+      "detail": "Deprecated classically (Sweet32, 64-bit block); disallowed by NIST after 2023",
+      "recommendation": "Migrate to AES-256-GCM",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:3bc07460a0c4"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.64 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-17",
+      "id": "ECDAT-QV-0017",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "could not classify; review manually"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "TLS (algorithm) in OpenVPN/easy-rsa: unknown; tier MONITOR",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:0e903013ab4b"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.64 Z=15"
+        }
+      ]
+    }
+  ]
+}

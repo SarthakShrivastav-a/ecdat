@@ -1,0 +1,6027 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.7",
+  "version": 1,
+  "vulnerabilities": [
+    {
+      "bom-ref": "vuln-1",
+      "id": "ECDAT-QV-0001",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "ECDSA (algorithm) in pyjwt: broken; tier SAFE",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:1c9ce9528305"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=3.6 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-2",
+      "id": "ECDAT-QV-0002",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "SHA-256 (algorithm) in pyjwt: safe; tier SAFE",
+      "detail": "128-bit collision resistance holds; Grover pre-image gain is impractical",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:cc37176fba7f"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.8 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-3",
+      "id": "ECDAT-QV-0003",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "TLS (protocol) in pyjwt: broken; tier SAFE",
+      "detail": "classical (ECDHE/RSA) key exchange only: harvestable today",
+      "recommendation": "Migrate to X25519MLKEM768 (hybrid)",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:protocol:d2a53b7d972c"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=0.5 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-4",
+      "id": "ECDAT-QV-0004",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "ssh-public-key:ECDSA (related-crypto-material) in pyjwt: broken; tier SAFE",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:7f11f2a494ae"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-5",
+      "id": "ECDAT-QV-0005",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "private-key:Ed25519 (related-crypto-material) in pyjwt: broken; tier SAFE",
+      "detail": "Edwards-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:8ccdd179818e"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-6",
+      "id": "ECDAT-QV-0006",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "Ed25519 (algorithm) in pyjwt: broken; tier SAFE",
+      "detail": "Edwards-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:7447b1509303"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.64 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-7",
+      "id": "ECDAT-QV-0007",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "ssh-public-key:Ed25519 (related-crypto-material) in pyjwt: broken; tier SAFE",
+      "detail": "Edwards-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:cf592175fa73"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-8",
+      "id": "ECDAT-QV-0008",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "OU=Test Certificate,O=PyJWT,L=Austin,ST=Texas,C=US (certificate) in pyjwt: broken; tier SAFE",
+      "detail": "Integer factorisation is broken by Shor's algorithm",
+      "recommendation": "Migrate to ML-DSA-65 certificate (re-issue when the CA supports FIPS 204; hybrid/dual certificates during transition) (hybrid)",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:certificate:e336c9e546a4"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=0.5 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-9",
+      "id": "ECDAT-QV-0009",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "high",
+          "justification": "framework deadline 2030 is within the 3.96-year migration window"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "RSA (algorithm) in pyjwt: broken; tier ACT_NOW",
+      "detail": "Integer factorisation is broken by Shor's algorithm",
+      "recommendation": "Migrate to ML-KEM-768 (hybrid)",
+      "analysis": {
+        "state": "exploitable",
+        "detail": "quantum-vulnerable and reachable",
+        "response": [
+          "update"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:9616519fd5d6"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=3.96 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-10",
+      "id": "ECDAT-QV-0010",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "ssh-public-key:SSH (related-crypto-material) in pyjwt: unknown; tier SAFE",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:dfff86d7251b"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-11",
+      "id": "ECDAT-QV-0011",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "public-key:RSA (related-crypto-material) in pyjwt: broken; tier SAFE",
+      "detail": "Integer factorisation is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:1d5b1629d277"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-12",
+      "id": "ECDAT-QV-0012",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": " (certificate) in pyjwt: unknown; tier SAFE",
+      "detail": "",
+      "recommendation": "Migrate to ML-DSA-65 certificate (re-issue when the CA supports FIPS 204; hybrid/dual certificates during transition) (hybrid)",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:certificate:f4e4e58bd15e"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-13",
+      "id": "ECDAT-QV-0013",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "could not classify; review manually"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "token:jwt (related-crypto-material) in pyjwt: unknown; tier MONITOR",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:ff70e38352a4"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-14",
+      "id": "ECDAT-QV-0014",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "could not classify; review manually"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "token:jwt (related-crypto-material) in pyjwt: unknown; tier MONITOR",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:0bddaee942c2"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-15",
+      "id": "ECDAT-QV-0015",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "could not classify; review manually"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "token:jwt (related-crypto-material) in pyjwt: unknown; tier MONITOR",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:7cd63cc31f55"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-16",
+      "id": "ECDAT-QV-0016",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "could not classify; review manually"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "token:jwt (related-crypto-material) in pyjwt: unknown; tier MONITOR",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:ab65db8668d1"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-17",
+      "id": "ECDAT-QV-0017",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "could not classify; review manually"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "private-key:private-key (related-crypto-material) in pyjwt: unknown; tier MONITOR",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:c5029389c5fb"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-18",
+      "id": "ECDAT-QV-0018",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "could not classify; review manually"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "key:generic-api-key (related-crypto-material) in pyjwt: unknown; tier MONITOR",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:af8e7b65d341"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-19",
+      "id": "ECDAT-QV-0019",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "private-key:ECDSA (related-crypto-material) in pyjwt: broken; tier SAFE",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:0feb56af32de"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-20",
+      "id": "ECDAT-QV-0020",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "private-key:Ed25519 (related-crypto-material) in pyjwt: broken; tier SAFE",
+      "detail": "Edwards-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:4c8bec980651"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-21",
+      "id": "ECDAT-QV-0021",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "private-key:RSA (related-crypto-material) in pyjwt: broken; tier SAFE",
+      "detail": "Integer factorisation is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:ca67fea76d60"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-22",
+      "id": "ECDAT-QV-0022",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "public-key:RSA (related-crypto-material) in pyjwt: broken; tier SAFE",
+      "detail": "Integer factorisation is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:ebbda1680827"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-23",
+      "id": "ECDAT-QV-0023",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "private-key:private-key (related-crypto-material) in pyjwt: unknown; tier SAFE",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:185652ca780f"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-24",
+      "id": "ECDAT-QV-0024",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "key:generic-api-key (related-crypto-material) in pyjwt: unknown; tier SAFE",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:d28090c77d94"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-25",
+      "id": "ECDAT-QV-0025",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "key:generic-api-key (related-crypto-material) in pyjwt: unknown; tier SAFE",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:7a2fd4b4b9b8"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-26",
+      "id": "ECDAT-QV-0026",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "token:jwt (related-crypto-material) in pyjwt: unknown; tier SAFE",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:430c9b332f9c"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-27",
+      "id": "ECDAT-QV-0027",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "HMAC (algorithm) in node-jsonwebtoken: safe; tier SAFE",
+      "detail": "MAC security depends on key length and the hash; Grover gives only quadratic speed-up",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:7b826aa23d8b"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=3.76 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-28",
+      "id": "ECDAT-QV-0028",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "RSA (algorithm) in node-jsonwebtoken: legacy-broken; tier SAFE",
+      "detail": "1024-bit key is below the classical minimum of 2048 bits",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:72e9825f82bd"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=3.68 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-29",
+      "id": "ECDAT-QV-0029",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "RSA (algorithm) in node-jsonwebtoken: broken; tier SAFE",
+      "detail": "Integer factorisation is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:8f7461e4db56"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=4.04 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-30",
+      "id": "ECDAT-QV-0030",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "private-key:DSA (related-crypto-material) in node-jsonwebtoken: broken; tier SAFE",
+      "detail": "Finite-field discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:9c6960675c6f"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-31",
+      "id": "ECDAT-QV-0031",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "DSA (algorithm) in node-jsonwebtoken: broken; tier SAFE",
+      "detail": "Finite-field discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:2a15279b9048"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=3.4 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-32",
+      "id": "ECDAT-QV-0032",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "private-key:ECDSA (related-crypto-material) in node-jsonwebtoken: broken; tier SAFE",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:cd745fae4084"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-33",
+      "id": "ECDAT-QV-0033",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "ECDSA (algorithm) in node-jsonwebtoken: broken; tier SAFE",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:53b52b7022d3"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=3.72 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-34",
+      "id": "ECDAT-QV-0034",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "O=Internet Widgits Pty Ltd,ST=Some-State,C=AU (certificate) in node-jsonwebtoken: broken; tier SAFE",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "Migrate to ML-DSA-65 certificate (re-issue when the CA supports FIPS 204; hybrid/dual certificates during transition) (hybrid)",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:certificate:2d2a8f308681"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=0.5 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-35",
+      "id": "ECDAT-QV-0035",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "SHA-1 (algorithm) in node-jsonwebtoken: legacy-broken; tier SAFE",
+      "detail": "Chosen-prefix collisions (SHAttered 2017, 2020); disallowed for signatures",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:c9aff8a37448"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=3.64 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-36",
+      "id": "ECDAT-QV-0036",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "*.auth0.com (certificate) in node-jsonwebtoken: broken; tier SAFE",
+      "detail": "Integer factorisation is broken by Shor's algorithm",
+      "recommendation": "Migrate to ML-DSA-65 certificate (re-issue when the CA supports FIPS 204; hybrid/dual certificates during transition) (hybrid)",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:certificate:81592f48ee45"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=0.5 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-37",
+      "id": "ECDAT-QV-0037",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "private-key:ECDSA (related-crypto-material) in node-jsonwebtoken: broken; tier SAFE",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:f6a4fe0f1150"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-38",
+      "id": "ECDAT-QV-0038",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "private-key:RSA (related-crypto-material) in node-jsonwebtoken: broken; tier SAFE",
+      "detail": "Integer factorisation is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:e98cb02fe6ff"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-39",
+      "id": "ECDAT-QV-0039",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "O=Internet Widgits Pty Ltd,ST=Some-State,C=AU (certificate) in node-jsonwebtoken: broken; tier SAFE",
+      "detail": "Integer factorisation is broken by Shor's algorithm",
+      "recommendation": "Migrate to ML-DSA-65 certificate (re-issue when the CA supports FIPS 204; hybrid/dual certificates during transition) (hybrid)",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:certificate:bcb67ab2cc09"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=0.5 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-40",
+      "id": "ECDAT-QV-0040",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "private-key:RSA (related-crypto-material) in node-jsonwebtoken: broken; tier SAFE",
+      "detail": "Integer factorisation is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:57514153eb80"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-41",
+      "id": "ECDAT-QV-0041",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "private-key:RSA (related-crypto-material) in node-jsonwebtoken: broken; tier SAFE",
+      "detail": "Integer factorisation is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:ebb44af91aca"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-42",
+      "id": "ECDAT-QV-0042",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "private-key:RSA (related-crypto-material) in node-jsonwebtoken: broken; tier SAFE",
+      "detail": "Integer factorisation is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:5d70eaff4313"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-43",
+      "id": "ECDAT-QV-0043",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "private-key:ECDSA (related-crypto-material) in node-jsonwebtoken: broken; tier SAFE",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:11fe32d9a1ba"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-44",
+      "id": "ECDAT-QV-0044",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "ECDSA (algorithm) in node-jsonwebtoken: broken; tier SAFE",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:351791a99a46"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=3.4 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-45",
+      "id": "ECDAT-QV-0045",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "private-key:ECDSA (related-crypto-material) in node-jsonwebtoken: broken; tier SAFE",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:3c12687f7e66"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-46",
+      "id": "ECDAT-QV-0046",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "ECDSA (algorithm) in node-jsonwebtoken: broken; tier SAFE",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:2703387d8c24"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=3.4 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-47",
+      "id": "ECDAT-QV-0047",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "public-key:RSA (related-crypto-material) in node-jsonwebtoken: broken; tier SAFE",
+      "detail": "Integer factorisation is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:fec5e79a0ec6"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-48",
+      "id": "ECDAT-QV-0048",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "public-key:RSA (related-crypto-material) in node-jsonwebtoken: broken; tier SAFE",
+      "detail": "Integer factorisation is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:edbb5c75630f"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-49",
+      "id": "ECDAT-QV-0049",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": " (certificate) in node-jsonwebtoken: unknown; tier SAFE",
+      "detail": "",
+      "recommendation": "Migrate to ML-DSA-65 certificate (re-issue when the CA supports FIPS 204; hybrid/dual certificates during transition) (hybrid)",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:certificate:b729e76b8c9d"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-50",
+      "id": "ECDAT-QV-0050",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "private-key:private-key (related-crypto-material) in node-jsonwebtoken: unknown; tier SAFE",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:fef33d202acb"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-51",
+      "id": "ECDAT-QV-0051",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "token:jwt (related-crypto-material) in node-jsonwebtoken: unknown; tier SAFE",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:6d9a622d8119"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-52",
+      "id": "ECDAT-QV-0052",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "token:jwt (related-crypto-material) in node-jsonwebtoken: unknown; tier SAFE",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:b82e9d3bdb63"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-53",
+      "id": "ECDAT-QV-0053",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "public-key:ECDSA (related-crypto-material) in node-jsonwebtoken: broken; tier SAFE",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:0aea6312148a"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-54",
+      "id": "ECDAT-QV-0054",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "public-key:RSA (related-crypto-material) in node-jsonwebtoken: broken; tier SAFE",
+      "detail": "Integer factorisation is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:1b811c8155ec"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-55",
+      "id": "ECDAT-QV-0055",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "public-key:RSA (related-crypto-material) in node-jsonwebtoken: broken; tier SAFE",
+      "detail": "Integer factorisation is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:e5d296571068"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-56",
+      "id": "ECDAT-QV-0056",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "public-key:ECDSA (related-crypto-material) in node-jsonwebtoken: broken; tier SAFE",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:76d35e0e7263"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-57",
+      "id": "ECDAT-QV-0057",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "public-key:ECDSA (related-crypto-material) in node-jsonwebtoken: broken; tier SAFE",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:d411ad00001b"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-58",
+      "id": "ECDAT-QV-0058",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "token:jwt (related-crypto-material) in node-jsonwebtoken: unknown; tier SAFE",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:a49bc6c5140e"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-59",
+      "id": "ECDAT-QV-0059",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "token:jwt (related-crypto-material) in node-jsonwebtoken: unknown; tier SAFE",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:5d1cc60beebd"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-60",
+      "id": "ECDAT-QV-0060",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is comment: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "SHA-256 (algorithm) in paramiko: safe; tier SAFE",
+      "detail": "128-bit collision resistance holds; Grover pre-image gain is impractical",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "false_positive",
+        "detail": "mentioned in a comment only",
+        "response": [],
+        "justification": "code_not_present"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:82c278e828a6"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=3.84 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-61",
+      "id": "ECDAT-QV-0061",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is comment: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "SHA-1 (algorithm) in paramiko: legacy-broken; tier SAFE",
+      "detail": "Chosen-prefix collisions (SHAttered 2017, 2020); disallowed for signatures",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "false_positive",
+        "detail": "mentioned in a comment only",
+        "response": [],
+        "justification": "code_not_present"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:44f98c2817c6"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=4.08 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-62",
+      "id": "ECDAT-QV-0062",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "high",
+          "justification": "framework deadline 2030 is within the 3.76-year migration window"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "X25519 (algorithm) in paramiko: broken; tier ACT_NOW",
+      "detail": "Curve25519 discrete log is broken by Shor's algorithm",
+      "recommendation": "Migrate to X25519MLKEM768 (hybrid)",
+      "analysis": {
+        "state": "exploitable",
+        "detail": "quantum-vulnerable and reachable",
+        "response": [
+          "update"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:eb2567739190"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=3.76 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-63",
+      "id": "ECDAT-QV-0063",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "high",
+          "justification": "framework deadline 2030 is within the 3.64-year migration window"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "ECDH (algorithm) in paramiko: broken; tier ACT_NOW",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "Migrate to X25519MLKEM768 (hybrid)",
+      "analysis": {
+        "state": "exploitable",
+        "detail": "quantum-vulnerable and reachable",
+        "response": [
+          "update"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:0124db742b81"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=3.64 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-64",
+      "id": "ECDAT-QV-0064",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is comment: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "ML-KEM-768 (algorithm) in paramiko: safe; tier SAFE",
+      "detail": "Module-lattice KEM, FIPS 203",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "false_positive",
+        "detail": "mentioned in a comment only",
+        "response": [],
+        "justification": "code_not_present"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:9f6180e65ece"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=3.6 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-65",
+      "id": "ECDAT-QV-0065",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is comment: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "AES-128 (algorithm) in paramiko: weakened; tier SAFE",
+      "detail": "Grover reduces AES-128 to ~64-bit effective security; still NIST-approved but fails CNSA 2.0",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "false_positive",
+        "detail": "mentioned in a comment only",
+        "response": [],
+        "justification": "code_not_present"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:f8b82bd6d3e2"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=3.64 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-66",
+      "id": "ECDAT-QV-0066",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is comment: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "AES-256 (algorithm) in paramiko: safe; tier SAFE",
+      "detail": "256-bit key keeps ~128-bit security under Grover",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "false_positive",
+        "detail": "mentioned in a comment only",
+        "response": [],
+        "justification": "code_not_present"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:31c8df993893"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=3.64 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-67",
+      "id": "ECDAT-QV-0067",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is comment: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "MD5 (algorithm) in paramiko: legacy-broken; tier SAFE",
+      "detail": "Practical collisions since 2004; unusable for signatures or integrity",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "false_positive",
+        "detail": "mentioned in a comment only",
+        "response": [],
+        "justification": "code_not_present"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:dcafad801351"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=3.64 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-68",
+      "id": "ECDAT-QV-0068",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "quantum-vulnerable but short-lived data, signing-only, or ample migration time"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "AES (algorithm) in paramiko: weakened; tier MONITOR",
+      "detail": "Grover's algorithm halves the effective key length; key size not yet known",
+      "recommendation": "Migrate to AES-256",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:dccd39529ea1"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=3.52 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-69",
+      "id": "ECDAT-QV-0069",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "private-key:Ed25519 (related-crypto-material) in paramiko: broken; tier SAFE",
+      "detail": "Edwards-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:e268b4504cdb"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-70",
+      "id": "ECDAT-QV-0070",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "Ed25519 (algorithm) in paramiko: broken; tier SAFE",
+      "detail": "Edwards-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:923003aafe55"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=3.92 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-71",
+      "id": "ECDAT-QV-0071",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "private-key:Ed25519 (related-crypto-material) in paramiko: broken; tier SAFE",
+      "detail": "Edwards-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:74fd4bd135fb"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-72",
+      "id": "ECDAT-QV-0072",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "private-key:unknown (related-crypto-material) in paramiko: unknown; tier SAFE",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:559a8fc3397c"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-73",
+      "id": "ECDAT-QV-0073",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "private-key:ECDSA (related-crypto-material) in paramiko: broken; tier SAFE",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:6bac56175f82"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-74",
+      "id": "ECDAT-QV-0074",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "high",
+          "justification": "framework deadline 2030 is within the 4.12-year migration window; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "ECDSA (algorithm) in paramiko: broken; tier ACT_NOW",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "Migrate to ML-DSA-65 (hybrid)",
+      "analysis": {
+        "state": "exploitable",
+        "detail": "quantum-vulnerable and reachable",
+        "response": [
+          "update"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:9c3182c34b3e"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=4.12 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-75",
+      "id": "ECDAT-QV-0075",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "private-key:unknown (related-crypto-material) in paramiko: unknown; tier SAFE",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:39e578c0d6dd"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-76",
+      "id": "ECDAT-QV-0076",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "private-key:ECDSA (related-crypto-material) in paramiko: broken; tier SAFE",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:8a30c09a0bdd"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-77",
+      "id": "ECDAT-QV-0077",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "ECDSA (algorithm) in paramiko: broken; tier SAFE",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:ad62c94082c2"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=3.64 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-78",
+      "id": "ECDAT-QV-0078",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "private-key:ECDSA (related-crypto-material) in paramiko: broken; tier SAFE",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:ced18303f57f"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-79",
+      "id": "ECDAT-QV-0079",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "private-key:ECDSA (related-crypto-material) in paramiko: broken; tier SAFE",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:f0525579f2c5"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-80",
+      "id": "ECDAT-QV-0080",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "private-key:ECDSA (related-crypto-material) in paramiko: broken; tier SAFE",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:3a6c3b3e8f61"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-81",
+      "id": "ECDAT-QV-0081",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "private-key:Ed25519 (related-crypto-material) in paramiko: broken; tier SAFE",
+      "detail": "Edwards-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:1ad63f9714d4"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-82",
+      "id": "ECDAT-QV-0082",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "private-key:unknown (related-crypto-material) in paramiko: unknown; tier SAFE",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:89bf9b8822df"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-83",
+      "id": "ECDAT-QV-0083",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "private-key:unknown (related-crypto-material) in paramiko: unknown; tier SAFE",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:2dbbc2ff001d"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-84",
+      "id": "ECDAT-QV-0084",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "ssh-public-key:SSH (related-crypto-material) in paramiko: unknown; tier SAFE",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:f75485d1a65d"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-85",
+      "id": "ECDAT-QV-0085",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "private-key:unknown (related-crypto-material) in paramiko: unknown; tier SAFE",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:86f2543b0464"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-86",
+      "id": "ECDAT-QV-0086",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "private-key:RSA (related-crypto-material) in paramiko: broken; tier SAFE",
+      "detail": "Integer factorisation is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:f04d89d8434c"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-87",
+      "id": "ECDAT-QV-0087",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "RSA (algorithm) in paramiko: broken; tier SAFE",
+      "detail": "Integer factorisation is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:a2693b68ee25"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=3.64 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-88",
+      "id": "ECDAT-QV-0088",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "private-key:RSA (related-crypto-material) in paramiko: broken; tier SAFE",
+      "detail": "Integer factorisation is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:bb53975ec263"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-89",
+      "id": "ECDAT-QV-0089",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "private-key:ECDSA (related-crypto-material) in paramiko: broken; tier SAFE",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:1e5eb629c392"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-90",
+      "id": "ECDAT-QV-0090",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "ECDSA (algorithm) in paramiko: broken; tier SAFE",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:0ccd0b7a2cfe"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=3.64 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-91",
+      "id": "ECDAT-QV-0091",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "private-key:Ed25519 (related-crypto-material) in paramiko: broken; tier SAFE",
+      "detail": "Edwards-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:a263cf53167f"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-92",
+      "id": "ECDAT-QV-0092",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "private-key:Ed25519 (related-crypto-material) in paramiko: broken; tier SAFE",
+      "detail": "Edwards-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:37251e3e6ef4"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-93",
+      "id": "ECDAT-QV-0093",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "Ed25519 (algorithm) in paramiko: broken; tier SAFE",
+      "detail": "Edwards-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:6ee44bbcf532"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=3.64 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-94",
+      "id": "ECDAT-QV-0094",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "private-key:RSA (related-crypto-material) in paramiko: legacy-broken; tier SAFE",
+      "detail": "1024-bit key is below the classical minimum of 2048 bits",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:7f397ca0e5b1"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-95",
+      "id": "ECDAT-QV-0095",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "high",
+          "justification": "classically broken or below minimum strength today, independent of quantum"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "RSA (algorithm) in paramiko: legacy-broken; tier ACT_NOW",
+      "detail": "1024-bit key is below the classical minimum of 2048 bits",
+      "recommendation": "Migrate to ML-KEM-768 (hybrid)",
+      "analysis": {
+        "state": "exploitable",
+        "detail": "quantum-vulnerable and reachable",
+        "response": [
+          "update"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:d403378fb726"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=4.28 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-96",
+      "id": "ECDAT-QV-0096",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "private-key:unknown (related-crypto-material) in paramiko: unknown; tier SAFE",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:fe06a1364d44"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-97",
+      "id": "ECDAT-QV-0097",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "private-key:RSA (related-crypto-material) in paramiko: legacy-broken; tier SAFE",
+      "detail": "1024-bit key is below the classical minimum of 2048 bits",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:9388c9f753d7"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-98",
+      "id": "ECDAT-QV-0098",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "public-key:ECDSA (related-crypto-material) in paramiko: broken; tier SAFE",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:6b07e9bd4157"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-99",
+      "id": "ECDAT-QV-0099",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "public-key:RSA (related-crypto-material) in paramiko: legacy-broken; tier SAFE",
+      "detail": "1024-bit key is below the classical minimum of 2048 bits",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:75b8376d0bb8"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-100",
+      "id": "ECDAT-QV-0100",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "public-key:RSA (related-crypto-material) in paramiko: legacy-broken; tier SAFE",
+      "detail": "1024-bit key is below the classical minimum of 2048 bits",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:6e2a0575ccf3"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-101",
+      "id": "ECDAT-QV-0101",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "public-key:ECDSA (related-crypto-material) in paramiko: broken; tier SAFE",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:1b4fa942d2c1"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-102",
+      "id": "ECDAT-QV-0102",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "public-key:ECDSA (related-crypto-material) in paramiko: broken; tier SAFE",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:ab50f2cb690b"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-103",
+      "id": "ECDAT-QV-0103",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "private-key:ECDSA (related-crypto-material) in paramiko: broken; tier SAFE",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:5757a0dcef1b"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-104",
+      "id": "ECDAT-QV-0104",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "public-key:ECDSA (related-crypto-material) in paramiko: broken; tier SAFE",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:24e7e4829ecb"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-105",
+      "id": "ECDAT-QV-0105",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "private-key:RSA (related-crypto-material) in paramiko: legacy-broken; tier SAFE",
+      "detail": "1024-bit key is below the classical minimum of 2048 bits",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:eef19869c3d6"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-106",
+      "id": "ECDAT-QV-0106",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "public-key:RSA (related-crypto-material) in paramiko: legacy-broken; tier SAFE",
+      "detail": "1024-bit key is below the classical minimum of 2048 bits",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:2f1ca987024c"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-107",
+      "id": "ECDAT-QV-0107",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "quantum-vulnerable but short-lived data, signing-only, or ample migration time"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "AES-128 (algorithm) in public-endpoints: weakened; tier MONITOR",
+      "detail": "Grover reduces AES-128 to ~64-bit effective security; still NIST-approved but fails CNSA 2.0",
+      "recommendation": "Migrate to AES-256",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:e4011f0f0c7f"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.84 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-108",
+      "id": "ECDAT-QV-0108",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "quantum-vulnerable but short-lived data, signing-only, or ample migration time; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "cloudflare.com (certificate) in public-endpoints: broken; tier MONITOR",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "Migrate to ML-DSA-65 certificate (re-issue when the CA supports FIPS 204; hybrid/dual certificates during transition) (hybrid)",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:certificate:dad63be6223a"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=0.5 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-109",
+      "id": "ECDAT-QV-0109",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "high",
+          "justification": "framework deadline 2030 is within the 3.6-year migration window"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "ECDSA (algorithm) in public-endpoints: broken; tier ACT_NOW",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "Migrate to ML-DSA-65 (hybrid)",
+      "analysis": {
+        "state": "exploitable",
+        "detail": "quantum-vulnerable and reachable",
+        "response": [
+          "update"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:840ae2ba5141"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.6 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-110",
+      "id": "ECDAT-QV-0110",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "quantum-vulnerable but short-lived data, signing-only, or ample migration time; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "example.com (certificate) in public-endpoints: broken; tier MONITOR",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "Migrate to ML-DSA-65 certificate (re-issue when the CA supports FIPS 204; hybrid/dual certificates during transition) (hybrid)",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:certificate:b25c7bebec17"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=0.5 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-111",
+      "id": "ECDAT-QV-0111",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "high",
+          "justification": "framework deadline 2030 is within the 3.48-year migration window"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "X25519 (algorithm) in public-endpoints: broken; tier ACT_NOW",
+      "detail": "Curve25519 discrete log is broken by Shor's algorithm",
+      "recommendation": "Migrate to X25519MLKEM768 (hybrid)",
+      "analysis": {
+        "state": "exploitable",
+        "detail": "quantum-vulnerable and reachable",
+        "response": [
+          "update"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:7b96a08a5305"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.48 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-112",
+      "id": "ECDAT-QV-0112",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "high",
+          "justification": "framework deadline 2030 is within the 3.4-year migration window"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "ECDH (algorithm) in public-endpoints: broken; tier ACT_NOW",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "Migrate to X25519MLKEM768 (hybrid)",
+      "analysis": {
+        "state": "exploitable",
+        "detail": "quantum-vulnerable and reachable",
+        "response": [
+          "update"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:aa9813741ae7"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.4 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-113",
+      "id": "ECDAT-QV-0113",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "high",
+          "justification": "framework deadline 2030 is within the 3.4-year migration window"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "DH (algorithm) in public-endpoints: broken; tier ACT_NOW",
+      "detail": "Finite-field discrete log is broken by Shor's algorithm",
+      "recommendation": "Migrate to X25519MLKEM768 (hybrid)",
+      "analysis": {
+        "state": "exploitable",
+        "detail": "quantum-vulnerable and reachable",
+        "response": [
+          "update"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:32c5e99de444"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.4 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-114",
+      "id": "ECDAT-QV-0114",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "high",
+          "justification": "framework deadline 2030 is within the 3.4-year migration window"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "Ed25519 (algorithm) in public-endpoints: broken; tier ACT_NOW",
+      "detail": "Edwards-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "Migrate to ML-DSA-65 (hybrid)",
+      "analysis": {
+        "state": "exploitable",
+        "detail": "quantum-vulnerable and reachable",
+        "response": [
+          "update"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:4d543959e2db"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.4 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-115",
+      "id": "ECDAT-QV-0115",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "could not classify; review manually"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "SSH (algorithm) in public-endpoints: unknown; tier MONITOR",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:4edba2d88f0d"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.4 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-116",
+      "id": "ECDAT-QV-0116",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "quantum-vulnerable but short-lived data, signing-only, or ample migration time"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "AES-192 (algorithm) in public-endpoints: weakened; tier MONITOR",
+      "detail": "Grover reduces AES-192 to ~96-bit effective security",
+      "recommendation": "Migrate to AES-256",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:cb4865e8bd25"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.4 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-117",
+      "id": "ECDAT-QV-0117",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "quantum-vulnerable but short-lived data, signing-only, or ample migration time"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "TLS (protocol) in public-endpoints: broken; tier MONITOR",
+      "detail": "classical (ECDHE/RSA) key exchange only: harvestable today",
+      "recommendation": "Migrate to X25519MLKEM768 (hybrid)",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:protocol:f32d37284b60"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=0.5 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-118",
+      "id": "ECDAT-QV-0118",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "quantum-vulnerable but short-lived data, signing-only, or ample migration time"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "AES-128 (algorithm) in public-endpoints: weakened; tier MONITOR",
+      "detail": "Grover reduces AES-128 to ~64-bit effective security; still NIST-approved but fails CNSA 2.0",
+      "recommendation": "Migrate to AES-256",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:cc9678375ee9"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.6 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-119",
+      "id": "ECDAT-QV-0119",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "quantum-vulnerable but short-lived data, signing-only, or ample migration time"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "www.nic.in (certificate) in public-endpoints: broken; tier MONITOR",
+      "detail": "Integer factorisation is broken by Shor's algorithm",
+      "recommendation": "Migrate to ML-DSA-65 certificate (re-issue when the CA supports FIPS 204; hybrid/dual certificates during transition) (hybrid)",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:certificate:7e50d98a18bb"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=0.5 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-120",
+      "id": "ECDAT-QV-0120",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "high",
+          "justification": "framework deadline 2030 is within the 3.48-year migration window"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "RSA (algorithm) in public-endpoints: broken; tier ACT_NOW",
+      "detail": "Integer factorisation is broken by Shor's algorithm",
+      "recommendation": "Migrate to ML-KEM-768 (hybrid)",
+      "analysis": {
+        "state": "exploitable",
+        "detail": "quantum-vulnerable and reachable",
+        "response": [
+          "update"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:7cad92f6898c"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.48 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-121",
+      "id": "ECDAT-QV-0121",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "framework deadline 2030 is within the 3.64-year migration window; library capability only: the dependency provides this algorithm but no use was observed in this codebase"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "ECDH (algorithm) in pyjwt: broken; tier MONITOR",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "Migrate to X25519MLKEM768 (hybrid)",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:fe19ebfc2b96"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.64 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-122",
+      "id": "ECDAT-QV-0122",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "framework deadline 2030 is within the 3.64-year migration window; library capability only: the dependency provides this algorithm but no use was observed in this codebase"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "X25519 (algorithm) in pyjwt: broken; tier MONITOR",
+      "detail": "Curve25519 discrete log is broken by Shor's algorithm",
+      "recommendation": "Migrate to X25519MLKEM768 (hybrid)",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:23e8fd94be6d"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.64 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-123",
+      "id": "ECDAT-QV-0123",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "framework deadline 2030 is within the 3.64-year migration window; library capability only: the dependency provides this algorithm but no use was observed in this codebase"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "DH (algorithm) in pyjwt: broken; tier MONITOR",
+      "detail": "Finite-field discrete log is broken by Shor's algorithm",
+      "recommendation": "Migrate to X25519MLKEM768 (hybrid)",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:0ae7891b8676"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.64 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-124",
+      "id": "ECDAT-QV-0124",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "framework deadline 2030 is within the 3.64-year migration window; library capability only: the dependency provides this algorithm but no use was observed in this codebase; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "DSA (algorithm) in pyjwt: broken; tier MONITOR",
+      "detail": "Finite-field discrete log is broken by Shor's algorithm",
+      "recommendation": "Migrate to ML-DSA-65 (hybrid)",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:13ef11749475"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.64 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-125",
+      "id": "ECDAT-QV-0125",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "quantum-vulnerable but short-lived data, signing-only, or ample migration time"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "AES-128 (algorithm) in pyjwt: weakened; tier MONITOR",
+      "detail": "Grover reduces AES-128 to ~64-bit effective security; still NIST-approved but fails CNSA 2.0",
+      "recommendation": "Migrate to AES-256",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:d370923d1420"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.64 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-126",
+      "id": "ECDAT-QV-0126",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "classically broken or below minimum strength today, independent of quantum; library capability only: the dependency provides this algorithm but no use was observed in this codebase"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "3DES (algorithm) in pyjwt: legacy-broken; tier MONITOR",
+      "detail": "Deprecated classically (Sweet32, 64-bit block); disallowed by NIST after 2023",
+      "recommendation": "Migrate to AES-256-GCM",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:237d73409dea"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.64 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-127",
+      "id": "ECDAT-QV-0127",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "classically broken or below minimum strength today, independent of quantum; library capability only: the dependency provides this algorithm but no use was observed in this codebase"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "SHA-1 (algorithm) in pyjwt: legacy-broken; tier MONITOR",
+      "detail": "Chosen-prefix collisions (SHAttered 2017, 2020); disallowed for signatures",
+      "recommendation": "Migrate to SHA-256",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:dcf7dda78119"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.64 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-128",
+      "id": "ECDAT-QV-0128",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "classically broken or below minimum strength today, independent of quantum; library capability only: the dependency provides this algorithm but no use was observed in this codebase"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "MD5 (algorithm) in pyjwt: legacy-broken; tier MONITOR",
+      "detail": "Practical collisions since 2004; unusable for signatures or integrity",
+      "recommendation": "Migrate to SHA-256",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:c5e36df2f8db"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.64 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-129",
+      "id": "ECDAT-QV-0129",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "framework deadline 2030 is within the 3.64-year migration window; library capability only: the dependency provides this algorithm but no use was observed in this codebase"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "DH (algorithm) in paramiko: broken; tier MONITOR",
+      "detail": "Finite-field discrete log is broken by Shor's algorithm",
+      "recommendation": "Migrate to X25519MLKEM768 (hybrid)",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:4c7771c5611e"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=3.64 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-130",
+      "id": "ECDAT-QV-0130",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "framework deadline 2030 is within the 3.64-year migration window; library capability only: the dependency provides this algorithm but no use was observed in this codebase; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "DSA (algorithm) in paramiko: broken; tier MONITOR",
+      "detail": "Finite-field discrete log is broken by Shor's algorithm",
+      "recommendation": "Migrate to ML-DSA-65 (hybrid)",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:3e5e38bab22a"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=3.64 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-131",
+      "id": "ECDAT-QV-0131",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "classically broken or below minimum strength today, independent of quantum; library capability only: the dependency provides this algorithm but no use was observed in this codebase"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "3DES (algorithm) in paramiko: legacy-broken; tier MONITOR",
+      "detail": "Deprecated classically (Sweet32, 64-bit block); disallowed by NIST after 2023",
+      "recommendation": "Migrate to AES-256-GCM",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:d18d7c4f8375"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=7 Y=3.64 Z=15"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "timestamp": "2026-09-18T08:24:31.260020+00:00",
+    "properties": [
+      {
+        "name": "ecdat:z_year",
+        "value": "2041"
+      }
+    ]
+  }
+}

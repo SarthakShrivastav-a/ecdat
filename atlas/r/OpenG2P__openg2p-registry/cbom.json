@@ -1,0 +1,3092 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.7.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.7",
+  "serialNumber": "urn:uuid:cdfbd880-1924-4521-8075-d9c4bb6776e9",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-09-18T08:10:19Z",
+    "tools": {
+      "components": [
+        {
+          "type": "application",
+          "name": "ecdat",
+          "version": "0.1.0",
+          "description": "Enterprise Cryptographic Discovery & Analysis Tool (SIH 2026 PS 26164)"
+        },
+        {
+          "type": "application",
+          "name": "opengrep",
+          "version": "1.29.0"
+        },
+        {
+          "type": "application",
+          "name": "cbomkit-theia",
+          "version": "- CycloneDXv1.6"
+        },
+        {
+          "type": "application",
+          "name": "syft",
+          "version": "Version:       1.51.1"
+        },
+        {
+          "type": "application",
+          "name": "tshark",
+          "version": "TShark (Wireshark) 4.6.8 (v4.6.8-0-ge677bf052328)."
+        },
+        {
+          "type": "application",
+          "name": "crane",
+          "version": "v0.22.1"
+        }
+      ]
+    },
+    "component": {
+      "type": "application",
+      "bom-ref": "urn:ecdat:scan:f804a189c758",
+      "name": "OpenG2P__openg2p-registry"
+    },
+    "properties": [
+      {
+        "name": "ecdat:z_year",
+        "value": "2041"
+      },
+      {
+        "name": "ecdat:profile",
+        "value": "enterprise"
+      },
+      {
+        "name": "ecdat:targets",
+        "value": "1"
+      },
+      {
+        "name": "ecdat:certin_table9",
+        "value": "CERT-In BOM guidelines v2.0 (2025-07-09) section 8.3"
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "application",
+      "bom-ref": "urn:ecdat:component:openg2p-openg2p-registry",
+      "name": "OpenG2P/openg2p-registry",
+      "properties": [
+        {
+          "name": "ecdat:zone",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "identity"
+        },
+        {
+          "name": "ecdat:path",
+          "value": "C:\\customize\\SIH2026\\demo\\ecdat\\.claude\\worktrees\\ecdat-build\\out\\atlas\\src\\OpenG2P__openg2p-registry"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "urn:ecdat:library:39375316929d",
+      "name": "pyca-cryptography",
+      "properties": [
+        {
+          "name": "ecdat:zone",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:path",
+          "value": "g2p_encryption_keymanager/tests/test_encryption_provider.py"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "urn:ecdat:library:a9fbf5798fda",
+      "name": "cryptography",
+      "version": "36",
+      "properties": [
+        {
+          "name": "ecdat:zone",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:path",
+          "value": "requirements.txt"
+        },
+        {
+          "name": "ecdat:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "ecdat:pqc_native",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "urn:ecdat:library:73c4d287eb55",
+      "name": "python-jose",
+      "properties": [
+        {
+          "name": "ecdat:zone",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:path",
+          "value": "requirements.txt"
+        },
+        {
+          "name": "ecdat:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "ecdat:pqc_native",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:d1cfaa8c6034",
+      "name": "SHA-1",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.3.14.3.2.26",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "SHA-1",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "classicalSecurityLevel": 0,
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "g2p_encryption_keymanager/models/encryption_provider.py",
+            "line": 265
+          },
+          {
+            "location": "g2p_auth_id_oidc/tests/test_controller.py",
+            "line": 68
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenG2P/openg2p-registry"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "20.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "identity"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "29"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.84"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "legacy-broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "4.167"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "8.84"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "SHA-256"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "9.2"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:a2af86f8ca28",
+      "name": "HMAC",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.2.840.113549.2.9",
+        "algorithmProperties": {
+          "primitive": "mac",
+          "algorithmFamily": "HMAC",
+          "cryptoFunctions": [
+            "tag",
+            "verify"
+          ],
+          "classicalSecurityLevel": 128,
+          "nistQuantumSecurityLevel": 1,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "g2p_auth_id_oidc/tests/test_controller.py",
+            "line": 69
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenG2P/openg2p-registry"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "20.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "identity"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "31"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.76"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "safe"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "8.76"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:953ffb806a40",
+      "name": "SHA-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "2.16.840.1.101.3.4.2.1",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "SHA-2",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "classicalSecurityLevel": 128,
+          "nistQuantumSecurityLevel": 2,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "g2p_encryption_keymanager/tests/test_encryption_provider.py",
+            "line": 51
+          },
+          {
+            "location": "g2p_encryption_keymanager/models/encryption_provider.py",
+            "line": 266
+          },
+          {
+            "location": "g2p_openid_vci/models/vci_issuer.py",
+            "line": 287
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenG2P/openg2p-registry"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "20.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "identity"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "26"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.96"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "safe"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "8.96"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:c99078a31998",
+      "name": "RSA-2048",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.2.840.113549.1.1.1",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "algorithmFamily": "RSASSA-PKCS1",
+          "parameterSetIdentifier": "2048",
+          "cryptoFunctions": [
+            "keygen"
+          ],
+          "classicalSecurityLevel": 112,
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "g2p_encryption_keymanager/tests/test_encryption_provider.py",
+            "line": 30
+          },
+          {
+            "location": "g2p_openid_vci/tests/test_openid_vc_issuer.py",
+            "line": 62
+          },
+          {
+            "location": "g2p_openid_vci_group/tests/test_openid_vc_issuer.py",
+            "line": 136
+          },
+          {
+            "location": "g2p_openid_vci/tests/test_openid_vc_issuer.py",
+            "line": 140
+          },
+          {
+            "location": "g2p_openid_vci/tests/test_openid_vc_issuer.py",
+            "line": 159
+          },
+          {
+            "location": "g2p_openid_vci/tests/test_openid_vc_issuer.py",
+            "line": 182
+          },
+          {
+            "location": "g2p_openid_vci/tests/test_openid_vc_issuer.py",
+            "line": 202
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenG2P/openg2p-registry"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "20.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "identity"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "23"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "4.08"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "9.08"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:564705997fc9",
+      "name": "key:generic-api-key",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "g2p_auth_oidc_encryption/__manifest__.py",
+            "line": 6
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenG2P/openg2p-registry"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "20.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "identity"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "58"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.667"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "6.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "4.4"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "42.9"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:4b47db7bd6fd",
+      "name": "ECDSA",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.2.840.10045.4.3.2",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "algorithmFamily": "ECDSA",
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "requirements.txt"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenG2P/openg2p-registry"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "dependency"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "20.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "identity"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "34"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.64"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "8.64"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "ML-DSA-65"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "8.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "71.4"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:cb55f60acb31",
+      "name": "ECDH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.3.132.1.12",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "algorithmFamily": "ECDH",
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "requirements.txt"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenG2P/openg2p-registry"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "dependency"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "20.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "identity"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "34"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.64"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "8.64"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "X25519MLKEM768"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "8.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "71.4"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:14f0696afcfd",
+      "name": "X25519",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.3.101.110",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "algorithmFamily": "ECDH",
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "requirements.txt"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenG2P/openg2p-registry"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "dependency"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "20.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "identity"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "34"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.64"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "8.64"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "X25519MLKEM768"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "8.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "71.4"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:0adfd5cdffe6",
+      "name": "Ed25519",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.3.101.112",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "algorithmFamily": "EdDSA",
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "requirements.txt"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenG2P/openg2p-registry"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "dependency"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "20.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "identity"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "34"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.64"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "8.64"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "ML-DSA-65"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "8.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "71.4"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:c0364cc7529f",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.2.840.10046.2.1",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "algorithmFamily": "FFDH",
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "requirements.txt"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenG2P/openg2p-registry"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "dependency"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "20.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "identity"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "34"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.64"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "8.64"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "X25519MLKEM768"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "8.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "71.4"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:8fc8796818b8",
+      "name": "DSA",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.2.840.10040.4.1",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "algorithmFamily": "DSA",
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "requirements.txt"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenG2P/openg2p-registry"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "dependency"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "20.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "identity"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "34"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.64"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "8.64"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "ML-DSA-65"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "8.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "71.4"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:d2c244a7fd8e",
+      "name": "AES-128",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "2.16.840.1.101.3.4.1.6",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "algorithmFamily": "AES",
+          "nistQuantumSecurityLevel": 1,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "requirements.txt"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenG2P/openg2p-registry"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "dependency"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "20.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "identity"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "34"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.64"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "weakened"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "8.64"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "AES-256"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "8.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "57.1"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:498708030adc",
+      "name": "AES-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "2.16.840.1.101.3.4.1.46",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "algorithmFamily": "AES",
+          "nistQuantumSecurityLevel": 5,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "requirements.txt"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenG2P/openg2p-registry"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "dependency"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "20.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "identity"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "34"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.64"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "safe"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "8.64"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "57.1"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:11ee295f4bbd",
+      "name": "ChaCha20",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.2.840.113549.1.9.16.3.18",
+        "algorithmProperties": {
+          "primitive": "ae",
+          "algorithmFamily": "ChaCha20",
+          "nistQuantumSecurityLevel": 5,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "requirements.txt"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenG2P/openg2p-registry"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "dependency"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "20.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "identity"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "34"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.64"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "safe"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "8.64"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "57.1"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:019838adbe86",
+      "name": "3DES",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.2.840.113549.3.7",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "algorithmFamily": "3DES",
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "requirements.txt"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenG2P/openg2p-registry"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "dependency"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "20.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "identity"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "34"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.64"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "legacy-broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "8.64"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "AES-256-GCM"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "8.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "57.1"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:82ac038d3148",
+      "name": "SHA-384",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "2.16.840.1.101.3.4.2.2",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "SHA-2",
+          "nistQuantumSecurityLevel": 4,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "requirements.txt"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenG2P/openg2p-registry"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "dependency"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "20.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "identity"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "34"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.64"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "safe"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "8.64"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "71.4"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:c80389d84837",
+      "name": "SHA-512",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "2.16.840.1.101.3.4.2.3",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "SHA-2",
+          "nistQuantumSecurityLevel": 5,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "requirements.txt"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenG2P/openg2p-registry"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "dependency"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "20.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "identity"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "34"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.64"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "safe"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "8.64"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "71.4"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:7d9704fc0e53",
+      "name": "SHA3-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "2.16.840.1.101.3.4.2.8",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "SHA-3",
+          "nistQuantumSecurityLevel": 2,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "requirements.txt"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenG2P/openg2p-registry"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "dependency"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "20.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "identity"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "34"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.64"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "safe"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "8.64"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "71.4"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:9c93515002c1",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.2.840.113549.2.5",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "MD5",
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "requirements.txt"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenG2P/openg2p-registry"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "dependency"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "20.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "identity"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "34"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.64"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "legacy-broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "8.64"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "SHA-256"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "8.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "71.4"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:7ec8855fa3ff",
+      "name": "PBKDF2",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.2.840.113549.1.5.12",
+        "algorithmProperties": {
+          "primitive": "kdf",
+          "algorithmFamily": "PBKDF2",
+          "nistQuantumSecurityLevel": 1,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "requirements.txt"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenG2P/openg2p-registry"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "dependency"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "20.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "identity"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "34"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.64"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "safe"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "8.64"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "71.4"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:04cca7526560",
+      "name": "scrypt",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.3.6.1.4.1.11591.4.11",
+        "algorithmProperties": {
+          "primitive": "kdf",
+          "algorithmFamily": "scrypt",
+          "nistQuantumSecurityLevel": 1,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "requirements.txt"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenG2P/openg2p-registry"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "dependency"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "20.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "identity"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "34"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.64"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "safe"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "8.64"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "71.4"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:ec589d09361e",
+      "name": "HKDF",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "kdf",
+          "algorithmFamily": "HKDF",
+          "nistQuantumSecurityLevel": 1,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "requirements.txt"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "OpenG2P/openg2p-registry"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "dependency"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "20.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "identity"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "34"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.64"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "safe"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "8.64"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "57.1"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "urn:ecdat:scan:f804a189c758",
+      "dependsOn": [
+        "urn:ecdat:component:openg2p-openg2p-registry"
+      ]
+    },
+    {
+      "ref": "urn:ecdat:component:openg2p-openg2p-registry",
+      "dependsOn": [
+        "urn:ecdat:library:39375316929d",
+        "urn:ecdat:library:a9fbf5798fda",
+        "urn:ecdat:library:73c4d287eb55",
+        "urn:ecdat:material:564705997fc9"
+      ]
+    },
+    {
+      "ref": "urn:ecdat:library:39375316929d"
+    },
+    {
+      "ref": "urn:ecdat:library:a9fbf5798fda",
+      "provides": [
+        "urn:ecdat:algorithm:c99078a31998",
+        "urn:ecdat:algorithm:8aada0b5cf76",
+        "urn:ecdat:algorithm:4b47db7bd6fd",
+        "urn:ecdat:algorithm:cb55f60acb31",
+        "urn:ecdat:algorithm:14f0696afcfd",
+        "urn:ecdat:algorithm:0adfd5cdffe6",
+        "urn:ecdat:algorithm:c0364cc7529f",
+        "urn:ecdat:algorithm:8fc8796818b8",
+        "urn:ecdat:algorithm:d2c244a7fd8e",
+        "urn:ecdat:algorithm:498708030adc",
+        "urn:ecdat:algorithm:11ee295f4bbd",
+        "urn:ecdat:algorithm:019838adbe86",
+        "urn:ecdat:algorithm:d1cfaa8c6034",
+        "urn:ecdat:algorithm:953ffb806a40",
+        "urn:ecdat:algorithm:82ac038d3148",
+        "urn:ecdat:algorithm:c80389d84837",
+        "urn:ecdat:algorithm:7d9704fc0e53",
+        "urn:ecdat:algorithm:9c93515002c1",
+        "urn:ecdat:algorithm:a2af86f8ca28",
+        "urn:ecdat:algorithm:7ec8855fa3ff",
+        "urn:ecdat:algorithm:04cca7526560",
+        "urn:ecdat:algorithm:ec589d09361e"
+      ]
+    },
+    {
+      "ref": "urn:ecdat:library:73c4d287eb55",
+      "provides": [
+        "urn:ecdat:algorithm:a2af86f8ca28",
+        "urn:ecdat:algorithm:c99078a31998",
+        "urn:ecdat:algorithm:8aada0b5cf76",
+        "urn:ecdat:algorithm:4b47db7bd6fd"
+      ]
+    }
+  ],
+  "vulnerabilities": [
+    {
+      "bom-ref": "vuln-1",
+      "id": "ECDAT-QV-0001",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "high",
+          "justification": "classically broken or below minimum strength today, independent of quantum"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "SHA-1 (algorithm) in OpenG2P/openg2p-registry: legacy-broken; tier ACT_NOW",
+      "detail": "Chosen-prefix collisions (SHAttered 2017, 2020); disallowed for signatures",
+      "recommendation": "Migrate to SHA-256",
+      "analysis": {
+        "state": "exploitable",
+        "detail": "quantum-vulnerable and reachable",
+        "response": [
+          "update"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:d1cfaa8c6034"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=20 Y=3.84 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-2",
+      "id": "ECDAT-QV-0002",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "HMAC (algorithm) in OpenG2P/openg2p-registry: safe; tier SAFE",
+      "detail": "MAC security depends on key length and the hash; Grover gives only quadratic speed-up",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:a2af86f8ca28"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=20 Y=3.76 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-3",
+      "id": "ECDAT-QV-0003",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "RSA (algorithm) in OpenG2P/openg2p-registry: broken; tier SAFE",
+      "detail": "Integer factorisation is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:c99078a31998"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=20 Y=4.08 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-4",
+      "id": "ECDAT-QV-0004",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "could not classify; review manually"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "key:generic-api-key (related-crypto-material) in OpenG2P/openg2p-registry: unknown; tier MONITOR",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:564705997fc9"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=20 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-5",
+      "id": "ECDAT-QV-0005",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "Mosca margin only -8.64 year(s) (X 20 + Y 3.64 vs Z 15); framework deadline 2030 is within the 3.64-year migration window; library capability only: the dependency provides this algorithm but no use was observed in this codebase; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "ECDSA (algorithm) in OpenG2P/openg2p-registry: broken; tier MONITOR",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "Migrate to ML-DSA-65 (hybrid)",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:4b47db7bd6fd"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=20 Y=3.64 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-6",
+      "id": "ECDAT-QV-0006",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "Mosca: X 20 + Y 3.64 = 23.64 > Z 15: data captured today outlives the migration; library capability only: the dependency provides this algorithm but no use was observed in this codebase"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "ECDH (algorithm) in OpenG2P/openg2p-registry: broken; tier MONITOR",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "Migrate to X25519MLKEM768 (hybrid)",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:cb55f60acb31"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=20 Y=3.64 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-7",
+      "id": "ECDAT-QV-0007",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "Mosca: X 20 + Y 3.64 = 23.64 > Z 15: data captured today outlives the migration; library capability only: the dependency provides this algorithm but no use was observed in this codebase"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "X25519 (algorithm) in OpenG2P/openg2p-registry: broken; tier MONITOR",
+      "detail": "Curve25519 discrete log is broken by Shor's algorithm",
+      "recommendation": "Migrate to X25519MLKEM768 (hybrid)",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:14f0696afcfd"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=20 Y=3.64 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-8",
+      "id": "ECDAT-QV-0008",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "Mosca margin only -8.64 year(s) (X 20 + Y 3.64 vs Z 15); framework deadline 2030 is within the 3.64-year migration window; library capability only: the dependency provides this algorithm but no use was observed in this codebase; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "Ed25519 (algorithm) in OpenG2P/openg2p-registry: broken; tier MONITOR",
+      "detail": "Edwards-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "Migrate to ML-DSA-65 (hybrid)",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:0adfd5cdffe6"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=20 Y=3.64 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-9",
+      "id": "ECDAT-QV-0009",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "Mosca: X 20 + Y 3.64 = 23.64 > Z 15: data captured today outlives the migration; library capability only: the dependency provides this algorithm but no use was observed in this codebase"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "DH (algorithm) in OpenG2P/openg2p-registry: broken; tier MONITOR",
+      "detail": "Finite-field discrete log is broken by Shor's algorithm",
+      "recommendation": "Migrate to X25519MLKEM768 (hybrid)",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:c0364cc7529f"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=20 Y=3.64 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-10",
+      "id": "ECDAT-QV-0010",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "Mosca margin only -8.64 year(s) (X 20 + Y 3.64 vs Z 15); framework deadline 2030 is within the 3.64-year migration window; library capability only: the dependency provides this algorithm but no use was observed in this codebase; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "DSA (algorithm) in OpenG2P/openg2p-registry: broken; tier MONITOR",
+      "detail": "Finite-field discrete log is broken by Shor's algorithm",
+      "recommendation": "Migrate to ML-DSA-65 (hybrid)",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:8fc8796818b8"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=20 Y=3.64 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-11",
+      "id": "ECDAT-QV-0011",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "Grover-weakened and Mosca gap 8.64 y: move to a 256-bit parameter set (AES-256 / SHA-384); library capability only: the dependency provides this algorithm but no use was observed in this codebase"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "AES-128 (algorithm) in OpenG2P/openg2p-registry: weakened; tier MONITOR",
+      "detail": "Grover reduces AES-128 to ~64-bit effective security; still NIST-approved but fails CNSA 2.0",
+      "recommendation": "Migrate to AES-256",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:d2c244a7fd8e"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=20 Y=3.64 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-12",
+      "id": "ECDAT-QV-0012",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "classically broken or below minimum strength today, independent of quantum; library capability only: the dependency provides this algorithm but no use was observed in this codebase"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "3DES (algorithm) in OpenG2P/openg2p-registry: legacy-broken; tier MONITOR",
+      "detail": "Deprecated classically (Sweet32, 64-bit block); disallowed by NIST after 2023",
+      "recommendation": "Migrate to AES-256-GCM",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:019838adbe86"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=20 Y=3.64 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-13",
+      "id": "ECDAT-QV-0013",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "classically broken or below minimum strength today, independent of quantum; library capability only: the dependency provides this algorithm but no use was observed in this codebase"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "MD5 (algorithm) in OpenG2P/openg2p-registry: legacy-broken; tier MONITOR",
+      "detail": "Practical collisions since 2004; unusable for signatures or integrity",
+      "recommendation": "Migrate to SHA-256",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:9c93515002c1"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=20 Y=3.64 Z=15"
+        }
+      ]
+    }
+  ]
+}

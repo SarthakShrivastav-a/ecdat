@@ -1,0 +1,3521 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.7.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.7",
+  "serialNumber": "urn:uuid:a2c3896c-3ca5-41d8-bef2-6354c52ad8b8",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-09-18T09:43:30Z",
+    "tools": {
+      "components": [
+        {
+          "type": "application",
+          "name": "ecdat",
+          "version": "0.1.0",
+          "description": "Enterprise Cryptographic Discovery & Analysis Tool (SIH 2026 PS 26164)"
+        },
+        {
+          "type": "application",
+          "name": "opengrep",
+          "version": "1.29.0"
+        },
+        {
+          "type": "application",
+          "name": "cbomkit-theia",
+          "version": "- CycloneDXv1.6"
+        },
+        {
+          "type": "application",
+          "name": "syft",
+          "version": "Version:       1.51.1"
+        },
+        {
+          "type": "application",
+          "name": "tshark",
+          "version": "TShark (Wireshark) 4.6.8 (v4.6.8-0-ge677bf052328)."
+        },
+        {
+          "type": "application",
+          "name": "crane",
+          "version": "v0.22.1"
+        }
+      ]
+    },
+    "component": {
+      "type": "application",
+      "bom-ref": "urn:ecdat:scan:35b708fed4fa",
+      "name": "golang-jwt__jwt"
+    },
+    "properties": [
+      {
+        "name": "ecdat:z_year",
+        "value": "2041"
+      },
+      {
+        "name": "ecdat:profile",
+        "value": "enterprise"
+      },
+      {
+        "name": "ecdat:targets",
+        "value": "1"
+      },
+      {
+        "name": "ecdat:certin_table9",
+        "value": "CERT-In BOM guidelines v2.0 (2025-07-09) section 8.3"
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "application",
+      "bom-ref": "urn:ecdat:component:golang-jwt-jwt",
+      "name": "golang-jwt/jwt",
+      "properties": [
+        {
+          "name": "ecdat:zone",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "session"
+        },
+        {
+          "name": "ecdat:path",
+          "value": "C:\\customize\\SIH2026\\demo\\ecdat\\.claude\\worktrees\\ecdat-build\\out\\atlas\\src\\golang-jwt__jwt"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "urn:ecdat:library:93d11e9db303",
+      "name": "go-crypto",
+      "properties": [
+        {
+          "name": "ecdat:zone",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:path",
+          "value": "rsa_pss_test.go"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "urn:ecdat:library:60e4af71516c",
+      "name": "runtime:go",
+      "version": "1.21",
+      "properties": [
+        {
+          "name": "ecdat:zone",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:path",
+          "value": "go.mod"
+        },
+        {
+          "name": "ecdat:ecosystem",
+          "value": "runtime"
+        },
+        {
+          "name": "ecdat:pqc_native",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:pqc_native_from",
+          "value": "1.24"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:2ffd5b2e7ad6",
+      "name": "HMAC",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.2.840.113549.2.9",
+        "algorithmProperties": {
+          "primitive": "mac",
+          "algorithmFamily": "HMAC",
+          "cryptoFunctions": [
+            "tag",
+            "verify"
+          ],
+          "classicalSecurityLevel": 128,
+          "nistQuantumSecurityLevel": 1,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "hmac.go",
+            "line": 73
+          },
+          {
+            "location": "hmac.go",
+            "line": 97
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "golang-jwt/jwt"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "0.1"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "session"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "42"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.32"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "safe"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-11.58"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:7ae07a3c7122",
+      "name": "RSA-2048",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.2.840.113549.1.1.1",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "algorithmFamily": "RSASSA-PKCS1",
+          "parameterSetIdentifier": "2048",
+          "cryptoFunctions": [
+            "keygen"
+          ],
+          "classicalSecurityLevel": 112,
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "test/privateSecure.pem",
+            "line": 1
+          },
+          {
+            "location": "rsa_test.go",
+            "line": 123
+          },
+          {
+            "location": "rsa.go",
+            "line": 88
+          },
+          {
+            "location": "rsa_pss.go",
+            "line": 127
+          },
+          {
+            "location": "http_example_test.go",
+            "line": 3
+          },
+          {
+            "location": "rsa.go",
+            "line": 9
+          },
+          {
+            "location": "rsa.go",
+            "line": 10
+          },
+          {
+            "location": "rsa.go",
+            "line": 10
+          },
+          {
+            "location": "ecdsa.go",
+            "line": 12
+          },
+          {
+            "location": "rsa_pss.go",
+            "line": 13
+          },
+          {
+            "location": "rsa_pss.go",
+            "line": 14
+          },
+          {
+            "location": "http_example_test.go",
+            "line": 24
+          },
+          {
+            "location": "http_example_test.go",
+            "line": 25
+          },
+          {
+            "location": "http_example_test.go",
+            "line": 25
+          },
+          {
+            "location": "http_example_test.go",
+            "line": 25
+          },
+          {
+            "location": "rsa.go",
+            "line": 48
+          },
+          {
+            "location": "rsa.go",
+            "line": 69
+          },
+          {
+            "location": "rsa_pss.go",
+            "line": 81
+          },
+          {
+            "location": "rsa_pss.go",
+            "line": 107
+          },
+          {
+            "location": "http_example_test.go",
+            "line": 136
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "golang-jwt/jwt"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "certificate,source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "0.1"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "session"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "26"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.96"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "2.007"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-10.94"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "ML-KEM-768"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "12.7"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:cc9b6a63a891",
+      "name": "private-key:ECDSA",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "private-key",
+          "size": 256,
+          "state": "active",
+          "format": "PEM"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "test/ec256-private.pem",
+            "line": 1
+          },
+          {
+            "location": "test/ec256-private.pem"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "golang-jwt/jwt"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "certificate,theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "0.1"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "session"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "70"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-13.9"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "71.4"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:df444def7727",
+      "name": "ECDSA-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.2.840.10045.4.3.2",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "algorithmFamily": "ECDSA",
+          "parameterSetIdentifier": "256",
+          "curve": "secp256r1",
+          "cryptoFunctions": [
+            "keygen",
+            "sign",
+            "verify"
+          ],
+          "classicalSecurityLevel": 128,
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "test/ec256-private.pem",
+            "line": 1
+          },
+          {
+            "location": "ecdsa.go",
+            "line": 12
+          },
+          {
+            "location": "ecdsa.go",
+            "line": 16
+          },
+          {
+            "location": "ecdsa.go",
+            "line": 17
+          },
+          {
+            "location": "ecdsa.go",
+            "line": 17
+          },
+          {
+            "location": "ecdsa.go",
+            "line": 57
+          },
+          {
+            "location": "ecdsa.go",
+            "line": 91
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "golang-jwt/jwt"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "certificate,source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "0.1"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "session"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "30"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.8"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-11.1"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:bd3aca883cde",
+      "name": "private-key:ECDSA",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "private-key",
+          "size": 384,
+          "state": "active",
+          "format": "PEM"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "test/ec384-private.pem",
+            "line": 1
+          },
+          {
+            "location": "test/ec384-private.pem"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "golang-jwt/jwt"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "certificate,theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "0.1"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "session"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "70"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-13.9"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "71.4"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:83dfaa6489e6",
+      "name": "ECDSA-384",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.2.840.10045.4.3.2",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "algorithmFamily": "ECDSA",
+          "parameterSetIdentifier": "384",
+          "curve": "secp384r1",
+          "cryptoFunctions": [
+            "keygen",
+            "sign",
+            "verify"
+          ],
+          "classicalSecurityLevel": 192,
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "test/ec384-private.pem",
+            "line": 1
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "golang-jwt/jwt"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "certificate"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "0.1"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "session"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "40"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.4"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-11.5"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:edd12ea025fa",
+      "name": "private-key:ECDSA",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "private-key",
+          "size": 521,
+          "state": "active",
+          "format": "PEM"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "test/ec512-private.pem",
+            "line": 1
+          },
+          {
+            "location": "test/ec512-private.pem"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "golang-jwt/jwt"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "certificate,theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "0.1"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "session"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "70"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-13.9"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "71.4"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:007e9d32aa2f",
+      "name": "ECDSA-521",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.2.840.10045.4.3.2",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "algorithmFamily": "ECDSA",
+          "parameterSetIdentifier": "521",
+          "curve": "secp521r1",
+          "cryptoFunctions": [
+            "keygen",
+            "sign",
+            "verify"
+          ],
+          "classicalSecurityLevel": 256,
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "test/ec512-private.pem",
+            "line": 1
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "golang-jwt/jwt"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "certificate"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "0.1"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "session"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "40"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.4"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-11.5"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:0ff47a4fe6d0",
+      "name": "private-key:Ed25519",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "private-key",
+          "size": 256,
+          "state": "active",
+          "format": "PEM"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "test/ed25519-private.pem",
+            "line": 1
+          },
+          {
+            "location": "test/ed25519-private.pem"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "golang-jwt/jwt"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "certificate,theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "0.1"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "session"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "70"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-13.9"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "71.4"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:c7b5fabac3a7",
+      "name": "Ed25519-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.3.101.112",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "algorithmFamily": "EdDSA",
+          "parameterSetIdentifier": "256",
+          "curve": "Ed25519",
+          "cryptoFunctions": [
+            "keygen",
+            "sign",
+            "verify"
+          ],
+          "classicalSecurityLevel": 128,
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "test/ed25519-private.pem",
+            "line": 1
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "golang-jwt/jwt"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "certificate"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "0.1"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "session"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "40"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.4"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-11.5"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:3b17d66e7ceb",
+      "name": "private-key:RSA",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "private-key",
+          "size": 2048,
+          "state": "active",
+          "format": "PEM"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "test/privateSecure.pem",
+            "line": 1
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "golang-jwt/jwt"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "certificate"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "0.1"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "session"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "70"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-13.9"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "71.4"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:f004b1d75e2f",
+      "name": "token:jwt",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "token"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "example_test.go",
+            "line": 28
+          },
+          {
+            "location": "example_test.go",
+            "line": 73
+          },
+          {
+            "location": "example_test.go",
+            "line": 79
+          },
+          {
+            "location": "example_test.go",
+            "line": 103
+          },
+          {
+            "location": "example_test.go",
+            "line": 147
+          },
+          {
+            "location": "example_test.go",
+            "line": 166
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "golang-jwt/jwt"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "0.1"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "session"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "55"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-13.9"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:e5102475b423",
+      "name": "token:jwt",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "token"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "hmac_example_test.go",
+            "line": 37
+          },
+          {
+            "location": "hmac_example_test.go",
+            "line": 43
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "golang-jwt/jwt"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "0.1"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "session"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "57"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-13.9"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:e8edddf7f7d8",
+      "name": "token:jwt",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "token"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "hmac_test.go",
+            "line": 20
+          },
+          {
+            "location": "hmac_test.go",
+            "line": 27
+          },
+          {
+            "location": "hmac_test.go",
+            "line": 34
+          },
+          {
+            "location": "hmac_test.go",
+            "line": 41
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "golang-jwt/jwt"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "0.1"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "session"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "56"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-13.9"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:1cdfa55c37e4",
+      "name": "key:generic-api-key",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "none_test.go",
+            "line": 27
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "golang-jwt/jwt"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "0.1"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "session"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "58"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-13.9"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "42.9"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:e420919a3889",
+      "name": "token:jwt",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "token"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "parser_test.go",
+            "line": 156
+          },
+          {
+            "location": "parser_test.go",
+            "line": 455
+          },
+          {
+            "location": "parser_test.go",
+            "line": 709
+          },
+          {
+            "location": "parser_test.go",
+            "line": 720
+          },
+          {
+            "location": "parser_test.go",
+            "line": 731
+          },
+          {
+            "location": "parser_test.go",
+            "line": 742
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "golang-jwt/jwt"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "0.1"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "session"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "55"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-13.9"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:87fcce80630c",
+      "name": "key:generic-api-key",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "parser_test.go",
+            "line": 504
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "golang-jwt/jwt"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "0.1"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "session"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "58"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-13.9"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "42.9"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:4f2b0f539cbe",
+      "name": "public-key:ECDSA",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "public-key",
+          "format": "PEM"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "test/ec256-private.pem"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "golang-jwt/jwt"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "0.1"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "session"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "58"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-13.9"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "42.9"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:4e4ea0465460",
+      "name": "public-key:ECDSA",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "public-key",
+          "format": "PEM"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "test/ec384-private.pem"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "golang-jwt/jwt"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "0.1"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "session"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "58"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-13.9"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "42.9"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:521894a0350a",
+      "name": "public-key:ECDSA",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "public-key",
+          "format": "PEM"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "test/ec512-private.pem"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "golang-jwt/jwt"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "0.1"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "session"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "58"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-13.9"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "42.9"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:efeeeb2fc472",
+      "name": "private-key:RSA",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "private-key",
+          "size": 2048,
+          "format": "PEM"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "test/sample_key"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "golang-jwt/jwt"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "0.1"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "session"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "58"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-13.9"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "57.1"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:8f02588928ae",
+      "name": "public-key:RSA",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "public-key",
+          "size": 2048,
+          "format": "PEM"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "test/sample_key"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "golang-jwt/jwt"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "0.1"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "session"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "58"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-13.9"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "57.1"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "urn:ecdat:scan:35b708fed4fa",
+      "dependsOn": [
+        "urn:ecdat:component:golang-jwt-jwt"
+      ]
+    },
+    {
+      "ref": "urn:ecdat:component:golang-jwt-jwt",
+      "dependsOn": [
+        "urn:ecdat:library:93d11e9db303",
+        "urn:ecdat:library:60e4af71516c",
+        "urn:ecdat:algorithm:2ffd5b2e7ad6",
+        "urn:ecdat:algorithm:7ae07a3c7122",
+        "urn:ecdat:material:cc9b6a63a891",
+        "urn:ecdat:algorithm:df444def7727",
+        "urn:ecdat:material:bd3aca883cde",
+        "urn:ecdat:algorithm:83dfaa6489e6",
+        "urn:ecdat:material:edd12ea025fa",
+        "urn:ecdat:algorithm:007e9d32aa2f",
+        "urn:ecdat:material:0ff47a4fe6d0",
+        "urn:ecdat:algorithm:c7b5fabac3a7",
+        "urn:ecdat:material:3b17d66e7ceb",
+        "urn:ecdat:material:f004b1d75e2f",
+        "urn:ecdat:material:e5102475b423",
+        "urn:ecdat:material:e8edddf7f7d8",
+        "urn:ecdat:material:1cdfa55c37e4",
+        "urn:ecdat:material:e420919a3889",
+        "urn:ecdat:material:87fcce80630c",
+        "urn:ecdat:material:4f2b0f539cbe",
+        "urn:ecdat:material:4e4ea0465460",
+        "urn:ecdat:material:521894a0350a",
+        "urn:ecdat:material:efeeeb2fc472",
+        "urn:ecdat:material:8f02588928ae"
+      ]
+    },
+    {
+      "ref": "urn:ecdat:library:93d11e9db303"
+    },
+    {
+      "ref": "urn:ecdat:library:60e4af71516c"
+    }
+  ],
+  "vulnerabilities": [
+    {
+      "bom-ref": "vuln-1",
+      "id": "ECDAT-QV-0001",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "high",
+          "justification": "framework deadline 2030 is within the 3.96-year migration window"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "RSA (algorithm) in golang-jwt/jwt: broken; tier ACT_NOW",
+      "detail": "Integer factorisation is broken by Shor's algorithm",
+      "recommendation": "Migrate to ML-KEM-768 (hybrid)",
+      "analysis": {
+        "state": "exploitable",
+        "detail": "quantum-vulnerable and reachable",
+        "response": [
+          "update"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:7ae07a3c7122"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=3.96 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-2",
+      "id": "ECDAT-QV-0002",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "private-key:ECDSA (related-crypto-material) in golang-jwt/jwt: broken; tier SAFE",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:cc9b6a63a891"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-3",
+      "id": "ECDAT-QV-0003",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "ECDSA (algorithm) in golang-jwt/jwt: broken; tier SAFE",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:df444def7727"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=3.8 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-4",
+      "id": "ECDAT-QV-0004",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "private-key:ECDSA (related-crypto-material) in golang-jwt/jwt: broken; tier SAFE",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:bd3aca883cde"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-5",
+      "id": "ECDAT-QV-0005",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "ECDSA (algorithm) in golang-jwt/jwt: broken; tier SAFE",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:83dfaa6489e6"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=3.4 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-6",
+      "id": "ECDAT-QV-0006",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "private-key:ECDSA (related-crypto-material) in golang-jwt/jwt: broken; tier SAFE",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:edd12ea025fa"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-7",
+      "id": "ECDAT-QV-0007",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "ECDSA (algorithm) in golang-jwt/jwt: broken; tier SAFE",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:007e9d32aa2f"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=3.4 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-8",
+      "id": "ECDAT-QV-0008",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "private-key:Ed25519 (related-crypto-material) in golang-jwt/jwt: broken; tier SAFE",
+      "detail": "Edwards-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:0ff47a4fe6d0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-9",
+      "id": "ECDAT-QV-0009",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "Ed25519 (algorithm) in golang-jwt/jwt: broken; tier SAFE",
+      "detail": "Edwards-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:c7b5fabac3a7"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=3.4 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-10",
+      "id": "ECDAT-QV-0010",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "private-key:RSA (related-crypto-material) in golang-jwt/jwt: broken; tier SAFE",
+      "detail": "Integer factorisation is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:3b17d66e7ceb"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-11",
+      "id": "ECDAT-QV-0011",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "token:jwt (related-crypto-material) in golang-jwt/jwt: unknown; tier SAFE",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:f004b1d75e2f"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-12",
+      "id": "ECDAT-QV-0012",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "token:jwt (related-crypto-material) in golang-jwt/jwt: unknown; tier SAFE",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:e5102475b423"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-13",
+      "id": "ECDAT-QV-0013",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "token:jwt (related-crypto-material) in golang-jwt/jwt: unknown; tier SAFE",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:e8edddf7f7d8"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-14",
+      "id": "ECDAT-QV-0014",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "key:generic-api-key (related-crypto-material) in golang-jwt/jwt: unknown; tier SAFE",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:1cdfa55c37e4"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-15",
+      "id": "ECDAT-QV-0015",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "token:jwt (related-crypto-material) in golang-jwt/jwt: unknown; tier SAFE",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:e420919a3889"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-16",
+      "id": "ECDAT-QV-0016",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "key:generic-api-key (related-crypto-material) in golang-jwt/jwt: unknown; tier SAFE",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:87fcce80630c"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-17",
+      "id": "ECDAT-QV-0017",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "public-key:ECDSA (related-crypto-material) in golang-jwt/jwt: broken; tier SAFE",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:4f2b0f539cbe"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-18",
+      "id": "ECDAT-QV-0018",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "public-key:ECDSA (related-crypto-material) in golang-jwt/jwt: broken; tier SAFE",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:4e4ea0465460"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-19",
+      "id": "ECDAT-QV-0019",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "public-key:ECDSA (related-crypto-material) in golang-jwt/jwt: broken; tier SAFE",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:521894a0350a"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-20",
+      "id": "ECDAT-QV-0020",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "private-key:RSA (related-crypto-material) in golang-jwt/jwt: broken; tier SAFE",
+      "detail": "Integer factorisation is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:efeeeb2fc472"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-21",
+      "id": "ECDAT-QV-0021",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "public-key:RSA (related-crypto-material) in golang-jwt/jwt: broken; tier SAFE",
+      "detail": "Integer factorisation is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:8f02588928ae"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=0.1 Y=1 Z=15"
+        }
+      ]
+    }
+  ]
+}

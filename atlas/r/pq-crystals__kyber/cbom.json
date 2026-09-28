@@ -1,0 +1,314 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.7.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.7",
+  "serialNumber": "urn:uuid:307c1d00-69d5-425a-a071-972fc86d32c4",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-09-18T09:41:59Z",
+    "tools": {
+      "components": [
+        {
+          "type": "application",
+          "name": "ecdat",
+          "version": "0.1.0",
+          "description": "Enterprise Cryptographic Discovery & Analysis Tool (SIH 2026 PS 26164)"
+        },
+        {
+          "type": "application",
+          "name": "opengrep",
+          "version": "1.29.0"
+        },
+        {
+          "type": "application",
+          "name": "cbomkit-theia",
+          "version": "- CycloneDXv1.6"
+        },
+        {
+          "type": "application",
+          "name": "syft",
+          "version": "Version:       1.51.1"
+        },
+        {
+          "type": "application",
+          "name": "tshark",
+          "version": "TShark (Wireshark) 4.6.8 (v4.6.8-0-ge677bf052328)."
+        },
+        {
+          "type": "application",
+          "name": "crane",
+          "version": "v0.22.1"
+        }
+      ]
+    },
+    "component": {
+      "type": "application",
+      "bom-ref": "urn:ecdat:scan:a18fa2c3f94f",
+      "name": "pq-crystals__kyber"
+    },
+    "properties": [
+      {
+        "name": "ecdat:z_year",
+        "value": "2041"
+      },
+      {
+        "name": "ecdat:profile",
+        "value": "enterprise"
+      },
+      {
+        "name": "ecdat:targets",
+        "value": "1"
+      },
+      {
+        "name": "ecdat:certin_table9",
+        "value": "CERT-In BOM guidelines v2.0 (2025-07-09) section 8.3"
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "application",
+      "bom-ref": "urn:ecdat:component:pq-crystals-kyber",
+      "name": "pq-crystals/kyber",
+      "properties": [
+        {
+          "name": "ecdat:zone",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:path",
+          "value": "C:\\customize\\SIH2026\\demo\\ecdat\\.claude\\worktrees\\ecdat-build\\out\\atlas\\src\\pq-crystals__kyber"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "urn:ecdat:library:8d2a23efbd4f",
+      "name": "openssl",
+      "properties": [
+        {
+          "name": "ecdat:zone",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:path",
+          "value": "ref/nistkat/rng.c"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:c7fe152f9573",
+      "name": "ML-KEM-768",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "2.16.840.1.101.3.4.4.2",
+        "algorithmProperties": {
+          "primitive": "kem",
+          "algorithmFamily": "ML-KEM",
+          "parameterSetIdentifier": "ML-KEM-768",
+          "cryptoFunctions": [
+            "decapsulate",
+            "encapsulate",
+            "keygen"
+          ],
+          "classicalSecurityLevel": 192,
+          "nistQuantumSecurityLevel": 3,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "runlcov.sh",
+            "line": 6
+          },
+          {
+            "location": "runlcov.sh",
+            "line": 7
+          },
+          {
+            "location": "runlcov.sh",
+            "line": 8
+          },
+          {
+            "location": "ref/symmetric-shake.c",
+            "line": 8
+          },
+          {
+            "location": "runlcov.sh",
+            "line": 10
+          },
+          {
+            "location": "ref/kem.c",
+            "line": 10
+          },
+          {
+            "location": "runlcov.sh",
+            "line": 13
+          },
+          {
+            "location": "runlcov.sh",
+            "line": 18
+          },
+          {
+            "location": "runlcov.sh",
+            "line": 19
+          },
+          {
+            "location": "runtests.sh",
+            "line": 22
+          },
+          {
+            "location": "runtests.sh",
+            "line": 23
+          },
+          {
+            "location": "runtests.sh",
+            "line": 24
+          },
+          {
+            "location": "ref/cbd.c",
+            "line": 25
+          },
+          {
+            "location": "ref/kem.c",
+            "line": 37
+          },
+          {
+            "location": "avx2/cbd.c",
+            "line": 61
+          },
+          {
+            "location": "ref/cbd.c",
+            "line": 77
+          },
+          {
+            "location": "ref/indcpa.c",
+            "line": 192
+          },
+          {
+            "location": "ref/indcpa.c",
+            "line": 244
+          },
+          {
+            "location": "ref/indcpa.c",
+            "line": 301
+          },
+          {
+            "location": "avx2/indcpa.c",
+            "line": 411
+          },
+          {
+            "location": "avx2/indcpa.c",
+            "line": 467
+          },
+          {
+            "location": "avx2/indcpa.c",
+            "line": 528
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "pq-crystals/kyber"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "27"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.92"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "safe"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-6.08"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "urn:ecdat:scan:a18fa2c3f94f",
+      "dependsOn": [
+        "urn:ecdat:component:pq-crystals-kyber"
+      ]
+    },
+    {
+      "ref": "urn:ecdat:component:pq-crystals-kyber",
+      "dependsOn": [
+        "urn:ecdat:library:8d2a23efbd4f",
+        "urn:ecdat:algorithm:c7fe152f9573"
+      ]
+    },
+    {
+      "ref": "urn:ecdat:library:8d2a23efbd4f"
+    }
+  ]
+}

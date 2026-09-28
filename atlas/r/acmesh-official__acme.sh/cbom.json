@@ -1,0 +1,2731 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.7.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.7",
+  "serialNumber": "urn:uuid:1dd299d5-6eb0-4ebb-9851-2e2e7dc970bd",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-09-18T08:12:36Z",
+    "tools": {
+      "components": [
+        {
+          "type": "application",
+          "name": "ecdat",
+          "version": "0.1.0",
+          "description": "Enterprise Cryptographic Discovery & Analysis Tool (SIH 2026 PS 26164)"
+        },
+        {
+          "type": "application",
+          "name": "opengrep",
+          "version": "1.29.0"
+        },
+        {
+          "type": "application",
+          "name": "cbomkit-theia",
+          "version": "- CycloneDXv1.6"
+        },
+        {
+          "type": "application",
+          "name": "syft",
+          "version": "Version:       1.51.1"
+        },
+        {
+          "type": "application",
+          "name": "tshark",
+          "version": "TShark (Wireshark) 4.6.8 (v4.6.8-0-ge677bf052328)."
+        },
+        {
+          "type": "application",
+          "name": "crane",
+          "version": "v0.22.1"
+        }
+      ]
+    },
+    "component": {
+      "type": "application",
+      "bom-ref": "urn:ecdat:scan:a6c5eb245323",
+      "name": "acmesh-official__acme.sh"
+    },
+    "properties": [
+      {
+        "name": "ecdat:z_year",
+        "value": "2041"
+      },
+      {
+        "name": "ecdat:profile",
+        "value": "enterprise"
+      },
+      {
+        "name": "ecdat:targets",
+        "value": "1"
+      },
+      {
+        "name": "ecdat:certin_table9",
+        "value": "CERT-In BOM guidelines v2.0 (2025-07-09) section 8.3"
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "application",
+      "bom-ref": "urn:ecdat:component:acmesh-official-acme.sh",
+      "name": "acmesh-official/acme.sh",
+      "properties": [
+        {
+          "name": "ecdat:zone",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:path",
+          "value": "C:\\customize\\SIH2026\\demo\\ecdat\\.claude\\worktrees\\ecdat-build\\out\\atlas\\src\\acmesh-official__acme.sh"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:667b73a99a13",
+      "name": "RSA",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.2.840.113549.1.1.1",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "algorithmFamily": "RSASSA-PKCS1",
+          "cryptoFunctions": [
+            "decrypt",
+            "encrypt",
+            "keygen",
+            "sign",
+            "verify"
+          ],
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "deploy/routeros.sh",
+            "line": 11
+          },
+          {
+            "location": "deploy/zyxel_gs1900.sh",
+            "line": 14
+          },
+          {
+            "location": "deploy/zyxel_gs1900.sh",
+            "line": 15
+          },
+          {
+            "location": "deploy/zyxel_gs1900.sh",
+            "line": 17
+          },
+          {
+            "location": "acme.sh",
+            "line": 29
+          },
+          {
+            "location": "deploy/haproxy.sh",
+            "line": 33
+          },
+          {
+            "location": "deploy/lighttpd.sh",
+            "line": 33
+          },
+          {
+            "location": "acme.sh",
+            "line": 50
+          },
+          {
+            "location": "deploy/vsftpd.sh",
+            "line": 68
+          },
+          {
+            "location": "deploy/vsftpd.sh",
+            "line": 69
+          },
+          {
+            "location": "dnsapi/dns_yc.sh",
+            "line": 71
+          },
+          {
+            "location": "deploy/ruckus.sh",
+            "line": 120
+          },
+          {
+            "location": "deploy/ruckus.sh",
+            "line": 126
+          },
+          {
+            "location": "deploy/lighttpd.sh",
+            "line": 129
+          },
+          {
+            "location": "deploy/lighttpd.sh",
+            "line": 130
+          },
+          {
+            "location": "deploy/ruckus.sh",
+            "line": 133
+          },
+          {
+            "location": "deploy/ruckus.sh",
+            "line": 136
+          },
+          {
+            "location": "deploy/zyxel_gs1900.sh",
+            "line": 139
+          },
+          {
+            "location": "deploy/unifi.sh",
+            "line": 172
+          },
+          {
+            "location": "deploy/haproxy.sh",
+            "line": 181
+          },
+          {
+            "location": "deploy/haproxy.sh",
+            "line": 182
+          },
+          {
+            "location": "deploy/unifios.sh",
+            "line": 223
+          },
+          {
+            "location": "deploy/unifios.sh",
+            "line": 233
+          },
+          {
+            "location": "dnsapi/dns_oci.sh",
+            "line": 237
+          },
+          {
+            "location": "dnsapi/dns_oci.sh",
+            "line": 251
+          },
+          {
+            "location": "dnsapi/dns_yc.sh",
+            "line": 288
+          },
+          {
+            "location": "dnsapi/dns_yc.sh",
+            "line": 289
+          },
+          {
+            "location": "acme.sh",
+            "line": 1248
+          },
+          {
+            "location": "acme.sh",
+            "line": 1256
+          },
+          {
+            "location": "acme.sh",
+            "line": 1475
+          },
+          {
+            "location": "acme.sh",
+            "line": 1480
+          },
+          {
+            "location": "acme.sh",
+            "line": 1803
+          },
+          {
+            "location": "acme.sh",
+            "line": 1832
+          },
+          {
+            "location": "acme.sh",
+            "line": 1833
+          },
+          {
+            "location": "acme.sh",
+            "line": 1842
+          },
+          {
+            "location": "acme.sh",
+            "line": 1847
+          },
+          {
+            "location": "acme.sh",
+            "line": 1923
+          },
+          {
+            "location": "acme.sh",
+            "line": 3416
+          },
+          {
+            "location": "acme.sh",
+            "line": 5227
+          },
+          {
+            "location": "acme.sh",
+            "line": 8669
+          },
+          {
+            "location": "acme.sh",
+            "line": 8692
+          },
+          {
+            "location": "acme.sh",
+            "line": 9091
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "acmesh-official/acme.sh"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "33"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.68"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "2.333"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-6.32"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "ML-KEM-768"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "14.7"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "85.7"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:12b8fa95ae49",
+      "name": "SHA3-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "2.16.840.1.101.3.4.2.8",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "SHA-3",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "classicalSecurityLevel": 128,
+          "nistQuantumSecurityLevel": 2,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "dnsapi/dns_efficientip.sh",
+            "line": 77
+          },
+          {
+            "location": "dnsapi/dns_efficientip.sh",
+            "line": 123
+          },
+          {
+            "location": "acme.sh",
+            "line": 1056
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "acmesh-official/acme.sh"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "37"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.52"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "safe"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-6.48"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:5d4c28825e84",
+      "name": "SHA-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "2.16.840.1.101.3.4.2.1",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "SHA-2",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "classicalSecurityLevel": 128,
+          "nistQuantumSecurityLevel": 2,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "dnsapi/dns_knot.sh",
+            "line": 8
+          },
+          {
+            "location": "dnsapi/dns_nm.sh",
+            "line": 8
+          },
+          {
+            "location": "dnsapi/dns_nm.sh",
+            "line": 23
+          },
+          {
+            "location": "deploy/shelly.sh",
+            "line": 24
+          },
+          {
+            "location": "dnsapi/dns_nm.sh",
+            "line": 24
+          },
+          {
+            "location": "dnsapi/dns_nm.sh",
+            "line": 26
+          },
+          {
+            "location": "dnsapi/dns_nm.sh",
+            "line": 27
+          },
+          {
+            "location": "deploy/shelly.sh",
+            "line": 30
+          },
+          {
+            "location": "dnsapi/dns_nm.sh",
+            "line": 30
+          },
+          {
+            "location": "dnsapi/dns_nm.sh",
+            "line": 33
+          },
+          {
+            "location": "deploy/byteplus_alb.sh",
+            "line": 39
+          },
+          {
+            "location": "dnsapi/dns_nm.sh",
+            "line": 43
+          },
+          {
+            "location": "deploy/byteplus_alb.sh",
+            "line": 53
+          },
+          {
+            "location": "dnsapi/dns_nm.sh",
+            "line": 75
+          },
+          {
+            "location": "deploy/baidu_cdn.sh",
+            "line": 82
+          },
+          {
+            "location": "deploy/baidu_cdn.sh",
+            "line": 91
+          },
+          {
+            "location": "dnsapi/dns_ali.sh",
+            "line": 119
+          },
+          {
+            "location": "deploy/baidu_cdn.sh",
+            "line": 128
+          },
+          {
+            "location": "dnsapi/dns_creoline.sh",
+            "line": 128
+          },
+          {
+            "location": "deploy/baidu_cdn.sh",
+            "line": 138
+          },
+          {
+            "location": "deploy/baidu_cdn.sh",
+            "line": 147
+          },
+          {
+            "location": "deploy/baidu_cdn.sh",
+            "line": 149
+          },
+          {
+            "location": "dnsapi/dns_tencent.sh",
+            "line": 152
+          },
+          {
+            "location": "deploy/shelly.sh",
+            "line": 153
+          },
+          {
+            "location": "dnsapi/dns_tencent.sh",
+            "line": 153
+          },
+          {
+            "location": "deploy/shelly.sh",
+            "line": 154
+          },
+          {
+            "location": "dnsapi/dns_tencent.sh",
+            "line": 156
+          },
+          {
+            "location": "dnsapi/dns_aurora.sh",
+            "line": 157
+          },
+          {
+            "location": "dnsapi/dns_tencent.sh",
+            "line": 160
+          },
+          {
+            "location": "dnsapi/dns_hw.sh",
+            "line": 161
+          },
+          {
+            "location": "dnsapi/dns_hw.sh",
+            "line": 162
+          },
+          {
+            "location": "dnsapi/dns_tencent.sh",
+            "line": 163
+          },
+          {
+            "location": "dnsapi/dns_tencent.sh",
+            "line": 166
+          },
+          {
+            "location": "dnsapi/dns_hw.sh",
+            "line": 167
+          },
+          {
+            "location": "deploy/unifi.sh",
+            "line": 172
+          },
+          {
+            "location": "dnsapi/dns_exoscale.sh",
+            "line": 175
+          },
+          {
+            "location": "dnsapi/dns_volcengine.sh",
+            "line": 176
+          },
+          {
+            "location": "dnsapi/dns_tencent.sh",
+            "line": 179
+          },
+          {
+            "location": "deploy/shelly.sh",
+            "line": 182
+          },
+          {
+            "location": "deploy/shelly.sh",
+            "line": 183
+          },
+          {
+            "location": "deploy/shelly.sh",
+            "line": 185
+          },
+          {
+            "location": "dnsapi/dns_hw.sh",
+            "line": 185
+          },
+          {
+            "location": "deploy/shelly.sh",
+            "line": 186
+          },
+          {
+            "location": "dnsapi/dns_hw.sh",
+            "line": 186
+          },
+          {
+            "location": "dnsapi/dns_tencent.sh",
+            "line": 188
+          },
+          {
+            "location": "deploy/shelly.sh",
+            "line": 189
+          },
+          {
+            "location": "dnsapi/dns_exoscale.sh",
+            "line": 189
+          },
+          {
+            "location": "notify/aws_ses.sh",
+            "line": 189
+          },
+          {
+            "location": "dnsapi/dns_tencent.sh",
+            "line": 191
+          },
+          {
+            "location": "dnsapi/dns_tencent.sh",
+            "line": 193
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "acmesh-official/acme.sh"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "33"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.68"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "safe"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-6.32"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:0cbfe460d4d7",
+      "name": "SHA-1",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.3.14.3.2.26",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "SHA-1",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "classicalSecurityLevel": 0,
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "deploy/windows_rdp.sh",
+            "line": 74
+          },
+          {
+            "location": "dnsapi/dns_ali.sh",
+            "line": 74
+          },
+          {
+            "location": "deploy/ali_cdn.sh",
+            "line": 83
+          },
+          {
+            "location": "deploy/ali_dcdn.sh",
+            "line": 83
+          },
+          {
+            "location": "deploy/qiniu.sh",
+            "line": 102
+          },
+          {
+            "location": "dnsapi/dns_transip.sh",
+            "line": 105
+          },
+          {
+            "location": "dnsapi/dns_wedos.sh",
+            "line": 112
+          },
+          {
+            "location": "dnsapi/dns_wedos.sh",
+            "line": 123
+          },
+          {
+            "location": "dnsapi/dns_wedos.sh",
+            "line": 124
+          },
+          {
+            "location": "dnsapi/dns_me.sh",
+            "line": 144
+          },
+          {
+            "location": "dnsapi/dns_websupport.sh",
+            "line": 161
+          },
+          {
+            "location": "dnsapi/dns_constellix.sh",
+            "line": 163
+          },
+          {
+            "location": "dnsapi/dns_ali.sh",
+            "line": 167
+          },
+          {
+            "location": "dnsapi/dns_active24.sh",
+            "line": 172
+          },
+          {
+            "location": "dnsapi/dns_ali.sh",
+            "line": 183
+          },
+          {
+            "location": "dnsapi/dns_ali.sh",
+            "line": 199
+          },
+          {
+            "location": "dnsapi/dns_ali.sh",
+            "line": 213
+          },
+          {
+            "location": "deploy/unifios.sh",
+            "line": 259
+          },
+          {
+            "location": "deploy/unifios.sh",
+            "line": 266
+          },
+          {
+            "location": "dnsapi/dns_ovh.sh",
+            "line": 307
+          },
+          {
+            "location": "dnsapi/dns_edgedns.sh",
+            "line": 377
+          },
+          {
+            "location": "acme.sh",
+            "line": 1056
+          },
+          {
+            "location": "acme.sh",
+            "line": 1079
+          },
+          {
+            "location": "acme.sh",
+            "line": 1080
+          },
+          {
+            "location": "acme.sh",
+            "line": 1100
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "acmesh-official/acme.sh"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "27"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.92"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "legacy-broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "2.917"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-6.08"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "SHA-256"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "15.7"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:33ce9e3a26d5",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.2.840.113549.2.5",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "MD5",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "classicalSecurityLevel": 0,
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "dnsapi/dns_bhosted.sh",
+            "line": 9
+          },
+          {
+            "location": "deploy/ikuai.sh",
+            "line": 60
+          },
+          {
+            "location": "deploy/ikuai.sh",
+            "line": 64
+          },
+          {
+            "location": "deploy/fritzbox.sh",
+            "line": 77
+          },
+          {
+            "location": "deploy/fritzbox.sh",
+            "line": 79
+          },
+          {
+            "location": "deploy/fritzbox.sh",
+            "line": 81
+          },
+          {
+            "location": "dnsapi/dns_bhosted.sh",
+            "line": 94
+          },
+          {
+            "location": "dnsapi/dns_oci.sh",
+            "line": 228
+          },
+          {
+            "location": "dnsapi/dns_oci.sh",
+            "line": 237
+          },
+          {
+            "location": "dnsapi/dns_gname.sh",
+            "line": 300
+          },
+          {
+            "location": "dnsapi/dns_bhosted.sh",
+            "line": 353
+          },
+          {
+            "location": "dnsapi/dns_bhosted.sh",
+            "line": 354
+          },
+          {
+            "location": "acme.sh",
+            "line": 1056
+          },
+          {
+            "location": "acme.sh",
+            "line": 1079
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "acmesh-official/acme.sh"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "27"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.92"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "legacy-broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "2.917"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-6.08"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "SHA-256"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "12.5"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:ebc482a043f6",
+      "name": "HMAC",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.2.840.113549.2.9",
+        "algorithmProperties": {
+          "primitive": "mac",
+          "algorithmFamily": "HMAC",
+          "cryptoFunctions": [
+            "tag",
+            "verify"
+          ],
+          "classicalSecurityLevel": 128,
+          "nistQuantumSecurityLevel": 1,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "dnsapi/dns_knot.sh",
+            "line": 8
+          },
+          {
+            "location": "deploy/byteplus_alb.sh",
+            "line": 39
+          },
+          {
+            "location": "dnsapi/dns_ali.sh",
+            "line": 74
+          },
+          {
+            "location": "deploy/ali_cdn.sh",
+            "line": 83
+          },
+          {
+            "location": "deploy/ali_dcdn.sh",
+            "line": 83
+          },
+          {
+            "location": "deploy/qiniu.sh",
+            "line": 102
+          },
+          {
+            "location": "dnsapi/dns_creoline.sh",
+            "line": 128
+          },
+          {
+            "location": "dnsapi/dns_creoline.sh",
+            "line": 139
+          },
+          {
+            "location": "dnsapi/dns_me.sh",
+            "line": 144
+          },
+          {
+            "location": "deploy/baidu_cdn.sh",
+            "line": 147
+          },
+          {
+            "location": "dnsapi/dns_creoline.sh",
+            "line": 147
+          },
+          {
+            "location": "dnsapi/dns_creoline.sh",
+            "line": 148
+          },
+          {
+            "location": "dnsapi/dns_me.sh",
+            "line": 148
+          },
+          {
+            "location": "deploy/baidu_cdn.sh",
+            "line": 149
+          },
+          {
+            "location": "dnsapi/dns_tencent.sh",
+            "line": 156
+          },
+          {
+            "location": "dnsapi/dns_aurora.sh",
+            "line": 157
+          },
+          {
+            "location": "dnsapi/dns_tencent.sh",
+            "line": 160
+          },
+          {
+            "location": "dnsapi/dns_websupport.sh",
+            "line": 161
+          },
+          {
+            "location": "dnsapi/dns_constellix.sh",
+            "line": 163
+          },
+          {
+            "location": "dnsapi/dns_tencent.sh",
+            "line": 163
+          },
+          {
+            "location": "dnsapi/dns_hw.sh",
+            "line": 165
+          },
+          {
+            "location": "dnsapi/dns_tencent.sh",
+            "line": 166
+          },
+          {
+            "location": "dnsapi/dns_ali.sh",
+            "line": 167
+          },
+          {
+            "location": "dnsapi/dns_constellix.sh",
+            "line": 167
+          },
+          {
+            "location": "dnsapi/dns_hw.sh",
+            "line": 167
+          },
+          {
+            "location": "dnsapi/dns_active24.sh",
+            "line": 172
+          },
+          {
+            "location": "dnsapi/dns_exoscale.sh",
+            "line": 175
+          },
+          {
+            "location": "dnsapi/dns_tencent.sh",
+            "line": 179
+          },
+          {
+            "location": "dnsapi/dns_ali.sh",
+            "line": 183
+          },
+          {
+            "location": "dnsapi/dns_hw.sh",
+            "line": 185
+          },
+          {
+            "location": "dnsapi/dns_exoscale.sh",
+            "line": 189
+          },
+          {
+            "location": "dnsapi/dns_tencent.sh",
+            "line": 193
+          },
+          {
+            "location": "dnsapi/dns_tencent.sh",
+            "line": 194
+          },
+          {
+            "location": "dnsapi/dns_tencent.sh",
+            "line": 195
+          },
+          {
+            "location": "dnsapi/dns_tencent.sh",
+            "line": 196
+          },
+          {
+            "location": "notify/aws_ses.sh",
+            "line": 197
+          },
+          {
+            "location": "dnsapi/dns_hw.sh",
+            "line": 198
+          },
+          {
+            "location": "dnsapi/dns_ali.sh",
+            "line": 199
+          },
+          {
+            "location": "dnsapi/dns_hw.sh",
+            "line": 201
+          },
+          {
+            "location": "dnsapi/dns_hw.sh",
+            "line": 205
+          },
+          {
+            "location": "dnsapi/dns_ali.sh",
+            "line": 213
+          },
+          {
+            "location": "deploy/baidu_cdn.sh",
+            "line": 218
+          },
+          {
+            "location": "deploy/baidu_cdn.sh",
+            "line": 221
+          },
+          {
+            "location": "notify/aws_ses.sh",
+            "line": 222
+          },
+          {
+            "location": "notify/aws_ses.sh",
+            "line": 225
+          },
+          {
+            "location": "notify/aws_ses.sh",
+            "line": 228
+          },
+          {
+            "location": "notify/aws_ses.sh",
+            "line": 231
+          },
+          {
+            "location": "dnsapi/dns_volcengine.sh",
+            "line": 232
+          },
+          {
+            "location": "dnsapi/dns_jd.sh",
+            "line": 234
+          },
+          {
+            "location": "notify/aws_ses.sh",
+            "line": 234
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "acmesh-official/acme.sh"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "22"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "4.12"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "safe"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-5.88"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:d039f36dff0b",
+      "name": "AES-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "2.16.840.1.101.3.4.1.46",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "algorithmFamily": "AES",
+          "parameterSetIdentifier": "256",
+          "cryptoFunctions": [
+            "decrypt",
+            "encrypt",
+            "keygen"
+          ],
+          "classicalSecurityLevel": 256,
+          "nistQuantumSecurityLevel": 5,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "deploy/unifi.sh",
+            "line": 172
+          },
+          {
+            "location": "acme.sh",
+            "line": 1574
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "acmesh-official/acme.sh"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "48"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.08"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "safe"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-6.92"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "85.7"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:2a1fdc15f14f",
+      "name": "ECDSA",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.2.840.10045.4.3.2",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "algorithmFamily": "ECDSA",
+          "cryptoFunctions": [
+            "keygen",
+            "sign",
+            "verify"
+          ],
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "deploy/lighttpd.sh",
+            "line": 127
+          },
+          {
+            "location": "deploy/unifi.sh",
+            "line": 161
+          },
+          {
+            "location": "deploy/unifi.sh",
+            "line": 172
+          },
+          {
+            "location": "deploy/panos.sh",
+            "line": 177
+          },
+          {
+            "location": "deploy/haproxy.sh",
+            "line": 179
+          },
+          {
+            "location": "deploy/unifios.sh",
+            "line": 223
+          },
+          {
+            "location": "deploy/unifios.sh",
+            "line": 231
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "acmesh-official/acme.sh"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "40"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.4"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "2.333"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-6.6"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "ML-DSA-65"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "10.2"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "85.7"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:0facd3c3a77a",
+      "name": "SHA-384",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "2.16.840.1.101.3.4.2.2",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "SHA-2",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "classicalSecurityLevel": 192,
+          "nistQuantumSecurityLevel": 4,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "deploy/unifi.sh",
+            "line": 172
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "acmesh-official/acme.sh"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "50"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "safe"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-7.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:952a34bf13f4",
+      "name": "AES-128",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "2.16.840.1.101.3.4.1.6",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "algorithmFamily": "AES",
+          "parameterSetIdentifier": "128",
+          "cryptoFunctions": [
+            "decrypt",
+            "encrypt",
+            "keygen"
+          ],
+          "classicalSecurityLevel": 128,
+          "nistQuantumSecurityLevel": 1,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "deploy/unifi.sh",
+            "line": 172
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "acmesh-official/acme.sh"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "50"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "weakened"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.167"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-7.0"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "AES-256"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "6.6"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "85.7"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:171889c5ed5b",
+      "name": "Ed25519",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.3.101.112",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "algorithmFamily": "EdDSA",
+          "cryptoFunctions": [
+            "keygen",
+            "sign",
+            "verify"
+          ],
+          "classicalSecurityLevel": 128,
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "deploy/windows_rdp.sh",
+            "line": 21
+          },
+          {
+            "location": "dnsapi/dns_dynv6.sh",
+            "line": 82
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "acmesh-official/acme.sh"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "38"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.48"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "2.333"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-6.52"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "ML-DSA-65"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "8.4"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:af7605770cd3",
+      "name": "SHA-512",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "2.16.840.1.101.3.4.2.3",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "SHA-2",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "classicalSecurityLevel": 256,
+          "nistQuantumSecurityLevel": 5,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "dnsapi/dns_transip.sh",
+            "line": 115
+          },
+          {
+            "location": "dnsapi/dns_transip.sh",
+            "line": 116
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "acmesh-official/acme.sh"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "39"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.44"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "safe"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-6.56"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:f2276102023c",
+      "name": "key:generic-api-key",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "dnsapi/dns_active24.sh",
+            "line": 12
+          },
+          {
+            "location": "dnsapi/dns_active24.sh",
+            "line": 13
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "acmesh-official/acme.sh"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "57"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.167"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-9.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "4.5"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "42.9"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:e50480033b64",
+      "name": "key:generic-api-key",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "notify/gotify.sh",
+            "line": 5
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "acmesh-official/acme.sh"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "58"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.167"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-9.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "4.4"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "42.9"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "urn:ecdat:scan:a6c5eb245323",
+      "dependsOn": [
+        "urn:ecdat:component:acmesh-official-acme.sh"
+      ]
+    },
+    {
+      "ref": "urn:ecdat:component:acmesh-official-acme.sh",
+      "dependsOn": [
+        "urn:ecdat:algorithm:667b73a99a13",
+        "urn:ecdat:algorithm:12b8fa95ae49",
+        "urn:ecdat:algorithm:5d4c28825e84",
+        "urn:ecdat:algorithm:0cbfe460d4d7",
+        "urn:ecdat:algorithm:33ce9e3a26d5",
+        "urn:ecdat:algorithm:ebc482a043f6",
+        "urn:ecdat:algorithm:d039f36dff0b",
+        "urn:ecdat:algorithm:2a1fdc15f14f",
+        "urn:ecdat:algorithm:0facd3c3a77a",
+        "urn:ecdat:algorithm:952a34bf13f4",
+        "urn:ecdat:algorithm:171889c5ed5b",
+        "urn:ecdat:algorithm:af7605770cd3",
+        "urn:ecdat:material:f2276102023c",
+        "urn:ecdat:material:e50480033b64"
+      ]
+    }
+  ],
+  "vulnerabilities": [
+    {
+      "bom-ref": "vuln-1",
+      "id": "ECDAT-QV-0001",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "high",
+          "justification": "framework deadline 2030 is within the 3.68-year migration window"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "RSA (algorithm) in acmesh-official/acme.sh: broken; tier ACT_NOW",
+      "detail": "Integer factorisation is broken by Shor's algorithm",
+      "recommendation": "Migrate to ML-KEM-768 (hybrid)",
+      "analysis": {
+        "state": "exploitable",
+        "detail": "quantum-vulnerable and reachable",
+        "response": [
+          "update"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:667b73a99a13"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.68 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-2",
+      "id": "ECDAT-QV-0002",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "high",
+          "justification": "classically broken or below minimum strength today, independent of quantum"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "SHA-1 (algorithm) in acmesh-official/acme.sh: legacy-broken; tier ACT_NOW",
+      "detail": "Chosen-prefix collisions (SHAttered 2017, 2020); disallowed for signatures",
+      "recommendation": "Migrate to SHA-256",
+      "analysis": {
+        "state": "exploitable",
+        "detail": "quantum-vulnerable and reachable",
+        "response": [
+          "update"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:0cbfe460d4d7"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.92 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-3",
+      "id": "ECDAT-QV-0003",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "high",
+          "justification": "classically broken or below minimum strength today, independent of quantum"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "MD5 (algorithm) in acmesh-official/acme.sh: legacy-broken; tier ACT_NOW",
+      "detail": "Practical collisions since 2004; unusable for signatures or integrity",
+      "recommendation": "Migrate to SHA-256",
+      "analysis": {
+        "state": "exploitable",
+        "detail": "quantum-vulnerable and reachable",
+        "response": [
+          "update"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:33ce9e3a26d5"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.92 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-4",
+      "id": "ECDAT-QV-0004",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "high",
+          "justification": "framework deadline 2030 is within the 3.4-year migration window; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "ECDSA (algorithm) in acmesh-official/acme.sh: broken; tier ACT_NOW",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "Migrate to ML-DSA-65 (hybrid)",
+      "analysis": {
+        "state": "exploitable",
+        "detail": "quantum-vulnerable and reachable",
+        "response": [
+          "update"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:2a1fdc15f14f"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.4 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-5",
+      "id": "ECDAT-QV-0005",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "quantum-vulnerable but short-lived data, signing-only, or ample migration time"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "AES-128 (algorithm) in acmesh-official/acme.sh: weakened; tier MONITOR",
+      "detail": "Grover reduces AES-128 to ~64-bit effective security; still NIST-approved but fails CNSA 2.0",
+      "recommendation": "Migrate to AES-256",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:952a34bf13f4"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-6",
+      "id": "ECDAT-QV-0006",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "high",
+          "justification": "framework deadline 2030 is within the 3.48-year migration window; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "Ed25519 (algorithm) in acmesh-official/acme.sh: broken; tier ACT_NOW",
+      "detail": "Edwards-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "Migrate to ML-DSA-65 (hybrid)",
+      "analysis": {
+        "state": "exploitable",
+        "detail": "quantum-vulnerable and reachable",
+        "response": [
+          "update"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:171889c5ed5b"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.48 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-7",
+      "id": "ECDAT-QV-0007",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "could not classify; review manually"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "key:generic-api-key (related-crypto-material) in acmesh-official/acme.sh: unknown; tier MONITOR",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:f2276102023c"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-8",
+      "id": "ECDAT-QV-0008",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "could not classify; review manually"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "key:generic-api-key (related-crypto-material) in acmesh-official/acme.sh: unknown; tier MONITOR",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:e50480033b64"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=1 Z=15"
+        }
+      ]
+    }
+  ]
+}

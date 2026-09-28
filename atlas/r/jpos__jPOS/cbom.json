@@ -1,0 +1,2769 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.7.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.7",
+  "serialNumber": "urn:uuid:80f438ef-dbd2-4ffd-ba2c-3db64f328a78",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-09-18T08:35:59Z",
+    "tools": {
+      "components": [
+        {
+          "type": "application",
+          "name": "ecdat",
+          "version": "0.1.0",
+          "description": "Enterprise Cryptographic Discovery & Analysis Tool (SIH 2026 PS 26164)"
+        },
+        {
+          "type": "application",
+          "name": "opengrep",
+          "version": "1.29.0"
+        },
+        {
+          "type": "application",
+          "name": "cbomkit-theia",
+          "version": "- CycloneDXv1.6"
+        },
+        {
+          "type": "application",
+          "name": "syft",
+          "version": "Version:       1.51.1"
+        },
+        {
+          "type": "application",
+          "name": "tshark",
+          "version": "TShark (Wireshark) 4.6.8 (v4.6.8-0-ge677bf052328)."
+        },
+        {
+          "type": "application",
+          "name": "crane",
+          "version": "v0.22.1"
+        }
+      ]
+    },
+    "component": {
+      "type": "application",
+      "bom-ref": "urn:ecdat:scan:a067c133fade",
+      "name": "jpos__jPOS"
+    },
+    "properties": [
+      {
+        "name": "ecdat:z_year",
+        "value": "2041"
+      },
+      {
+        "name": "ecdat:profile",
+        "value": "enterprise"
+      },
+      {
+        "name": "ecdat:targets",
+        "value": "1"
+      },
+      {
+        "name": "ecdat:certin_table9",
+        "value": "CERT-In BOM guidelines v2.0 (2025-07-09) section 8.3"
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "application",
+      "bom-ref": "urn:ecdat:component:jpos-jpos",
+      "name": "jpos/jPOS",
+      "properties": [
+        {
+          "name": "ecdat:zone",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "financial"
+        },
+        {
+          "name": "ecdat:path",
+          "value": "C:\\customize\\SIH2026\\demo\\ecdat\\.claude\\worktrees\\ecdat-build\\out\\atlas\\src\\jpos__jPOS"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "urn:ecdat:library:0d95a52f9af9",
+      "name": "jca",
+      "properties": [
+        {
+          "name": "ecdat:zone",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:path",
+          "value": "jpos/src/main/java/org/jpos/iso/SunJSSESocketFactory.java"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "urn:ecdat:library:89ac3bbeb2c4",
+      "name": "jce",
+      "properties": [
+        {
+          "name": "ecdat:zone",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:path",
+          "value": "jpos/src/main/java/org/jpos/security/SensitiveString.java"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "urn:ecdat:library:0c1a9eee343a",
+      "name": "bouncycastle",
+      "properties": [
+        {
+          "name": "ecdat:zone",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:path",
+          "value": "jpos/src/test/java/org/jpos/tlv/packager/bertlv/Bug568BERTLVAsciiHexPackager.java"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "urn:ecdat:library:02ec0b6d8a42",
+      "name": "runtime:java",
+      "version": "25",
+      "properties": [
+        {
+          "name": "ecdat:zone",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:path",
+          "value": "build.gradle"
+        },
+        {
+          "name": "ecdat:ecosystem",
+          "value": "runtime"
+        },
+        {
+          "name": "ecdat:pqc_native",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:pqc_native_from",
+          "value": "24"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:protocol:c566c654804c",
+      "name": "TLS",
+      "cryptoProperties": {
+        "assetType": "protocol",
+        "protocolProperties": {
+          "type": "tls",
+          "version": "TLS"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "jpos/src/main/java/org/jpos/iso/GenericSSLSocketFactory.java",
+            "line": 166
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "jpos/jPOS"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "10.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "financial"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "75"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "0.5"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.333"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-4.5"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "X25519MLKEM768"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "2.2"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "60.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:528d59113194",
+      "name": "DES-56",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.3.14.3.2.7",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "algorithmFamily": "DES",
+          "parameterSetIdentifier": "56",
+          "cryptoFunctions": [
+            "encrypt"
+          ],
+          "classicalSecurityLevel": 56,
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "jpos/src/main/java/org/jpos/q2/Q2.java",
+            "line": 1110
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/iso/MessageErrorIndicator.java",
+            "line": 26
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/iso/MessageErrorIndicator.java",
+            "line": 26
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/iso/MessageErrorIndicator.java",
+            "line": 26
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/SecureDESKey.java",
+            "line": 27
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/SecureDESKey.java",
+            "line": 27
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/KeyScheme.java",
+            "line": 28
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/ARPCMethod.java",
+            "line": 30
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/Util.java",
+            "line": 33
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/MKDMethod.java",
+            "line": 37
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/Algorithm.java",
+            "line": 38
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/PaddingMethod.java",
+            "line": 39
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/KeyScheme.java",
+            "line": 40
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/MKDMethod.java",
+            "line": 43
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/Util.java",
+            "line": 46
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/SMAdapter.java",
+            "line": 48
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/KeyScheme.java",
+            "line": 52
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/SMAdapter.java",
+            "line": 52
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/SMAdapter.java",
+            "line": 56
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/KeyScheme.java",
+            "line": 59
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/SecureDESKey.java",
+            "line": 59
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/SMAdapter.java",
+            "line": 60
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/SMAdapter.java",
+            "line": 60
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/jceadapter/JCEHandler.java",
+            "line": 64
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/jceadapter/JCEHandler.java",
+            "line": 64
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/SecureKeyBlockBuilder.java",
+            "line": 66
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/SMAdapter.java",
+            "line": 66
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/SMAdapter.java",
+            "line": 66
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/EncryptedPIN.java",
+            "line": 68
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/KeyScheme.java",
+            "line": 72
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/SMAdapter.java",
+            "line": 75
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/SMAdapter.java",
+            "line": 75
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/KeyUsage.java",
+            "line": 76
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/SecureKeyBlockBuilder.java",
+            "line": 77
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/SecureDESKey.java",
+            "line": 79
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/jceadapter/JCEHandler.java",
+            "line": 82
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/jceadapter/JCEHandler.java",
+            "line": 82
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/jceadapter/JCEHandler.java",
+            "line": 82
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/SMAdapter.java",
+            "line": 85
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/SMAdapter.java",
+            "line": 85
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/SMAdapter.java",
+            "line": 94
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/SMAdapter.java",
+            "line": 94
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/SecureKeyBlockBuilder.java",
+            "line": 96
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/jceadapter/JCEHandler.java",
+            "line": 99
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/jceadapter/JCEHandler.java",
+            "line": 99
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/jceadapter/JCEHandler.java",
+            "line": 99
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/jceadapter/JCEHandler.java",
+            "line": 99
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/jceadapter/JCEHandler.java",
+            "line": 99
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/jceadapter/JCEHandler.java",
+            "line": 99
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/SMAdapter.java",
+            "line": 104
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "jpos/jPOS"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "10.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "financial"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "33"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.68"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "legacy-broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "3.333"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-1.32"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "AES-256-GCM"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "14.7"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "85.7"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:5a3535a4c508",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.2.840.113549.2.5",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "MD5",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "classicalSecurityLevel": 0,
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "jpos/src/main/java/org/jpos/space/MD5Template.java",
+            "line": 71
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/iso/filter/MD5Filter.java",
+            "line": 100
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/space/MD5Template.java",
+            "line": 30
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/iso/filter/MD5Filter.java",
+            "line": 32
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/space/MD5Template.java",
+            "line": 52
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/space/MD5Template.java",
+            "line": 63
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/space/MD5Template.java",
+            "line": 63
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/iso/filter/MD5Filter.java",
+            "line": 78
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/space/MD5Template.java",
+            "line": 94
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "jpos/jPOS"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "10.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "financial"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "39"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.44"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "legacy-broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "3.333"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-1.56"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "SHA-256"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "8.3"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:e96052e782ec",
+      "name": "SHA-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "2.16.840.1.101.3.4.2.1",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "SHA-2",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "classicalSecurityLevel": 128,
+          "nistQuantumSecurityLevel": 2,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "jpos/src/test/resources/keystore.jks"
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/q2/install/ModuleUtils.java",
+            "line": 120
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/iso/filter/MD5Filter.java",
+            "line": 32
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/q2/install/ModuleUtils.java",
+            "line": 111
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/q2/install/ModuleUtils.java",
+            "line": 111
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/q2/install/ModuleUtils.java",
+            "line": 111
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/q2/Q2.java",
+            "line": 138
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/ExtKeyUsage.java",
+            "line": 149
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/EMVSMAdapter.java",
+            "line": 410
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "jpos/jPOS"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "certificate,source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "10.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "financial"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "35"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.6"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "safe"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-1.4"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:d35a24670f51",
+      "name": "SHA-1",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.3.14.3.2.26",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "SHA-1",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "classicalSecurityLevel": 0,
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "jpos/src/main/java/org/jpos/security/jceadapter/JCESecurityModule.java",
+            "line": 133
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/util/PGPHelper.java",
+            "line": 648
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/q2/Q2.java",
+            "line": 1380
+          },
+          {
+            "location": "jpos/src/test/java/org/jpos/security/jceadapter/JCESecurityModuleTest.java",
+            "line": 2693
+          },
+          {
+            "location": "jpos/src/test/java/org/jpos/security/jceadapter/JCESecurityModuleTest.java",
+            "line": 2929
+          },
+          {
+            "location": "jpos/src/test/java/org/jpos/security/jceadapter/JCESecurityModuleTest.java",
+            "line": 3134
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/jceadapter/JCESecurityModule.java",
+            "line": 3255
+          },
+          {
+            "location": "jpos/src/test/java/org/jpos/security/jceadapter/JCESecurityModuleTest.java",
+            "line": 3297
+          },
+          {
+            "location": "jpos/src/test/java/org/jpos/security/jceadapter/JCESecurityModuleTest.java",
+            "line": 3323
+          },
+          {
+            "location": "jpos/src/test/java/org/jpos/security/jceadapter/JCESecurityModuleTest.java",
+            "line": 3486
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/EMVCAPublicKey.java",
+            "line": 25
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/EMVICCPublicKey.java",
+            "line": 25
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/EMVIssuerPublicKey.java",
+            "line": 25
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/log/evt/SysInfo.java",
+            "line": 30
+          },
+          {
+            "location": "jpos/src/test/java/org/jpos/security/EMVCAPublicKeyTest.java",
+            "line": 38
+          },
+          {
+            "location": "jpos/src/test/java/org/jpos/security/EMVICCPublicKeyTest.java",
+            "line": 39
+          },
+          {
+            "location": "jpos/src/test/java/org/jpos/security/EMVIssuerPublicKeyTest.java",
+            "line": 39
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/MKDMethod.java",
+            "line": 43
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/EMVSMAdapter.java",
+            "line": 133
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/jceadapter/JCESecurityModule.java",
+            "line": 134
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/ExtKeyUsage.java",
+            "line": 135
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/EMVSMAdapter.java",
+            "line": 410
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/EMVSMAdapter.java",
+            "line": 410
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/EMVSMAdapter.java",
+            "line": 464
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/EMVSMAdapter.java",
+            "line": 464
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/EMVSMAdapter.java",
+            "line": 464
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/EMVSMAdapter.java",
+            "line": 530
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/EMVSMAdapter.java",
+            "line": 581
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/EMVSMAdapter.java",
+            "line": 630
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/EMVSMAdapter.java",
+            "line": 630
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/EMVSMAdapter.java",
+            "line": 630
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/jceadapter/JCESecurityModule.java",
+            "line": 789
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/jceadapter/JCESecurityModule.java",
+            "line": 806
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/q2/Q2.java",
+            "line": 1370
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/q2/Q2.java",
+            "line": 1370
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/jceadapter/JCESecurityModule.java",
+            "line": 1392
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/jceadapter/JCESecurityModule.java",
+            "line": 1665
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/jceadapter/JCESecurityModule.java",
+            "line": 1746
+          },
+          {
+            "location": "jpos/src/test/java/org/jpos/security/jceadapter/JCESecurityModuleTest.java",
+            "line": 2117
+          },
+          {
+            "location": "jpos/src/test/java/org/jpos/security/jceadapter/JCESecurityModuleTest.java",
+            "line": 2692
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/BaseSMAdapter.java",
+            "line": 2713
+          },
+          {
+            "location": "jpos/src/test/java/org/jpos/security/jceadapter/JCESecurityModuleTest.java",
+            "line": 2928
+          },
+          {
+            "location": "jpos/src/test/java/org/jpos/security/jceadapter/JCESecurityModuleTest.java",
+            "line": 3450
+          },
+          {
+            "location": "jpos/src/test/java/org/jpos/security/jceadapter/JCESecurityModuleTest.java",
+            "line": 3595
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "jpos/jPOS"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "10.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "financial"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "33"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.68"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "legacy-broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "3.333"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-1.32"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "SHA-256"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "14.7"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:da304eb1d486",
+      "name": "3DES-168",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.2.840.113549.3.7",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "algorithmFamily": "3DES",
+          "parameterSetIdentifier": "168",
+          "cryptoFunctions": [
+            "decrypt",
+            "encrypt"
+          ],
+          "classicalSecurityLevel": 112,
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "jpos/src/main/java/org/jpos/security/EncryptedPIN.java",
+            "line": 68
+          },
+          {
+            "location": "jpos/src/test/java/org/jpos/security/jceadapter/DUKPTTest.java",
+            "line": 89
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/SMAdapter.java",
+            "line": 1348
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/SMAdapter.java",
+            "line": 1367
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/jceadapter/JCESecurityModule.java",
+            "line": 2908
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "jpos/jPOS"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "comment"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "10.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "financial"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "32"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.72"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "legacy-broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-1.28"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "85.7"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:6fc1ae3bbbff",
+      "name": "AES",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "algorithmFamily": "AES",
+          "cryptoFunctions": [
+            "keygen"
+          ],
+          "nistQuantumSecurityLevel": 1,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "jpos/src/main/java/org/jpos/security/SensitiveString.java",
+            "line": 80
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "jpos/jPOS"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "10.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "financial"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "50"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "weakened"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.333"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-2.0"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "AES-256"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "6.6"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "57.1"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:c6c64ff8bc78",
+      "name": "RSA-1024",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.2.840.113549.1.1.1",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "algorithmFamily": "RSASSA-PKCS1",
+          "parameterSetIdentifier": "1024",
+          "cryptoFunctions": [
+            "keygen"
+          ],
+          "classicalSecurityLevel": 80,
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "jpos/src/test/java/org/jpos/security/jceadapter/JCESecurityModuleTest.java",
+            "line": 2627
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "jpos/jPOS"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "10.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "financial"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "46"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.16"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "legacy-broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-1.84"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:98ddc616bc1e",
+      "name": "private-key:RSA",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "private-key",
+          "size": 2048,
+          "state": "active",
+          "format": "JKS",
+          "id": "selfsigned"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "jpos/src/test/resources/keystore.jks"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "jpos/jPOS"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "certificate"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "10.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "financial"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "70"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-4.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "71.4"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:5d20f11b6fac",
+      "name": "RSA-2048",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.2.840.113549.1.1.1",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "algorithmFamily": "RSASSA-PKCS1",
+          "parameterSetIdentifier": "2048",
+          "cryptoFunctions": [
+            "verify"
+          ],
+          "classicalSecurityLevel": 112,
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "jpos/src/test/resources/keystore.jks"
+          },
+          {
+            "location": "jpos/src/test/resources/keystore.jks"
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/EMVCAPublicKey.java",
+            "line": 25
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/EMVCAPublicKey.java",
+            "line": 25
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/EMVCAPublicKey.java",
+            "line": 25
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/EMVICCPublicKey.java",
+            "line": 25
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/EMVICCPublicKey.java",
+            "line": 25
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/EMVICCPublicKey.java",
+            "line": 25
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/EMVIssuerPublicKey.java",
+            "line": 25
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/EMVIssuerPublicKey.java",
+            "line": 25
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/EMVIssuerPublicKey.java",
+            "line": 25
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/SecurePrivateKey.java",
+            "line": 26
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/ExtKeyUsage.java",
+            "line": 28
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/SMAdapter.java",
+            "line": 31
+          },
+          {
+            "location": "jpos/src/test/java/org/jpos/security/EMVCAPublicKeyTest.java",
+            "line": 39
+          },
+          {
+            "location": "jpos/src/test/java/org/jpos/security/EMVICCPublicKeyTest.java",
+            "line": 40
+          },
+          {
+            "location": "jpos/src/test/java/org/jpos/security/EMVIssuerPublicKeyTest.java",
+            "line": 40
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/Algorithm.java",
+            "line": 53
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/KeyScheme.java",
+            "line": 72
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/EMVCAPublicKey.java",
+            "line": 73
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/EMVCAPublicKey.java",
+            "line": 73
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/EMVCAPublicKey.java",
+            "line": 83
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/EMVCAPublicKey.java",
+            "line": 83
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/ExtKeyUsage.java",
+            "line": 86
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/ExtKeyUsage.java",
+            "line": 93
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/jceadapter/JCEHandler.java",
+            "line": 99
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/EMVIssuerPublicKey.java",
+            "line": 100
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/EMVIssuerPublicKey.java",
+            "line": 100
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/ExtKeyUsage.java",
+            "line": 100
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/EMVICCPublicKey.java",
+            "line": 101
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/EMVICCPublicKey.java",
+            "line": 101
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/ExtKeyUsage.java",
+            "line": 107
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/EMVIssuerPublicKey.java",
+            "line": 110
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/EMVIssuerPublicKey.java",
+            "line": 110
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/EMVICCPublicKey.java",
+            "line": 111
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/EMVICCPublicKey.java",
+            "line": 111
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/ExtKeyUsage.java",
+            "line": 114
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/jceadapter/JCEHandler.java",
+            "line": 143
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/SMAdapter.java",
+            "line": 186
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/SMAdapter.java",
+            "line": 196
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/EMVSMAdapter.java",
+            "line": 410
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/EMVSMAdapter.java",
+            "line": 410
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/EMVSMAdapter.java",
+            "line": 410
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/EMVSMAdapter.java",
+            "line": 464
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/EMVSMAdapter.java",
+            "line": 464
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/EMVSMAdapter.java",
+            "line": 464
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/EMVSMAdapter.java",
+            "line": 530
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/EMVSMAdapter.java",
+            "line": 530
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/EMVSMAdapter.java",
+            "line": 581
+          },
+          {
+            "location": "jpos/src/main/java/org/jpos/security/EMVSMAdapter.java",
+            "line": 581
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "jpos/jPOS"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "certificate,source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "10.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "financial"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "27"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.92"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-1.08"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:certificate:f30c1da5cb6b",
+      "name": "localhost",
+      "cryptoProperties": {
+        "assetType": "certificate",
+        "oid": "1.2.840.113549.1.1.11",
+        "certificateProperties": {
+          "subjectName": "CN=localhost,OU=Dummy,O=Dummy,L=Somewhere,ST=Somewhere,C=AU",
+          "issuerName": "CN=localhost,OU=Dummy,O=Dummy,L=Somewhere,ST=Somewhere,C=AU",
+          "notValidBefore": "2012-08-08T00:39:29Z",
+          "notValidAfter": "2012-11-06T00:39:29Z",
+          "certificateFormat": "X.509",
+          "certificateExtension": "jks",
+          "serialNumber": "2af58044",
+          "certificateState": [
+            {
+              "state": "deactivated"
+            }
+          ],
+          "fingerprint": {
+            "alg": "SHA-256",
+            "content": "feab4d8e49995adde3f53cd25dafe622b9541a5fe8be1de39e2ee5b3b72ec4a4"
+          }
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "jpos/src/test/resources/keystore.jks"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "jpos/jPOS"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "certificate"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "10.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "financial"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "76"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "0.5"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-4.5"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "ML-DSA-65 certificate (re-issue when the CA supports FIPS 204; hybrid/dual certificates during transition)"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "2.2"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:28a329a3e285",
+      "name": "private-key:private-key",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "private-key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "jpos/src/dist/cfg/demo.priv"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "jpos/jPOS"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "10.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "financial"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "58"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.333"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-4.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "4.4"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "42.9"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:e26cce2e5f2f",
+      "name": "key:generic-api-key",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "jpos/src/test/resources/org/jpos/security/keys-test",
+            "line": 27
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "jpos/jPOS"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "10.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "financial"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "58"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-4.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "42.9"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "urn:ecdat:scan:a067c133fade",
+      "dependsOn": [
+        "urn:ecdat:component:jpos-jpos"
+      ]
+    },
+    {
+      "ref": "urn:ecdat:component:jpos-jpos",
+      "dependsOn": [
+        "urn:ecdat:library:0d95a52f9af9",
+        "urn:ecdat:library:89ac3bbeb2c4",
+        "urn:ecdat:library:0c1a9eee343a",
+        "urn:ecdat:library:02ec0b6d8a42",
+        "urn:ecdat:protocol:c566c654804c",
+        "urn:ecdat:algorithm:528d59113194",
+        "urn:ecdat:algorithm:5a3535a4c508",
+        "urn:ecdat:algorithm:e96052e782ec",
+        "urn:ecdat:algorithm:d35a24670f51",
+        "urn:ecdat:algorithm:da304eb1d486",
+        "urn:ecdat:algorithm:6fc1ae3bbbff",
+        "urn:ecdat:algorithm:c6c64ff8bc78",
+        "urn:ecdat:material:98ddc616bc1e",
+        "urn:ecdat:algorithm:5d20f11b6fac",
+        "urn:ecdat:certificate:f30c1da5cb6b",
+        "urn:ecdat:material:28a329a3e285",
+        "urn:ecdat:material:e26cce2e5f2f"
+      ]
+    },
+    {
+      "ref": "urn:ecdat:library:0d95a52f9af9"
+    },
+    {
+      "ref": "urn:ecdat:library:89ac3bbeb2c4"
+    },
+    {
+      "ref": "urn:ecdat:library:0c1a9eee343a"
+    },
+    {
+      "ref": "urn:ecdat:library:02ec0b6d8a42"
+    }
+  ],
+  "vulnerabilities": [
+    {
+      "bom-ref": "vuln-1",
+      "id": "ECDAT-QV-0001",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "quantum-vulnerable but short-lived data, signing-only, or ample migration time"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "TLS (protocol) in jpos/jPOS: broken; tier MONITOR",
+      "detail": "classical (ECDHE/RSA) key exchange only: harvestable today",
+      "recommendation": "Migrate to X25519MLKEM768 (hybrid)",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:protocol:c566c654804c"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=10 Y=0.5 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-2",
+      "id": "ECDAT-QV-0002",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "high",
+          "justification": "classically broken or below minimum strength today, independent of quantum"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "DES (algorithm) in jpos/jPOS: legacy-broken; tier ACT_NOW",
+      "detail": "56-bit key is brute-forceable classically",
+      "recommendation": "Migrate to AES-256-GCM",
+      "analysis": {
+        "state": "exploitable",
+        "detail": "quantum-vulnerable and reachable",
+        "response": [
+          "update"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:528d59113194"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=10 Y=3.68 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-3",
+      "id": "ECDAT-QV-0003",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "high",
+          "justification": "classically broken or below minimum strength today, independent of quantum"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "MD5 (algorithm) in jpos/jPOS: legacy-broken; tier ACT_NOW",
+      "detail": "Practical collisions since 2004; unusable for signatures or integrity",
+      "recommendation": "Migrate to SHA-256",
+      "analysis": {
+        "state": "exploitable",
+        "detail": "quantum-vulnerable and reachable",
+        "response": [
+          "update"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:5a3535a4c508"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=10 Y=3.44 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-4",
+      "id": "ECDAT-QV-0004",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "high",
+          "justification": "classically broken or below minimum strength today, independent of quantum"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "SHA-1 (algorithm) in jpos/jPOS: legacy-broken; tier ACT_NOW",
+      "detail": "Chosen-prefix collisions (SHAttered 2017, 2020); disallowed for signatures",
+      "recommendation": "Migrate to SHA-256",
+      "analysis": {
+        "state": "exploitable",
+        "detail": "quantum-vulnerable and reachable",
+        "response": [
+          "update"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:d35a24670f51"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=10 Y=3.68 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-5",
+      "id": "ECDAT-QV-0005",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is comment: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "3DES (algorithm) in jpos/jPOS: legacy-broken; tier SAFE",
+      "detail": "Deprecated classically (Sweet32, 64-bit block); disallowed by NIST after 2023",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "false_positive",
+        "detail": "mentioned in a comment only",
+        "response": [],
+        "justification": "code_not_present"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:da304eb1d486"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=10 Y=3.72 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-6",
+      "id": "ECDAT-QV-0006",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "quantum-vulnerable but short-lived data, signing-only, or ample migration time"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "AES (algorithm) in jpos/jPOS: weakened; tier MONITOR",
+      "detail": "Grover's algorithm halves the effective key length; key size not yet known",
+      "recommendation": "Migrate to AES-256",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:6fc1ae3bbbff"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=10 Y=3 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-7",
+      "id": "ECDAT-QV-0007",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "RSA (algorithm) in jpos/jPOS: legacy-broken; tier SAFE",
+      "detail": "1024-bit key is below the classical minimum of 2048 bits",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:c6c64ff8bc78"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=10 Y=3.16 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-8",
+      "id": "ECDAT-QV-0008",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "private-key:RSA (related-crypto-material) in jpos/jPOS: broken; tier SAFE",
+      "detail": "Integer factorisation is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:98ddc616bc1e"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=10 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-9",
+      "id": "ECDAT-QV-0009",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "RSA (algorithm) in jpos/jPOS: broken; tier SAFE",
+      "detail": "Integer factorisation is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:5d20f11b6fac"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=10 Y=3.92 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-10",
+      "id": "ECDAT-QV-0010",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "localhost (certificate) in jpos/jPOS: broken; tier SAFE",
+      "detail": "Integer factorisation is broken by Shor's algorithm",
+      "recommendation": "Migrate to ML-DSA-65 certificate (re-issue when the CA supports FIPS 204; hybrid/dual certificates during transition) (hybrid)",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:certificate:f30c1da5cb6b"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=10 Y=0.5 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-11",
+      "id": "ECDAT-QV-0011",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "could not classify; review manually"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "private-key:private-key (related-crypto-material) in jpos/jPOS: unknown; tier MONITOR",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:28a329a3e285"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=10 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-12",
+      "id": "ECDAT-QV-0012",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "key:generic-api-key (related-crypto-material) in jpos/jPOS: unknown; tier SAFE",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:e26cce2e5f2f"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=10 Y=1 Z=15"
+        }
+      ]
+    }
+  ]
+}

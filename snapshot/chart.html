@@ -1,0 +1,82 @@
+<!doctype html><html><head><meta charset='utf-8'><link rel='icon' href='data:,'><style>
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+:root{--paper:#fbfaf7;--panel:#ffffff;--ink:#12212e;--ink2:#41505d;--muted:#6f7c88;--rule:#e3e0d9;
+--rule2:#cfcabf;--india:#eda100;--ref:#1f5fae;--accent:#a87400;--exposed:#b8322f;--safe:#256f4a;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--paper:#14181b;--panel:#191e22;--ink:#eef1f2;--ink2:#b9c2c8;
+--muted:#8a949c;--rule:#2a3136;--rule2:#3b444b;--india:#eda100;--ref:#6ba8f0;--accent:#e9b44c;
+--exposed:#e5736f;--safe:#5cbe8d;color-scheme:dark}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);
+font:16px/1.62 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums}
+main{max-width:1180px;margin:0 auto;padding:56px 28px 80px}
+@media(max-width:640px){main{padding:34px 18px 56px}}
+a{color:var(--ref);text-decoration:none;border-bottom:1px solid rgba(31,95,174,.3)}
+a:hover{border-bottom-color:currentColor}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+.kicker{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11.5px;letter-spacing:.18em;
+text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+h1{font-size:40px;line-height:1.08;letter-spacing:-.02em;font-weight:600;margin:0}
+h2{font-size:15px;letter-spacing:.14em;text-transform:uppercase;font-family:"IBM Plex Mono",monospace;
+font-weight:500;color:var(--muted);margin:52px 0 14px;display:flex;align-items:center;gap:14px}
+h2::after{content:"";flex:1;height:1px;background:var(--rule)}
+h3{font-size:17px;margin:26px 0 6px;font-weight:600}
+.lede{font-size:19px;line-height:1.5;color:var(--ink2);margin:14px 0 0;max-width:62ch}
+.rule{width:64px;height:3px;background:var(--india);border-radius:2px;margin:26px 0 0}
+p{max-width:74ch}
+.sub{color:var(--ink2);margin:6px 0 0;max-width:74ch}
+.muted{color:var(--muted)}.small{font-size:13.5px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+/* the three artefacts, as a record rather than as cards */
+.artefacts{border-top:1px solid var(--rule)}
+.artefact{position:relative;display:flex;gap:32px;align-items:flex-start;justify-content:space-between;
+padding:18px 14px;margin:0 -14px;border-bottom:1px solid var(--rule);border-radius:8px;cursor:pointer;
+transition:background .12s ease}
+/* the whole row is the tap target: the title's link is stretched over it, so the accessible
+   name stays the title and keyboard focus still lands on one link per row */
+.artefact .n a::after{content:"";position:absolute;inset:0;border-radius:8px}
+.artefact:hover{background:rgba(237,161,0,.07)}
+.artefact:hover .n a{border-bottom-color:currentColor}
+.artefact:focus-within{background:rgba(237,161,0,.07);outline:2px solid var(--accent);outline-offset:-2px}
+.artefact:focus-within .n a:focus-visible{outline:none}
+.artefact .t{flex:1;min-width:0}
+.artefact .n{font-size:19px;font-weight:600;letter-spacing:-.01em;margin-bottom:5px}
+.artefact .n a{border-bottom:1px solid transparent}
+.artefact .d{color:var(--ink2);font-size:14.5px;max-width:62ch}
+.artefact .go{display:block;margin-top:8px;font-family:"IBM Plex Mono",monospace;font-size:11px;
+letter-spacing:.14em;text-transform:uppercase;color:var(--muted);opacity:0;transition:opacity .12s ease}
+.artefact:hover .go,.artefact:focus-within .go{opacity:1}
+.artefact .f{flex:none;width:126px;text-align:right;font-family:"IBM Plex Mono",monospace;color:var(--muted);
+font-size:12px;line-height:1.45;white-space:nowrap}
+.artefact .f b{display:block;font-size:23px;font-weight:600;color:var(--ink);letter-spacing:-.02em;margin-bottom:2px}
+/* stat line, used by the atlas */
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:2px 28px;margin:18px 0 8px}
+.tile{padding:12px 0 2px;border-top:2px solid var(--rule2)}
+.tile .v{font-size:30px;font-weight:600;letter-spacing:-.02em;line-height:1.1}
+.tile .l{color:var(--muted);font-size:12.5px;line-height:1.35;margin-top:4px;max-width:26ch}
+pre{background:var(--panel);border:1px solid var(--rule);border-left:3px solid var(--india);
+border-radius:0 6px 6px 0;padding:14px 16px;overflow:auto;font-size:13.5px;line-height:1.65;
+font-family:"IBM Plex Mono",ui-monospace,monospace}
+code{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.92em}
+table{border-collapse:collapse;width:100%;font-size:13.5px;margin-top:8px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--rule);vertical-align:top}
+th{color:var(--muted);font-weight:500;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+font-family:"IBM Plex Mono",monospace;cursor:pointer;line-height:1.35;vertical-align:bottom;
+border-bottom:1px solid var(--rule2)}
+th:first-child,td:first-child{min-width:150px}
+td:last-child,td:nth-child(2){white-space:nowrap}
+.scroll{overflow-x:auto;margin-top:8px}
+tbody tr:hover{background:rgba(237,161,0,.05)}
+td.num,th.num{text-align:right;font-family:"IBM Plex Mono",monospace}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
+.filters button{background:transparent;border:1px solid var(--rule2);border-radius:999px;padding:4px 13px;
+color:var(--ink2);cursor:pointer;font:inherit;font-size:13px}
+.filters button:hover{border-color:var(--accent)}
+.filters button.on{border-color:var(--accent);color:var(--accent);background:rgba(237,161,0,.08)}
+.note{border-left:2px solid var(--rule2);padding:4px 0 4px 16px;color:var(--muted);font-size:13.5px;max-width:78ch}
+.kv{font-size:13.5px;color:var(--ink2)}
+.kv b{font-weight:500;color:var(--ink)}
+footer{margin-top:64px;padding-top:16px;border-top:1px solid var(--rule);color:var(--muted);font-size:12.5px;
+display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between}
+</style></head><body><div id='chart' style='padding:16px 20px;background:var(--surface)'><p class='small' style='margin:0 0 4px'><span style='color:var(--india)'>■</span> Indian sector &nbsp; <span style='color:var(--ref)'>■</span> global reference</p><svg viewBox='0 0 900 384' width='100%' role='img' aria-label='Share of sites negotiating hybrid post-quantum key exchange, by sector' xmlns='http://www.w3.org/2000/svg' style='font-family:IBM Plex Sans,Inter,system-ui,sans-serif'><line x1='300.0' y1='28' x2='300.0' y2='368' stroke='var(--rule)' stroke-width='1'/><text x='300.0' y='20' font-size='12' fill='var(--muted)' text-anchor='middle'>0%</text><line x1='432.5' y1='28' x2='432.5' y2='368' stroke='var(--rule)' stroke-width='1'/><text x='432.5' y='20' font-size='12' fill='var(--muted)' text-anchor='middle'>25%</text><line x1='565.0' y1='28' x2='565.0' y2='368' stroke='var(--rule)' stroke-width='1'/><text x='565.0' y='20' font-size='12' fill='var(--muted)' text-anchor='middle'>50%</text><line x1='697.5' y1='28' x2='697.5' y2='368' stroke='var(--rule)' stroke-width='1'/><text x='697.5' y='20' font-size='12' fill='var(--muted)' text-anchor='middle'>75%</text><line x1='830.0' y1='28' x2='830.0' y2='368' stroke='var(--rule)' stroke-width='1'/><text x='830.0' y='20' font-size='12' fill='var(--muted)' text-anchor='middle'>100%</text><g><title>Global reference: 56.0% of 25 reachable sites negotiate hybrid post-quantum key exchange</title><text x='288' y='51.8' font-size='14' fill='var(--ink)' text-anchor='end' font-weight='600'>Global reference</text><path d='M300,36 h292.8 a4,4 0 0 1 4,4 v14 a4,4 0 0 1 -4,4 h-292.8 z' fill='var(--ref)'/><rect x='300' y='29.0' width='530' height='36' fill='transparent'/><text x='604.8' y='51.8' font-size='14' fill='var(--ink)' font-weight='600'>56.0%</text><text x='896' y='51.8' font-size='12' fill='var(--muted)' text-anchor='end'>n=25</text></g><g><title>Banking, financial services &amp; insurance: 34.4% of 32 reachable sites negotiate hybrid post-quantum key exchange</title><text x='288' y='87.8' font-size='14' fill='var(--ink)' text-anchor='end'>Banking, financial services &amp; insurance</text><path d='M300,72 h178.3 a4,4 0 0 1 4,4 v14 a4,4 0 0 1 -4,4 h-178.3 z' fill='var(--india)'/><rect x='300' y='65.0' width='530' height='36' fill='transparent'/><text x='490.3' y='87.8' font-size='14' fill='var(--ink)'>34.4%</text><text x='896' y='87.8' font-size='12' fill='var(--muted)' text-anchor='end'>n=32</text></g><g><title>Power &amp; energy: 18.8% of 16 reachable sites negotiate hybrid post-quantum key exchange</title><text x='288' y='123.8' font-size='14' fill='var(--ink)' text-anchor='end'>Power &amp; energy</text><path d='M300,108 h95.6 a4,4 0 0 1 4,4 v14 a4,4 0 0 1 -4,4 h-95.6 z' fill='var(--india)'/><rect x='300' y='101.0' width='530' height='36' fill='transparent'/><text x='407.6' y='123.8' font-size='14' fill='var(--ink)'>18.8%</text><text x='896' y='123.8' font-size='12' fill='var(--muted)' text-anchor='end'>n=16</text></g><g><title>Government (central): 17.8% of 45 reachable sites negotiate hybrid post-quantum key exchange</title><text x='288' y='159.8' font-size='14' fill='var(--ink)' text-anchor='end'>Government (central)</text><path d='M300,144 h90.3 a4,4 0 0 1 4,4 v14 a4,4 0 0 1 -4,4 h-90.3 z' fill='var(--india)'/><rect x='300' y='137.0' width='530' height='36' fill='transparent'/><text x='402.3' y='159.8' font-size='14' fill='var(--ink)'>17.8%</text><text x='896' y='159.8' font-size='12' fill='var(--muted)' text-anchor='end'>n=45</text></g><g><title>Transport: 16.7% of 12 reachable sites negotiate hybrid post-quantum key exchange</title><text x='288' y='195.8' font-size='14' fill='var(--ink)' text-anchor='end'>Transport</text><path d='M300,180 h84.5 a4,4 0 0 1 4,4 v14 a4,4 0 0 1 -4,4 h-84.5 z' fill='var(--india)'/><rect x='300' y='173.0' width='530' height='36' fill='transparent'/><text x='396.5' y='195.8' font-size='14' fill='var(--ink)'>16.7%</text><text x='896' y='195.8' font-size='12' fill='var(--muted)' text-anchor='end'>n=12</text></g><g><title>Health: 11.1% of 9 reachable sites negotiate hybrid post-quantum key exchange</title><text x='288' y='231.8' font-size='14' fill='var(--ink)' text-anchor='end'>Health</text><path d='M300,216 h54.8 a4,4 0 0 1 4,4 v14 a4,4 0 0 1 -4,4 h-54.8 z' fill='var(--india)'/><rect x='300' y='209.0' width='530' height='36' fill='transparent'/><text x='366.8' y='231.8' font-size='14' fill='var(--ink)'>11.1%</text><text x='896' y='231.8' font-size='12' fill='var(--muted)' text-anchor='end'>n=9</text></g><g><title>Telecom: 0.0% of 8 reachable sites negotiate hybrid post-quantum key exchange</title><text x='288' y='267.8' font-size='14' fill='var(--ink)' text-anchor='end'>Telecom</text><line x1='300' y1='252' x2='300' y2='274' stroke='var(--india)' stroke-width='2'/><rect x='300' y='245.0' width='530' height='36' fill='transparent'/><text x='308.0' y='267.8' font-size='14' fill='var(--ink)'>0.0%</text><text x='896' y='267.8' font-size='12' fill='var(--muted)' text-anchor='end'>n=8</text></g><g><title>Strategic &amp; public enterprises: 0.0% of 10 reachable sites negotiate hybrid post-quantum key exchange</title><text x='288' y='303.8' font-size='14' fill='var(--ink)' text-anchor='end'>Strategic &amp; public enterprises</text><line x1='300' y1='288' x2='300' y2='310' stroke='var(--india)' stroke-width='2'/><rect x='300' y='281.0' width='530' height='36' fill='transparent'/><text x='308.0' y='303.8' font-size='14' fill='var(--ink)'>0.0%</text><text x='896' y='303.8' font-size='12' fill='var(--muted)' text-anchor='end'>n=10</text></g><g><title>India, all 7 sectors: 18.9% of 132 reachable sites negotiate hybrid post-quantum key exchange</title><text x='288' y='339.8' font-size='14' fill='var(--ink)' text-anchor='end' font-weight='600'>India, all 7 sectors</text><path d='M300,324 h96.2 a4,4 0 0 1 4,4 v14 a4,4 0 0 1 -4,4 h-96.2 z' fill='var(--india)'/><rect x='300' y='317.0' width='530' height='36' fill='transparent'/><text x='408.2' y='339.8' font-size='14' fill='var(--ink)' font-weight='600'>18.9%</text><text x='896' y='339.8' font-size='12' fill='var(--muted)' text-anchor='end'>n=132</text></g></svg></div></body></html>

@@ -1,0 +1,3576 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.7.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.7",
+  "serialNumber": "urn:uuid:aa3ab60c-4b4e-4b32-8cbc-0429e82b4c6a",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-09-18T08:26:43Z",
+    "tools": {
+      "components": [
+        {
+          "type": "application",
+          "name": "ecdat",
+          "version": "0.1.0",
+          "description": "Enterprise Cryptographic Discovery & Analysis Tool (SIH 2026 PS 26164)"
+        },
+        {
+          "type": "application",
+          "name": "opengrep",
+          "version": "1.29.0"
+        },
+        {
+          "type": "application",
+          "name": "cbomkit-theia",
+          "version": "- CycloneDXv1.6"
+        },
+        {
+          "type": "application",
+          "name": "syft",
+          "version": "Version:       1.51.1"
+        },
+        {
+          "type": "application",
+          "name": "tshark",
+          "version": "TShark (Wireshark) 4.6.8 (v4.6.8-0-ge677bf052328)."
+        },
+        {
+          "type": "application",
+          "name": "crane",
+          "version": "v0.22.1"
+        }
+      ]
+    },
+    "component": {
+      "type": "application",
+      "bom-ref": "urn:ecdat:scan:7e489531c72f",
+      "name": "hyperledger__fabric-sdk-node"
+    },
+    "properties": [
+      {
+        "name": "ecdat:z_year",
+        "value": "2041"
+      },
+      {
+        "name": "ecdat:profile",
+        "value": "enterprise"
+      },
+      {
+        "name": "ecdat:targets",
+        "value": "1"
+      },
+      {
+        "name": "ecdat:certin_table9",
+        "value": "CERT-In BOM guidelines v2.0 (2025-07-09) section 8.3"
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "application",
+      "bom-ref": "urn:ecdat:component:hyperledger-fabric-sdk-node",
+      "name": "hyperledger/fabric-sdk-node",
+      "properties": [
+        {
+          "name": "ecdat:zone",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "financial"
+        },
+        {
+          "name": "ecdat:path",
+          "value": "C:\\customize\\SIH2026\\demo\\ecdat\\.claude\\worktrees\\ecdat-build\\out\\atlas\\src\\hyperledger__fabric-sdk-node"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "urn:ecdat:library:2b4b4e02f178",
+      "name": "runtime:node",
+      "version": "10.13.0",
+      "properties": [
+        {
+          "name": "ecdat:zone",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:path",
+          "value": "fabric-ca-client/package.json"
+        },
+        {
+          "name": "ecdat:ecosystem",
+          "value": "runtime"
+        },
+        {
+          "name": "ecdat:pqc_native",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "urn:ecdat:library:2c9b537b1904",
+      "name": "runtime:java",
+      "version": "8",
+      "properties": [
+        {
+          "name": "ecdat:zone",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:path",
+          "value": "test/ts-fixtures/chaincode/java/legacyJava/build.gradle"
+        },
+        {
+          "name": "ecdat:ecosystem",
+          "value": "runtime"
+        },
+        {
+          "name": "ecdat:pqc_native",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:pqc_native_from",
+          "value": "24"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:78e2e060004d",
+      "name": "RSA",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.2.840.113549.1.1.1",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "algorithmFamily": "RSASSA-PKCS1",
+          "cryptoFunctions": [
+            "decrypt",
+            "encrypt",
+            "keygen",
+            "sign",
+            "verify"
+          ],
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "fabric-common/lib/CryptoSuite.js",
+            "line": 7
+          },
+          {
+            "location": "test/fixtures/fabricca/generateCSR.sh",
+            "line": 8
+          },
+          {
+            "location": "test/fixtures/fabricca/generateCSR.sh",
+            "line": 9
+          },
+          {
+            "location": "fabric-common/lib/CryptoAlgorithms.js",
+            "line": 22
+          },
+          {
+            "location": "fabric-common/lib/CryptoAlgorithms.js",
+            "line": 26
+          },
+          {
+            "location": "fabric-common/lib/CryptoAlgorithms.js",
+            "line": 28
+          },
+          {
+            "location": "fabric-common/lib/CryptoAlgorithms.js",
+            "line": 30
+          },
+          {
+            "location": "fabric-common/lib/CryptoAlgorithms.js",
+            "line": 32
+          },
+          {
+            "location": "fabric-ca-client/lib/helper.js",
+            "line": 34
+          },
+          {
+            "location": "test/fixtures/chaincode/goLang/src/github.com/example_cc/vendor/golang.org/x/sys/unix/syscall_linux_mipsx.go",
+            "line": 45
+          },
+          {
+            "location": "test/fixtures/chaincode/goLang/src/github.com/example_cc_private/vendor/golang.org/x/sys/unix/syscall_linux_mipsx.go",
+            "line": 45
+          },
+          {
+            "location": "test/ts-fixtures/chaincode/goLang/src/github.com/legacyGo/vendor/golang.org/x/sys/unix/syscall_linux_mipsx.go",
+            "line": 45
+          },
+          {
+            "location": "test/ts-fixtures/chaincode/goLang/src/github.com/legacyGoPrivateData/vendor/golang.org/x/sys/unix/syscall_linux_mipsx.go",
+            "line": 45
+          },
+          {
+            "location": "test/fixtures/chaincode/goLang/src/github.com/example_cc/vendor/golang.org/x/sys/unix/syscall_linux_mipsx.go",
+            "line": 46
+          },
+          {
+            "location": "test/fixtures/chaincode/goLang/src/github.com/example_cc/vendor/golang.org/x/sys/unix/syscall_linux_sparc64.go",
+            "line": 46
+          },
+          {
+            "location": "test/fixtures/chaincode/goLang/src/github.com/example_cc_private/vendor/golang.org/x/sys/unix/syscall_linux_mipsx.go",
+            "line": 46
+          },
+          {
+            "location": "test/fixtures/chaincode/goLang/src/github.com/example_cc_private/vendor/golang.org/x/sys/unix/syscall_linux_sparc64.go",
+            "line": 46
+          },
+          {
+            "location": "test/ts-fixtures/chaincode/goLang/src/github.com/legacyGo/vendor/golang.org/x/sys/unix/syscall_linux_mipsx.go",
+            "line": 46
+          },
+          {
+            "location": "test/ts-fixtures/chaincode/goLang/src/github.com/legacyGo/vendor/golang.org/x/sys/unix/syscall_linux_sparc64.go",
+            "line": 46
+          },
+          {
+            "location": "test/ts-fixtures/chaincode/goLang/src/github.com/legacyGoPrivateData/vendor/golang.org/x/sys/unix/syscall_linux_mipsx.go",
+            "line": 46
+          },
+          {
+            "location": "test/ts-fixtures/chaincode/goLang/src/github.com/legacyGoPrivateData/vendor/golang.org/x/sys/unix/syscall_linux_sparc64.go",
+            "line": 46
+          },
+          {
+            "location": "test/fixtures/chaincode/goLang/src/github.com/example_cc/vendor/golang.org/x/sys/unix/syscall_linux_sparc64.go",
+            "line": 47
+          },
+          {
+            "location": "test/fixtures/chaincode/goLang/src/github.com/example_cc_private/vendor/golang.org/x/sys/unix/syscall_linux_sparc64.go",
+            "line": 47
+          },
+          {
+            "location": "test/ts-fixtures/chaincode/goLang/src/github.com/legacyGo/vendor/golang.org/x/sys/unix/syscall_linux_sparc64.go",
+            "line": 47
+          },
+          {
+            "location": "test/ts-fixtures/chaincode/goLang/src/github.com/legacyGoPrivateData/vendor/golang.org/x/sys/unix/syscall_linux_sparc64.go",
+            "line": 47
+          },
+          {
+            "location": "test/fixtures/chaincode/goLang/src/github.com/example_cc/vendor/golang.org/x/sys/unix/syscall_linux_ppc64x.go",
+            "line": 50
+          },
+          {
+            "location": "test/fixtures/chaincode/goLang/src/github.com/example_cc_private/vendor/golang.org/x/sys/unix/syscall_linux_ppc64x.go",
+            "line": 50
+          },
+          {
+            "location": "test/ts-fixtures/chaincode/goLang/src/github.com/legacyGo/vendor/golang.org/x/sys/unix/syscall_linux_ppc64x.go",
+            "line": 50
+          },
+          {
+            "location": "test/ts-fixtures/chaincode/goLang/src/github.com/legacyGoPrivateData/vendor/golang.org/x/sys/unix/syscall_linux_ppc64x.go",
+            "line": 50
+          },
+          {
+            "location": "test/fixtures/chaincode/goLang/src/github.com/example_cc/vendor/golang.org/x/sys/unix/syscall_linux_ppc64x.go",
+            "line": 51
+          },
+          {
+            "location": "test/fixtures/chaincode/goLang/src/github.com/example_cc_private/vendor/golang.org/x/sys/unix/syscall_linux_ppc64x.go",
+            "line": 51
+          },
+          {
+            "location": "test/ts-fixtures/chaincode/goLang/src/github.com/legacyGo/vendor/golang.org/x/sys/unix/syscall_linux_ppc64x.go",
+            "line": 51
+          },
+          {
+            "location": "test/ts-fixtures/chaincode/goLang/src/github.com/legacyGoPrivateData/vendor/golang.org/x/sys/unix/syscall_linux_ppc64x.go",
+            "line": 51
+          },
+          {
+            "location": "test/fixtures/chaincode/goLang/src/github.com/example_cc/vendor/golang.org/x/sys/unix/syscall_linux_mips64x.go",
+            "line": 52
+          },
+          {
+            "location": "test/fixtures/chaincode/goLang/src/github.com/example_cc_private/vendor/golang.org/x/sys/unix/syscall_linux_mips64x.go",
+            "line": 52
+          },
+          {
+            "location": "test/ts-fixtures/chaincode/goLang/src/github.com/legacyGo/vendor/golang.org/x/sys/unix/syscall_linux_mips64x.go",
+            "line": 52
+          },
+          {
+            "location": "test/ts-fixtures/chaincode/goLang/src/github.com/legacyGoPrivateData/vendor/golang.org/x/sys/unix/syscall_linux_mips64x.go",
+            "line": 52
+          },
+          {
+            "location": "test/fixtures/chaincode/goLang/src/github.com/example_cc/vendor/golang.org/x/sys/unix/syscall_linux_mips64x.go",
+            "line": 53
+          },
+          {
+            "location": "test/fixtures/chaincode/goLang/src/github.com/example_cc_private/vendor/golang.org/x/sys/unix/syscall_linux_mips64x.go",
+            "line": 53
+          },
+          {
+            "location": "test/ts-fixtures/chaincode/goLang/src/github.com/legacyGo/vendor/golang.org/x/sys/unix/syscall_linux_mips64x.go",
+            "line": 53
+          },
+          {
+            "location": "test/ts-fixtures/chaincode/goLang/src/github.com/legacyGoPrivateData/vendor/golang.org/x/sys/unix/syscall_linux_mips64x.go",
+            "line": 53
+          },
+          {
+            "location": "test/fixtures/chaincode/goLang/src/github.com/example_cc/vendor/golang.org/x/sys/unix/syscall_linux_mipsx.go",
+            "line": 55
+          },
+          {
+            "location": "test/fixtures/chaincode/goLang/src/github.com/example_cc_private/vendor/golang.org/x/sys/unix/syscall_linux_mipsx.go",
+            "line": 55
+          },
+          {
+            "location": "test/ts-fixtures/chaincode/goLang/src/github.com/legacyGo/vendor/golang.org/x/sys/unix/syscall_linux_mipsx.go",
+            "line": 55
+          },
+          {
+            "location": "test/ts-fixtures/chaincode/goLang/src/github.com/legacyGoPrivateData/vendor/golang.org/x/sys/unix/syscall_linux_mipsx.go",
+            "line": 55
+          },
+          {
+            "location": "test/fixtures/chaincode/goLang/src/github.com/example_cc/vendor/golang.org/x/sys/unix/syscall_linux_mipsx.go",
+            "line": 56
+          },
+          {
+            "location": "test/fixtures/chaincode/goLang/src/github.com/example_cc/vendor/golang.org/x/sys/unix/syscall_linux_sparc64.go",
+            "line": 56
+          },
+          {
+            "location": "test/fixtures/chaincode/goLang/src/github.com/example_cc_private/vendor/golang.org/x/sys/unix/syscall_linux_mipsx.go",
+            "line": 56
+          },
+          {
+            "location": "test/fixtures/chaincode/goLang/src/github.com/example_cc_private/vendor/golang.org/x/sys/unix/syscall_linux_sparc64.go",
+            "line": 56
+          },
+          {
+            "location": "test/ts-fixtures/chaincode/goLang/src/github.com/legacyGo/vendor/golang.org/x/sys/unix/syscall_linux_mipsx.go",
+            "line": 56
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "hyperledger/fabric-sdk-node"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "10.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "financial"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "27"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.92"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-1.08"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "85.7"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:d95895a97f81",
+      "name": "SHA-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "2.16.840.1.101.3.4.2.1",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "SHA-2",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "classicalSecurityLevel": 128,
+          "nistQuantumSecurityLevel": 2,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "fabric-common/test/data/cert.pem",
+            "line": 1
+          },
+          {
+            "location": "fabric-common/lib/hash/hash_sha2_256.js",
+            "line": 24
+          },
+          {
+            "location": "test/fixtures/chaincode/goLang/src/github.com/example_cc/vendor/github.com/hyperledger/fabric-chaincode-go/shim/stub.go",
+            "line": 112
+          },
+          {
+            "location": "test/fixtures/chaincode/goLang/src/github.com/example_cc_private/vendor/github.com/hyperledger/fabric-chaincode-go/shim/stub.go",
+            "line": 112
+          },
+          {
+            "location": "test/ts-fixtures/chaincode/goLang/src/github.com/legacyGo/vendor/github.com/hyperledger/fabric-chaincode-go/shim/stub.go",
+            "line": 112
+          },
+          {
+            "location": "test/ts-fixtures/chaincode/goLang/src/github.com/legacyGoPrivateData/vendor/github.com/hyperledger/fabric-chaincode-go/shim/stub.go",
+            "line": 112
+          },
+          {
+            "location": "fabric-common/lib/Client.js",
+            "line": 549
+          },
+          {
+            "location": "fabric-common/test/data/cert.pem"
+          },
+          {
+            "location": "fabric-common/lib/CryptoAlgorithms.js",
+            "line": 55
+          },
+          {
+            "location": "fabric-common/lib/CryptoAlgorithms.js",
+            "line": 59
+          },
+          {
+            "location": "fabric-common/lib/impl/ecdsa/key.js",
+            "line": 75
+          },
+          {
+            "location": "test/fixtures/chaincode/goLang/src/github.com/example_cc/vendor/github.com/hyperledger/fabric-protos-go/msp/msp_config.pb.go",
+            "line": 245
+          },
+          {
+            "location": "test/fixtures/chaincode/goLang/src/github.com/example_cc_private/vendor/github.com/hyperledger/fabric-protos-go/msp/msp_config.pb.go",
+            "line": 245
+          },
+          {
+            "location": "test/ts-fixtures/chaincode/goLang/src/github.com/legacyGo/vendor/github.com/hyperledger/fabric-protos-go/msp/msp_config.pb.go",
+            "line": 245
+          },
+          {
+            "location": "test/ts-fixtures/chaincode/goLang/src/github.com/legacyGoPrivateData/vendor/github.com/hyperledger/fabric-protos-go/msp/msp_config.pb.go",
+            "line": 245
+          },
+          {
+            "location": "fabric-common/lib/impl/bccsp_pkcs11.js",
+            "line": 272
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "hyperledger/fabric-sdk-node"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "certificate,source,theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "10.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "financial"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "24"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "4.04"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "safe"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-0.96"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:789dfdabe0df",
+      "name": "SHA-384",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "2.16.840.1.101.3.4.2.2",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "SHA-2",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "classicalSecurityLevel": 192,
+          "nistQuantumSecurityLevel": 4,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "fabric-common/lib/hash/hash_sha2_384.js",
+            "line": 24
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "hyperledger/fabric-sdk-node"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "10.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "financial"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "37"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.52"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "safe"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-1.48"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:aff65fbdf82b",
+      "name": "ECDH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.3.132.1.12",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "algorithmFamily": "ECDH",
+          "cryptoFunctions": [
+            "keygen",
+            "other"
+          ],
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "fabric-common/lib/impl/bccsp_pkcs11.js",
+            "line": 709
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "hyperledger/fabric-sdk-node"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "comment"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "10.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "financial"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "40"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.4"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-1.6"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "85.7"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:protocol:48f486cf7149",
+      "name": "TLS",
+      "cryptoProperties": {
+        "assetType": "protocol",
+        "protocolProperties": {
+          "type": "tls",
+          "version": "TLSv1.2"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "test/fixtures/chaincode/goLang/src/github.com/example_cc/vendor/github.com/hyperledger/fabric-chaincode-go/shim/internal/config.go",
+            "line": 77
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "hyperledger/fabric-sdk-node"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "10.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "financial"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "63"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "0.5"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-4.5"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "X25519MLKEM768"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "2.7"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "60.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:protocol:015b7ab28d77",
+      "name": "TLS",
+      "cryptoProperties": {
+        "assetType": "protocol",
+        "protocolProperties": {
+          "type": "tls",
+          "version": "TLSv1.2"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "test/fixtures/chaincode/goLang/src/github.com/example_cc/vendor/golang.org/x/net/http2/server.go",
+            "line": 259
+          },
+          {
+            "location": "test/fixtures/chaincode/goLang/src/github.com/example_cc/vendor/golang.org/x/net/http2/server.go",
+            "line": 436
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "hyperledger/fabric-sdk-node"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "10.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "financial"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "62"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "0.5"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-4.5"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "X25519MLKEM768"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "2.8"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "60.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:3d085227630d",
+      "name": "SHA-1",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.3.14.3.2.26",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "SHA-1",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "classicalSecurityLevel": 0,
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "test/fixtures/chaincode/goLang/src/github.com/example_cc/vendor/golang.org/x/sys/unix/syscall_linux.go",
+            "line": 604
+          },
+          {
+            "location": "test/fixtures/chaincode/goLang/src/github.com/example_cc_private/vendor/golang.org/x/sys/unix/syscall_linux.go",
+            "line": 604
+          },
+          {
+            "location": "test/ts-fixtures/chaincode/goLang/src/github.com/legacyGo/vendor/golang.org/x/sys/unix/syscall_linux.go",
+            "line": 604
+          },
+          {
+            "location": "test/ts-fixtures/chaincode/goLang/src/github.com/legacyGoPrivateData/vendor/golang.org/x/sys/unix/syscall_linux.go",
+            "line": 604
+          },
+          {
+            "location": "test/fixtures/chaincode/goLang/src/github.com/example_cc/vendor/golang.org/x/sys/unix/syscall_linux.go",
+            "line": 607
+          },
+          {
+            "location": "test/fixtures/chaincode/goLang/src/github.com/example_cc_private/vendor/golang.org/x/sys/unix/syscall_linux.go",
+            "line": 607
+          },
+          {
+            "location": "test/ts-fixtures/chaincode/goLang/src/github.com/legacyGo/vendor/golang.org/x/sys/unix/syscall_linux.go",
+            "line": 607
+          },
+          {
+            "location": "test/ts-fixtures/chaincode/goLang/src/github.com/legacyGoPrivateData/vendor/golang.org/x/sys/unix/syscall_linux.go",
+            "line": 607
+          },
+          {
+            "location": "test/fixtures/chaincode/goLang/src/github.com/example_cc/vendor/golang.org/x/sys/unix/syscall_linux.go",
+            "line": 609
+          },
+          {
+            "location": "test/fixtures/chaincode/goLang/src/github.com/example_cc_private/vendor/golang.org/x/sys/unix/syscall_linux.go",
+            "line": 609
+          },
+          {
+            "location": "test/ts-fixtures/chaincode/goLang/src/github.com/legacyGo/vendor/golang.org/x/sys/unix/syscall_linux.go",
+            "line": 609
+          },
+          {
+            "location": "test/ts-fixtures/chaincode/goLang/src/github.com/legacyGoPrivateData/vendor/golang.org/x/sys/unix/syscall_linux.go",
+            "line": 609
+          },
+          {
+            "location": "test/fixtures/chaincode/goLang/src/github.com/example_cc/vendor/golang.org/x/sys/unix/syscall_linux.go",
+            "line": 616
+          },
+          {
+            "location": "test/fixtures/chaincode/goLang/src/github.com/example_cc_private/vendor/golang.org/x/sys/unix/syscall_linux.go",
+            "line": 616
+          },
+          {
+            "location": "test/ts-fixtures/chaincode/goLang/src/github.com/legacyGo/vendor/golang.org/x/sys/unix/syscall_linux.go",
+            "line": 616
+          },
+          {
+            "location": "test/ts-fixtures/chaincode/goLang/src/github.com/legacyGoPrivateData/vendor/golang.org/x/sys/unix/syscall_linux.go",
+            "line": 616
+          },
+          {
+            "location": "test/fixtures/chaincode/goLang/src/github.com/example_cc/vendor/golang.org/x/sys/unix/syscall_linux.go",
+            "line": 623
+          },
+          {
+            "location": "test/fixtures/chaincode/goLang/src/github.com/example_cc_private/vendor/golang.org/x/sys/unix/syscall_linux.go",
+            "line": 623
+          },
+          {
+            "location": "test/ts-fixtures/chaincode/goLang/src/github.com/legacyGo/vendor/golang.org/x/sys/unix/syscall_linux.go",
+            "line": 623
+          },
+          {
+            "location": "test/ts-fixtures/chaincode/goLang/src/github.com/legacyGoPrivateData/vendor/golang.org/x/sys/unix/syscall_linux.go",
+            "line": 623
+          },
+          {
+            "location": "test/fixtures/chaincode/goLang/src/github.com/example_cc/vendor/golang.org/x/sys/unix/syscall_linux.go",
+            "line": 641
+          },
+          {
+            "location": "test/fixtures/chaincode/goLang/src/github.com/example_cc_private/vendor/golang.org/x/sys/unix/syscall_linux.go",
+            "line": 641
+          },
+          {
+            "location": "test/ts-fixtures/chaincode/goLang/src/github.com/legacyGo/vendor/golang.org/x/sys/unix/syscall_linux.go",
+            "line": 641
+          },
+          {
+            "location": "test/ts-fixtures/chaincode/goLang/src/github.com/legacyGoPrivateData/vendor/golang.org/x/sys/unix/syscall_linux.go",
+            "line": 641
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "hyperledger/fabric-sdk-node"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "comment"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "10.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "financial"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "22"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "4.12"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "legacy-broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-0.88"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:protocol:bf5c62d41559",
+      "name": "TLS",
+      "cryptoProperties": {
+        "assetType": "protocol",
+        "protocolProperties": {
+          "type": "tls",
+          "version": "TLSv1.2"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "test/fixtures/chaincode/goLang/src/github.com/example_cc_private/vendor/github.com/hyperledger/fabric-chaincode-go/shim/internal/config.go",
+            "line": 77
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "hyperledger/fabric-sdk-node"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "10.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "financial"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "63"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "0.5"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-4.5"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "X25519MLKEM768"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "2.7"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "60.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:protocol:6f2b6a2787ee",
+      "name": "TLS",
+      "cryptoProperties": {
+        "assetType": "protocol",
+        "protocolProperties": {
+          "type": "tls",
+          "version": "TLSv1.2"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "test/fixtures/chaincode/goLang/src/github.com/example_cc_private/vendor/golang.org/x/net/http2/server.go",
+            "line": 259
+          },
+          {
+            "location": "test/fixtures/chaincode/goLang/src/github.com/example_cc_private/vendor/golang.org/x/net/http2/server.go",
+            "line": 436
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "hyperledger/fabric-sdk-node"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "10.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "financial"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "62"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "0.5"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-4.5"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "X25519MLKEM768"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "2.8"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "60.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:protocol:8dffaa392e8e",
+      "name": "TLS",
+      "cryptoProperties": {
+        "assetType": "protocol",
+        "protocolProperties": {
+          "type": "tls",
+          "version": "TLSv1.2"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "test/ts-fixtures/chaincode/goLang/src/github.com/legacyGo/vendor/github.com/hyperledger/fabric-chaincode-go/shim/internal/config.go",
+            "line": 77
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "hyperledger/fabric-sdk-node"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "10.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "financial"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "63"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "0.5"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-4.5"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "X25519MLKEM768"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "2.7"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "60.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:protocol:f58c234b7a2c",
+      "name": "TLS",
+      "cryptoProperties": {
+        "assetType": "protocol",
+        "protocolProperties": {
+          "type": "tls",
+          "version": "TLSv1.2"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "test/ts-fixtures/chaincode/goLang/src/github.com/legacyGo/vendor/golang.org/x/net/http2/server.go",
+            "line": 259
+          },
+          {
+            "location": "test/ts-fixtures/chaincode/goLang/src/github.com/legacyGo/vendor/golang.org/x/net/http2/server.go",
+            "line": 436
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "hyperledger/fabric-sdk-node"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "10.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "financial"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "62"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "0.5"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-4.5"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "X25519MLKEM768"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "2.8"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "60.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:protocol:56c1af6ee1b4",
+      "name": "TLS",
+      "cryptoProperties": {
+        "assetType": "protocol",
+        "protocolProperties": {
+          "type": "tls",
+          "version": "TLSv1.2"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "test/ts-fixtures/chaincode/goLang/src/github.com/legacyGoPrivateData/vendor/github.com/hyperledger/fabric-chaincode-go/shim/internal/config.go",
+            "line": 77
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "hyperledger/fabric-sdk-node"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "10.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "financial"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "63"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "0.5"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-4.5"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "X25519MLKEM768"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "2.7"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "60.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:protocol:b70e08509167",
+      "name": "TLS",
+      "cryptoProperties": {
+        "assetType": "protocol",
+        "protocolProperties": {
+          "type": "tls",
+          "version": "TLSv1.2"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "test/ts-fixtures/chaincode/goLang/src/github.com/legacyGoPrivateData/vendor/golang.org/x/net/http2/server.go",
+            "line": 259
+          },
+          {
+            "location": "test/ts-fixtures/chaincode/goLang/src/github.com/legacyGoPrivateData/vendor/golang.org/x/net/http2/server.go",
+            "line": 436
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "hyperledger/fabric-sdk-node"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "10.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "financial"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "62"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "0.5"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-4.5"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "X25519MLKEM768"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "2.8"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "60.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:certificate:209f7d5fd8a2",
+      "name": "admin",
+      "cryptoProperties": {
+        "assetType": "certificate",
+        "oid": "1.2.840.10045.4.3.2",
+        "certificateProperties": {
+          "subjectName": "CN=admin,OU=client,O=Hyperledger,ST=North Carolina,C=US",
+          "issuerName": "CN=tlsca,OU=Fabric,O=Hyperledger,ST=North Carolina,C=US",
+          "notValidBefore": "2019-02-04T11:51:00Z",
+          "notValidAfter": "2020-02-04T11:56:00Z",
+          "certificateFormat": "X.509",
+          "certificateExtension": "pem",
+          "serialNumber": "7d4da65f5dc429cd4b451e457adda2c053e7f883",
+          "certificateState": [
+            {
+              "state": "deactivated"
+            }
+          ],
+          "fingerprint": {
+            "alg": "SHA-256",
+            "content": "87feacdd22ce778be5e639b1302439ac1bb58e2df2a99c78c8880ec9ee588c45"
+          }
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "fabric-common/test/data/cert.pem",
+            "line": 1
+          },
+          {
+            "location": "fabric-common/test/data/cert.pem"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "hyperledger/fabric-sdk-node"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "certificate,theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "10.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "financial"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "76"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "0.5"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-4.5"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "ML-DSA-65 certificate (re-issue when the CA supports FIPS 204; hybrid/dual certificates during transition)"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "2.2"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:bca0546e09e9",
+      "name": "ECDSA-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.2.840.10045.4.3.2",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "algorithmFamily": "ECDSA",
+          "parameterSetIdentifier": "256",
+          "curve": "secp256r1",
+          "cryptoFunctions": [
+            "verify"
+          ],
+          "classicalSecurityLevel": 128,
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "fabric-common/test/data/cert.pem",
+            "line": 1
+          },
+          {
+            "location": "fabric-common/test/data/key.pem",
+            "line": 1
+          },
+          {
+            "location": "fabric-common/test/data/cert.pem"
+          },
+          {
+            "location": "fabric-common/test/data/cert.pem"
+          },
+          {
+            "location": "fabric-common/test/data/cert.pem"
+          },
+          {
+            "location": "fabric-common/lib/CryptoSuite.js",
+            "line": 7
+          },
+          {
+            "location": "fabric-common/lib/CryptoSuite.js",
+            "line": 7
+          },
+          {
+            "location": "fabric-common/lib/CryptoAlgorithms.js",
+            "line": 10
+          },
+          {
+            "location": "fabric-common/lib/CryptoAlgorithms.js",
+            "line": 15
+          },
+          {
+            "location": "fabric-common/lib/CryptoAlgorithms.js",
+            "line": 17
+          },
+          {
+            "location": "fabric-common/lib/CryptoAlgorithms.js",
+            "line": 19
+          },
+          {
+            "location": "fabric-common/lib/impl/ecdsa/key.js",
+            "line": 19
+          },
+          {
+            "location": "fabric-common/lib/impl/ecdsa/pkcs11_key.js",
+            "line": 19
+          },
+          {
+            "location": "fabric-common/lib/impl/CryptoSuite_ECDSA_AES.js",
+            "line": 22
+          },
+          {
+            "location": "fabric-common/lib/impl/ecdsa/key.js",
+            "line": 25
+          },
+          {
+            "location": "fabric-common/lib/impl/CryptoSuite_ECDSA_AES.js",
+            "line": 31
+          },
+          {
+            "location": "fabric-ca-client/lib/FabricCAServices.js",
+            "line": 35
+          },
+          {
+            "location": "fabric-ca-client/lib/helper.js",
+            "line": 35
+          },
+          {
+            "location": "fabric-common/lib/impl/CryptoKeyStore.js",
+            "line": 61
+          },
+          {
+            "location": "fabric-common/lib/Utils.js",
+            "line": 70
+          },
+          {
+            "location": "fabric-common/lib/impl/CryptoSuite_ECDSA_AES.js",
+            "line": 125
+          },
+          {
+            "location": "fabric-common/lib/impl/CryptoSuite_ECDSA_AES.js",
+            "line": 148
+          },
+          {
+            "location": "fabric-common/lib/BaseClient.js",
+            "line": 185
+          },
+          {
+            "location": "fabric-common/lib/impl/CryptoSuite_ECDSA_AES.js",
+            "line": 213
+          },
+          {
+            "location": "test/fixtures/chaincode/goLang/src/github.com/example_cc/vendor/golang.org/x/net/http2/server.go",
+            "line": 243
+          },
+          {
+            "location": "test/fixtures/chaincode/goLang/src/github.com/example_cc_private/vendor/golang.org/x/net/http2/server.go",
+            "line": 243
+          },
+          {
+            "location": "test/ts-fixtures/chaincode/goLang/src/github.com/legacyGo/vendor/golang.org/x/net/http2/server.go",
+            "line": 243
+          },
+          {
+            "location": "test/ts-fixtures/chaincode/goLang/src/github.com/legacyGoPrivateData/vendor/golang.org/x/net/http2/server.go",
+            "line": 243
+          },
+          {
+            "location": "fabric-common/lib/impl/CryptoSuite_ECDSA_AES.js",
+            "line": 262
+          },
+          {
+            "location": "fabric-common/lib/impl/bccsp_pkcs11.js",
+            "line": 446
+          },
+          {
+            "location": "fabric-common/lib/impl/bccsp_pkcs11.js",
+            "line": 541
+          },
+          {
+            "location": "fabric-common/lib/impl/bccsp_pkcs11.js",
+            "line": 558
+          },
+          {
+            "location": "fabric-common/lib/impl/bccsp_pkcs11.js",
+            "line": 579
+          },
+          {
+            "location": "fabric-common/lib/impl/bccsp_pkcs11.js",
+            "line": 612
+          },
+          {
+            "location": "fabric-common/lib/impl/bccsp_pkcs11.js",
+            "line": 616
+          },
+          {
+            "location": "fabric-common/lib/impl/bccsp_pkcs11.js",
+            "line": 637
+          },
+          {
+            "location": "fabric-common/lib/impl/bccsp_pkcs11.js",
+            "line": 916
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "hyperledger/fabric-sdk-node"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "certificate,source,theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "10.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "financial"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "22"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "4.12"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-0.88"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:035cc606a489",
+      "name": "private-key:ECDSA",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "private-key",
+          "size": 256,
+          "state": "active",
+          "format": "PEM"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "fabric-common/test/data/key.pem",
+            "line": 1
+          },
+          {
+            "location": "fabric-common/test/data/key.pem"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "hyperledger/fabric-sdk-node"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "certificate,theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "10.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "financial"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "70"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-4.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "71.4"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:214e4e58451e",
+      "name": "public-key:ECDSA",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "public-key",
+          "format": "PEM"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "fabric-common/test/data/cert.pem"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "hyperledger/fabric-sdk-node"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "10.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "financial"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "58"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-4.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "42.9"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:5e83c324a2e7",
+      "name": "private-key:private-key",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "private-key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "fabric-network/test/wallet/testuser.id"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "hyperledger/fabric-sdk-node"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "10.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "financial"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "58"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-4.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "42.9"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:6a875206d205",
+      "name": "private-key:private-key",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "private-key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "test/fixtures/profiles/network.json",
+            "line": 48
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "hyperledger/fabric-sdk-node"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "10.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "financial"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "58"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-4.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "42.9"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:f5e9b9499249",
+      "name": "private-key:private-key",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "private-key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "test/fixtures/test-wallet/x509-v1.id"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "hyperledger/fabric-sdk-node"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "10.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "financial"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "58"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-4.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "42.9"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "urn:ecdat:scan:7e489531c72f",
+      "dependsOn": [
+        "urn:ecdat:component:hyperledger-fabric-sdk-node"
+      ]
+    },
+    {
+      "ref": "urn:ecdat:component:hyperledger-fabric-sdk-node",
+      "dependsOn": [
+        "urn:ecdat:library:2b4b4e02f178",
+        "urn:ecdat:library:2c9b537b1904",
+        "urn:ecdat:algorithm:78e2e060004d",
+        "urn:ecdat:algorithm:d95895a97f81",
+        "urn:ecdat:algorithm:789dfdabe0df",
+        "urn:ecdat:algorithm:aff65fbdf82b",
+        "urn:ecdat:protocol:48f486cf7149",
+        "urn:ecdat:protocol:015b7ab28d77",
+        "urn:ecdat:algorithm:3d085227630d",
+        "urn:ecdat:protocol:bf5c62d41559",
+        "urn:ecdat:protocol:6f2b6a2787ee",
+        "urn:ecdat:protocol:8dffaa392e8e",
+        "urn:ecdat:protocol:f58c234b7a2c",
+        "urn:ecdat:protocol:56c1af6ee1b4",
+        "urn:ecdat:protocol:b70e08509167",
+        "urn:ecdat:certificate:209f7d5fd8a2",
+        "urn:ecdat:algorithm:bca0546e09e9",
+        "urn:ecdat:material:035cc606a489",
+        "urn:ecdat:material:214e4e58451e",
+        "urn:ecdat:material:5e83c324a2e7",
+        "urn:ecdat:material:6a875206d205",
+        "urn:ecdat:material:f5e9b9499249"
+      ]
+    },
+    {
+      "ref": "urn:ecdat:library:2b4b4e02f178"
+    },
+    {
+      "ref": "urn:ecdat:library:2c9b537b1904"
+    }
+  ],
+  "vulnerabilities": [
+    {
+      "bom-ref": "vuln-1",
+      "id": "ECDAT-QV-0001",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "RSA (algorithm) in hyperledger/fabric-sdk-node: broken; tier SAFE",
+      "detail": "Integer factorisation is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:78e2e060004d"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=10 Y=3.92 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-2",
+      "id": "ECDAT-QV-0002",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is comment: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "ECDH (algorithm) in hyperledger/fabric-sdk-node: broken; tier SAFE",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "false_positive",
+        "detail": "mentioned in a comment only",
+        "response": [],
+        "justification": "code_not_present"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:aff65fbdf82b"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=10 Y=3.4 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-3",
+      "id": "ECDAT-QV-0003",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "TLS (protocol) in hyperledger/fabric-sdk-node: broken; tier SAFE",
+      "detail": "classical (ECDHE/RSA) key exchange only: harvestable today",
+      "recommendation": "Migrate to X25519MLKEM768 (hybrid)",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:protocol:48f486cf7149"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=10 Y=0.5 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-4",
+      "id": "ECDAT-QV-0004",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "TLS (protocol) in hyperledger/fabric-sdk-node: broken; tier SAFE",
+      "detail": "classical (ECDHE/RSA) key exchange only: harvestable today",
+      "recommendation": "Migrate to X25519MLKEM768 (hybrid)",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:protocol:015b7ab28d77"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=10 Y=0.5 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-5",
+      "id": "ECDAT-QV-0005",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is comment: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "SHA-1 (algorithm) in hyperledger/fabric-sdk-node: legacy-broken; tier SAFE",
+      "detail": "Chosen-prefix collisions (SHAttered 2017, 2020); disallowed for signatures",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "false_positive",
+        "detail": "mentioned in a comment only",
+        "response": [],
+        "justification": "code_not_present"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:3d085227630d"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=10 Y=4.12 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-6",
+      "id": "ECDAT-QV-0006",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "TLS (protocol) in hyperledger/fabric-sdk-node: broken; tier SAFE",
+      "detail": "classical (ECDHE/RSA) key exchange only: harvestable today",
+      "recommendation": "Migrate to X25519MLKEM768 (hybrid)",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:protocol:bf5c62d41559"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=10 Y=0.5 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-7",
+      "id": "ECDAT-QV-0007",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "TLS (protocol) in hyperledger/fabric-sdk-node: broken; tier SAFE",
+      "detail": "classical (ECDHE/RSA) key exchange only: harvestable today",
+      "recommendation": "Migrate to X25519MLKEM768 (hybrid)",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:protocol:6f2b6a2787ee"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=10 Y=0.5 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-8",
+      "id": "ECDAT-QV-0008",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "TLS (protocol) in hyperledger/fabric-sdk-node: broken; tier SAFE",
+      "detail": "classical (ECDHE/RSA) key exchange only: harvestable today",
+      "recommendation": "Migrate to X25519MLKEM768 (hybrid)",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:protocol:8dffaa392e8e"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=10 Y=0.5 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-9",
+      "id": "ECDAT-QV-0009",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "TLS (protocol) in hyperledger/fabric-sdk-node: broken; tier SAFE",
+      "detail": "classical (ECDHE/RSA) key exchange only: harvestable today",
+      "recommendation": "Migrate to X25519MLKEM768 (hybrid)",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:protocol:f58c234b7a2c"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=10 Y=0.5 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-10",
+      "id": "ECDAT-QV-0010",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "TLS (protocol) in hyperledger/fabric-sdk-node: broken; tier SAFE",
+      "detail": "classical (ECDHE/RSA) key exchange only: harvestable today",
+      "recommendation": "Migrate to X25519MLKEM768 (hybrid)",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:protocol:56c1af6ee1b4"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=10 Y=0.5 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-11",
+      "id": "ECDAT-QV-0011",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "TLS (protocol) in hyperledger/fabric-sdk-node: broken; tier SAFE",
+      "detail": "classical (ECDHE/RSA) key exchange only: harvestable today",
+      "recommendation": "Migrate to X25519MLKEM768 (hybrid)",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:protocol:b70e08509167"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=10 Y=0.5 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-12",
+      "id": "ECDAT-QV-0012",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "admin (certificate) in hyperledger/fabric-sdk-node: broken; tier SAFE",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "Migrate to ML-DSA-65 certificate (re-issue when the CA supports FIPS 204; hybrid/dual certificates during transition) (hybrid)",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:certificate:209f7d5fd8a2"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=10 Y=0.5 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-13",
+      "id": "ECDAT-QV-0013",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "ECDSA (algorithm) in hyperledger/fabric-sdk-node: broken; tier SAFE",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:bca0546e09e9"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=10 Y=4.12 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-14",
+      "id": "ECDAT-QV-0014",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "private-key:ECDSA (related-crypto-material) in hyperledger/fabric-sdk-node: broken; tier SAFE",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:035cc606a489"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=10 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-15",
+      "id": "ECDAT-QV-0015",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "public-key:ECDSA (related-crypto-material) in hyperledger/fabric-sdk-node: broken; tier SAFE",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:214e4e58451e"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=10 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-16",
+      "id": "ECDAT-QV-0016",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "private-key:private-key (related-crypto-material) in hyperledger/fabric-sdk-node: unknown; tier SAFE",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:5e83c324a2e7"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=10 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-17",
+      "id": "ECDAT-QV-0017",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "private-key:private-key (related-crypto-material) in hyperledger/fabric-sdk-node: unknown; tier SAFE",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:6a875206d205"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=10 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-18",
+      "id": "ECDAT-QV-0018",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "private-key:private-key (related-crypto-material) in hyperledger/fabric-sdk-node: unknown; tier SAFE",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:f5e9b9499249"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=10 Y=1 Z=15"
+        }
+      ]
+    }
+  ]
+}

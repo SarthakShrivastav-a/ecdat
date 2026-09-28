@@ -1,0 +1,3440 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.7.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.7",
+  "serialNumber": "urn:uuid:c1d8a4d6-df57-4471-88db-700dc7a274a4",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-09-18T08:19:09Z",
+    "tools": {
+      "components": [
+        {
+          "type": "application",
+          "name": "ecdat",
+          "version": "0.1.0",
+          "description": "Enterprise Cryptographic Discovery & Analysis Tool (SIH 2026 PS 26164)"
+        },
+        {
+          "type": "application",
+          "name": "opengrep",
+          "version": "1.29.0"
+        },
+        {
+          "type": "application",
+          "name": "cbomkit-theia",
+          "version": "- CycloneDXv1.6"
+        },
+        {
+          "type": "application",
+          "name": "syft",
+          "version": "Version:       1.51.1"
+        },
+        {
+          "type": "application",
+          "name": "tshark",
+          "version": "TShark (Wireshark) 4.6.8 (v4.6.8-0-ge677bf052328)."
+        },
+        {
+          "type": "application",
+          "name": "crane",
+          "version": "v0.22.1"
+        }
+      ]
+    },
+    "component": {
+      "type": "application",
+      "bom-ref": "urn:ecdat:scan:27c0d4720f18",
+      "name": "bitcoin__bips"
+    },
+    "properties": [
+      {
+        "name": "ecdat:z_year",
+        "value": "2041"
+      },
+      {
+        "name": "ecdat:profile",
+        "value": "enterprise"
+      },
+      {
+        "name": "ecdat:targets",
+        "value": "1"
+      },
+      {
+        "name": "ecdat:certin_table9",
+        "value": "CERT-In BOM guidelines v2.0 (2025-07-09) section 8.3"
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "application",
+      "bom-ref": "urn:ecdat:component:bitcoin-bips",
+      "name": "bitcoin/bips",
+      "properties": [
+        {
+          "name": "ecdat:zone",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "financial"
+        },
+        {
+          "name": "ecdat:path",
+          "value": "C:\\customize\\SIH2026\\demo\\ecdat\\.claude\\worktrees\\ecdat-build\\out\\atlas\\src\\bitcoin__bips"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "urn:ecdat:library:5bd4cdfbeb21",
+      "name": "runtime:python",
+      "version": "3.9",
+      "properties": [
+        {
+          "name": "ecdat:zone",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:path",
+          "value": "bip-0352/secp256k1lab/pyproject.toml"
+        },
+        {
+          "name": "ecdat:ecosystem",
+          "value": "runtime"
+        },
+        {
+          "name": "ecdat:pqc_native",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:e5dab82db055",
+      "name": "HMAC",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.2.840.113549.2.9",
+        "algorithmProperties": {
+          "primitive": "mac",
+          "algorithmFamily": "HMAC",
+          "cryptoFunctions": [
+            "tag",
+            "verify"
+          ],
+          "classicalSecurityLevel": 128,
+          "nistQuantumSecurityLevel": 1,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "bip-0324/reference.py",
+            "line": 21
+          },
+          {
+            "location": "bip-0089/bip32.py",
+            "line": 95
+          },
+          {
+            "location": "bip-0328/_xpub.py",
+            "line": 221
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "bitcoin/bips"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "10.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "financial"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "32"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.72"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "safe"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-1.28"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:a3dd6f2d83b3",
+      "name": "SHA-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "2.16.840.1.101.3.4.2.1",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "SHA-2",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "classicalSecurityLevel": 128,
+          "nistQuantumSecurityLevel": 2,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "bip-0089/secp256k1lab/util.py",
+            "line": 7
+          },
+          {
+            "location": "bip-0352/secp256k1lab/src/secp256k1lab/util.py",
+            "line": 7
+          },
+          {
+            "location": "bip-0374/secp256k1lab/src/secp256k1lab/util.py",
+            "line": 7
+          },
+          {
+            "location": "bip-0375/deps/secp256k1lab/src/secp256k1lab/util.py",
+            "line": 7
+          },
+          {
+            "location": "bip-0089/secp256k1lab/util.py",
+            "line": 8
+          },
+          {
+            "location": "bip-0352/secp256k1lab/src/secp256k1lab/util.py",
+            "line": 8
+          },
+          {
+            "location": "bip-0374/secp256k1lab/src/secp256k1lab/util.py",
+            "line": 8
+          },
+          {
+            "location": "bip-0375/deps/secp256k1lab/src/secp256k1lab/util.py",
+            "line": 8
+          },
+          {
+            "location": "bip-0324/reference.py",
+            "line": 12
+          },
+          {
+            "location": "bip-0324/reference.py",
+            "line": 15
+          },
+          {
+            "location": "bip-0328/_common.py",
+            "line": 15
+          },
+          {
+            "location": "bip-0089/secp256k1lab/ecdh.py",
+            "line": 16
+          },
+          {
+            "location": "bip-0352/secp256k1lab/src/secp256k1lab/ecdh.py",
+            "line": 16
+          },
+          {
+            "location": "bip-0374/secp256k1lab/src/secp256k1lab/ecdh.py",
+            "line": 16
+          },
+          {
+            "location": "bip-0375/deps/secp256k1lab/src/secp256k1lab/ecdh.py",
+            "line": 16
+          },
+          {
+            "location": "bip-0089/secp256k1lab/util.py",
+            "line": 24
+          },
+          {
+            "location": "bip-0352/secp256k1lab/src/secp256k1lab/util.py",
+            "line": 24
+          },
+          {
+            "location": "bip-0374/secp256k1lab/src/secp256k1lab/util.py",
+            "line": 24
+          },
+          {
+            "location": "bip-0375/deps/secp256k1lab/src/secp256k1lab/util.py",
+            "line": 24
+          },
+          {
+            "location": "bip-0340/reference.py",
+            "line": 25
+          },
+          {
+            "location": "bip-0340/reference.py",
+            "line": 26
+          },
+          {
+            "location": "bip-0327/reference.py",
+            "line": 28
+          },
+          {
+            "location": "bip-0327/reference.py",
+            "line": 29
+          },
+          {
+            "location": "bip-0360/ref-impl/python/p2mr.py",
+            "line": 35
+          },
+          {
+            "location": "bip-0375/deps/bitcoin_test/messages.py",
+            "line": 44
+          },
+          {
+            "location": "bip-0340/reference.py",
+            "line": 83
+          },
+          {
+            "location": "bip-0352/bitcoin_utils.py",
+            "line": 138
+          },
+          {
+            "location": "bip-0324/gen_test_vectors.py",
+            "line": 168
+          },
+          {
+            "location": "bip-0324/gen_test_vectors.py",
+            "line": 379
+          },
+          {
+            "location": "bip-0089/reference.py",
+            "line": 617
+          },
+          {
+            "location": "bip-0346/ref-impl/src/main.rs",
+            "line": 4
+          },
+          {
+            "location": "bip-0324/reference.py",
+            "line": 17
+          },
+          {
+            "location": "bip-0346/ref-impl/src/main.rs",
+            "line": 49
+          },
+          {
+            "location": "bip-0449/test-vectors/src/main.rs",
+            "line": 57
+          },
+          {
+            "location": "bip-0346/ref-impl/src/main.rs",
+            "line": 201
+          },
+          {
+            "location": "bip-0346/ref-impl/src/main.rs",
+            "line": 213
+          },
+          {
+            "location": "bip-0346/ref-impl/src/main.rs",
+            "line": 240
+          },
+          {
+            "location": "bip-0346/ref-impl/src/main.rs",
+            "line": 243
+          },
+          {
+            "location": "bip-0346/ref-impl/src/main.rs",
+            "line": 250
+          },
+          {
+            "location": "bip-0346/ref-impl/src/main.rs",
+            "line": 253
+          },
+          {
+            "location": "bip-0346/ref-impl/src/main.rs",
+            "line": 255
+          },
+          {
+            "location": "bip-0346/ref-impl/src/main.rs",
+            "line": 266
+          },
+          {
+            "location": "bip-0346/ref-impl/src/main.rs",
+            "line": 268
+          },
+          {
+            "location": "bip-0346/ref-impl/src/main.rs",
+            "line": 287
+          },
+          {
+            "location": "bip-0346/ref-impl/src/main.rs",
+            "line": 291
+          },
+          {
+            "location": "bip-0346/ref-impl/src/main.rs",
+            "line": 298
+          },
+          {
+            "location": "bip-0346/ref-impl/src/main.rs",
+            "line": 302
+          },
+          {
+            "location": "bip-0346/ref-impl/src/main.rs",
+            "line": 309
+          },
+          {
+            "location": "bip-0346/ref-impl/src/main.rs",
+            "line": 311
+          },
+          {
+            "location": "bip-0346/ref-impl/src/main.rs",
+            "line": 313
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "bitcoin/bips"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "10.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "financial"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "24"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "4.04"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "safe"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-0.96"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:6010f6bb437d",
+      "name": "ECDH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.3.132.1.12",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "algorithmFamily": "ECDH",
+          "cryptoFunctions": [
+            "keygen",
+            "other"
+          ],
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "bip-0375/validator/inputs.py",
+            "line": 33
+          },
+          {
+            "location": "bip-0375/validator/inputs.py",
+            "line": 48
+          },
+          {
+            "location": "bip-0375/validator/validate_psbt.py",
+            "line": 85
+          },
+          {
+            "location": "bip-0375/validator/validate_psbt.py",
+            "line": 153
+          },
+          {
+            "location": "bip-0375/validator/validate_psbt.py",
+            "line": 170
+          },
+          {
+            "location": "bip-0375/validator/validate_psbt.py",
+            "line": 330
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "bitcoin/bips"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "comment"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "10.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "financial"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "34"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.64"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-1.36"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "85.7"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:c0b4b8910166",
+      "name": "key:generic-api-key",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "bip-0038.mediawiki",
+            "line": 233
+          },
+          {
+            "location": "bip-0038.mediawiki",
+            "line": 257
+          },
+          {
+            "location": "bip-0038.mediawiki",
+            "line": 265
+          },
+          {
+            "location": "bip-0038.mediawiki",
+            "line": 275
+          },
+          {
+            "location": "bip-0038.mediawiki",
+            "line": 285
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "bitcoin/bips"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "10.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "financial"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "55"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.333"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-4.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "4.6"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "42.9"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:0c9b15f78856",
+      "name": "key:generic-api-key",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "bip-0046.mediawiki",
+            "line": 119
+          },
+          {
+            "location": "bip-0046.mediawiki",
+            "line": 138
+          },
+          {
+            "location": "bip-0046.mediawiki",
+            "line": 147
+          },
+          {
+            "location": "bip-0046.mediawiki",
+            "line": 156
+          },
+          {
+            "location": "bip-0046.mediawiki",
+            "line": 165
+          },
+          {
+            "location": "bip-0046.mediawiki",
+            "line": 168
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "bitcoin/bips"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "10.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "financial"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "55"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.333"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-4.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "4.6"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "42.9"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:efd3f2bcf037",
+      "name": "key:generic-api-key",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "bip-0049.mediawiki",
+            "line": 92
+          },
+          {
+            "location": "bip-0049.mediawiki",
+            "line": 93
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "bitcoin/bips"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "10.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "financial"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "57"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.333"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-4.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "4.5"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "42.9"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:b7bfc009b99d",
+      "name": "key:generic-api-key",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "bip-0084.mediawiki",
+            "line": 77
+          },
+          {
+            "location": "bip-0084.mediawiki",
+            "line": 82
+          },
+          {
+            "location": "bip-0084.mediawiki",
+            "line": 87
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "bitcoin/bips"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "10.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "financial"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "57"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.333"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-4.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "4.5"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "42.9"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:0746e076581b",
+      "name": "key:generic-api-key",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "bip-0085.mediawiki",
+            "line": 67
+          },
+          {
+            "location": "bip-0085.mediawiki",
+            "line": 71
+          },
+          {
+            "location": "bip-0085.mediawiki",
+            "line": 76
+          },
+          {
+            "location": "bip-0085.mediawiki",
+            "line": 80
+          },
+          {
+            "location": "bip-0085.mediawiki",
+            "line": 98
+          },
+          {
+            "location": "bip-0085.mediawiki",
+            "line": 192
+          },
+          {
+            "location": "bip-0085.mediawiki",
+            "line": 205
+          },
+          {
+            "location": "bip-0085.mediawiki",
+            "line": 218
+          },
+          {
+            "location": "bip-0085.mediawiki",
+            "line": 242
+          },
+          {
+            "location": "bip-0085.mediawiki",
+            "line": 261
+          },
+          {
+            "location": "bip-0085.mediawiki",
+            "line": 278
+          },
+          {
+            "location": "bip-0085.mediawiki",
+            "line": 315
+          },
+          {
+            "location": "bip-0085.mediawiki",
+            "line": 353
+          },
+          {
+            "location": "bip-0085.mediawiki",
+            "line": 419
+          },
+          {
+            "location": "bip-0085.mediawiki",
+            "line": 448
+          },
+          {
+            "location": "bip-0085.mediawiki",
+            "line": 458
+          },
+          {
+            "location": "bip-0085.mediawiki",
+            "line": 468
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "bitcoin/bips"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "10.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "financial"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "52"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.333"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-4.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "4.8"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "42.9"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:6b892d77fb78",
+      "name": "key:generic-api-key",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "bip-0086.mediawiki",
+            "line": 96
+          },
+          {
+            "location": "bip-0086.mediawiki",
+            "line": 97
+          },
+          {
+            "location": "bip-0086.mediawiki",
+            "line": 104
+          },
+          {
+            "location": "bip-0086.mediawiki",
+            "line": 105
+          },
+          {
+            "location": "bip-0086.mediawiki",
+            "line": 112
+          },
+          {
+            "location": "bip-0086.mediawiki",
+            "line": 113
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "bitcoin/bips"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "10.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "financial"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "55"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.333"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-4.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "4.6"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "42.9"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:ea629cfde3b4",
+      "name": "key:generic-api-key",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "bip-0089/vectors/delegator_sign_vectors.json",
+            "line": 4
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "bitcoin/bips"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "10.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "financial"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "58"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.333"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-4.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "4.4"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "42.9"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:62f80ab576a9",
+      "name": "key:generic-api-key",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "bip-0143.mediawiki",
+            "line": 152
+          },
+          {
+            "location": "bip-0143.mediawiki",
+            "line": 156
+          },
+          {
+            "location": "bip-0143.mediawiki",
+            "line": 157
+          },
+          {
+            "location": "bip-0143.mediawiki",
+            "line": 216
+          },
+          {
+            "location": "bip-0143.mediawiki",
+            "line": 217
+          },
+          {
+            "location": "bip-0143.mediawiki",
+            "line": 276
+          },
+          {
+            "location": "bip-0143.mediawiki",
+            "line": 306
+          },
+          {
+            "location": "bip-0143.mediawiki",
+            "line": 307
+          },
+          {
+            "location": "bip-0143.mediawiki",
+            "line": 314
+          },
+          {
+            "location": "bip-0143.mediawiki",
+            "line": 315
+          },
+          {
+            "location": "bip-0143.mediawiki",
+            "line": 364
+          },
+          {
+            "location": "bip-0143.mediawiki",
+            "line": 365
+          },
+          {
+            "location": "bip-0143.mediawiki",
+            "line": 374
+          },
+          {
+            "location": "bip-0143.mediawiki",
+            "line": 375
+          },
+          {
+            "location": "bip-0143.mediawiki",
+            "line": 452
+          },
+          {
+            "location": "bip-0143.mediawiki",
+            "line": 467
+          },
+          {
+            "location": "bip-0143.mediawiki",
+            "line": 468
+          },
+          {
+            "location": "bip-0143.mediawiki",
+            "line": 483
+          },
+          {
+            "location": "bip-0143.mediawiki",
+            "line": 484
+          },
+          {
+            "location": "bip-0143.mediawiki",
+            "line": 499
+          },
+          {
+            "location": "bip-0143.mediawiki",
+            "line": 500
+          },
+          {
+            "location": "bip-0143.mediawiki",
+            "line": 515
+          },
+          {
+            "location": "bip-0143.mediawiki",
+            "line": 516
+          },
+          {
+            "location": "bip-0143.mediawiki",
+            "line": 531
+          },
+          {
+            "location": "bip-0143.mediawiki",
+            "line": 532
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "bitcoin/bips"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "10.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "financial"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "52"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.333"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-4.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "4.8"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "42.9"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:addf5684e934",
+      "name": "key:generic-api-key",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "bip-0175.mediawiki",
+            "line": 131
+          },
+          {
+            "location": "bip-0175.mediawiki",
+            "line": 140
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "bitcoin/bips"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "10.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "financial"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "57"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.333"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-4.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "4.5"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "42.9"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:0a8d74857920",
+      "name": "key:generic-api-key",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "bip-0341/wallet-test-vectors.json",
+            "line": 277
+          },
+          {
+            "location": "bip-0341/wallet-test-vectors.json",
+            "line": 284
+          },
+          {
+            "location": "bip-0341/wallet-test-vectors.json",
+            "line": 303
+          },
+          {
+            "location": "bip-0341/wallet-test-vectors.json",
+            "line": 310
+          },
+          {
+            "location": "bip-0341/wallet-test-vectors.json",
+            "line": 324
+          },
+          {
+            "location": "bip-0341/wallet-test-vectors.json",
+            "line": 331
+          },
+          {
+            "location": "bip-0341/wallet-test-vectors.json",
+            "line": 351
+          },
+          {
+            "location": "bip-0341/wallet-test-vectors.json",
+            "line": 358
+          },
+          {
+            "location": "bip-0341/wallet-test-vectors.json",
+            "line": 378
+          },
+          {
+            "location": "bip-0341/wallet-test-vectors.json",
+            "line": 385
+          },
+          {
+            "location": "bip-0341/wallet-test-vectors.json",
+            "line": 404
+          },
+          {
+            "location": "bip-0341/wallet-test-vectors.json",
+            "line": 411
+          },
+          {
+            "location": "bip-0341/wallet-test-vectors.json",
+            "line": 425
+          },
+          {
+            "location": "bip-0341/wallet-test-vectors.json",
+            "line": 432
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "bitcoin/bips"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "10.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "financial"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "52"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.333"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-4.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "4.8"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "42.9"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:166f2b6a1f93",
+      "name": "key:generic-api-key",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "bip-0352/send_and_receive_test_vectors.json",
+            "line": 17
+          },
+          {
+            "location": "bip-0352/send_and_receive_test_vectors.json",
+            "line": 29
+          },
+          {
+            "location": "bip-0352/send_and_receive_test_vectors.json",
+            "line": 49
+          },
+          {
+            "location": "bip-0352/send_and_receive_test_vectors.json",
+            "line": 88
+          },
+          {
+            "location": "bip-0352/send_and_receive_test_vectors.json",
+            "line": 89
+          },
+          {
+            "location": "bip-0352/send_and_receive_test_vectors.json",
+            "line": 99
+          },
+          {
+            "location": "bip-0352/send_and_receive_test_vectors.json",
+            "line": 105
+          },
+          {
+            "location": "bip-0352/send_and_receive_test_vectors.json",
+            "line": 127
+          },
+          {
+            "location": "bip-0352/send_and_receive_test_vectors.json",
+            "line": 139
+          },
+          {
+            "location": "bip-0352/send_and_receive_test_vectors.json",
+            "line": 159
+          },
+          {
+            "location": "bip-0352/send_and_receive_test_vectors.json",
+            "line": 198
+          },
+          {
+            "location": "bip-0352/send_and_receive_test_vectors.json",
+            "line": 199
+          },
+          {
+            "location": "bip-0352/send_and_receive_test_vectors.json",
+            "line": 209
+          },
+          {
+            "location": "bip-0352/send_and_receive_test_vectors.json",
+            "line": 215
+          },
+          {
+            "location": "bip-0352/send_and_receive_test_vectors.json",
+            "line": 237
+          },
+          {
+            "location": "bip-0352/send_and_receive_test_vectors.json",
+            "line": 249
+          },
+          {
+            "location": "bip-0352/send_and_receive_test_vectors.json",
+            "line": 269
+          },
+          {
+            "location": "bip-0352/send_and_receive_test_vectors.json",
+            "line": 308
+          },
+          {
+            "location": "bip-0352/send_and_receive_test_vectors.json",
+            "line": 309
+          },
+          {
+            "location": "bip-0352/send_and_receive_test_vectors.json",
+            "line": 319
+          },
+          {
+            "location": "bip-0352/send_and_receive_test_vectors.json",
+            "line": 325
+          },
+          {
+            "location": "bip-0352/send_and_receive_test_vectors.json",
+            "line": 347
+          },
+          {
+            "location": "bip-0352/send_and_receive_test_vectors.json",
+            "line": 359
+          },
+          {
+            "location": "bip-0352/send_and_receive_test_vectors.json",
+            "line": 379
+          },
+          {
+            "location": "bip-0352/send_and_receive_test_vectors.json",
+            "line": 418
+          },
+          {
+            "location": "bip-0352/send_and_receive_test_vectors.json",
+            "line": 419
+          },
+          {
+            "location": "bip-0352/send_and_receive_test_vectors.json",
+            "line": 429
+          },
+          {
+            "location": "bip-0352/send_and_receive_test_vectors.json",
+            "line": 435
+          },
+          {
+            "location": "bip-0352/send_and_receive_test_vectors.json",
+            "line": 457
+          },
+          {
+            "location": "bip-0352/send_and_receive_test_vectors.json",
+            "line": 469
+          },
+          {
+            "location": "bip-0352/send_and_receive_test_vectors.json",
+            "line": 489
+          },
+          {
+            "location": "bip-0352/send_and_receive_test_vectors.json",
+            "line": 528
+          },
+          {
+            "location": "bip-0352/send_and_receive_test_vectors.json",
+            "line": 529
+          },
+          {
+            "location": "bip-0352/send_and_receive_test_vectors.json",
+            "line": 539
+          },
+          {
+            "location": "bip-0352/send_and_receive_test_vectors.json",
+            "line": 545
+          },
+          {
+            "location": "bip-0352/send_and_receive_test_vectors.json",
+            "line": 567
+          },
+          {
+            "location": "bip-0352/send_and_receive_test_vectors.json",
+            "line": 579
+          },
+          {
+            "location": "bip-0352/send_and_receive_test_vectors.json",
+            "line": 599
+          },
+          {
+            "location": "bip-0352/send_and_receive_test_vectors.json",
+            "line": 638
+          },
+          {
+            "location": "bip-0352/send_and_receive_test_vectors.json",
+            "line": 639
+          },
+          {
+            "location": "bip-0352/send_and_receive_test_vectors.json",
+            "line": 649
+          },
+          {
+            "location": "bip-0352/send_and_receive_test_vectors.json",
+            "line": 655
+          },
+          {
+            "location": "bip-0352/send_and_receive_test_vectors.json",
+            "line": 677
+          },
+          {
+            "location": "bip-0352/send_and_receive_test_vectors.json",
+            "line": 689
+          },
+          {
+            "location": "bip-0352/send_and_receive_test_vectors.json",
+            "line": 709
+          },
+          {
+            "location": "bip-0352/send_and_receive_test_vectors.json",
+            "line": 748
+          },
+          {
+            "location": "bip-0352/send_and_receive_test_vectors.json",
+            "line": 749
+          },
+          {
+            "location": "bip-0352/send_and_receive_test_vectors.json",
+            "line": 759
+          },
+          {
+            "location": "bip-0352/send_and_receive_test_vectors.json",
+            "line": 765
+          },
+          {
+            "location": "bip-0352/send_and_receive_test_vectors.json",
+            "line": 787
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "bitcoin/bips"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "10.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "financial"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "52"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.333"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-4.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "4.8"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "42.9"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:f80101f9cb34",
+      "name": "key:generic-api-key",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "bip-0360/ref-impl/common/tests/data/p2mr_pqc_construction.json",
+            "line": 23
+          },
+          {
+            "location": "bip-0360/ref-impl/common/tests/data/p2mr_pqc_construction.json",
+            "line": 50
+          },
+          {
+            "location": "bip-0360/ref-impl/common/tests/data/p2mr_pqc_construction.json",
+            "line": 87
+          },
+          {
+            "location": "bip-0360/ref-impl/common/tests/data/p2mr_pqc_construction.json",
+            "line": 95
+          },
+          {
+            "location": "bip-0360/ref-impl/common/tests/data/p2mr_pqc_construction.json",
+            "line": 126
+          },
+          {
+            "location": "bip-0360/ref-impl/common/tests/data/p2mr_pqc_construction.json",
+            "line": 163
+          },
+          {
+            "location": "bip-0360/ref-impl/common/tests/data/p2mr_pqc_construction.json",
+            "line": 171
+          },
+          {
+            "location": "bip-0360/ref-impl/common/tests/data/p2mr_pqc_construction.json",
+            "line": 178
+          },
+          {
+            "location": "bip-0360/ref-impl/common/tests/data/p2mr_pqc_construction.json",
+            "line": 211
+          },
+          {
+            "location": "bip-0360/ref-impl/common/tests/data/p2mr_pqc_construction.json",
+            "line": 219
+          },
+          {
+            "location": "bip-0360/ref-impl/common/tests/data/p2mr_pqc_construction.json",
+            "line": 226
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "bitcoin/bips"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "10.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "financial"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "52"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-4.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "42.9"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:077993f609b0",
+      "name": "key:generic-api-key",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "bip-0375/bip375_test_vectors.json",
+            "line": 67
+          },
+          {
+            "location": "bip-0375/bip375_test_vectors.json",
+            "line": 79
+          },
+          {
+            "location": "bip-0375/bip375_test_vectors.json",
+            "line": 92
+          },
+          {
+            "location": "bip-0375/bip375_test_vectors.json",
+            "line": 107
+          },
+          {
+            "location": "bip-0375/bip375_test_vectors.json",
+            "line": 120
+          },
+          {
+            "location": "bip-0375/bip375_test_vectors.json",
+            "line": 135
+          },
+          {
+            "location": "bip-0375/bip375_test_vectors.json",
+            "line": 148
+          },
+          {
+            "location": "bip-0375/bip375_test_vectors.json",
+            "line": 161
+          },
+          {
+            "location": "bip-0375/bip375_test_vectors.json",
+            "line": 174
+          },
+          {
+            "location": "bip-0375/bip375_test_vectors.json",
+            "line": 189
+          },
+          {
+            "location": "bip-0375/bip375_test_vectors.json",
+            "line": 202
+          },
+          {
+            "location": "bip-0375/bip375_test_vectors.json",
+            "line": 216
+          },
+          {
+            "location": "bip-0375/bip375_test_vectors.json",
+            "line": 229
+          },
+          {
+            "location": "bip-0375/bip375_test_vectors.json",
+            "line": 244
+          },
+          {
+            "location": "bip-0375/bip375_test_vectors.json",
+            "line": 257
+          },
+          {
+            "location": "bip-0375/bip375_test_vectors.json",
+            "line": 263
+          },
+          {
+            "location": "bip-0375/bip375_test_vectors.json",
+            "line": 278
+          },
+          {
+            "location": "bip-0375/bip375_test_vectors.json",
+            "line": 290
+          },
+          {
+            "location": "bip-0375/bip375_test_vectors.json",
+            "line": 303
+          },
+          {
+            "location": "bip-0375/bip375_test_vectors.json",
+            "line": 309
+          },
+          {
+            "location": "bip-0375/bip375_test_vectors.json",
+            "line": 315
+          },
+          {
+            "location": "bip-0375/bip375_test_vectors.json",
+            "line": 330
+          },
+          {
+            "location": "bip-0375/bip375_test_vectors.json",
+            "line": 342
+          },
+          {
+            "location": "bip-0375/bip375_test_vectors.json",
+            "line": 355
+          },
+          {
+            "location": "bip-0375/bip375_test_vectors.json",
+            "line": 370
+          },
+          {
+            "location": "bip-0375/bip375_test_vectors.json",
+            "line": 393
+          },
+          {
+            "location": "bip-0375/bip375_test_vectors.json",
+            "line": 413
+          },
+          {
+            "location": "bip-0375/bip375_test_vectors.json",
+            "line": 426
+          },
+          {
+            "location": "bip-0375/bip375_test_vectors.json",
+            "line": 449
+          },
+          {
+            "location": "bip-0375/bip375_test_vectors.json",
+            "line": 462
+          },
+          {
+            "location": "bip-0375/bip375_test_vectors.json",
+            "line": 485
+          },
+          {
+            "location": "bip-0375/bip375_test_vectors.json",
+            "line": 498
+          },
+          {
+            "location": "bip-0375/bip375_test_vectors.json",
+            "line": 527
+          },
+          {
+            "location": "bip-0375/bip375_test_vectors.json",
+            "line": 540
+          },
+          {
+            "location": "bip-0375/bip375_test_vectors.json",
+            "line": 594
+          },
+          {
+            "location": "bip-0375/bip375_test_vectors.json",
+            "line": 607
+          },
+          {
+            "location": "bip-0375/bip375_test_vectors.json",
+            "line": 630
+          },
+          {
+            "location": "bip-0375/bip375_test_vectors.json",
+            "line": 642
+          },
+          {
+            "location": "bip-0375/bip375_test_vectors.json",
+            "line": 655
+          },
+          {
+            "location": "bip-0375/bip375_test_vectors.json",
+            "line": 677
+          },
+          {
+            "location": "bip-0375/bip375_test_vectors.json",
+            "line": 689
+          },
+          {
+            "location": "bip-0375/bip375_test_vectors.json",
+            "line": 702
+          },
+          {
+            "location": "bip-0375/bip375_test_vectors.json",
+            "line": 708
+          },
+          {
+            "location": "bip-0375/bip375_test_vectors.json",
+            "line": 731
+          },
+          {
+            "location": "bip-0375/bip375_test_vectors.json",
+            "line": 743
+          },
+          {
+            "location": "bip-0375/bip375_test_vectors.json",
+            "line": 756
+          },
+          {
+            "location": "bip-0375/bip375_test_vectors.json",
+            "line": 761
+          },
+          {
+            "location": "bip-0375/bip375_test_vectors.json",
+            "line": 767
+          },
+          {
+            "location": "bip-0375/bip375_test_vectors.json",
+            "line": 796
+          },
+          {
+            "location": "bip-0375/bip375_test_vectors.json",
+            "line": 809
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "bitcoin/bips"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "10.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "financial"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "52"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.333"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-4.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "4.8"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "42.9"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:dfa8e5cc7b78",
+      "name": "key:generic-api-key",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "bip-0443.mediawiki",
+            "line": 287
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "bitcoin/bips"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "10.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "financial"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "58"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.333"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-4.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "4.4"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "42.9"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "urn:ecdat:scan:27c0d4720f18",
+      "dependsOn": [
+        "urn:ecdat:component:bitcoin-bips"
+      ]
+    },
+    {
+      "ref": "urn:ecdat:component:bitcoin-bips",
+      "dependsOn": [
+        "urn:ecdat:library:5bd4cdfbeb21",
+        "urn:ecdat:algorithm:e5dab82db055",
+        "urn:ecdat:algorithm:a3dd6f2d83b3",
+        "urn:ecdat:algorithm:6010f6bb437d",
+        "urn:ecdat:material:c0b4b8910166",
+        "urn:ecdat:material:0c9b15f78856",
+        "urn:ecdat:material:efd3f2bcf037",
+        "urn:ecdat:material:b7bfc009b99d",
+        "urn:ecdat:material:0746e076581b",
+        "urn:ecdat:material:6b892d77fb78",
+        "urn:ecdat:material:ea629cfde3b4",
+        "urn:ecdat:material:62f80ab576a9",
+        "urn:ecdat:material:addf5684e934",
+        "urn:ecdat:material:0a8d74857920",
+        "urn:ecdat:material:166f2b6a1f93",
+        "urn:ecdat:material:f80101f9cb34",
+        "urn:ecdat:material:077993f609b0",
+        "urn:ecdat:material:dfa8e5cc7b78"
+      ]
+    },
+    {
+      "ref": "urn:ecdat:library:5bd4cdfbeb21"
+    }
+  ],
+  "vulnerabilities": [
+    {
+      "bom-ref": "vuln-1",
+      "id": "ECDAT-QV-0001",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is comment: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "ECDH (algorithm) in bitcoin/bips: broken; tier SAFE",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "false_positive",
+        "detail": "mentioned in a comment only",
+        "response": [],
+        "justification": "code_not_present"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:6010f6bb437d"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=10 Y=3.64 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-2",
+      "id": "ECDAT-QV-0002",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "could not classify; review manually"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "key:generic-api-key (related-crypto-material) in bitcoin/bips: unknown; tier MONITOR",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:c0b4b8910166"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=10 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-3",
+      "id": "ECDAT-QV-0003",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "could not classify; review manually"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "key:generic-api-key (related-crypto-material) in bitcoin/bips: unknown; tier MONITOR",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:0c9b15f78856"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=10 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-4",
+      "id": "ECDAT-QV-0004",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "could not classify; review manually"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "key:generic-api-key (related-crypto-material) in bitcoin/bips: unknown; tier MONITOR",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:efd3f2bcf037"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=10 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-5",
+      "id": "ECDAT-QV-0005",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "could not classify; review manually"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "key:generic-api-key (related-crypto-material) in bitcoin/bips: unknown; tier MONITOR",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:b7bfc009b99d"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=10 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-6",
+      "id": "ECDAT-QV-0006",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "could not classify; review manually"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "key:generic-api-key (related-crypto-material) in bitcoin/bips: unknown; tier MONITOR",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:0746e076581b"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=10 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-7",
+      "id": "ECDAT-QV-0007",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "could not classify; review manually"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "key:generic-api-key (related-crypto-material) in bitcoin/bips: unknown; tier MONITOR",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:6b892d77fb78"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=10 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-8",
+      "id": "ECDAT-QV-0008",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "could not classify; review manually"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "key:generic-api-key (related-crypto-material) in bitcoin/bips: unknown; tier MONITOR",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:ea629cfde3b4"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=10 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-9",
+      "id": "ECDAT-QV-0009",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "could not classify; review manually"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "key:generic-api-key (related-crypto-material) in bitcoin/bips: unknown; tier MONITOR",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:62f80ab576a9"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=10 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-10",
+      "id": "ECDAT-QV-0010",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "could not classify; review manually"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "key:generic-api-key (related-crypto-material) in bitcoin/bips: unknown; tier MONITOR",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:addf5684e934"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=10 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-11",
+      "id": "ECDAT-QV-0011",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "could not classify; review manually"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "key:generic-api-key (related-crypto-material) in bitcoin/bips: unknown; tier MONITOR",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:0a8d74857920"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=10 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-12",
+      "id": "ECDAT-QV-0012",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "could not classify; review manually"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "key:generic-api-key (related-crypto-material) in bitcoin/bips: unknown; tier MONITOR",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:166f2b6a1f93"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=10 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-13",
+      "id": "ECDAT-QV-0013",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "key:generic-api-key (related-crypto-material) in bitcoin/bips: unknown; tier SAFE",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:f80101f9cb34"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=10 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-14",
+      "id": "ECDAT-QV-0014",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "could not classify; review manually"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "key:generic-api-key (related-crypto-material) in bitcoin/bips: unknown; tier MONITOR",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:077993f609b0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=10 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-15",
+      "id": "ECDAT-QV-0015",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "could not classify; review manually"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "key:generic-api-key (related-crypto-material) in bitcoin/bips: unknown; tier MONITOR",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:dfa8e5cc7b78"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=10 Y=1 Z=15"
+        }
+      ]
+    }
+  ]
+}

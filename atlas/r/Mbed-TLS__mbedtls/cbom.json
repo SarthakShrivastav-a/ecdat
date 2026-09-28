@@ -1,0 +1,5792 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.7.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.7",
+  "serialNumber": "urn:uuid:7ed06deb-ddcb-48f4-b057-616893f4867d",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-09-18T08:42:04Z",
+    "tools": {
+      "components": [
+        {
+          "type": "application",
+          "name": "ecdat",
+          "version": "0.1.0",
+          "description": "Enterprise Cryptographic Discovery & Analysis Tool (SIH 2026 PS 26164)"
+        },
+        {
+          "type": "application",
+          "name": "opengrep",
+          "version": "1.29.0"
+        },
+        {
+          "type": "application",
+          "name": "cbomkit-theia",
+          "version": "- CycloneDXv1.6"
+        },
+        {
+          "type": "application",
+          "name": "syft",
+          "version": "Version:       1.51.1"
+        },
+        {
+          "type": "application",
+          "name": "tshark",
+          "version": "TShark (Wireshark) 4.6.8 (v4.6.8-0-ge677bf052328)."
+        },
+        {
+          "type": "application",
+          "name": "crane",
+          "version": "v0.22.1"
+        }
+      ]
+    },
+    "component": {
+      "type": "application",
+      "bom-ref": "urn:ecdat:scan:0eea48a1d847",
+      "name": "Mbed-TLS__mbedtls"
+    },
+    "properties": [
+      {
+        "name": "ecdat:z_year",
+        "value": "2041"
+      },
+      {
+        "name": "ecdat:profile",
+        "value": "enterprise"
+      },
+      {
+        "name": "ecdat:targets",
+        "value": "1"
+      },
+      {
+        "name": "ecdat:certin_table9",
+        "value": "CERT-In BOM guidelines v2.0 (2025-07-09) section 8.3"
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "application",
+      "bom-ref": "urn:ecdat:component:mbed-tls-mbedtls",
+      "name": "Mbed-TLS/mbedtls",
+      "properties": [
+        {
+          "name": "ecdat:zone",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:path",
+          "value": "C:\\customize\\SIH2026\\demo\\ecdat\\.claude\\worktrees\\ecdat-build\\out\\atlas\\src\\Mbed-TLS__mbedtls"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "urn:ecdat:library:706ddcff589a",
+      "name": "mbedtls",
+      "properties": [
+        {
+          "name": "ecdat:zone",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:path",
+          "value": "library/mbedtls_utils.h"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "urn:ecdat:library:337db9e1afb2",
+      "name": "requests",
+      "version": "2.32.5",
+      "properties": [
+        {
+          "name": "ecdat:zone",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:path",
+          "value": "docs/requirements.txt"
+        },
+        {
+          "name": "ecdat:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "ecdat:pqc_native",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "urn:ecdat:library:a2a01fc0ddc5",
+      "name": "urllib3",
+      "version": "2.6.3",
+      "properties": [
+        {
+          "name": "ecdat:zone",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:path",
+          "value": "docs/requirements.txt"
+        },
+        {
+          "name": "ecdat:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "ecdat:pqc_native",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:2dce947c3b77",
+      "name": "RSA",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.2.840.113549.1.1.1",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "algorithmFamily": "RSASSA-PKCS1",
+          "cryptoFunctions": [
+            "decrypt",
+            "encrypt",
+            "keygen",
+            "sign",
+            "verify"
+          ],
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "configs/config-suite-b.h",
+            "line": 10
+          },
+          {
+            "location": "configs/config-thread.h",
+            "line": 11
+          },
+          {
+            "location": "configs/crypto-config-thread.h",
+            "line": 11
+          },
+          {
+            "location": "configs/crypto-config-suite-b.h",
+            "line": 12
+          },
+          {
+            "location": "doxygen/input/doc_encdec.h",
+            "line": 12
+          },
+          {
+            "location": "include/mbedtls/x509.h",
+            "line": 40
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 43
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 44
+          },
+          {
+            "location": "scripts/generate_errors.pl",
+            "line": 45
+          },
+          {
+            "location": "tests/compat.sh",
+            "line": 90
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 95
+          },
+          {
+            "location": "scripts/config.py",
+            "line": 96
+          },
+          {
+            "location": "tests/include/test/certs.h",
+            "line": 96
+          },
+          {
+            "location": "tests/include/test/certs.h",
+            "line": 96
+          },
+          {
+            "location": "programs/ssl/ssl_fork_server.c",
+            "line": 97
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 97
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 98
+          },
+          {
+            "location": "include/mbedtls/x509.h",
+            "line": 102
+          },
+          {
+            "location": "include/mbedtls/x509.h",
+            "line": 103
+          },
+          {
+            "location": "programs/ssl/ssl_server.c",
+            "line": 103
+          },
+          {
+            "location": "include/mbedtls/x509_crt.h",
+            "line": 104
+          },
+          {
+            "location": "include/mbedtls/x509.h",
+            "line": 105
+          },
+          {
+            "location": "include/mbedtls/x509.h",
+            "line": 106
+          },
+          {
+            "location": "include/mbedtls/ssl.h",
+            "line": 112
+          },
+          {
+            "location": "programs/ssl/dtls_server.c",
+            "line": 121
+          },
+          {
+            "location": "include/mbedtls/x509_crt.h",
+            "line": 135
+          },
+          {
+            "location": "programs/ssl/ssl_test_lib.h",
+            "line": 142
+          },
+          {
+            "location": "programs/ssl/ssl_test_lib.h",
+            "line": 142
+          },
+          {
+            "location": "tests/scripts/components-basic-checks.sh",
+            "line": 142
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 143
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 144
+          },
+          {
+            "location": "tests/scripts/components-basic-checks.sh",
+            "line": 145
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 145
+          },
+          {
+            "location": "tests/scripts/components-basic-checks.sh",
+            "line": 146
+          },
+          {
+            "location": "tests/scripts/components-basic-checks.sh",
+            "line": 148
+          },
+          {
+            "location": "tests/scripts/components-basic-checks.sh",
+            "line": 149
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 149
+          },
+          {
+            "location": "include/mbedtls/ssl_ciphersuites.h",
+            "line": 154
+          },
+          {
+            "location": "include/mbedtls/ssl_ciphersuites.h",
+            "line": 154
+          },
+          {
+            "location": "tests/src/certs.c",
+            "line": 161
+          },
+          {
+            "location": "tests/include/test/certs.h",
+            "line": 165
+          },
+          {
+            "location": "tests/include/test/certs.h",
+            "line": 165
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 169
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 170
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 171
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 175
+          },
+          {
+            "location": "tests/context-info.sh",
+            "line": 206
+          },
+          {
+            "location": "tests/include/test/certs.h",
+            "line": 220
+          },
+          {
+            "location": "tests/include/test/certs.h",
+            "line": 220
+          },
+          {
+            "location": "tests/context-info.sh",
+            "line": 228
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "Mbed-TLS/mbedtls"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "33"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.68"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "2.333"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-6.32"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "ML-KEM-768"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "14.7"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "85.7"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:ade7228a0029",
+      "name": "DES-56",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.3.14.3.2.7",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "algorithmFamily": "DES",
+          "parameterSetIdentifier": "56",
+          "cryptoFunctions": [
+            "decrypt",
+            "encrypt"
+          ],
+          "classicalSecurityLevel": 56,
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "doxygen/input/doc_encdec.h",
+            "line": 12
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "Mbed-TLS/mbedtls"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "comment"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "40"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.4"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "legacy-broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-6.6"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "85.7"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:490bc13a8290",
+      "name": "3DES-168",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.2.840.113549.3.7",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "algorithmFamily": "3DES",
+          "parameterSetIdentifier": "168",
+          "cryptoFunctions": [
+            "decrypt",
+            "encrypt"
+          ],
+          "classicalSecurityLevel": 112,
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "doxygen/input/doc_encdec.h",
+            "line": 12
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "Mbed-TLS/mbedtls"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "comment"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "40"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.4"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "legacy-broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-6.6"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "85.7"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:c0ff463c9e81",
+      "name": "ECDSA",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.2.840.10045.4.3.2",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "algorithmFamily": "ECDSA",
+          "cryptoFunctions": [
+            "keygen",
+            "sign",
+            "verify"
+          ],
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "doxygen/input/doc_encdec.h",
+            "line": 12
+          },
+          {
+            "location": "tests/scripts/components-configuration-tls.sh",
+            "line": 23
+          },
+          {
+            "location": "scripts/config.py",
+            "line": 90
+          },
+          {
+            "location": "tests/compat.sh",
+            "line": 90
+          },
+          {
+            "location": "include/mbedtls/x509.h",
+            "line": 102
+          },
+          {
+            "location": "include/mbedtls/x509.h",
+            "line": 105
+          },
+          {
+            "location": "include/mbedtls/x509_crt.h",
+            "line": 134
+          },
+          {
+            "location": "include/mbedtls/ssl_ciphersuites.h",
+            "line": 142
+          },
+          {
+            "location": "programs/ssl/ssl_test_lib.h",
+            "line": 142
+          },
+          {
+            "location": "tests/scripts/components-basic-checks.sh",
+            "line": 142
+          },
+          {
+            "location": "tests/scripts/components-basic-checks.sh",
+            "line": 143
+          },
+          {
+            "location": "tests/scripts/components-basic-checks.sh",
+            "line": 144
+          },
+          {
+            "location": "library/x509_crt.c",
+            "line": 146
+          },
+          {
+            "location": "tests/scripts/components-basic-checks.sh",
+            "line": 147
+          },
+          {
+            "location": "tests/scripts/components-basic-checks.sh",
+            "line": 150
+          },
+          {
+            "location": "include/mbedtls/ssl_ciphersuites.h",
+            "line": 167
+          },
+          {
+            "location": "include/mbedtls/ssl_ciphersuites.h",
+            "line": 174
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 197
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 204
+          },
+          {
+            "location": "include/mbedtls/mbedtls_config.h",
+            "line": 208
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 212
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 213
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 215
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 216
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 222
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 223
+          },
+          {
+            "location": "tests/scripts/components-configuration-tls.sh",
+            "line": 230
+          },
+          {
+            "location": "tests/scripts/components-configuration-tls.sh",
+            "line": 231
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 234
+          },
+          {
+            "location": "include/mbedtls/oid.h",
+            "line": 238
+          },
+          {
+            "location": "include/mbedtls/oid.h",
+            "line": 242
+          },
+          {
+            "location": "include/mbedtls/oid.h",
+            "line": 244
+          },
+          {
+            "location": "include/mbedtls/oid.h",
+            "line": 248
+          },
+          {
+            "location": "include/mbedtls/oid.h",
+            "line": 248
+          },
+          {
+            "location": "include/mbedtls/oid.h",
+            "line": 253
+          },
+          {
+            "location": "include/mbedtls/oid.h",
+            "line": 253
+          },
+          {
+            "location": "include/mbedtls/oid.h",
+            "line": 258
+          },
+          {
+            "location": "include/mbedtls/oid.h",
+            "line": 258
+          },
+          {
+            "location": "tests/scripts/components-configuration-tls.sh",
+            "line": 258
+          },
+          {
+            "location": "tests/scripts/components-configuration-tls.sh",
+            "line": 259
+          },
+          {
+            "location": "tests/scripts/components-configuration-tls.sh",
+            "line": 262
+          },
+          {
+            "location": "include/mbedtls/oid.h",
+            "line": 263
+          },
+          {
+            "location": "include/mbedtls/oid.h",
+            "line": 263
+          },
+          {
+            "location": "tests/scripts/components-configuration-tls.sh",
+            "line": 263
+          },
+          {
+            "location": "tests/compat.sh",
+            "line": 309
+          },
+          {
+            "location": "tests/compat.sh",
+            "line": 311
+          },
+          {
+            "location": "tests/compat.sh",
+            "line": 312
+          },
+          {
+            "location": "tests/compat.sh",
+            "line": 313
+          },
+          {
+            "location": "tests/compat.sh",
+            "line": 314
+          },
+          {
+            "location": "tests/compat.sh",
+            "line": 315
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "Mbed-TLS/mbedtls"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "33"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.68"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-6.32"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "85.7"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:90bef7e61f94",
+      "name": "ECDH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.3.132.1.12",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "algorithmFamily": "ECDH",
+          "cryptoFunctions": [
+            "keygen",
+            "other"
+          ],
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "doxygen/input/doc_encdec.h",
+            "line": 12
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 55
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 56
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 60
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 63
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 64
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 66
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 68
+          },
+          {
+            "location": "scripts/config.py",
+            "line": 81
+          },
+          {
+            "location": "scripts/config.py",
+            "line": 90
+          },
+          {
+            "location": "programs/ssl/ssl_test_lib.h",
+            "line": 142
+          },
+          {
+            "location": "tests/scripts/analyze_outcomes.py",
+            "line": 200
+          },
+          {
+            "location": "include/mbedtls/ssl_ciphersuites.h",
+            "line": 207
+          },
+          {
+            "location": "include/mbedtls/ssl_ciphersuites.h",
+            "line": 236
+          },
+          {
+            "location": "include/mbedtls/ssl_ciphersuites.h",
+            "line": 242
+          },
+          {
+            "location": "tests/scripts/components-configuration-tls.sh",
+            "line": 257
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 317
+          },
+          {
+            "location": "tests/scripts/components-configuration-tls.sh",
+            "line": 424
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 444
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 445
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 449
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 457
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 458
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 461
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 462
+          },
+          {
+            "location": "tests/scripts/components-configuration-tls.sh",
+            "line": 466
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 473
+          },
+          {
+            "location": "tests/scripts/components-configuration-tls.sh",
+            "line": 474
+          },
+          {
+            "location": "tests/compat.sh",
+            "line": 503
+          },
+          {
+            "location": "tests/compat.sh",
+            "line": 504
+          },
+          {
+            "location": "tests/compat.sh",
+            "line": 506
+          },
+          {
+            "location": "tests/scripts/components-configuration-tls.sh",
+            "line": 521
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 523
+          },
+          {
+            "location": "tests/compat.sh",
+            "line": 570
+          },
+          {
+            "location": "tests/compat.sh",
+            "line": 571
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 614
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 615
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 624
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 641
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 646
+          },
+          {
+            "location": "library/ssl_misc.h",
+            "line": 699
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 725
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 756
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 786
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 820
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 845
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 846
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 900
+          },
+          {
+            "location": "tests/opt-testcases/tls13-kex-modes.sh",
+            "line": 922
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 922
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "Mbed-TLS/mbedtls"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "33"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.68"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-6.32"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "85.7"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:7826d830f161",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.2.840.113549.2.5",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "MD5",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "classicalSecurityLevel": 0,
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "doxygen/input/doc_hashing.h",
+            "line": 12
+          },
+          {
+            "location": "include/mbedtls/pkcs7.h",
+            "line": 12
+          },
+          {
+            "location": "scripts/generate_errors.pl",
+            "line": 40
+          },
+          {
+            "location": "tests/compat.sh",
+            "line": 542
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 627
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 650
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 663
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 1256
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 1318
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 1341
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 1382
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2203
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2216
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2230
+          },
+          {
+            "location": "library/ssl_tls.c",
+            "line": 5946
+          },
+          {
+            "location": "library/ssl_tls.c",
+            "line": 8246
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "Mbed-TLS/mbedtls"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "22"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "4.12"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "legacy-broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "2.917"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-5.88"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "SHA-256"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "14.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:c4f9f93ef752",
+      "name": "SHA-1",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.3.14.3.2.26",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "SHA-1",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "classicalSecurityLevel": 0,
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "doxygen/input/doc_hashing.h",
+            "line": 12
+          },
+          {
+            "location": "include/mbedtls/pkcs7.h",
+            "line": 12
+          },
+          {
+            "location": "tests/git-scripts/pre-push.sh",
+            "line": 23
+          },
+          {
+            "location": "scripts/generate_errors.pl",
+            "line": 42
+          },
+          {
+            "location": "tests/include/test/certs.h",
+            "line": 90
+          },
+          {
+            "location": "tests/include/test/certs.h",
+            "line": 90
+          },
+          {
+            "location": "tests/include/test/certs.h",
+            "line": 159
+          },
+          {
+            "location": "tests/include/test/certs.h",
+            "line": 159
+          },
+          {
+            "location": "tests/src/certs.c",
+            "line": 161
+          },
+          {
+            "location": "include/mbedtls/oid.h",
+            "line": 244
+          },
+          {
+            "location": "library/ssl_misc.h",
+            "line": 290
+          },
+          {
+            "location": "tests/src/certs.c",
+            "line": 303
+          },
+          {
+            "location": "programs/ssl/ssl_test_common_source.c",
+            "line": 311
+          },
+          {
+            "location": "tests/scripts/depends.py",
+            "line": 483
+          },
+          {
+            "location": "programs/ssl/ssl_client2.c",
+            "line": 502
+          },
+          {
+            "location": "programs/ssl/ssl_server2.c",
+            "line": 648
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 969
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 1066
+          },
+          {
+            "location": "library/ssl_tls12_server.c",
+            "line": 1335
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 1342
+          },
+          {
+            "location": "programs/ssl/ssl_client2.c",
+            "line": 1796
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2134
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2135
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2136
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2613
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2615
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2617
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2622
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2624
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2629
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2634
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2635
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2636
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2642
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2643
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2644
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2650
+          },
+          {
+            "location": "programs/ssl/ssl_server2.c",
+            "line": 2752
+          },
+          {
+            "location": "library/ssl_misc.h",
+            "line": 2811
+          },
+          {
+            "location": "include/mbedtls/ssl.h",
+            "line": 3526
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 5185
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 5187
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 5201
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 5203
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 5205
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 5219
+          },
+          {
+            "location": "library/ssl_tls.c",
+            "line": 5946
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 6585
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 6590
+          },
+          {
+            "location": "library/ssl_tls.c",
+            "line": 8246
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "Mbed-TLS/mbedtls"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "33"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.68"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "legacy-broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "2.917"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-6.32"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "SHA-256"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "14.7"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:fdaa7e53220a",
+      "name": "SHA-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "2.16.840.1.101.3.4.2.1",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "SHA-2",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "classicalSecurityLevel": 128,
+          "nistQuantumSecurityLevel": 2,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "doxygen/input/doc_hashing.h",
+            "line": 12
+          },
+          {
+            "location": "library/ssl_cookie.c",
+            "line": 36
+          },
+          {
+            "location": "library/ssl_cookie.c",
+            "line": 36
+          },
+          {
+            "location": "scripts/generate_errors.pl",
+            "line": 42
+          },
+          {
+            "location": "library/ssl_tls13_keys.c",
+            "line": 47
+          },
+          {
+            "location": "library/mbedtls_check_config.h",
+            "line": 81
+          },
+          {
+            "location": "library/x509_crt.c",
+            "line": 90
+          },
+          {
+            "location": "tests/include/test/certs.h",
+            "line": 90
+          },
+          {
+            "location": "tests/include/test/certs.h",
+            "line": 90
+          },
+          {
+            "location": "library/mbedtls_check_config.h",
+            "line": 100
+          },
+          {
+            "location": "include/mbedtls/x509_crt.h",
+            "line": 104
+          },
+          {
+            "location": "library/x509_crt.c",
+            "line": 118
+          },
+          {
+            "location": "library/x509_crt.c",
+            "line": 143
+          },
+          {
+            "location": "tests/include/test/certs.h",
+            "line": 159
+          },
+          {
+            "location": "tests/include/test/certs.h",
+            "line": 159
+          },
+          {
+            "location": "tests/src/certs.c",
+            "line": 161
+          },
+          {
+            "location": "library/mbedtls_check_config.h",
+            "line": 181
+          },
+          {
+            "location": "library/ssl_tls13_generic.c",
+            "line": 182
+          },
+          {
+            "location": "tests/context-info.sh",
+            "line": 206
+          },
+          {
+            "location": "tests/context-info.sh",
+            "line": 228
+          },
+          {
+            "location": "tests/context-info.sh",
+            "line": 239
+          },
+          {
+            "location": "include/mbedtls/oid.h",
+            "line": 253
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 283
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 285
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 286
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 287
+          },
+          {
+            "location": "library/ssl_misc.h",
+            "line": 288
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 288
+          },
+          {
+            "location": "tests/context-info.sh",
+            "line": 289
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 289
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 290
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 292
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 293
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 294
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 295
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 296
+          },
+          {
+            "location": "tests/context-info.sh",
+            "line": 298
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 298
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 299
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 300
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 301
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 302
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 303
+          },
+          {
+            "location": "tests/src/certs.c",
+            "line": 303
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 307
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 308
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 311
+          },
+          {
+            "location": "tests/compat.sh",
+            "line": 312
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 312
+          },
+          {
+            "location": "tests/compat.sh",
+            "line": 313
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "Mbed-TLS/mbedtls"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "33"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.68"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "safe"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-6.32"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:01ae2da346fc",
+      "name": "AES-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "2.16.840.1.101.3.4.1.46",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "algorithmFamily": "AES",
+          "parameterSetIdentifier": "256",
+          "cryptoFunctions": [
+            "decrypt",
+            "encrypt",
+            "keygen"
+          ],
+          "classicalSecurityLevel": 256,
+          "nistQuantumSecurityLevel": 5,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 14
+          },
+          {
+            "location": "library/ssl_ciphersuites.c",
+            "line": 23
+          },
+          {
+            "location": "library/ssl_ciphersuites.c",
+            "line": 53
+          },
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 221
+          },
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 222
+          },
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 224
+          },
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 227
+          },
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 233
+          },
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 278
+          },
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 279
+          },
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 281
+          },
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 284
+          },
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 296
+          },
+          {
+            "location": "tests/compat.sh",
+            "line": 534
+          },
+          {
+            "location": "include/mbedtls/ssl.h",
+            "line": 634
+          },
+          {
+            "location": "include/mbedtls/ssl.h",
+            "line": 634
+          },
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 985
+          },
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 986
+          },
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 988
+          },
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 991
+          },
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 1026
+          },
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 1027
+          },
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 1030
+          },
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 1033
+          },
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 1143
+          },
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 1145
+          },
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 1147
+          },
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 1149
+          },
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 1153
+          },
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 1193
+          },
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 1194
+          },
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 1196
+          },
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 1201
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2198
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2211
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2225
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2316
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2350
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2528
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2529
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2531
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2534
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2563
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 3630
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 3646
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 3839
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 3840
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 6091
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 6445
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 8446
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "Mbed-TLS/mbedtls"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "27"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.92"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "safe"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-6.08"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "85.7"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:58574d89b813",
+      "name": "AES-128",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "2.16.840.1.101.3.4.1.6",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "algorithmFamily": "AES",
+          "parameterSetIdentifier": "128",
+          "cryptoFunctions": [
+            "decrypt",
+            "encrypt",
+            "keygen"
+          ],
+          "classicalSecurityLevel": 128,
+          "nistQuantumSecurityLevel": 1,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "library/ssl_ciphersuites.c",
+            "line": 23
+          },
+          {
+            "location": "library/ssl_ciphersuites.c",
+            "line": 75
+          },
+          {
+            "location": "programs/ssl/ssl_test_lib.h",
+            "line": 98
+          },
+          {
+            "location": "tests/context-info.sh",
+            "line": 350
+          },
+          {
+            "location": "tests/compat.sh",
+            "line": 534
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 1847
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 1877
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 1896
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2190
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2192
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2194
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2438
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2475
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2526
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2527
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2530
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2532
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2533
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2692
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2708
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2726
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2742
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2760
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2776
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2794
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2811
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2829
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2863
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 3115
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 3117
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 3135
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 3137
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 3155
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 3157
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 3175
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 3177
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 3193
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 3195
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 3213
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 3215
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 3233
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 3235
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 3253
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 3255
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 3515
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 3529
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 3542
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 3554
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 3566
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 3578
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "Mbed-TLS/mbedtls"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "22"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "4.12"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "weakened"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-5.88"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "85.7"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:protocol:2eadb4469219",
+      "name": "TLS",
+      "cryptoProperties": {
+        "assetType": "protocol",
+        "protocolProperties": {
+          "type": "tls",
+          "version": "TLSv1.3"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "programs/ssl/ssl_client2.c",
+            "line": 440
+          },
+          {
+            "location": "programs/ssl/ssl_client2.c",
+            "line": 442
+          },
+          {
+            "location": "programs/ssl/ssl_client2.c",
+            "line": 450
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "Mbed-TLS/mbedtls"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "58"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "0.5"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.167"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-9.5"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "X25519MLKEM768"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "2.9"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "60.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:protocol:f6370b95bb05",
+      "name": "TLS",
+      "cryptoProperties": {
+        "assetType": "protocol",
+        "protocolProperties": {
+          "type": "tls",
+          "version": "TLSv1.3"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "programs/ssl/ssl_server2.c",
+            "line": 563
+          },
+          {
+            "location": "programs/ssl/ssl_server2.c",
+            "line": 565
+          },
+          {
+            "location": "programs/ssl/ssl_server2.c",
+            "line": 575
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "Mbed-TLS/mbedtls"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "58"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "0.5"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.167"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-9.5"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "X25519MLKEM768"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "2.9"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "60.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:08950b840080",
+      "name": "AES",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "algorithmFamily": "AES",
+          "cryptoFunctions": [
+            "decrypt",
+            "encrypt",
+            "keygen"
+          ],
+          "nistQuantumSecurityLevel": 1,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "tests/scripts/components-configuration-tls.sh",
+            "line": 23
+          },
+          {
+            "location": "scripts/generate_errors.pl",
+            "line": 38
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 101
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 112
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 114
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 118
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 123
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 126
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 128
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 131
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 135
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 136
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 140
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 143
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 147
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 148
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 153
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 154
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 158
+          },
+          {
+            "location": "tests/scripts/components-configuration-tls.sh",
+            "line": 161
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 166
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 168
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 172
+          },
+          {
+            "location": "tests/scripts/components-configuration-tls.sh",
+            "line": 175
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 176
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 179
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 180
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 183
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 184
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 187
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 190
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 191
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 202
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 206
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 210
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 213
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 214
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 217
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 218
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 222
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 223
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 225
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 227
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 230
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 232
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 235
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 237
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 240
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 242
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 244
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "Mbed-TLS/mbedtls"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "33"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.68"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "weakened"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.167"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-6.32"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "AES-256"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "11.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "57.1"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:8883a83a2bac",
+      "name": "ChaCha20-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.2.840.113549.1.9.16.3.18",
+        "algorithmProperties": {
+          "primitive": "ae",
+          "algorithmFamily": "ChaCha20",
+          "parameterSetIdentifier": "256",
+          "cryptoFunctions": [
+            "decrypt",
+            "encrypt",
+            "tag"
+          ],
+          "classicalSecurityLevel": 256,
+          "nistQuantumSecurityLevel": 5,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "scripts/generate_errors.pl",
+            "line": 39
+          },
+          {
+            "location": "tests/scripts/components-configuration-tls.sh",
+            "line": 56
+          },
+          {
+            "location": "tests/scripts/components-configuration-tls.sh",
+            "line": 85
+          },
+          {
+            "location": "tests/compat.sh",
+            "line": 96
+          },
+          {
+            "location": "tests/scripts/components-configuration-tls.sh",
+            "line": 114
+          },
+          {
+            "location": "tests/context-info.sh",
+            "line": 206
+          },
+          {
+            "location": "tests/context-info.sh",
+            "line": 228
+          },
+          {
+            "location": "tests/context-info.sh",
+            "line": 289
+          },
+          {
+            "location": "tests/context-info.sh",
+            "line": 298
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 352
+          },
+          {
+            "location": "tests/compat.sh",
+            "line": 364
+          },
+          {
+            "location": "tests/compat.sh",
+            "line": 372
+          },
+          {
+            "location": "tests/compat.sh",
+            "line": 378
+          },
+          {
+            "location": "tests/compat.sh",
+            "line": 381
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 418
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 419
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 420
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 1416
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 1417
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 1452
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 1453
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 1599
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 1611
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2154
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2162
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2169
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2175
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2183
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2185
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2187
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2700
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2734
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2768
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2803
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2837
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2845
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2871
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2879
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 3997
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 3999
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 4000
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 10599
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 12419
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 12427
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 12474
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 12507
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 12539
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 12574
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "Mbed-TLS/mbedtls"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "33"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.68"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "safe"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-6.32"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "85.7"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:dd0ab7a960bd",
+      "name": "HMAC",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.2.840.113549.2.9",
+        "algorithmProperties": {
+          "primitive": "mac",
+          "algorithmFamily": "HMAC",
+          "cryptoFunctions": [
+            "tag",
+            "verify"
+          ],
+          "classicalSecurityLevel": 128,
+          "nistQuantumSecurityLevel": 1,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 13
+          },
+          {
+            "location": "scripts/generate_errors.pl",
+            "line": 40
+          },
+          {
+            "location": "tests/scripts/components-psasim.sh",
+            "line": 92
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 119
+          },
+          {
+            "location": "scripts/generate_errors.pl",
+            "line": 128
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 190
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 192
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 200
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 201
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 203
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 204
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 209
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 213
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 217
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 222
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 233
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 234
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 320
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 332
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 334
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 337
+          },
+          {
+            "location": "tests/context-info.sh",
+            "line": 361
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 497
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 1355
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 1361
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 1372
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 1374
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 1378
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 1379
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 1381
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 1390
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 1399
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 1401
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 1403
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 1409
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 9244
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 9245
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 11045
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 11046
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 11051
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 11065
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 11070
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 11083
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 11084
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 11089
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 11102
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 11279
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 11304
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 11317
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 11330
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "Mbed-TLS/mbedtls"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "33"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.68"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "safe"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-6.32"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:76445600ecf0",
+      "name": "PBKDF2",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.2.840.113549.1.5.12",
+        "algorithmProperties": {
+          "primitive": "kdf",
+          "algorithmFamily": "PBKDF2",
+          "cryptoFunctions": [
+            "keyderive"
+          ],
+          "classicalSecurityLevel": 128,
+          "nistQuantumSecurityLevel": 1,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "scripts/generate_errors.pl",
+            "line": 41
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 93
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 362
+          },
+          {
+            "location": "tests/scripts/components-configuration-tls.sh",
+            "line": 369
+          },
+          {
+            "location": "tests/scripts/components-build-system.sh",
+            "line": 390
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 1505
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 2098
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "Mbed-TLS/mbedtls"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "37"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.52"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "safe"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-6.48"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:91c64b4a6cc9",
+      "name": "SHA-512",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "2.16.840.1.101.3.4.2.3",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "SHA-2",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "classicalSecurityLevel": 256,
+          "nistQuantumSecurityLevel": 5,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "scripts/generate_errors.pl",
+            "line": 42
+          },
+          {
+            "location": "tests/scripts/components-platform.sh",
+            "line": 609
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 1307
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 1308
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 1330
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 1344
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 1761
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 1973
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2391
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2392
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2396
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 12737
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 12752
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 12829
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 12832
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 12845
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 12848
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 12864
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 12880
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 12978
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 12993
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 13070
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 13073
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 13086
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 13089
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 13105
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 13121
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 13805
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 13807
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 13810
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 13820
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 13822
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 13825
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 13836
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 13838
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 13841
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 13842
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 13843
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 13854
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 13857
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 13860
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 13861
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 13871
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 13874
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 13878
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 13879
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 13889
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 13892
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 13904
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 13907
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "Mbed-TLS/mbedtls"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "34"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.64"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "safe"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-6.36"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:d309fdb74524",
+      "name": "SHA3-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "2.16.840.1.101.3.4.2.8",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "SHA-3",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "classicalSecurityLevel": 128,
+          "nistQuantumSecurityLevel": 2,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "scripts/generate_errors.pl",
+            "line": 42
+          },
+          {
+            "location": "scripts/generate_errors.pl",
+            "line": 136
+          },
+          {
+            "location": "scripts/generate_errors.pl",
+            "line": 137
+          },
+          {
+            "location": "scripts/generate_errors.pl",
+            "line": 140
+          },
+          {
+            "location": "scripts/generate_errors.pl",
+            "line": 143
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 597
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 749
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 838
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 914
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 971
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 1068
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 1256
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 1320
+          },
+          {
+            "location": "tests/scripts/components-configuration-crypto.sh",
+            "line": 1384
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "Mbed-TLS/mbedtls"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "27"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.92"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "safe"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-6.08"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:b18767b1866e",
+      "name": "SHA-384",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "2.16.840.1.101.3.4.2.2",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "SHA-2",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "classicalSecurityLevel": 192,
+          "nistQuantumSecurityLevel": 4,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 14
+          },
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 31
+          },
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 221
+          },
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 222
+          },
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 224
+          },
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 227
+          },
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 233
+          },
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 278
+          },
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 279
+          },
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 281
+          },
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 284
+          },
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 296
+          },
+          {
+            "location": "tests/compat.sh",
+            "line": 315
+          },
+          {
+            "location": "tests/compat.sh",
+            "line": 316
+          },
+          {
+            "location": "tests/compat.sh",
+            "line": 327
+          },
+          {
+            "location": "tests/compat.sh",
+            "line": 328
+          },
+          {
+            "location": "tests/compat.sh",
+            "line": 363
+          },
+          {
+            "location": "tests/compat.sh",
+            "line": 371
+          },
+          {
+            "location": "tests/compat.sh",
+            "line": 380
+          },
+          {
+            "location": "tests/compat.sh",
+            "line": 409
+          },
+          {
+            "location": "tests/compat.sh",
+            "line": 410
+          },
+          {
+            "location": "tests/compat.sh",
+            "line": 418
+          },
+          {
+            "location": "tests/compat.sh",
+            "line": 419
+          },
+          {
+            "location": "tests/compat.sh",
+            "line": 428
+          },
+          {
+            "location": "tests/compat.sh",
+            "line": 430
+          },
+          {
+            "location": "tests/compat.sh",
+            "line": 432
+          },
+          {
+            "location": "tests/compat.sh",
+            "line": 437
+          },
+          {
+            "location": "tests/compat.sh",
+            "line": 440
+          },
+          {
+            "location": "tests/compat.sh",
+            "line": 443
+          },
+          {
+            "location": "tests/compat.sh",
+            "line": 444
+          },
+          {
+            "location": "tests/compat.sh",
+            "line": 446
+          },
+          {
+            "location": "tests/compat.sh",
+            "line": 465
+          },
+          {
+            "location": "tests/compat.sh",
+            "line": 472
+          },
+          {
+            "location": "tests/compat.sh",
+            "line": 480
+          },
+          {
+            "location": "tests/compat.sh",
+            "line": 483
+          },
+          {
+            "location": "tests/compat.sh",
+            "line": 542
+          },
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 985
+          },
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 986
+          },
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 988
+          },
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 991
+          },
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 1026
+          },
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 1027
+          },
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 1030
+          },
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 1033
+          },
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 1143
+          },
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 1145
+          },
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 1147
+          },
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 1153
+          },
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 1193
+          },
+          {
+            "location": "tests/opt-testcases/tls13-misc.sh",
+            "line": 1194
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "Mbed-TLS/mbedtls"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "26"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.96"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "safe"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-6.04"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:6cbcdcb70004",
+      "name": "X25519",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.3.101.110",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "algorithmFamily": "ECDH",
+          "cryptoFunctions": [
+            "keygen",
+            "other"
+          ],
+          "classicalSecurityLevel": 128,
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "tests/opt-testcases/tls13-kex-modes.sh",
+            "line": 974
+          },
+          {
+            "location": "tests/opt-testcases/tls13-kex-modes.sh",
+            "line": 976
+          },
+          {
+            "location": "tests/opt-testcases/tls13-kex-modes.sh",
+            "line": 980
+          },
+          {
+            "location": "tests/opt-testcases/tls13-kex-modes.sh",
+            "line": 1697
+          },
+          {
+            "location": "tests/opt-testcases/tls13-kex-modes.sh",
+            "line": 1699
+          },
+          {
+            "location": "tests/opt-testcases/tls13-kex-modes.sh",
+            "line": 1702
+          },
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2164
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "Mbed-TLS/mbedtls"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "34"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.64"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-6.36"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:7c5fc7599c55",
+      "name": "key:generic-api-key",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "tests/ssl-opt.sh",
+            "line": 2437
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "Mbed-TLS/mbedtls"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "58"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-9.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "42.9"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:da7a553c329a",
+      "name": "key:generic-api-key",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "tests/suites/test_suite_ssl.data",
+            "line": 2789
+          },
+          {
+            "location": "tests/suites/test_suite_ssl.data",
+            "line": 2791
+          },
+          {
+            "location": "tests/suites/test_suite_ssl.data",
+            "line": 2800
+          },
+          {
+            "location": "tests/suites/test_suite_ssl.data",
+            "line": 2802
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "Mbed-TLS/mbedtls"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "56"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-9.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "42.9"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "urn:ecdat:scan:0eea48a1d847",
+      "dependsOn": [
+        "urn:ecdat:component:mbed-tls-mbedtls"
+      ]
+    },
+    {
+      "ref": "urn:ecdat:component:mbed-tls-mbedtls",
+      "dependsOn": [
+        "urn:ecdat:library:706ddcff589a",
+        "urn:ecdat:library:337db9e1afb2",
+        "urn:ecdat:library:a2a01fc0ddc5",
+        "urn:ecdat:algorithm:2dce947c3b77",
+        "urn:ecdat:algorithm:ade7228a0029",
+        "urn:ecdat:algorithm:490bc13a8290",
+        "urn:ecdat:algorithm:c0ff463c9e81",
+        "urn:ecdat:algorithm:90bef7e61f94",
+        "urn:ecdat:algorithm:7826d830f161",
+        "urn:ecdat:algorithm:c4f9f93ef752",
+        "urn:ecdat:algorithm:fdaa7e53220a",
+        "urn:ecdat:algorithm:01ae2da346fc",
+        "urn:ecdat:algorithm:58574d89b813",
+        "urn:ecdat:protocol:2eadb4469219",
+        "urn:ecdat:protocol:f6370b95bb05",
+        "urn:ecdat:algorithm:08950b840080",
+        "urn:ecdat:algorithm:8883a83a2bac",
+        "urn:ecdat:algorithm:dd0ab7a960bd",
+        "urn:ecdat:algorithm:76445600ecf0",
+        "urn:ecdat:algorithm:91c64b4a6cc9",
+        "urn:ecdat:algorithm:d309fdb74524",
+        "urn:ecdat:algorithm:b18767b1866e",
+        "urn:ecdat:algorithm:6cbcdcb70004",
+        "urn:ecdat:material:7c5fc7599c55",
+        "urn:ecdat:material:da7a553c329a"
+      ]
+    },
+    {
+      "ref": "urn:ecdat:library:706ddcff589a"
+    },
+    {
+      "ref": "urn:ecdat:library:337db9e1afb2"
+    },
+    {
+      "ref": "urn:ecdat:library:a2a01fc0ddc5"
+    }
+  ],
+  "vulnerabilities": [
+    {
+      "bom-ref": "vuln-1",
+      "id": "ECDAT-QV-0001",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "high",
+          "justification": "framework deadline 2030 is within the 3.68-year migration window"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "RSA (algorithm) in Mbed-TLS/mbedtls: broken; tier ACT_NOW",
+      "detail": "Integer factorisation is broken by Shor's algorithm",
+      "recommendation": "Migrate to ML-KEM-768 (hybrid)",
+      "analysis": {
+        "state": "exploitable",
+        "detail": "quantum-vulnerable and reachable",
+        "response": [
+          "update"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:2dce947c3b77"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.68 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-2",
+      "id": "ECDAT-QV-0002",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is comment: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "DES (algorithm) in Mbed-TLS/mbedtls: legacy-broken; tier SAFE",
+      "detail": "56-bit key is brute-forceable classically",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "false_positive",
+        "detail": "mentioned in a comment only",
+        "response": [],
+        "justification": "code_not_present"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:ade7228a0029"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.4 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-3",
+      "id": "ECDAT-QV-0003",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is comment: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "3DES (algorithm) in Mbed-TLS/mbedtls: legacy-broken; tier SAFE",
+      "detail": "Deprecated classically (Sweet32, 64-bit block); disallowed by NIST after 2023",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "false_positive",
+        "detail": "mentioned in a comment only",
+        "response": [],
+        "justification": "code_not_present"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:490bc13a8290"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.4 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-4",
+      "id": "ECDAT-QV-0004",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "ECDSA (algorithm) in Mbed-TLS/mbedtls: broken; tier SAFE",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:c0ff463c9e81"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.68 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-5",
+      "id": "ECDAT-QV-0005",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "ECDH (algorithm) in Mbed-TLS/mbedtls: broken; tier SAFE",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:90bef7e61f94"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.68 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-6",
+      "id": "ECDAT-QV-0006",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "high",
+          "justification": "classically broken or below minimum strength today, independent of quantum"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "MD5 (algorithm) in Mbed-TLS/mbedtls: legacy-broken; tier ACT_NOW",
+      "detail": "Practical collisions since 2004; unusable for signatures or integrity",
+      "recommendation": "Migrate to SHA-256",
+      "analysis": {
+        "state": "exploitable",
+        "detail": "quantum-vulnerable and reachable",
+        "response": [
+          "update"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:7826d830f161"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=4.12 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-7",
+      "id": "ECDAT-QV-0007",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "high",
+          "justification": "classically broken or below minimum strength today, independent of quantum"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "SHA-1 (algorithm) in Mbed-TLS/mbedtls: legacy-broken; tier ACT_NOW",
+      "detail": "Chosen-prefix collisions (SHAttered 2017, 2020); disallowed for signatures",
+      "recommendation": "Migrate to SHA-256",
+      "analysis": {
+        "state": "exploitable",
+        "detail": "quantum-vulnerable and reachable",
+        "response": [
+          "update"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:c4f9f93ef752"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.68 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-8",
+      "id": "ECDAT-QV-0008",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "AES-256 (algorithm) in Mbed-TLS/mbedtls: safe; tier SAFE",
+      "detail": "256-bit key keeps ~128-bit security under Grover",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:01ae2da346fc"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.92 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-9",
+      "id": "ECDAT-QV-0009",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "AES-128 (algorithm) in Mbed-TLS/mbedtls: weakened; tier SAFE",
+      "detail": "Grover reduces AES-128 to ~64-bit effective security; still NIST-approved but fails CNSA 2.0",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:58574d89b813"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=4.12 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-10",
+      "id": "ECDAT-QV-0010",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "quantum-vulnerable but short-lived data, signing-only, or ample migration time"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "TLS (protocol) in Mbed-TLS/mbedtls: broken; tier MONITOR",
+      "detail": "classical (ECDHE/RSA) key exchange only: harvestable today",
+      "recommendation": "Migrate to X25519MLKEM768 (hybrid)",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:protocol:2eadb4469219"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=0.5 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-11",
+      "id": "ECDAT-QV-0011",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "quantum-vulnerable but short-lived data, signing-only, or ample migration time"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "TLS (protocol) in Mbed-TLS/mbedtls: broken; tier MONITOR",
+      "detail": "classical (ECDHE/RSA) key exchange only: harvestable today",
+      "recommendation": "Migrate to X25519MLKEM768 (hybrid)",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:protocol:f6370b95bb05"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=0.5 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-12",
+      "id": "ECDAT-QV-0012",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "quantum-vulnerable but short-lived data, signing-only, or ample migration time"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "AES (algorithm) in Mbed-TLS/mbedtls: weakened; tier MONITOR",
+      "detail": "Grover's algorithm halves the effective key length; key size not yet known",
+      "recommendation": "Migrate to AES-256",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:08950b840080"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.68 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-13",
+      "id": "ECDAT-QV-0013",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "SHA-384 (algorithm) in Mbed-TLS/mbedtls: safe; tier SAFE",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:b18767b1866e"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.96 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-14",
+      "id": "ECDAT-QV-0014",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "X25519 (algorithm) in Mbed-TLS/mbedtls: broken; tier SAFE",
+      "detail": "Curve25519 discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:6cbcdcb70004"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.64 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-15",
+      "id": "ECDAT-QV-0015",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "key:generic-api-key (related-crypto-material) in Mbed-TLS/mbedtls: unknown; tier SAFE",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:7c5fc7599c55"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-16",
+      "id": "ECDAT-QV-0016",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "key:generic-api-key (related-crypto-material) in Mbed-TLS/mbedtls: unknown; tier SAFE",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:da7a553c329a"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=1 Z=15"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>ECDAT · CBOM Atlas</title><link rel='icon' href='data:,'><style>
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+:root{--paper:#fbfaf7;--panel:#ffffff;--ink:#12212e;--ink2:#41505d;--muted:#6f7c88;--rule:#e3e0d9;
+--rule2:#cfcabf;--india:#eda100;--ref:#1f5fae;--accent:#a87400;--exposed:#b8322f;--safe:#256f4a;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--paper:#14181b;--panel:#191e22;--ink:#eef1f2;--ink2:#b9c2c8;
+--muted:#8a949c;--rule:#2a3136;--rule2:#3b444b;--india:#eda100;--ref:#6ba8f0;--accent:#e9b44c;
+--exposed:#e5736f;--safe:#5cbe8d;color-scheme:dark}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);
+font:16px/1.62 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums}
+main{max-width:1180px;margin:0 auto;padding:56px 28px 80px}
+@media(max-width:640px){main{padding:34px 18px 56px}}
+a{color:var(--ref);text-decoration:none;border-bottom:1px solid rgba(31,95,174,.3)}
+a:hover{border-bottom-color:currentColor}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+.kicker{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11.5px;letter-spacing:.18em;
+text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+h1{font-size:40px;line-height:1.08;letter-spacing:-.02em;font-weight:600;margin:0}
+h2{font-size:15px;letter-spacing:.14em;text-transform:uppercase;font-family:"IBM Plex Mono",monospace;
+font-weight:500;color:var(--muted);margin:52px 0 14px;display:flex;align-items:center;gap:14px}
+h2::after{content:"";flex:1;height:1px;background:var(--rule)}
+h3{font-size:17px;margin:26px 0 6px;font-weight:600}
+.lede{font-size:19px;line-height:1.5;color:var(--ink2);margin:14px 0 0;max-width:62ch}
+.rule{width:64px;height:3px;background:var(--india);border-radius:2px;margin:26px 0 0}
+p{max-width:74ch}
+.sub{color:var(--ink2);margin:6px 0 0;max-width:74ch}
+.muted{color:var(--muted)}.small{font-size:13.5px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+/* the three artefacts, as a record rather than as cards */
+.artefacts{border-top:1px solid var(--rule)}
+.artefact{position:relative;display:flex;gap:32px;align-items:flex-start;justify-content:space-between;
+padding:18px 14px;margin:0 -14px;border-bottom:1px solid var(--rule);border-radius:8px;cursor:pointer;
+transition:background .12s ease}
+/* the whole row is the tap target: the title's link is stretched over it, so the accessible
+   name stays the title and keyboard focus still lands on one link per row */
+.artefact .n a::after{content:"";position:absolute;inset:0;border-radius:8px}
+.artefact:hover{background:rgba(237,161,0,.07)}
+.artefact:hover .n a{border-bottom-color:currentColor}
+.artefact:focus-within{background:rgba(237,161,0,.07);outline:2px solid var(--accent);outline-offset:-2px}
+.artefact:focus-within .n a:focus-visible{outline:none}
+.artefact .t{flex:1;min-width:0}
+.artefact .n{font-size:19px;font-weight:600;letter-spacing:-.01em;margin-bottom:5px}
+.artefact .n a{border-bottom:1px solid transparent}
+.artefact .d{color:var(--ink2);font-size:14.5px;max-width:62ch}
+.artefact .go{display:block;margin-top:8px;font-family:"IBM Plex Mono",monospace;font-size:11px;
+letter-spacing:.14em;text-transform:uppercase;color:var(--muted);opacity:0;transition:opacity .12s ease}
+.artefact:hover .go,.artefact:focus-within .go{opacity:1}
+.artefact .f{flex:none;width:126px;text-align:right;font-family:"IBM Plex Mono",monospace;color:var(--muted);
+font-size:12px;line-height:1.45;white-space:nowrap}
+.artefact .f b{display:block;font-size:23px;font-weight:600;color:var(--ink);letter-spacing:-.02em;margin-bottom:2px}
+/* stat line, used by the atlas */
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:2px 28px;margin:18px 0 8px}
+.tile{padding:12px 0 2px;border-top:2px solid var(--rule2)}
+.tile .v{font-size:30px;font-weight:600;letter-spacing:-.02em;line-height:1.1}
+.tile .l{color:var(--muted);font-size:12.5px;line-height:1.35;margin-top:4px;max-width:26ch}
+pre{background:var(--panel);border:1px solid var(--rule);border-left:3px solid var(--india);
+border-radius:0 6px 6px 0;padding:14px 16px;overflow:auto;font-size:13.5px;line-height:1.65;
+font-family:"IBM Plex Mono",ui-monospace,monospace}
+code{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.92em}
+table{border-collapse:collapse;width:100%;font-size:13.5px;margin-top:8px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--rule);vertical-align:top}
+th{color:var(--muted);font-weight:500;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+font-family:"IBM Plex Mono",monospace;cursor:pointer;line-height:1.35;vertical-align:bottom;
+border-bottom:1px solid var(--rule2)}
+th:first-child,td:first-child{min-width:150px}
+td:last-child,td:nth-child(2){white-space:nowrap}
+.scroll{overflow-x:auto;margin-top:8px}
+tbody tr:hover{background:rgba(237,161,0,.05)}
+td.num,th.num{text-align:right;font-family:"IBM Plex Mono",monospace}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
+.filters button{background:transparent;border:1px solid var(--rule2);border-radius:999px;padding:4px 13px;
+color:var(--ink2);cursor:pointer;font:inherit;font-size:13px}
+.filters button:hover{border-color:var(--accent)}
+.filters button.on{border-color:var(--accent);color:var(--accent);background:rgba(237,161,0,.08)}
+.note{border-left:2px solid var(--rule2);padding:4px 0 4px 16px;color:var(--muted);font-size:13.5px;max-width:78ch}
+.kv{font-size:13.5px;color:var(--ink2)}
+.kv b{font-weight:500;color:var(--ink)}
+footer{margin-top:64px;padding-top:16px;border-top:1px solid var(--rule);color:var(--muted);font-size:12.5px;
+display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between}
+</style></head><body><main>
+<h1>CBOM Atlas</h1>
+<p class='sub'>We scanned 109 public codebases with our prototype on 18 Sep 2026. Every row links to the CycloneDX 1.7
+Cryptographic Bill of Materials we produced, signed with ML-DSA-65 (FIPS 204), together with its human-readable report and VEX file.</p>
+<div class='tiles'><div class='tile'><div class='v'>109</div><div class='l'>public repositories, one signed CBOM each</div></div><div class='tile'><div class='v'>9,481</div><div class='l'>cryptographic assets inventoried</div></div><div class='tile'><div class='v'>37 s</div><div class='l'>median scan time per repository</div></div><div class='tile'><div class='v'>100%</div><div class='l'>CycloneDX 1.7 schema-valid and ML-DSA-65 signed</div></div></div>
+<h2>By category</h2><table><thead><tr><th>category</th><th class='num'>repos</th><th class='num'>quantum-vulnerable crypto in production</th><th class='num'>crypto broken today</th><th class='num'>already use post-quantum</th><th class='num'>CERT-In avg</th></tr></thead><tbody><tr><td>India digital public infrastructure (open source)</td><td class='num'>28</td><td class='num'>75%</td><td class='num'>32%</td><td class='num'>0%</td><td class='num'>61%</td></tr><tr><td>Identity, auth and token libraries</td><td class='num'>17</td><td class='num'>71%</td><td class='num'>41%</td><td class='num'>12%</td><td class='num'>61%</td></tr><tr><td>PKI, certificates and TLS tooling</td><td class='num'>12</td><td class='num'>100%</td><td class='num'>92%</td><td class='num'>33%</td><td class='num'>76%</td></tr><tr><td>SSH, VPN and secure transport</td><td class='num'>11</td><td class='num'>91%</td><td class='num'>82%</td><td class='num'>54%</td><td class='num'>65%</td></tr><tr><td>General-purpose crypto libraries</td><td class='num'>13</td><td class='num'>54%</td><td class='num'>38%</td><td class='num'>31%</td><td class='num'>72%</td></tr><tr><td>Payments, banking and blockchain</td><td class='num'>11</td><td class='num'>64%</td><td class='num'>54%</td><td class='num'>9%</td><td class='num'>72%</td></tr><tr><td>Messaging, storage and collaboration platforms</td><td class='num'>7</td><td class='num'>86%</td><td class='num'>71%</td><td class='num'>57%</td><td class='num'>60%</td></tr><tr><td>Post-quantum reference implementations (control group)</td><td class='num'>10</td><td class='num'>30%</td><td class='num'>20%</td><td class='num'>100%</td><td class='num'>84%</td></tr></tbody></table>
+<h2>Every repository</h2>
+<div class='filters' id='filters'></div>
+<table id='t'><thead><tr><th data-k='repo'>repository</th><th data-k='category'>category</th><th data-k='data_class'>data kept for</th>
+<th class='num' data-k='observed'>observed</th><th class='num' data-k='EXPOSED'>exposed</th><th class='num' data-k='ACT_NOW'>act now</th>
+<th class='num' data-k='MONITOR'>monitor</th><th data-k='vuln'>quantum-vulnerable in production</th><th data-k='pqc'>post-quantum</th>
+<th class='num' data-k='certin_pct'>CERT-In</th><th>files</th></tr></thead><tbody></tbody></table>
+<h2>How to check our work</h2>
+<pre>git clone &lt;ecdat repo&gt; &amp;&amp; cd ecdat &amp;&amp; pip install -e .
+ecdat verify r/&lt;repo&gt;/cbom.json --pubkey ../ecdat-mldsa65.pub</pre>
+<p class='note'>"Observed" means we found it in the project's own code, configuration, certificates or binaries. Algorithms a dependency merely
+<i>can</i> provide we list in the CBOM as dependency inventory (781 of them) and never count as use.
+"Data kept for" is the assumption that drives Mosca's rule for that repository; change it and the tiers change. Quantum-vulnerable
+algorithms such as RSA are today's global default, not a flaw in any one project. Maintainers who want a row changed or removed can open
+an issue.</p>
+<script>
+const LIFE={session:'hours (session)',pii:'7 y (personal data)',financial:'10 y (financial)',identity:'20 y (identity)',health:'25 y (health)',defence:'30 y (defence)',generic:'5 y (generic)'};
+let rows=[],cat='all',key='category',asc=true;
+fetch('atlas.json').then(r=>r.json()).then(d=>{rows=d.repos.map(r=>({...r,...r.tiers,vuln:[...r.shor_broken_in_production,...r.legacy_broken_in_production].join(', '),pqc:r.pqc_present.join(', ')}));
+const cats=Object.entries(d.by_category).filter(([k,v])=>v.repos);const f=document.getElementById('filters');
+[['all','all']].concat(cats.map(([k,v])=>[k,v.label])).forEach(([k,l])=>{const b=document.createElement('button');b.textContent=l;b.onclick=()=>{cat=k;draw()};b.dataset.k=k;f.appendChild(b)});draw()});
+document.querySelectorAll('th[data-k]').forEach(th=>th.onclick=()=>{const k=th.dataset.k;asc=key===k?!asc:true;key=k;draw()});
+function esc(s){return String(s??'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))}
+function draw(){document.querySelectorAll('#filters button').forEach(b=>b.classList.toggle('on',b.dataset.k===cat));
+const v=rows.filter(r=>cat==='all'||r.category===cat).sort((a,b)=>{const x=a[key],y=b[key];return (x>y?1:x<y?-1:0)*(asc?1:-1)});
+document.querySelector('#t tbody').innerHTML=v.map(r=>`<tr><td><a href="${r.url}">${esc(r.repo)}</a><div class='muted small'>${esc(r.language||'')}</div></td>
+<td class='small'>${esc(r.category)}</td><td class='small'>${esc(LIFE[r.data_class]||r.data_class)}</td><td class='num'>${r.observed}</td>
+<td class='num'>${r.EXPOSED}</td><td class='num'>${r.ACT_NOW}</td><td class='num'>${r.MONITOR}</td><td class='small'>${esc(r.vuln)||'<span class=muted>none</span>'}</td>
+<td class='small'>${esc(r.pqc)||'<span class=muted>none</span>'}</td><td class='num'>${(r.certin_pct??0).toFixed(0)}%</td>
+<td class='small'><a href="r/${r.slug}/cbom.json">CBOM</a> · <a href="r/${r.slug}/cbom.json.mldsa65.sig">sig</a> · <a href="r/${r.slug}/report.html">report</a> · <a href="r/${r.slug}/vex.json">VEX</a></td></tr>`).join('')}
+</script><footer><span>ECDAT · Smart India Hackathon 2026 · problem statement 26164 (NTRO)</span><span><a href='../index.html'>evidence hub</a></span></footer></main></body></html>

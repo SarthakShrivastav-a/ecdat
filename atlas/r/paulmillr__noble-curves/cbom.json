@@ -1,0 +1,2699 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.7.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.7",
+  "serialNumber": "urn:uuid:7aa1a084-0557-4859-881d-d1a2c0d8700e",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-09-18T08:17:21Z",
+    "tools": {
+      "components": [
+        {
+          "type": "application",
+          "name": "ecdat",
+          "version": "0.1.0",
+          "description": "Enterprise Cryptographic Discovery & Analysis Tool (SIH 2026 PS 26164)"
+        },
+        {
+          "type": "application",
+          "name": "opengrep",
+          "version": "1.29.0"
+        },
+        {
+          "type": "application",
+          "name": "cbomkit-theia",
+          "version": "- CycloneDXv1.6"
+        },
+        {
+          "type": "application",
+          "name": "syft",
+          "version": "Version:       1.51.1"
+        },
+        {
+          "type": "application",
+          "name": "tshark",
+          "version": "TShark (Wireshark) 4.6.8 (v4.6.8-0-ge677bf052328)."
+        },
+        {
+          "type": "application",
+          "name": "crane",
+          "version": "v0.22.1"
+        }
+      ]
+    },
+    "component": {
+      "type": "application",
+      "bom-ref": "urn:ecdat:scan:42ec85332322",
+      "name": "paulmillr__noble-curves"
+    },
+    "properties": [
+      {
+        "name": "ecdat:z_year",
+        "value": "2041"
+      },
+      {
+        "name": "ecdat:profile",
+        "value": "enterprise"
+      },
+      {
+        "name": "ecdat:targets",
+        "value": "1"
+      },
+      {
+        "name": "ecdat:certin_table9",
+        "value": "CERT-In BOM guidelines v2.0 (2025-07-09) section 8.3"
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "application",
+      "bom-ref": "urn:ecdat:component:paulmillr-noble-curves",
+      "name": "paulmillr/noble-curves",
+      "properties": [
+        {
+          "name": "ecdat:zone",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:path",
+          "value": "C:\\customize\\SIH2026\\demo\\ecdat\\.claude\\worktrees\\ecdat-build\\out\\atlas\\src\\paulmillr__noble-curves"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "urn:ecdat:library:4f59b8e72cb4",
+      "name": "@noble/hashes",
+      "version": "2.4.0",
+      "properties": [
+        {
+          "name": "ecdat:zone",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:path",
+          "value": "package-lock.json"
+        },
+        {
+          "name": "ecdat:ecosystem",
+          "value": "npm"
+        },
+        {
+          "name": "ecdat:pqc_native",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "urn:ecdat:library:515087c74e77",
+      "name": "runtime:node",
+      "properties": [
+        {
+          "name": "ecdat:zone",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:path",
+          "value": "package.json"
+        },
+        {
+          "name": "ecdat:ecosystem",
+          "value": "runtime"
+        },
+        {
+          "name": "ecdat:pqc_native",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "urn:ecdat:library:a15d31df089b",
+      "name": "tweetnacl",
+      "version": "1.0.3",
+      "properties": [
+        {
+          "name": "ecdat:zone",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:path",
+          "value": "benchmark/thirdparty/package-lock.json"
+        },
+        {
+          "name": "ecdat:ecosystem",
+          "value": "npm"
+        },
+        {
+          "name": "ecdat:pqc_native",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "urn:ecdat:library:a27ac230fcca",
+      "name": "runtime:go",
+      "version": "1.19",
+      "properties": [
+        {
+          "name": "ecdat:zone",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:path",
+          "value": "test/vectors/bls12-381/go_pairing_vectors/go.mod"
+        },
+        {
+          "name": "ecdat:ecosystem",
+          "value": "runtime"
+        },
+        {
+          "name": "ecdat:pqc_native",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:pqc_native_from",
+          "value": "1.24"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "urn:ecdat:library:1687caa6f4fe",
+      "name": "@noble/curves",
+      "version": "2.4.0",
+      "properties": [
+        {
+          "name": "ecdat:zone",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:path",
+          "value": "syft:pkg:npm/%40noble/curves@2.4.0"
+        },
+        {
+          "name": "ecdat:ecosystem",
+          "value": "npm"
+        },
+        {
+          "name": "ecdat:pqc_native",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:41cd1cffc284",
+      "name": "ECDSA",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.2.840.10045.4.3.2",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "algorithmFamily": "ECDSA",
+          "cryptoFunctions": [
+            "keygen",
+            "sign",
+            "verify"
+          ],
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "benchmark/ct-inv.ts",
+            "line": 1
+          },
+          {
+            "location": "benchmark/thirdparty/collect_sjcl_attackpy.mjs",
+            "line": 1
+          },
+          {
+            "location": "src/webcrypto.ts",
+            "line": 1
+          },
+          {
+            "location": "src/webcrypto.ts",
+            "line": 1
+          },
+          {
+            "location": "src/abstract/der.ts",
+            "line": 1
+          },
+          {
+            "location": "benchmark/thirdparty/minerva_3p.mjs",
+            "line": 2
+          },
+          {
+            "location": "benchmark/thirdparty/minerva_attack.py",
+            "line": 2
+          },
+          {
+            "location": "test/nist.test.ts",
+            "line": 23
+          },
+          {
+            "location": "src/abstract/der.ts",
+            "line": 35
+          },
+          {
+            "location": "src/abstract/der.ts",
+            "line": 67
+          },
+          {
+            "location": "src/abstract/weierstrass.ts",
+            "line": 69
+          },
+          {
+            "location": "src/nist.ts",
+            "line": 94
+          },
+          {
+            "location": "src/nist.ts",
+            "line": 184
+          },
+          {
+            "location": "src/abstract/modular.ts",
+            "line": 184
+          },
+          {
+            "location": "src/nist.ts",
+            "line": 249
+          },
+          {
+            "location": "src/nist.ts",
+            "line": 252
+          },
+          {
+            "location": "src/nist.ts",
+            "line": 266
+          },
+          {
+            "location": "src/abstract/weierstrass.ts",
+            "line": 269
+          },
+          {
+            "location": "src/webcrypto.ts",
+            "line": 284
+          },
+          {
+            "location": "src/webcrypto.ts",
+            "line": 286
+          },
+          {
+            "location": "src/abstract/weierstrass.ts",
+            "line": 359
+          },
+          {
+            "location": "src/webcrypto.ts",
+            "line": 369
+          },
+          {
+            "location": "src/abstract/weierstrass.ts",
+            "line": 372
+          },
+          {
+            "location": "src/webcrypto.ts",
+            "line": 416
+          },
+          {
+            "location": "src/abstract/weierstrass.ts",
+            "line": 426
+          },
+          {
+            "location": "src/webcrypto.ts",
+            "line": 499
+          },
+          {
+            "location": "src/webcrypto.ts",
+            "line": 499
+          },
+          {
+            "location": "src/webcrypto.ts",
+            "line": 523
+          },
+          {
+            "location": "src/webcrypto.ts",
+            "line": 545
+          },
+          {
+            "location": "src/abstract/weierstrass.ts",
+            "line": 603
+          },
+          {
+            "location": "test/secp256k1.test.ts",
+            "line": 645
+          },
+          {
+            "location": "src/abstract/weierstrass.ts",
+            "line": 945
+          },
+          {
+            "location": "src/abstract/weierstrass.ts",
+            "line": 1037
+          },
+          {
+            "location": "src/abstract/weierstrass.ts",
+            "line": 1075
+          },
+          {
+            "location": "src/abstract/weierstrass.ts",
+            "line": 1236
+          },
+          {
+            "location": "src/abstract/weierstrass.ts",
+            "line": 1236
+          },
+          {
+            "location": "src/abstract/weierstrass.ts",
+            "line": 1236
+          },
+          {
+            "location": "src/abstract/weierstrass.ts",
+            "line": 1236
+          },
+          {
+            "location": "src/abstract/weierstrass.ts",
+            "line": 1236
+          },
+          {
+            "location": "src/abstract/weierstrass.ts",
+            "line": 1308
+          },
+          {
+            "location": "src/abstract/weierstrass.ts",
+            "line": 1331
+          },
+          {
+            "location": "src/abstract/weierstrass.ts",
+            "line": 1348
+          },
+          {
+            "location": "src/abstract/weierstrass.ts",
+            "line": 1452
+          },
+          {
+            "location": "src/abstract/weierstrass.ts",
+            "line": 1529
+          },
+          {
+            "location": "src/abstract/weierstrass.ts",
+            "line": 1652
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "paulmillr/noble-curves"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "comment"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "27"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.92"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-6.08"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "85.7"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:04b819e9a370",
+      "name": "ECDH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.3.132.1.12",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "algorithmFamily": "ECDH",
+          "cryptoFunctions": [
+            "keygen",
+            "other"
+          ],
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "benchmark/ct.ts",
+            "line": 1
+          },
+          {
+            "location": "src/ed25519.ts",
+            "line": 1
+          },
+          {
+            "location": "src/ed448.ts",
+            "line": 1
+          },
+          {
+            "location": "test/nist.test.ts",
+            "line": 23
+          },
+          {
+            "location": "test/nist.test.ts",
+            "line": 25
+          },
+          {
+            "location": "src/abstract/montgomery.ts",
+            "line": 63
+          },
+          {
+            "location": "src/nist.ts",
+            "line": 94
+          },
+          {
+            "location": "test/nist.test.ts",
+            "line": 110
+          },
+          {
+            "location": "src/webcrypto.ts",
+            "line": 182
+          },
+          {
+            "location": "src/nist.ts",
+            "line": 184
+          },
+          {
+            "location": "src/abstract/montgomery.ts",
+            "line": 209
+          },
+          {
+            "location": "src/nist.ts",
+            "line": 257
+          },
+          {
+            "location": "src/nist.ts",
+            "line": 266
+          },
+          {
+            "location": "src/abstract/montgomery.ts",
+            "line": 317
+          },
+          {
+            "location": "src/webcrypto.ts",
+            "line": 398
+          },
+          {
+            "location": "test/ed448.test.ts",
+            "line": 410
+          },
+          {
+            "location": "src/abstract/weierstrass.ts",
+            "line": 411
+          },
+          {
+            "location": "src/webcrypto.ts",
+            "line": 416
+          },
+          {
+            "location": "src/webcrypto.ts",
+            "line": 420
+          },
+          {
+            "location": "src/webcrypto.ts",
+            "line": 434
+          },
+          {
+            "location": "src/webcrypto.ts",
+            "line": 449
+          },
+          {
+            "location": "src/webcrypto.ts",
+            "line": 490
+          },
+          {
+            "location": "src/webcrypto.ts",
+            "line": 609
+          },
+          {
+            "location": "src/webcrypto.ts",
+            "line": 630
+          },
+          {
+            "location": "src/abstract/curve.ts",
+            "line": 645
+          },
+          {
+            "location": "src/abstract/weierstrass.ts",
+            "line": 1112
+          },
+          {
+            "location": "src/abstract/weierstrass.ts",
+            "line": 1112
+          },
+          {
+            "location": "src/abstract/weierstrass.ts",
+            "line": 1112
+          },
+          {
+            "location": "src/abstract/weierstrass.ts",
+            "line": 1199
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "paulmillr/noble-curves"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "comment"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "24"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "4.04"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-5.96"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "85.7"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:be0c65db852a",
+      "name": "SHA-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "2.16.840.1.101.3.4.2.1",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "SHA-2",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "classicalSecurityLevel": 128,
+          "nistQuantumSecurityLevel": 2,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "benchmark/thirdparty/minerva_3p.mjs",
+            "line": 18
+          },
+          {
+            "location": "benchmark/thirdparty/minerva_3p.mjs",
+            "line": 32
+          },
+          {
+            "location": "benchmark/thirdparty/minerva_attack.py",
+            "line": 35
+          },
+          {
+            "location": "benchmark/thirdparty/collect_sjcl_attackpy.mjs",
+            "line": 5
+          },
+          {
+            "location": "src/nist.ts",
+            "line": 94
+          },
+          {
+            "location": "src/abstract/hash-to-curve.ts",
+            "line": 169
+          },
+          {
+            "location": "src/abstract/hash-to-curve.ts",
+            "line": 169
+          },
+          {
+            "location": "src/abstract/weierstrass.ts",
+            "line": 173
+          },
+          {
+            "location": "src/misc.ts",
+            "line": 175
+          },
+          {
+            "location": "src/abstract/weierstrass.ts",
+            "line": 181
+          },
+          {
+            "location": "src/abstract/weierstrass.ts",
+            "line": 198
+          },
+          {
+            "location": "src/bn254.ts",
+            "line": 258
+          },
+          {
+            "location": "src/abstract/hash-to-curve.ts",
+            "line": 288
+          },
+          {
+            "location": "src/abstract/hash-to-curve.ts",
+            "line": 288
+          },
+          {
+            "location": "src/abstract/hash-to-curve.ts",
+            "line": 414
+          },
+          {
+            "location": "src/abstract/hash-to-curve.ts",
+            "line": 414
+          },
+          {
+            "location": "src/abstract/oprf.ts",
+            "line": 415
+          },
+          {
+            "location": "src/abstract/oprf.ts",
+            "line": 415
+          },
+          {
+            "location": "src/abstract/oprf.ts",
+            "line": 415
+          },
+          {
+            "location": "test/rfc9591-frost.test.ts",
+            "line": 606
+          },
+          {
+            "location": "src/utils.ts",
+            "line": 733
+          },
+          {
+            "location": "src/utils.ts",
+            "line": 733
+          },
+          {
+            "location": "src/abstract/weierstrass.ts",
+            "line": 1236
+          },
+          {
+            "location": "src/abstract/weierstrass.ts",
+            "line": 1236
+          },
+          {
+            "location": "src/abstract/weierstrass.ts",
+            "line": 1489
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "paulmillr/noble-curves"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "18"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "4.28"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "safe"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-5.72"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:ea093b5a8a6b",
+      "name": "ML-KEM-768",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "2.16.840.1.101.3.4.4.2",
+        "algorithmProperties": {
+          "primitive": "kem",
+          "algorithmFamily": "ML-KEM",
+          "parameterSetIdentifier": "ML-KEM-768",
+          "cryptoFunctions": [
+            "decapsulate",
+            "encapsulate",
+            "keygen"
+          ],
+          "classicalSecurityLevel": 192,
+          "nistQuantumSecurityLevel": 3,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "test/fft.test.ts",
+            "line": 279
+          },
+          {
+            "location": "src/abstract/fft.ts",
+            "line": 377
+          },
+          {
+            "location": "src/abstract/fft.ts",
+            "line": 461
+          },
+          {
+            "location": "src/abstract/fft.ts",
+            "line": 467
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "paulmillr/noble-curves"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "comment"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "36"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.56"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "safe"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-6.44"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:cfe51ca2f5fc",
+      "name": "key:generic-api-key",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "test/ed.test.ts",
+            "line": 13
+          },
+          {
+            "location": "test/ed.test.ts",
+            "line": 25
+          },
+          {
+            "location": "test/ed.test.ts",
+            "line": 37
+          },
+          {
+            "location": "test/ed.test.ts",
+            "line": 49
+          },
+          {
+            "location": "test/ed.test.ts",
+            "line": 61
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "paulmillr/noble-curves"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "55"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-9.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "42.9"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:21c2e19086b0",
+      "name": "key:generic-api-key",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "test/vectors/ed25519/ed25519_test_OLD.json",
+            "line": 28
+          },
+          {
+            "location": "test/vectors/ed25519/ed25519_test_OLD.json",
+            "line": 625
+          },
+          {
+            "location": "test/vectors/ed25519/ed25519_test_OLD.json",
+            "line": 718
+          },
+          {
+            "location": "test/vectors/ed25519/ed25519_test_OLD.json",
+            "line": 747
+          },
+          {
+            "location": "test/vectors/ed25519/ed25519_test_OLD.json",
+            "line": 776
+          },
+          {
+            "location": "test/vectors/ed25519/ed25519_test_OLD.json",
+            "line": 805
+          },
+          {
+            "location": "test/vectors/ed25519/ed25519_test_OLD.json",
+            "line": 834
+          },
+          {
+            "location": "test/vectors/ed25519/ed25519_test_OLD.json",
+            "line": 863
+          },
+          {
+            "location": "test/vectors/ed25519/ed25519_test_OLD.json",
+            "line": 900
+          },
+          {
+            "location": "test/vectors/ed25519/ed25519_test_OLD.json",
+            "line": 937
+          },
+          {
+            "location": "test/vectors/ed25519/ed25519_test_OLD.json",
+            "line": 1030
+          },
+          {
+            "location": "test/vectors/ed25519/ed25519_test_OLD.json",
+            "line": 1067
+          },
+          {
+            "location": "test/vectors/ed25519/ed25519_test_OLD.json",
+            "line": 1128
+          },
+          {
+            "location": "test/vectors/ed25519/ed25519_test_OLD.json",
+            "line": 1165
+          },
+          {
+            "location": "test/vectors/ed25519/ed25519_test_OLD.json",
+            "line": 1202
+          },
+          {
+            "location": "test/vectors/ed25519/ed25519_test_OLD.json",
+            "line": 1231
+          },
+          {
+            "location": "test/vectors/ed25519/ed25519_test_OLD.json",
+            "line": 1260
+          },
+          {
+            "location": "test/vectors/ed25519/ed25519_test_OLD.json",
+            "line": 1289
+          },
+          {
+            "location": "test/vectors/ed25519/ed25519_test_OLD.json",
+            "line": 1318
+          },
+          {
+            "location": "test/vectors/ed25519/ed25519_test_OLD.json",
+            "line": 1347
+          },
+          {
+            "location": "test/vectors/ed25519/ed25519_test_OLD.json",
+            "line": 1376
+          },
+          {
+            "location": "test/vectors/ed25519/ed25519_test_OLD.json",
+            "line": 1405
+          },
+          {
+            "location": "test/vectors/ed25519/ed25519_test_OLD.json",
+            "line": 1434
+          },
+          {
+            "location": "test/vectors/ed25519/ed25519_test_OLD.json",
+            "line": 1463
+          },
+          {
+            "location": "test/vectors/ed25519/ed25519_test_OLD.json",
+            "line": 1492
+          },
+          {
+            "location": "test/vectors/ed25519/ed25519_test_OLD.json",
+            "line": 1521
+          },
+          {
+            "location": "test/vectors/ed25519/ed25519_test_OLD.json",
+            "line": 1550
+          },
+          {
+            "location": "test/vectors/ed25519/ed25519_test_OLD.json",
+            "line": 1579
+          },
+          {
+            "location": "test/vectors/ed25519/ed25519_test_OLD.json",
+            "line": 1608
+          },
+          {
+            "location": "test/vectors/ed25519/ed25519_test_OLD.json",
+            "line": 1637
+          },
+          {
+            "location": "test/vectors/ed25519/ed25519_test_OLD.json",
+            "line": 1666
+          },
+          {
+            "location": "test/vectors/ed25519/ed25519_test_OLD.json",
+            "line": 1695
+          },
+          {
+            "location": "test/vectors/ed25519/ed25519_test_OLD.json",
+            "line": 1724
+          },
+          {
+            "location": "test/vectors/ed25519/ed25519_test_OLD.json",
+            "line": 1753
+          },
+          {
+            "location": "test/vectors/ed25519/ed25519_test_OLD.json",
+            "line": 1782
+          },
+          {
+            "location": "test/vectors/ed25519/ed25519_test_OLD.json",
+            "line": 1811
+          },
+          {
+            "location": "test/vectors/ed25519/ed25519_test_OLD.json",
+            "line": 1840
+          },
+          {
+            "location": "test/vectors/ed25519/ed25519_test_OLD.json",
+            "line": 1869
+          },
+          {
+            "location": "test/vectors/ed25519/ed25519_test_OLD.json",
+            "line": 1898
+          },
+          {
+            "location": "test/vectors/ed25519/ed25519_test_OLD.json",
+            "line": 1927
+          },
+          {
+            "location": "test/vectors/ed25519/ed25519_test_OLD.json",
+            "line": 1956
+          },
+          {
+            "location": "test/vectors/ed25519/ed25519_test_OLD.json",
+            "line": 1985
+          },
+          {
+            "location": "test/vectors/ed25519/ed25519_test_OLD.json",
+            "line": 2014
+          },
+          {
+            "location": "test/vectors/ed25519/ed25519_test_OLD.json",
+            "line": 2043
+          },
+          {
+            "location": "test/vectors/ed25519/ed25519_test_OLD.json",
+            "line": 2072
+          },
+          {
+            "location": "test/vectors/ed25519/ed25519_test_OLD.json",
+            "line": 2101
+          },
+          {
+            "location": "test/vectors/ed25519/ed25519_test_OLD.json",
+            "line": 2130
+          },
+          {
+            "location": "test/vectors/ed25519/ed25519_test_OLD.json",
+            "line": 2159
+          },
+          {
+            "location": "test/vectors/ed25519/ed25519_test_OLD.json",
+            "line": 2188
+          },
+          {
+            "location": "test/vectors/ed25519/ed25519_test_OLD.json",
+            "line": 2217
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "paulmillr/noble-curves"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "52"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-9.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "42.9"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:3b0023356fee",
+      "name": "key:generic-api-key",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "test/vectors/ed448/ed448_test_OLD.json",
+            "line": 28
+          },
+          {
+            "location": "test/vectors/ed448/ed448_test_OLD.json",
+            "line": 681
+          },
+          {
+            "location": "test/vectors/ed448/ed448_test_OLD.json",
+            "line": 710
+          },
+          {
+            "location": "test/vectors/ed448/ed448_test_OLD.json",
+            "line": 747
+          },
+          {
+            "location": "test/vectors/ed448/ed448_test_OLD.json",
+            "line": 776
+          },
+          {
+            "location": "test/vectors/ed448/ed448_test_OLD.json",
+            "line": 805
+          },
+          {
+            "location": "test/vectors/ed448/ed448_test_OLD.json",
+            "line": 834
+          },
+          {
+            "location": "test/vectors/ed448/ed448_test_OLD.json",
+            "line": 863
+          },
+          {
+            "location": "test/vectors/ed448/ed448_test_OLD.json",
+            "line": 892
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "paulmillr/noble-curves"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "52"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-9.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "42.9"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:a84ea60f58eb",
+      "name": "SHA-512",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "2.16.840.1.101.3.4.2.3",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "SHA-2",
+          "nistQuantumSecurityLevel": 5,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "package-lock.json"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "paulmillr/noble-curves"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "dependency"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "34"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.64"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "safe"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-6.36"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "71.4"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:516c551932ac",
+      "name": "SHA3-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "2.16.840.1.101.3.4.2.8",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "SHA-3",
+          "nistQuantumSecurityLevel": 2,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "package-lock.json"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "paulmillr/noble-curves"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "dependency"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "34"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.64"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "safe"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-6.36"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "71.4"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:c8df3dd1955a",
+      "name": "HMAC",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.2.840.113549.2.9",
+        "algorithmProperties": {
+          "primitive": "mac",
+          "algorithmFamily": "HMAC",
+          "nistQuantumSecurityLevel": 1,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "package-lock.json"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "paulmillr/noble-curves"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "dependency"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "34"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.64"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "safe"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-6.36"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "71.4"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:efc282a1a3a5",
+      "name": "PBKDF2",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.2.840.113549.1.5.12",
+        "algorithmProperties": {
+          "primitive": "kdf",
+          "algorithmFamily": "PBKDF2",
+          "nistQuantumSecurityLevel": 1,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "package-lock.json"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "paulmillr/noble-curves"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "dependency"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "34"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.64"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "safe"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-6.36"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "71.4"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:d82130d25bff",
+      "name": "scrypt",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.3.6.1.4.1.11591.4.11",
+        "algorithmProperties": {
+          "primitive": "kdf",
+          "algorithmFamily": "scrypt",
+          "nistQuantumSecurityLevel": 1,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "package-lock.json"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "paulmillr/noble-curves"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "dependency"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "34"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.64"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "safe"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-6.36"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "71.4"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:a48c7788102a",
+      "name": "X25519",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.3.101.110",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "algorithmFamily": "ECDH",
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "benchmark/thirdparty/package-lock.json"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "paulmillr/noble-curves"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "dependency"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "37"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.52"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-6.48"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "X25519MLKEM768"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "7.7"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "71.4"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:25afdfc32566",
+      "name": "Ed25519",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.3.101.112",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "algorithmFamily": "EdDSA",
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "benchmark/thirdparty/package-lock.json"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "paulmillr/noble-curves"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "dependency"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "37"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.52"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-6.48"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "ML-DSA-65"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "7.7"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "71.4"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "urn:ecdat:scan:42ec85332322",
+      "dependsOn": [
+        "urn:ecdat:component:paulmillr-noble-curves"
+      ]
+    },
+    {
+      "ref": "urn:ecdat:component:paulmillr-noble-curves",
+      "dependsOn": [
+        "urn:ecdat:library:4f59b8e72cb4",
+        "urn:ecdat:library:515087c74e77",
+        "urn:ecdat:library:a15d31df089b",
+        "urn:ecdat:library:a27ac230fcca",
+        "urn:ecdat:library:1687caa6f4fe",
+        "urn:ecdat:algorithm:ea093b5a8a6b",
+        "urn:ecdat:material:cfe51ca2f5fc",
+        "urn:ecdat:material:21c2e19086b0",
+        "urn:ecdat:material:3b0023356fee"
+      ]
+    },
+    {
+      "ref": "urn:ecdat:library:4f59b8e72cb4",
+      "provides": [
+        "urn:ecdat:algorithm:be0c65db852a",
+        "urn:ecdat:algorithm:a84ea60f58eb",
+        "urn:ecdat:algorithm:516c551932ac",
+        "urn:ecdat:algorithm:c8df3dd1955a",
+        "urn:ecdat:algorithm:efc282a1a3a5",
+        "urn:ecdat:algorithm:d82130d25bff"
+      ]
+    },
+    {
+      "ref": "urn:ecdat:library:515087c74e77"
+    },
+    {
+      "ref": "urn:ecdat:library:a15d31df089b",
+      "provides": [
+        "urn:ecdat:algorithm:a48c7788102a",
+        "urn:ecdat:algorithm:25afdfc32566",
+        "urn:ecdat:algorithm:a84ea60f58eb"
+      ]
+    },
+    {
+      "ref": "urn:ecdat:library:a27ac230fcca"
+    },
+    {
+      "ref": "urn:ecdat:library:1687caa6f4fe",
+      "provides": [
+        "urn:ecdat:algorithm:41cd1cffc284",
+        "urn:ecdat:algorithm:04b819e9a370",
+        "urn:ecdat:algorithm:a48c7788102a",
+        "urn:ecdat:algorithm:25afdfc32566"
+      ]
+    }
+  ],
+  "vulnerabilities": [
+    {
+      "bom-ref": "vuln-1",
+      "id": "ECDAT-QV-0001",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is comment: not a production security control; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "ECDSA (algorithm) in paulmillr/noble-curves: broken; tier SAFE",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "false_positive",
+        "detail": "mentioned in a comment only",
+        "response": [],
+        "justification": "code_not_present"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:41cd1cffc284"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.92 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-2",
+      "id": "ECDAT-QV-0002",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is comment: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "ECDH (algorithm) in paulmillr/noble-curves: broken; tier SAFE",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "false_positive",
+        "detail": "mentioned in a comment only",
+        "response": [],
+        "justification": "code_not_present"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:04b819e9a370"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=4.04 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-3",
+      "id": "ECDAT-QV-0003",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is comment: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "ML-KEM-768 (algorithm) in paulmillr/noble-curves: safe; tier SAFE",
+      "detail": "Module-lattice KEM, FIPS 203",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "false_positive",
+        "detail": "mentioned in a comment only",
+        "response": [],
+        "justification": "code_not_present"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:ea093b5a8a6b"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.56 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-4",
+      "id": "ECDAT-QV-0004",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "key:generic-api-key (related-crypto-material) in paulmillr/noble-curves: unknown; tier SAFE",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:cfe51ca2f5fc"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-5",
+      "id": "ECDAT-QV-0005",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "key:generic-api-key (related-crypto-material) in paulmillr/noble-curves: unknown; tier SAFE",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:21c2e19086b0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-6",
+      "id": "ECDAT-QV-0006",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "key:generic-api-key (related-crypto-material) in paulmillr/noble-curves: unknown; tier SAFE",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:3b0023356fee"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-7",
+      "id": "ECDAT-QV-0007",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "framework deadline 2030 is within the 3.52-year migration window; library capability only: the dependency provides this algorithm but no use was observed in this codebase"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "X25519 (algorithm) in paulmillr/noble-curves: broken; tier MONITOR",
+      "detail": "Curve25519 discrete log is broken by Shor's algorithm",
+      "recommendation": "Migrate to X25519MLKEM768 (hybrid)",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:a48c7788102a"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.52 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-8",
+      "id": "ECDAT-QV-0008",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "framework deadline 2030 is within the 3.52-year migration window; library capability only: the dependency provides this algorithm but no use was observed in this codebase; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "Ed25519 (algorithm) in paulmillr/noble-curves: broken; tier MONITOR",
+      "detail": "Edwards-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "Migrate to ML-DSA-65 (hybrid)",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:25afdfc32566"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.52 Z=15"
+        }
+      ]
+    }
+  ]
+}

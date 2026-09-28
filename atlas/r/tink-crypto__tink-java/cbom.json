@@ -1,0 +1,4829 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.7.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.7",
+  "serialNumber": "urn:uuid:047eac84-c0aa-4283-baa2-dbf15768826c",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-09-18T08:24:18Z",
+    "tools": {
+      "components": [
+        {
+          "type": "application",
+          "name": "ecdat",
+          "version": "0.1.0",
+          "description": "Enterprise Cryptographic Discovery & Analysis Tool (SIH 2026 PS 26164)"
+        },
+        {
+          "type": "application",
+          "name": "opengrep",
+          "version": "1.29.0"
+        },
+        {
+          "type": "application",
+          "name": "cbomkit-theia",
+          "version": "- CycloneDXv1.6"
+        },
+        {
+          "type": "application",
+          "name": "syft",
+          "version": "Version:       1.51.1"
+        },
+        {
+          "type": "application",
+          "name": "tshark",
+          "version": "TShark (Wireshark) 4.6.8 (v4.6.8-0-ge677bf052328)."
+        },
+        {
+          "type": "application",
+          "name": "crane",
+          "version": "v0.22.1"
+        }
+      ]
+    },
+    "component": {
+      "type": "application",
+      "bom-ref": "urn:ecdat:scan:c398a9330d88",
+      "name": "tink-crypto__tink-java"
+    },
+    "properties": [
+      {
+        "name": "ecdat:z_year",
+        "value": "2041"
+      },
+      {
+        "name": "ecdat:profile",
+        "value": "enterprise"
+      },
+      {
+        "name": "ecdat:targets",
+        "value": "1"
+      },
+      {
+        "name": "ecdat:certin_table9",
+        "value": "CERT-In BOM guidelines v2.0 (2025-07-09) section 8.3"
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "application",
+      "bom-ref": "urn:ecdat:component:tink-crypto-tink-java",
+      "name": "tink-crypto/tink-java",
+      "properties": [
+        {
+          "name": "ecdat:zone",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:path",
+          "value": "C:\\customize\\SIH2026\\demo\\ecdat\\.claude\\worktrees\\ecdat-build\\out\\atlas\\src\\tink-crypto__tink-java"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "urn:ecdat:library:af8d12613b99",
+      "name": "jca",
+      "properties": [
+        {
+          "name": "ecdat:zone",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:path",
+          "value": "examples/walkthrough/src/main/java/walkthrough/CreateKeysetExample.java"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "urn:ecdat:library:3ff3c81340dd",
+      "name": "jce",
+      "properties": [
+        {
+          "name": "ecdat:zone",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:path",
+          "value": "src/main/java/com/google/crypto/tink/subtle/Hkdf.java"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "urn:ecdat:library:879505a3194b",
+      "name": "runtime:java",
+      "version": "11",
+      "properties": [
+        {
+          "name": "ecdat:zone",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:path",
+          "value": "examples/android/helloworld/app/build.gradle"
+        },
+        {
+          "name": "ecdat:ecosystem",
+          "value": "runtime"
+        },
+        {
+          "name": "ecdat:pqc_native",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:pqc_native_from",
+          "value": "24"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:ffaf52871ec8",
+      "name": "AES-128",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "2.16.840.1.101.3.4.1.6",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "algorithmFamily": "AES",
+          "parameterSetIdentifier": "128",
+          "cryptoFunctions": [
+            "decrypt",
+            "encrypt",
+            "keygen"
+          ],
+          "classicalSecurityLevel": 128,
+          "nistQuantumSecurityLevel": 1,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "examples/walkthrough/src/main/java/walkthrough/CreateKeysetExample.java",
+            "line": 27
+          },
+          {
+            "location": "examples/walkthrough/src/main/java/walkthrough/CreateKeysetExample.java",
+            "line": 27
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/hybrid/PredefinedHybridParameters.java",
+            "line": 31
+          },
+          {
+            "location": "examples/walkthrough/src/main/java/walkthrough/CreateKeysetExample.java",
+            "line": 40
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/hybrid/PredefinedHybridParameters.java",
+            "line": 62
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/hybrid/HybridKeyTemplates.java",
+            "line": 67
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/hybrid/HybridKeyTemplates.java",
+            "line": 90
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/hybrid/PredefinedHybridParameters.java",
+            "line": 96
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/hybrid/HybridKeyTemplates.java",
+            "line": 115
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/hybrid/PredefinedHybridParameters.java",
+            "line": 131
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/hybrid/PredefinedHybridParameters.java",
+            "line": 152
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/hybrid/EciesAeadHkdfPrivateKeyManager.java",
+            "line": 252
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/hybrid/EciesAeadHkdfPrivateKeyManager.java",
+            "line": 285
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/hybrid/EciesAeadHkdfPrivateKeyManager.java",
+            "line": 318
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/hybrid/EciesAeadHkdfPrivateKeyManager.java",
+            "line": 356
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "tink-crypto/tink-java"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "comment"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "28"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.88"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "weakened"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-6.12"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "85.7"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:69f469aff84e",
+      "name": "SHA-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "2.16.840.1.101.3.4.2.1",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "SHA-2",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "classicalSecurityLevel": 128,
+          "nistQuantumSecurityLevel": 2,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "kokoro/testutils/java_test_container_images.sh",
+            "line": 27
+          },
+          {
+            "location": "kokoro/testutils/update_android_sdk.sh",
+            "line": 27
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/mac/PredefinedMacParameters.java",
+            "line": 27
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/AccessesPartialKey.java",
+            "line": 28
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/signature/PredefinedSignatureParameters.java",
+            "line": 28
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/streamingaead/PredefinedStreamingAeadParameters.java",
+            "line": 28
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/streamingaead/PredefinedStreamingAeadParameters.java",
+            "line": 28
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/prf/PredefinedPrfParameters.java",
+            "line": 30
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/hybrid/PredefinedHybridParameters.java",
+            "line": 31
+          },
+          {
+            "location": "kokoro/gcp_ubuntu/bazel/run_tests.sh",
+            "line": 32
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/signature/internal/SigUtil.java",
+            "line": 32
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/testing/WycheproofTestUtil.java",
+            "line": 35
+          },
+          {
+            "location": "kokoro/testutils/update_android_sdk.sh",
+            "line": 38
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/PemKeyType.java",
+            "line": 39
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/subtle/PemKeyType.java",
+            "line": 40
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/PemKeyType.java",
+            "line": 41
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/subtle/PemKeyType.java",
+            "line": 42
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/PemKeyType.java",
+            "line": 43
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/subtle/PemKeyType.java",
+            "line": 44
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/PemKeyType.java",
+            "line": 48
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/mac/PredefinedMacParameters.java",
+            "line": 48
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/prf/PredefinedPrfParameters.java",
+            "line": 48
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/signature/PredefinedSignatureParameters.java",
+            "line": 49
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/subtle/PemKeyType.java",
+            "line": 49
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/PemKeyType.java",
+            "line": 50
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/subtle/PemKeyType.java",
+            "line": 51
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/PemKeyType.java",
+            "line": 52
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/streamingaead/PredefinedStreamingAeadParameters.java",
+            "line": 52
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/streamingaead/PredefinedStreamingAeadParameters.java",
+            "line": 52
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/subtle/PemKeyType.java",
+            "line": 53
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/PemKeyType.java",
+            "line": 57
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/testing/WycheproofTestUtil.java",
+            "line": 57
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/testing/WycheproofTestUtil.java",
+            "line": 57
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/subtle/PemKeyType.java",
+            "line": 58
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/mac/MacKeyTemplates.java",
+            "line": 60
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/hybrid/PredefinedHybridParameters.java",
+            "line": 62
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/streamingaead/StreamingAeadKeyTemplates.java",
+            "line": 63
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/streamingaead/StreamingAeadKeyTemplates.java",
+            "line": 63
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/hybrid/HybridKeyTemplates.java",
+            "line": 67
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/signature/SignatureKeyTemplates.java",
+            "line": 68
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/mac/PredefinedMacParameters.java",
+            "line": 69
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/mac/MacKeyTemplates.java",
+            "line": 74
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/streamingaead/PredefinedStreamingAeadParameters.java",
+            "line": 77
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/streamingaead/PredefinedStreamingAeadParameters.java",
+            "line": 77
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/streamingaead/StreamingAeadKeyTemplates.java",
+            "line": 79
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/streamingaead/StreamingAeadKeyTemplates.java",
+            "line": 79
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/jwt/JwtEcdsaParameters.java",
+            "line": 84
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/prf/PrfKeyTemplates.java",
+            "line": 85
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/subtle/RsaSsaPkcs1SignJceTest.java",
+            "line": 85
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/jwt/JwtRsaSsaPssParameters.java",
+            "line": 88
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "tink-crypto/tink-java"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "27"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.92"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "safe"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-6.08"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:654864aaf27c",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.2.840.113549.2.5",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "MD5",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "classicalSecurityLevel": 0,
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "maven/maven_deploy_library.sh",
+            "line": 163
+          },
+          {
+            "location": "maven/maven_deploy_library.sh",
+            "line": 169
+          },
+          {
+            "location": "maven/maven_deploy_library.sh",
+            "line": 185
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "tink-crypto/tink-java"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "38"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.48"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "legacy-broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "2.917"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-6.52"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "SHA-256"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "7.7"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:424b61387ded",
+      "name": "SHA-1",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.3.14.3.2.26",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "SHA-1",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "classicalSecurityLevel": 0,
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/com/google/crypto/tink/subtle/Enums.java",
+            "line": 23
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/subtle/Enums.java",
+            "line": 23
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/subtle/RsaSsaPkcs1SignJceTest.java",
+            "line": 120
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/streamingaead/internal/testing/AesCtrHmacStreamingTestUtil.java",
+            "line": 136
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/subtle/RsaSsaPssVerifyJce.java",
+            "line": 138
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/subtle/RsaSsaPssSignJce.java",
+            "line": 145
+          },
+          {
+            "location": "maven/maven_deploy_library.sh",
+            "line": 163
+          },
+          {
+            "location": "maven/maven_deploy_library.sh",
+            "line": 170
+          },
+          {
+            "location": "maven/maven_deploy_library.sh",
+            "line": 186
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/subtle/SelfKeyTestValidatorsTest.java",
+            "line": 535
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "tink-crypto/tink-java"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "28"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.88"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "legacy-broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "2.917"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-6.12"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "SHA-256"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "13.2"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:63fdda695ffa",
+      "name": "SHA-512",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "2.16.840.1.101.3.4.2.3",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "SHA-2",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "classicalSecurityLevel": 256,
+          "nistQuantumSecurityLevel": 5,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "maven/maven_deploy_library.sh",
+            "line": 172
+          },
+          {
+            "location": "maven/maven_deploy_library.sh",
+            "line": 188
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "tink-crypto/tink-java"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "non-security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "39"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.44"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "safe"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-6.56"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:eecf4cf05eb2",
+      "name": "ECDSA",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.2.840.10045.4.3.2",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "algorithmFamily": "ECDSA",
+          "cryptoFunctions": [
+            "keygen",
+            "sign"
+          ],
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/test/java/com/google/crypto/tink/subtle/EcdsaSignJceTest.java",
+            "line": 53
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/signature/KeyConversionTest.java",
+            "line": 57
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/signature/internal/EcdsaSignJceTest.java",
+            "line": 59
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/subtle/EcdsaVerifyJceTest.java",
+            "line": 63
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/subtle/EcdsaSignJceTest.java",
+            "line": 65
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/signature/internal/EcdsaSignJceTest.java",
+            "line": 71
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/subtle/EcdsaSignJceTest.java",
+            "line": 74
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/signature/internal/EcdsaSignJceTest.java",
+            "line": 80
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/internal/LegacyKeyManagerImplTest.java",
+            "line": 84
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/subtle/EcdsaSignVerifyFipsTest.java",
+            "line": 92
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/signature/internal/EcdsaSignVerifyFipsTest.java",
+            "line": 93
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/hybrid/EciesPublicKeyTest.java",
+            "line": 97
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/hybrid/EciesPrivateKeyTest.java",
+            "line": 107
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/subtle/EcdsaVerifyJceTest.java",
+            "line": 107
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/subtle/EcdsaSignVerifyFipsTest.java",
+            "line": 114
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/signature/internal/EcdsaSignVerifyFipsTest.java",
+            "line": 115
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/signature/internal/EcdsaVerifyJce.java",
+            "line": 124
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/signature/internal/EcdsaSignJce.java",
+            "line": 131
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/subtle/EcdsaSignVerifyFipsTest.java",
+            "line": 133
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/signature/EcdsaPrivateKeyTest.java",
+            "line": 134
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/signature/internal/EcdsaSignVerifyFipsTest.java",
+            "line": 134
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/signature/internal/EcdsaVerifyJceTest.java",
+            "line": 135
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/signature/internal/EcdsaSignJceTest.java",
+            "line": 160
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/signature/EcdsaVerifyKeyManagerTest.java",
+            "line": 163
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/signature/EcdsaPrivateKeyTest.java",
+            "line": 170
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/signature/internal/EcdsaVerifyJceTest.java",
+            "line": 181
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/signature/EcdsaVerifyKeyManagerTest.java",
+            "line": 200
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/signature/subtle/EcdsaVerifierTest.java",
+            "line": 212
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/subtle/SignatureThreadSafetyTest.java",
+            "line": 224
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/signature/internal/EcdsaVerifyJceTest.java",
+            "line": 226
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/signature/internal/EcdsaVerifyJceTest.java",
+            "line": 246
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/signature/internal/EcdsaVerifyJceTest.java",
+            "line": 268
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/signature/internal/EcdsaVerifyJceTest.java",
+            "line": 342
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/testing/TestUtil.java",
+            "line": 371
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/testing/TestUtil.java",
+            "line": 474
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/signature/EcdsaParameters.java",
+            "line": 26
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/jwt/JwtEcdsaPrivateKey.java",
+            "line": 27
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/subtle/EcdsaSignJce.java",
+            "line": 27
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/internal/EllipticCurvesUtil.java",
+            "line": 28
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/signature/EcdsaParameters.java",
+            "line": 28
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/signature/EcdsaParameters.java",
+            "line": 28
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/subtle/EcdsaVerifyJce.java",
+            "line": 28
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/signature/EcdsaPrivateKey.java",
+            "line": 31
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/signature/EcdsaPrivateKey.java",
+            "line": 31
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/subtle/SubtleUtil.java",
+            "line": 31
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/subtle/SubtleUtil.java",
+            "line": 31
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/signature/EcdsaPublicKey.java",
+            "line": 32
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/signature/internal/testing/EcdsaTestUtil.java",
+            "line": 32
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/jwt/JwtEcdsaPublicKey.java",
+            "line": 33
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/jwt/subtle/JwtEcdsaPublicKeySign.java",
+            "line": 33
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "tink-crypto/tink-java"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "26"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.96"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "2.333"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-6.04"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "ML-DSA-65"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "15.8"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "85.7"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:62c5cc9ea083",
+      "name": "ML-DSA-65",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "2.16.840.1.101.3.4.3.18",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "algorithmFamily": "ML-DSA",
+          "parameterSetIdentifier": "ML-DSA-65",
+          "cryptoFunctions": [
+            "keygen",
+            "sign",
+            "verify"
+          ],
+          "classicalSecurityLevel": 192,
+          "nistQuantumSecurityLevel": 3,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/com/google/crypto/tink/signature/MlDsaParameters.java",
+            "line": 22
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/signature/MlDsaParameters.java",
+            "line": 24
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/signature/MlDsaParameters.java",
+            "line": 24
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/jwt/internal/JwtMlDsaVerifyKeyManager.java",
+            "line": 25
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/signature/CompositeMlDsaParameters.java",
+            "line": 26
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/signature/MlDsaPrivateKey.java",
+            "line": 26
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/jwt/JwtMlDsaPrivateKey.java",
+            "line": 27
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/jwt/JwtMlDsaPrivateKey.java",
+            "line": 27
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/jwt/JwtMlDsaPrivateKey.java",
+            "line": 27
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/jwt/JwtMlDsaPrivateKey.java",
+            "line": 27
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/signature/CompositeMlDsaPrivateKey.java",
+            "line": 27
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/signature/CompositeMlDsaParameters.java",
+            "line": 28
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/signature/CompositeMlDsaParameters.java",
+            "line": 28
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/signature/MlDsaPublicKey.java",
+            "line": 30
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/signature/MlDsaSignKeyManager.java",
+            "line": 31
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/signature/internal/testing/MlDsaTestUtil.java",
+            "line": 31
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/jwt/subtle/JwtMlDsaPublicKeySign.java",
+            "line": 32
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/jwt/JwtMlDsaPublicKey.java",
+            "line": 33
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/signature/CompositeMlDsaPublicKey.java",
+            "line": 33
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/signature/internal/CompositeMlDsaUtil.java",
+            "line": 34
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/jwt/internal/JwtMlDsaKeyCreator.java",
+            "line": 36
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/jwt/subtle/JwtMlDsaPublicKeyVerify.java",
+            "line": 36
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/signature/internal/MlDsaKeyCreator.java",
+            "line": 36
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/signature/internal/MlDsaVerifyConscrypt.java",
+            "line": 36
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/signature/internal/CompositeMlDsaVerifyConscrypt.java",
+            "line": 43
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/signature/internal/MlDsaSignConscrypt.java",
+            "line": 43
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/signature/internal/CompositeMlDsaSignConscrypt.java",
+            "line": 44
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/signature/MlDsaParameters.java",
+            "line": 47
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/signature/MlDsaParameters.java",
+            "line": 47
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/signature/CompositeMlDsaParameters.java",
+            "line": 51
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/jwt/internal/JwtMlDsaSignKeyManager.java",
+            "line": 56
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/jwt/internal/JwtMlDsaSignKeyManager.java",
+            "line": 56
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/jwt/internal/JwtMlDsaSignKeyManager.java",
+            "line": 56
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/PemKeyType.java",
+            "line": 67
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/signature/internal/CompositeMlDsaSignVerifyConscryptTest.java",
+            "line": 68
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/signature/subtle/CompositeMlDsaSignerVerifierTest.java",
+            "line": 70
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/signature/MlDsaSignKeyManagerTest.java",
+            "line": 73
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/signature/MlDsaSignKeyManagerConscryptTest.java",
+            "line": 79
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/signature/internal/CompositeMlDsaSignVerifyConscryptTest.java",
+            "line": 86
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/signature/subtle/CompositeMlDsaSignerVerifierTest.java",
+            "line": 89
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/signature/MlDsaSignKeyManagerTest.java",
+            "line": 91
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/signature/MlDsaSignKeyManagerConscryptTest.java",
+            "line": 94
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/jwt/internal/JwtMlDsaSignKeyManager.java",
+            "line": 96
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/signature/SignatureConfig2026Test.java",
+            "line": 100
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/signature/CompositeMlDsaParameters.java",
+            "line": 102
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/signature/internal/CompositeMlDsaSignVerifyConscryptTest.java",
+            "line": 102
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/signature/subtle/CompositeMlDsaSignerVerifierTest.java",
+            "line": 106
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/signature/MlDsaSignKeyManagerConscryptTest.java",
+            "line": 115
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/signature/internal/CompositeMlDsaSignVerifyConscryptTest.java",
+            "line": 121
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/signature/subtle/CompositeMlDsaSignerVerifierTest.java",
+            "line": 126
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "tink-crypto/tink-java"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "comment"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "30"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.8"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "safe"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-6.2"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:f630d27d06ab",
+      "name": "AES-GCM-SIV",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "algorithmFamily": "AES",
+          "padding": "other",
+          "cryptoFunctions": [
+            "encrypt"
+          ],
+          "nistQuantumSecurityLevel": 1,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/test/java/com/google/crypto/tink/aead/internal/AesGcmSivTest.java",
+            "line": 62
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/aead/subtle/AesGcmSiv.java",
+            "line": 63
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/aead/internal/AesGcmSivTest.java",
+            "line": 71
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "tink-crypto/tink-java"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "35"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.6"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "weakened"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.167"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-6.4"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "AES-256"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "8.6"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "71.4"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:f715a24c46a5",
+      "name": "ECDH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.3.132.1.12",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "algorithmFamily": "ECDH",
+          "cryptoFunctions": [
+            "keygen",
+            "other"
+          ],
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/com/google/crypto/tink/hybrid/internal/HpkeHelperForAndroidKeystore.java",
+            "line": 25
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/internal/Curve25519.java",
+            "line": 25
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/internal/Curve25519.java",
+            "line": 25
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/subtle/X25519.java",
+            "line": 25
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/subtle/X25519.java",
+            "line": 25
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/internal/EllipticCurvesUtil.java",
+            "line": 28
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/hybrid/internal/AuthHpkeHelperForAndroidKeystore.java",
+            "line": 29
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/hybrid/PredefinedHybridParameters.java",
+            "line": 31
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/internal/Curve25519.java",
+            "line": 38
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/internal/Field25519.java",
+            "line": 39
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/subtle/EllipticCurves.java",
+            "line": 41
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/hybrid/PredefinedHybridParameters.java",
+            "line": 62
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/hybrid/HybridKeyTemplates.java",
+            "line": 67
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/internal/EllipticCurvesUtil.java",
+            "line": 74
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/internal/EllipticCurvesUtil.java",
+            "line": 74
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/subtle/EllipticCurves.java",
+            "line": 86
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/hybrid/HybridKeyTemplates.java",
+            "line": 90
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/hybrid/PredefinedHybridParameters.java",
+            "line": 96
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/internal/Curve25519Test.java",
+            "line": 104
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/hybrid/HybridKeyTemplates.java",
+            "line": 115
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/hybrid/EciesAeadHkdfPrivateKeyManager.java",
+            "line": 252
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/internal/EllipticCurvesUtil.java",
+            "line": 253
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/hybrid/EciesAeadHkdfPrivateKeyManager.java",
+            "line": 285
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/hybrid/EciesAeadHkdfPrivateKeyManager.java",
+            "line": 318
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/hybrid/EciesAeadHkdfPrivateKeyManager.java",
+            "line": 356
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/internal/Curve25519.java",
+            "line": 390
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/subtle/EllipticCurvesConscryptTest.java",
+            "line": 631
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/subtle/EllipticCurvesConscryptTest.java",
+            "line": 652
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/subtle/EllipticCurvesConscryptTest.java",
+            "line": 675
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/subtle/EllipticCurvesTest.java",
+            "line": 741
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/subtle/EllipticCurvesTest.java",
+            "line": 762
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/subtle/EllipticCurvesTest.java",
+            "line": 785
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "tink-crypto/tink-java"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "comment"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "22"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "4.12"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-5.88"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "85.7"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:a035c432f136",
+      "name": "AES-GCM",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "algorithmFamily": "AES",
+          "mode": "gcm",
+          "padding": "other",
+          "cryptoFunctions": [
+            "encrypt"
+          ],
+          "nistQuantumSecurityLevel": 1,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/test/java/com/google/crypto/tink/subtle/EngineFactoryTest.java",
+            "line": 81
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/integration/android/AndroidKeystore.java",
+            "line": 152
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/integration/android/AndroidKeystore.java",
+            "line": 177
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "tink-crypto/tink-java"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "35"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.6"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "weakened"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.167"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-6.4"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "AES-256"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "8.6"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "71.4"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:fdaae4201a58",
+      "name": "AES-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "2.16.840.1.101.3.4.1.46",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "algorithmFamily": "AES",
+          "parameterSetIdentifier": "256",
+          "cryptoFunctions": [
+            "decrypt",
+            "encrypt",
+            "keygen"
+          ],
+          "classicalSecurityLevel": 256,
+          "nistQuantumSecurityLevel": 5,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/test/java/com/google/crypto/tink/hybrid/internal/AuthHpkeHelperForAndroidKeystoreTest.java",
+            "line": 89
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/integration/android/AndroidKeystoreKmsClient.java",
+            "line": 195
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/integration/android/AndroidKeystoreKmsClient.java",
+            "line": 213
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "tink-crypto/tink-java"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "low"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "comment"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "37"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.52"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "safe"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-6.48"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "85.7"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:algorithm:92fab58690ca",
+      "name": "RSA-3072-ECB",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "oid": "1.2.840.113549.1.1.1",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "algorithmFamily": "RSASSA-PKCS1",
+          "parameterSetIdentifier": "3072",
+          "mode": "ecb",
+          "cryptoFunctions": [
+            "keygen"
+          ],
+          "classicalSecurityLevel": 128,
+          "nistQuantumSecurityLevel": 0,
+          "executionEnvironment": "software-plain-ram"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/test/java/com/google/crypto/tink/subtle/RsaSsaPkcs1SignJceTest.java",
+            "line": 166
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/hybrid/subtle/RsaKem.java",
+            "line": 57
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/hybrid/subtle/RsaKem.java",
+            "line": 75
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/signature/internal/RsaSsaPssSignConscrypt.java",
+            "line": 74
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/subtle/RsaSsaPkcs1SignJceTest.java",
+            "line": 76
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/hybrid/subtle/RsaKemTest.java",
+            "line": 84
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/subtle/RsaSsaPkcs1SignJceTest.java",
+            "line": 90
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/subtle/RsaSsaPkcs1SignJceTest.java",
+            "line": 102
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/hybrid/subtle/RsaKemTest.java",
+            "line": 104
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/hybrid/subtle/RsaKem.java",
+            "line": 108
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/signature/internal/RsaSsaPkcs1VerifyConscrypt.java",
+            "line": 109
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/subtle/RsaSsaPkcs1SignJceTest.java",
+            "line": 114
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/signature/internal/RsaSsaPkcs1SignJceTest.java",
+            "line": 117
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/signature/KeyConversionTest.java",
+            "line": 123
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/signature/internal/RsaSsaPkcs1SignJce.java",
+            "line": 127
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/subtle/RsaSsaPkcs1SignJceTest.java",
+            "line": 132
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/hybrid/subtle/RsaKemTest.java",
+            "line": 139
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/subtle/RsaSsaPkcs1SignJceTest.java",
+            "line": 145
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/signature/internal/RsaSsaPssVerifyConscrypt.java",
+            "line": 161
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/hybrid/subtle/RsaKemHybridDecryptTest.java",
+            "line": 168
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/signature/KeyConversionTest.java",
+            "line": 186
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/signature/KeyConversionTest.java",
+            "line": 208
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/signature/KeyConversionTest.java",
+            "line": 227
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/signature/KeyConversionTest.java",
+            "line": 237
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/signature/KeyConversionTest.java",
+            "line": 242
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/signature/RsaSsaPkcs1PrivateKeyTest.java",
+            "line": 408
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/signature/RsaSsaPssPrivateKeyTest.java",
+            "line": 418
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/signature/RsaSsaPkcs1PrivateKeyTest.java",
+            "line": 483
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/signature/RsaSsaPssPrivateKeyTest.java",
+            "line": 497
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/hybrid/subtle/RsaKemHybridEncrypt.java",
+            "line": 28
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/jwt/JwtRsaSsaPkcs1PrivateKey.java",
+            "line": 28
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/jwt/JwtRsaSsaPssPrivateKey.java",
+            "line": 28
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/signature/RsaSsaPkcs1PrivateKey.java",
+            "line": 29
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/signature/RsaSsaPssPrivateKey.java",
+            "line": 29
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/signature/RsaSsaPkcs1PublicKey.java",
+            "line": 30
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/signature/RsaSsaPssPublicKey.java",
+            "line": 30
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/hybrid/subtle/RsaKemHybridDecrypt.java",
+            "line": 31
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/jwt/JwtRsaSsaPkcs1PublicKey.java",
+            "line": 32
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/jwt/JwtRsaSsaPssPublicKey.java",
+            "line": 32
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/jwt/subtle/JwtRsaSsaPkcs1PublicKeySign.java",
+            "line": 32
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/jwt/subtle/JwtRsaSsaPssPublicKeySign.java",
+            "line": 32
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/subtle/RsaSsaPkcs1SignJce.java",
+            "line": 32
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/subtle/RsaSsaPkcs1VerifyJce.java",
+            "line": 32
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/jwt/internal/JwtRsaSsaPkcs1KeyCreator.java",
+            "line": 35
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/jwt/internal/JwtRsaSsaPssKeyCreator.java",
+            "line": 35
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/signature/internal/RsaSsaPkcs1KeyCreator.java",
+            "line": 35
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/signature/internal/RsaSsaPssKeyCreator.java",
+            "line": 35
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/jwt/subtle/JwtRsaSsaPkcs1PublicKeyVerify.java",
+            "line": 36
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/jwt/subtle/JwtRsaSsaPssPublicKeyVerify.java",
+            "line": 36
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/signature/internal/RsaAsn1Util.java",
+            "line": 36
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "tink-crypto/tink-java"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "high"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "source"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "26"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "3.96"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "broken"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "2.333"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-6.04"
+        },
+        {
+          "name": "ecdat:recommendation",
+          "value": "ML-KEM-768"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "15.8"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "100.0"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:2c328ca170ff",
+      "name": "key:generic-api-key",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "kokoro/testutils/github_release_util_test.sh",
+            "line": 323
+          },
+          {
+            "location": "kokoro/testutils/github_release_util_test.sh",
+            "line": 365
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "tink-crypto/tink-java"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "57"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.167"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-9.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "4.5"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "42.9"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:510020eb541d",
+      "name": "key:generic-api-key",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/com/google/crypto/tink/hybrid/EciesPrivateKey.java",
+            "line": 51
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "tink-crypto/tink-java"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "58"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.167"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-9.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "4.4"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "42.9"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:24a6037ca477",
+      "name": "key:generic-api-key",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/com/google/crypto/tink/jwt/JwtRsaSsaPkcs1PrivateKey.java",
+            "line": 45
+          },
+          {
+            "location": "src/main/java/com/google/crypto/tink/jwt/JwtRsaSsaPkcs1PrivateKey.java",
+            "line": 171
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "tink-crypto/tink-java"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "security"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "57"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "1.167"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-9.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "4.5"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "in_triage"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "42.9"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:3a663aa8e2dc",
+      "name": "private-key:private-key",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "private-key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/test/java/com/google/crypto/tink/PemKeyTypeTest.java",
+            "line": 60
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/PemKeyTypeTest.java",
+            "line": 113
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "tink-crypto/tink-java"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "57"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-9.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "42.9"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:6706f5a07eb9",
+      "name": "private-key:private-key",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "private-key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/test/java/com/google/crypto/tink/internal/PemUtilTest.java",
+            "line": 55
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/internal/PemUtilTest.java",
+            "line": 110
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/internal/PemUtilTest.java",
+            "line": 130
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "tink-crypto/tink-java"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "57"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-9.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "42.9"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:5ee98b2d650a",
+      "name": "key:generic-api-key",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/test/java/com/google/crypto/tink/jwt/JwtSignatureConfigurationV0Test.java",
+            "line": 799
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/jwt/JwtSignatureConfigurationV0Test.java",
+            "line": 802
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/jwt/JwtSignatureConfigurationV0Test.java",
+            "line": 805
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/jwt/JwtSignatureConfigurationV0Test.java",
+            "line": 808
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/jwt/JwtSignatureConfigurationV0Test.java",
+            "line": 811
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/jwt/JwtSignatureConfigurationV0Test.java",
+            "line": 814
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/jwt/JwtSignatureConfigurationV0Test.java",
+            "line": 817
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/jwt/JwtSignatureConfigurationV0Test.java",
+            "line": 820
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/jwt/JwtSignatureConfigurationV0Test.java",
+            "line": 823
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/jwt/JwtSignatureConfigurationV0Test.java",
+            "line": 826
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/jwt/JwtSignatureConfigurationV0Test.java",
+            "line": 829
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/jwt/JwtSignatureConfigurationV0Test.java",
+            "line": 832
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "tink-crypto/tink-java"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "52"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-9.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "42.9"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:70df2471710f",
+      "name": "token:jwt",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "token"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/test/java/com/google/crypto/tink/jwt/internal/JwtFormatTest.java",
+            "line": 553
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/jwt/internal/JwtFormatTest.java",
+            "line": 560
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/jwt/internal/JwtFormatTest.java",
+            "line": 565
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/jwt/internal/JwtFormatTest.java",
+            "line": 570
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "tink-crypto/tink-java"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "56"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-9.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:3d2d792fbdd9",
+      "name": "token:jwt",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "token"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/test/java/com/google/crypto/tink/jwt/internal/testing/JwtSignatureTestUtilTest.java",
+            "line": 41
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "tink-crypto/tink-java"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "58"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-9.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:9a88cf0305a1",
+      "name": "private-key:private-key",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "private-key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/test/java/com/google/crypto/tink/signature/SignaturePemKeysetReaderTest.java",
+            "line": 845
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/signature/SignaturePemKeysetReaderTest.java",
+            "line": 944
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/signature/SignaturePemKeysetReaderTest.java",
+            "line": 989
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "tink-crypto/tink-java"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "57"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-9.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "42.9"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:2a9b349e9e02",
+      "name": "key:generic-api-key",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/test/java/com/google/crypto/tink/subtle/AesCtrJceCipherTest.java",
+            "line": 44
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "tink-crypto/tink-java"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "58"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-9.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "42.9"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:8e886e7a79ba",
+      "name": "private-key:private-key",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "private-key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/test/java/com/google/crypto/tink/subtle/PemKeyTypeTest.java",
+            "line": 62
+          },
+          {
+            "location": "src/test/java/com/google/crypto/tink/subtle/PemKeyTypeTest.java",
+            "line": 115
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "tink-crypto/tink-java"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "57"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-9.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "42.9"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:ecdat:material:b0e85320df4a",
+      "name": "key:generic-api-key",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/test/java/com/google/crypto/tink/testing/HpkeTestUtilTest.java",
+            "line": 49
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "ecdat:component",
+          "value": "tink-crypto/tink-java"
+        },
+        {
+          "name": "ecdat:confidence",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:collectors",
+          "value": "theia"
+        },
+        {
+          "name": "ecdat:corroborated",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:usage",
+          "value": "test"
+        },
+        {
+          "name": "ecdat:exposure",
+          "value": "internal"
+        },
+        {
+          "name": "ecdat:lifetime_years",
+          "value": "5.0"
+        },
+        {
+          "name": "ecdat:data_class",
+          "value": "generic"
+        },
+        {
+          "name": "ecdat:criticality",
+          "value": "medium"
+        },
+        {
+          "name": "ecdat:agility",
+          "value": "58"
+        },
+        {
+          "name": "ecdat:migration_years",
+          "value": "1.0"
+        },
+        {
+          "name": "ecdat:quantum_class",
+          "value": "unknown"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:priority",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:mosca_gap_years",
+          "value": "-9.0"
+        },
+        {
+          "name": "ecdat:effort_weeks",
+          "value": "0.0"
+        },
+        {
+          "name": "ecdat:vex",
+          "value": "not_affected"
+        },
+        {
+          "name": "ecdat:certin_completeness_pct",
+          "value": "42.9"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "urn:ecdat:scan:c398a9330d88",
+      "dependsOn": [
+        "urn:ecdat:component:tink-crypto-tink-java"
+      ]
+    },
+    {
+      "ref": "urn:ecdat:component:tink-crypto-tink-java",
+      "dependsOn": [
+        "urn:ecdat:library:af8d12613b99",
+        "urn:ecdat:library:3ff3c81340dd",
+        "urn:ecdat:library:879505a3194b",
+        "urn:ecdat:algorithm:ffaf52871ec8",
+        "urn:ecdat:algorithm:69f469aff84e",
+        "urn:ecdat:algorithm:654864aaf27c",
+        "urn:ecdat:algorithm:424b61387ded",
+        "urn:ecdat:algorithm:63fdda695ffa",
+        "urn:ecdat:algorithm:eecf4cf05eb2",
+        "urn:ecdat:algorithm:62c5cc9ea083",
+        "urn:ecdat:algorithm:f630d27d06ab",
+        "urn:ecdat:algorithm:f715a24c46a5",
+        "urn:ecdat:algorithm:a035c432f136",
+        "urn:ecdat:algorithm:fdaae4201a58",
+        "urn:ecdat:algorithm:92fab58690ca",
+        "urn:ecdat:material:2c328ca170ff",
+        "urn:ecdat:material:510020eb541d",
+        "urn:ecdat:material:24a6037ca477",
+        "urn:ecdat:material:3a663aa8e2dc",
+        "urn:ecdat:material:6706f5a07eb9",
+        "urn:ecdat:material:5ee98b2d650a",
+        "urn:ecdat:material:70df2471710f",
+        "urn:ecdat:material:3d2d792fbdd9",
+        "urn:ecdat:material:9a88cf0305a1",
+        "urn:ecdat:material:2a9b349e9e02",
+        "urn:ecdat:material:8e886e7a79ba",
+        "urn:ecdat:material:b0e85320df4a"
+      ]
+    },
+    {
+      "ref": "urn:ecdat:library:af8d12613b99"
+    },
+    {
+      "ref": "urn:ecdat:library:3ff3c81340dd"
+    },
+    {
+      "ref": "urn:ecdat:library:879505a3194b"
+    }
+  ],
+  "vulnerabilities": [
+    {
+      "bom-ref": "vuln-1",
+      "id": "ECDAT-QV-0001",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is comment: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "AES-128 (algorithm) in tink-crypto/tink-java: weakened; tier SAFE",
+      "detail": "Grover reduces AES-128 to ~64-bit effective security; still NIST-approved but fails CNSA 2.0",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "false_positive",
+        "detail": "mentioned in a comment only",
+        "response": [],
+        "justification": "code_not_present"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:ffaf52871ec8"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.88 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-2",
+      "id": "ECDAT-QV-0002",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "high",
+          "justification": "classically broken or below minimum strength today, independent of quantum"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "MD5 (algorithm) in tink-crypto/tink-java: legacy-broken; tier ACT_NOW",
+      "detail": "Practical collisions since 2004; unusable for signatures or integrity",
+      "recommendation": "Migrate to SHA-256",
+      "analysis": {
+        "state": "exploitable",
+        "detail": "quantum-vulnerable and reachable",
+        "response": [
+          "update"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:654864aaf27c"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.48 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-3",
+      "id": "ECDAT-QV-0003",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "high",
+          "justification": "classically broken or below minimum strength today, independent of quantum"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "SHA-1 (algorithm) in tink-crypto/tink-java: legacy-broken; tier ACT_NOW",
+      "detail": "Chosen-prefix collisions (SHAttered 2017, 2020); disallowed for signatures",
+      "recommendation": "Migrate to SHA-256",
+      "analysis": {
+        "state": "exploitable",
+        "detail": "quantum-vulnerable and reachable",
+        "response": [
+          "update"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:424b61387ded"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.88 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-4",
+      "id": "ECDAT-QV-0004",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is non-security: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "SHA-512 (algorithm) in tink-crypto/tink-java: safe; tier SAFE",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "non-security use of a hash",
+        "response": [],
+        "justification": "requires_configuration"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:63fdda695ffa"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.44 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-5",
+      "id": "ECDAT-QV-0005",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "high",
+          "justification": "framework deadline 2030 is within the 3.96-year migration window; signature/authentication use: harvest-now-decrypt-later does not apply; deadline-driven"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "ECDSA (algorithm) in tink-crypto/tink-java: broken; tier ACT_NOW",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "Migrate to ML-DSA-65 (hybrid)",
+      "analysis": {
+        "state": "exploitable",
+        "detail": "quantum-vulnerable and reachable",
+        "response": [
+          "update"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:eecf4cf05eb2"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.96 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-6",
+      "id": "ECDAT-QV-0006",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is comment: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "ML-DSA-65 (algorithm) in tink-crypto/tink-java: safe; tier SAFE",
+      "detail": "Module-lattice signature, FIPS 204",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "false_positive",
+        "detail": "mentioned in a comment only",
+        "response": [],
+        "justification": "code_not_present"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:62c5cc9ea083"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.8 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-7",
+      "id": "ECDAT-QV-0007",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "quantum-vulnerable but short-lived data, signing-only, or ample migration time"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "AES (algorithm) in tink-crypto/tink-java: weakened; tier MONITOR",
+      "detail": "Grover's algorithm halves the effective key length; key size not yet known",
+      "recommendation": "Migrate to AES-256",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:f630d27d06ab"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.6 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-8",
+      "id": "ECDAT-QV-0008",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is comment: not a production security control"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "ECDH (algorithm) in tink-crypto/tink-java: broken; tier SAFE",
+      "detail": "Elliptic-curve discrete log is broken by Shor's algorithm",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "false_positive",
+        "detail": "mentioned in a comment only",
+        "response": [],
+        "justification": "code_not_present"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:f715a24c46a5"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=4.12 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-9",
+      "id": "ECDAT-QV-0009",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "quantum-vulnerable but short-lived data, signing-only, or ample migration time"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "AES (algorithm) in tink-crypto/tink-java: weakened; tier MONITOR",
+      "detail": "Grover's algorithm halves the effective key length; key size not yet known",
+      "recommendation": "Migrate to AES-256",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:a035c432f136"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.6 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-10",
+      "id": "ECDAT-QV-0010",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is comment: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "AES-256 (algorithm) in tink-crypto/tink-java: safe; tier SAFE",
+      "detail": "256-bit key keeps ~128-bit security under Grover",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "false_positive",
+        "detail": "mentioned in a comment only",
+        "response": [],
+        "justification": "code_not_present"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:fdaae4201a58"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.52 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-11",
+      "id": "ECDAT-QV-0011",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "high",
+          "justification": "framework deadline 2030 is within the 3.96-year migration window"
+        }
+      ],
+      "cwes": [
+        327
+      ],
+      "description": "RSA (algorithm) in tink-crypto/tink-java: broken; tier ACT_NOW",
+      "detail": "Integer factorisation is broken by Shor's algorithm",
+      "recommendation": "Migrate to ML-KEM-768 (hybrid)",
+      "analysis": {
+        "state": "exploitable",
+        "detail": "quantum-vulnerable and reachable",
+        "response": [
+          "update"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:algorithm:92fab58690ca"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "ACT_NOW"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "true"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=3.96 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-12",
+      "id": "ECDAT-QV-0012",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "could not classify; review manually"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "key:generic-api-key (related-crypto-material) in tink-crypto/tink-java: unknown; tier MONITOR",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:2c328ca170ff"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-13",
+      "id": "ECDAT-QV-0013",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "could not classify; review manually"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "key:generic-api-key (related-crypto-material) in tink-crypto/tink-java: unknown; tier MONITOR",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:510020eb541d"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-14",
+      "id": "ECDAT-QV-0014",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "medium",
+          "justification": "could not classify; review manually"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "key:generic-api-key (related-crypto-material) in tink-crypto/tink-java: unknown; tier MONITOR",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "in_triage",
+        "detail": "quantum-vulnerable; low urgency",
+        "response": []
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:24a6037ca477"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "MONITOR"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-15",
+      "id": "ECDAT-QV-0015",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "private-key:private-key (related-crypto-material) in tink-crypto/tink-java: unknown; tier SAFE",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:3a663aa8e2dc"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-16",
+      "id": "ECDAT-QV-0016",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "private-key:private-key (related-crypto-material) in tink-crypto/tink-java: unknown; tier SAFE",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:6706f5a07eb9"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-17",
+      "id": "ECDAT-QV-0017",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "key:generic-api-key (related-crypto-material) in tink-crypto/tink-java: unknown; tier SAFE",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:5ee98b2d650a"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-18",
+      "id": "ECDAT-QV-0018",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "token:jwt (related-crypto-material) in tink-crypto/tink-java: unknown; tier SAFE",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:70df2471710f"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-19",
+      "id": "ECDAT-QV-0019",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "token:jwt (related-crypto-material) in tink-crypto/tink-java: unknown; tier SAFE",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:3d2d792fbdd9"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-20",
+      "id": "ECDAT-QV-0020",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "private-key:private-key (related-crypto-material) in tink-crypto/tink-java: unknown; tier SAFE",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:9a88cf0305a1"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-21",
+      "id": "ECDAT-QV-0021",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "key:generic-api-key (related-crypto-material) in tink-crypto/tink-java: unknown; tier SAFE",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:2a9b349e9e02"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-22",
+      "id": "ECDAT-QV-0022",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "private-key:private-key (related-crypto-material) in tink-crypto/tink-java: unknown; tier SAFE",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:8e886e7a79ba"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=1 Z=15"
+        }
+      ]
+    },
+    {
+      "bom-ref": "vuln-23",
+      "id": "ECDAT-QV-0023",
+      "source": {
+        "name": "ECDAT quantum risk engine",
+        "url": "https://sih.gov.in/sih2026PS#26164"
+      },
+      "ratings": [
+        {
+          "method": "other",
+          "severity": "info",
+          "justification": "usage is test: not a production security control"
+        }
+      ],
+      "cwes": [
+        326
+      ],
+      "description": "key:generic-api-key (related-crypto-material) in tink-crypto/tink-java: unknown; tier SAFE",
+      "detail": "",
+      "recommendation": "No change required",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "test-only code path",
+        "response": [],
+        "justification": "code_not_reachable"
+      },
+      "affects": [
+        {
+          "ref": "urn:ecdat:material:b0e85320df4a"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ecdat:tier",
+          "value": "SAFE"
+        },
+        {
+          "name": "ecdat:hndl_applicable",
+          "value": "false"
+        },
+        {
+          "name": "ecdat:mosca",
+          "value": "X=5 Y=1 Z=15"
+        }
+      ]
+    }
+  ]
+}

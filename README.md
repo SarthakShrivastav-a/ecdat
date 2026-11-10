@@ -1,7 +1,5 @@
 # ECDAT — Enterprise Cryptographic Discovery & Analysis Tool
 
-**SIH 2026 · PS 26164 · NTRO · Blockchain & Cybersecurity**
-
 We built ECDAT to answer three questions about an organisation's cryptography: **where is it**, **which of it
 breaks when a quantum computer arrives**, and **what do we fix first with the engineers we actually have**.
 

@@ -13,6 +13,8 @@ migration plan** with PQC/hybrid targets, VEX statements and patch suggestions. 
 [India readiness snapshot](https://sarthakshrivastav-a.github.io/ecdat/snapshot) ·
 [Live dashboard](https://sarthakshrivastav-a.github.io/ecdat/dashboard)
 
+New here? Step-by-step setup and usage: [RUN_GUIDE.md](RUN_GUIDE.md)
+
 ---
 
 ## One command, five phases
@@ -102,7 +104,7 @@ ecdat verify cbom.json --pubkey ecdat-mldsa65.pub
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\python -m pip install -e . --no-deps
-.\.venv\Scripts\python -m pip install cryptography cyclonedx-python-lib lief scapy "tree-sitter>=0.25" tree-sitter-python tree-sitter-javascript tree-sitter-java tree-sitter-go tree-sitter-c yara-python fastapi "uvicorn[standard]" pyyaml typer rich jsonschema reportlab dilithium-py kyber-py httpx python-multipart cryptolyzer pycryptodomex pyasn1 pyasn1-modules javaobj-py3
+.\.venv\Scripts\python -m pip install cryptography cyclonedx-python-lib lief scapy "tree-sitter>=0.25" tree-sitter-python tree-sitter-javascript tree-sitter-java tree-sitter-go tree-sitter-c yara-python fastapi "uvicorn[standard]" pyyaml typer rich jsonschema reportlab dilithium-py kyber-py httpx python-multipart cryptolyzer pycryptodomex pyasn1 pyasn1-modules javaobj-py3 pytest
 .\.venv\Scripts\python -m pip install --no-deps pyjks      # pyjks pulls in a C extension (twofish) that is not needed
 ```
 

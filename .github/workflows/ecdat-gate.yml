@@ -1,3 +1,9 @@
+# Template CI gate for projects that adopt ECDAT.
+# ecdat.yaml (what to scan) and cbom-baseline.json (the accepted CBOM to diff against) belong to the
+# adopting project's repo root; they are not part of ECDAT itself. If cbom-baseline.json is absent, this
+# run's own scan is used as the baseline (the gate passes) - commit out/base/cbom.json as cbom-baseline.json
+# to start enforcing. Outside the ECDAT repo, replace `pip install . --no-deps` with
+# `pip install --no-deps git+https://github.com/SarthakShrivastav-a/ecdat.git` and copy requirements-ci.txt.
 name: ECDAT quantum-crypto gate
 on:
   pull_request:
@@ -11,10 +17,19 @@ jobs:
       - uses: actions/setup-python@v5
         with: {python-version: "3.11"}
       - name: Install ECDAT
-        run: pip install . --no-deps && pip install -r requirements-ci.txt
+        run: |
+          pip install . --no-deps
+          pip install -r requirements-ci.txt
+          pip install --no-deps pyjks   # its twofish dependency needs a C compiler and is not used
       - name: Scan and gate (no external engines needed)
         run: |
-          ecdat gate -c ecdat.yaml --baseline cbom-baseline.json --policy no-new-vulnerable --no-external-tools -o out/gate
+          BASELINE=cbom-baseline.json
+          if [ ! -f "$BASELINE" ]; then
+            echo "::warning::cbom-baseline.json not found; using this run's scan as the baseline. Commit out/base/cbom.json as cbom-baseline.json to enforce the gate."
+            ecdat scan -c ecdat.yaml -o out/base --no-sign --no-external-tools
+            BASELINE=out/base/cbom.json
+          fi
+          ecdat gate -c ecdat.yaml --baseline "$BASELINE" --policy no-new-vulnerable --no-external-tools -o out/gate
       - name: Upload CBOM, VEX, SARIF and gate summary
         if: always()
         uses: actions/upload-artifact@v4

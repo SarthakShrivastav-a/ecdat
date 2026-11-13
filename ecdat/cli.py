@@ -163,6 +163,14 @@ app.add_typer(zoo_app, name="zoo")
 @zoo_app.command("build")
 def zoo_build(out: Path = typer.Option(None, "--out")):
     """Generate certificates, keystores, binaries, container image tars and pcaps for the evaluation corpus."""
+    # scripts/ lives at the repo root, which is not on sys.path when run through the installed `ecdat` launcher.
+    repo_root = Path(__file__).resolve().parents[1]
+    if not (repo_root / "scripts" / "build_zoo.py").exists():
+        console.print("[red]zoo build needs a source checkout of ECDAT[/red] (scripts/build_zoo.py not found at "
+                      f"{repo_root}). Clone the repo and install it with `pip install -e .`.")
+        raise typer.Exit(2)
+    if str(repo_root) not in sys.path:
+        sys.path.insert(0, str(repo_root))
     from scripts.build_zoo import ZOO, build_all
     truth = build_all(out or ZOO)
     console.print(json.dumps({k: sorted(v.keys()) for k, v in truth.items()}, indent=2))

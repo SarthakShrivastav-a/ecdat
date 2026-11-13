@@ -1,0 +1,31 @@
+# Runtime dependencies of ECDAT (mirrors pyproject.toml [project].dependencies) plus pytest.
+# pyjks is deliberately NOT listed: it must be installed with --no-deps (its twofish dependency needs a
+# C compiler and is not used), so CI installs it separately with `pip install --no-deps pyjks`.
+cryptography
+cyclonedx-python-lib>=11.11
+lief
+scapy
+tree-sitter>=0.25
+tree-sitter-python
+tree-sitter-javascript
+tree-sitter-java
+tree-sitter-go
+tree-sitter-c
+yara-python
+fastapi
+uvicorn[standard]
+pyyaml
+typer
+rich
+jsonschema
+reportlab
+dilithium-py
+kyber-py
+httpx
+python-multipart
+cryptolyzer
+pycryptodomex
+pyasn1
+pyasn1-modules
+javaobj-py3
+pytest
